@@ -1,9 +1,12 @@
 {
-  "name": "@dashkite/module",
+  "name": "@dashkite/joy",
   "version": "0.0.0",
   "description": "",
   "main": "build/src/index.js",
-  "exports": "./build/src/index.js",
+  "exports": {
+    ".": "./build/src/index.js",
+    "./object": "./build/src/object.js"
+  },
   "files": [
     "build/src",
     "src"
@@ -24,7 +27,7 @@
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
     "@dashkite/genie": "^0.1.0",
-    "@dashkite/masonry": "^0.3.0",
+    "@dashkite/masonry": "^0.4.0",
     "amen": "^3.0.0",
     "coffeescript": "^2.5.1"
   }
