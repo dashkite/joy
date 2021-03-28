@@ -1,8 +1,8 @@
-# Project Name
+# Joy
 
-*Short project description*
+*Convenient like Lodash, functional like Rambda.*
 
-Longer description that contains a short code example
+TBD
 
 ## Features
 
