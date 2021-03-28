@@ -12,11 +12,6 @@ export default do ->
 
   print await test "object helpers", [
 
-    test "bind", -> assert (x.bind (-> @x), {x: 1})() == 1
-
-    test "detach", ->
-      assert.deepEqual (x.detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
-
     test "keys", ->
       assert.deepEqual (x.keys x: 1, y: 2), [ "x", "y" ]
 
@@ -37,10 +32,10 @@ export default do ->
     test "set", ->
       assert.deepEqual { x: 2 }, (x.set "x", 2, x: 1)
 
-    test "include", ->
+    test "assign", ->
       a = x: 1, y: 2
       b = z: 3
-      x.include a, b
+      x.assign a, b
       assert.deepEqual a, {x: 1, y: 2, z: 3}
 
     test "merge", ->
@@ -53,6 +48,8 @@ export default do ->
     test "query", ->
       assert.equal true, x.query { x: 1 }, { x: 1, y: 2 }
       assert.equal false, x.query { x: 2 }, { x: 1, y: 2 }
+      assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
+      assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}
       assert.equal true, x.query 1, 1
       assert.equal false, x.query 1, 2
 

@@ -14,13 +14,23 @@
 
 ## {{name}}
 
+_@dashkite/joy/{{lower name}}_
+
 {{#each functions}}
 
 ### {{name}}
 
 _{{name}} {{arguments}} &rarr; {{returns}}_
 
-{{description}}
+{{{description}}}
+
+{{#if example}}
+#### Example
+
+```coffeescript
+{{{example}}}
+```
+{{/if~}}
 
 {{/each}}
 

@@ -77,32 +77,151 @@
         Returns a function that awaits on its arguments before passing it to the given function.
 
     - name: pipe
-      arguments: function
+      arguments: functions
       returns: function
       description: >-
         Returns a function that composes the given functions, calling them in the order given.
 
     - name: pipeWith
+      arguments: adapter, functions
+      returns: function
+      description: >-
+        Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
+      example: |-
+        trace = (f) ->
+          (args...) ->
+            console.log "function:", f.name
+            console.log "-- arguments:", args
+            console.log "-- returns:", r = f args...
+            r
+
+        pipeWith trace, [
+          # functions to trace...
+        ]
 
     - name: compose
+      arguments: functions
+      returns: function
+      description: >-
+        Returns a function that composes the given functions, calling them in reverse of the order given.
 
     - name: flow
+      arguments: functions
+      returns: function
+      description: >-
+        Returns an async function that composes the given functions, which may be async, calling them in the order given.
+
+        Convenience for `pipeWith wait`.
+
+    - name: flowWith
+      arguments: adapter, functions
+      returns: function
+      description: >-
+        Works like [`flow`](#flow), except transforms each function with the given adaper before composing them.
 
     - name: apply
+      arguments: function, arguments
+      returns: value
+      description: >-
+        Calls the given function with the given arguments. Convenience for [`Function::apply`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
+
+        [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
     - name: call
+      arguments: function, arguments...
+      returns: value
+      description: >-
+        Calls the given function with the given arguments. Convenience for [`Function::call`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
+
+        [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
     - name: spread
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that accepts an array of arguments and passes them to the given function.
 
     - name: stack
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that passes its arguments to the given function as an array.
 
     - name: once
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that calls the given function once. Subsequent invocations will simply return the value returned by the initial invocation.
 
     - name: memoize
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that calls the given function once for a given set arguments. Subsequent invocations with the same arguments will simply return the value returned by the initial invocation. The arguments must be serializable with `toString`.
+
+- name: Predicate
+  functions:
+    - name: negate
 
 - name: Object
   functions:
+
     - name: keys
       arguments: object
       returns: array
       description: Returns the property names for the given object.
+
+    - name: values
+      arguments: object
+      returns: array
+      description: Returns the property values for the given object.
+
+    - name: pairs
+      arguments: object
+      returns: array
+      description: >-
+        Returns the properties for the given object as an associative array (an array of two-element arrays).
+      example: |
+        assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
+          [["a", 1], ["b", 2], ["c", 3]]
+
+    - name: has
+      arguments: key, object
+      returns: boolean
+      description: >-
+        Returns the true if the given object has a property matching the given key, false otherwise.
+
+    - name: get
+      arguments: key, object
+      returns: boolean
+      description: >-
+        Returns the value of the property matching the given key for the given object. Like most Joy functions, `get` is curryable, so `get` can be used like Ramda's [`pluck`][ramda].
+
+        [ramda]: https://ramdajs.com/docs/#pluck
+
+    - name: set
+      arguments: key, value, object
+      returns: boolean
+      description: >-
+        Sets the value of the property matching the given key for the given object.
+
+    - name: assign
+      arguments: object, objects...
+      returns: object
+      description: >-
+        Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
+
+    - name: merge
+      arguments: object, objects...
+      returns: object
+      description: >-
+        Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
+
+    - name: query
+      arguments: exemplar, object
+      returns: object
+      description: >-
+        Returns true if _object_ matches _exemplar_, false otherwise. An exemplar matches if all of its properties are equal to the corresponding properties in the target object. Matching is done recursively, so the exemplar can contain nested values.
+      example: |
+        assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
+        assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}

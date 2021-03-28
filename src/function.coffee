@@ -99,14 +99,11 @@ stack = (f) -> (ax...) -> f ax
 
 # Inspired by Rambda: https://ramdajs.com/docs/#pipeWith
 pipeWith = curry (c, fx) ->
+  gx = ((c f) for f in fx)
   (ax...) ->
-    for f, i in fx
-      try
-        ax = [ (c f) ax... ]
-      catch error
-        report f, i, error
-    return ax[0]
-
+    for f, i in gx
+      ax = [ f ax... ]
+    ax[0]
 
 pipe = pipeWith identity
 
@@ -118,6 +115,8 @@ wait = (f) ->
       .then (ax) -> f ax...
 
 flow = pipeWith wait
+
+flowWith = curry (c, fx) -> pipeWith (pipe [ c, wait ]), fx
 
 tee = (f) ->
   arity (Math.max f.length, 1), (a, bx...) ->
@@ -144,6 +143,10 @@ call = (f, ax...) -> (f ax...)
 
 apply = (f, ax) -> (f ax...)
 
+bind = curry (f, x) -> f.bind x
+
+detach = (f) -> curry (x, args...) -> f.apply x, args
+
 export {
   identity
   wrap
@@ -163,10 +166,13 @@ export {
   compose
   wait
   flow
+  flowWith
   tee
   rtee
   once
   memoize
   call
   apply
+  bind
+  detach
 }

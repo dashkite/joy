@@ -23,7 +23,11 @@ t.define "test", [ "build" ], ->
     "./build/test/index.js"
   ]
 
+Handlebars.registerHelper "lower", (text) ->
+  text = Handlebars.escapeExpression text
+  new Handlebars.SafeString text.toLowerCase()
+
 t.define "doc:generate", ->
   reference = YAML.load await q.read p.join "docs", "reference.yaml"
-  template = Handlebars.compile await q.read p.join "docs", "reference.md.hb"
+  template = Handlebars.compile await q.read p.join "docs", "reference.md.hbs"
   q.write (p.join "docs", "reference.md"), template reference

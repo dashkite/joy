@@ -2,10 +2,6 @@ import {curry, negate} from "panda-garden"
 import {isObject, isArray, isFunction, isRegExp} from "./type"
 import {equal} from "./equal"
 
-bind = curry (f, x) -> f.bind x
-
-detach = (f) -> curry (x, args...) -> f.apply x, args
-
 keys = Object.keys
 
 values = (x) -> v for k, v of x
@@ -20,7 +16,7 @@ set = curry (key, value, object) ->
 
 has = curry (p, x) -> x[p]?
 
-include = (target, sources...) -> Object.assign target, sources...
+assign = (target, sources...) -> Object.assign target, sources...
 
 merge = (objects...) -> Object.assign {}, objects...
 
@@ -33,15 +29,13 @@ query = curry (example, target) ->
     equal example, target
 
 export {
-  bind
-  detach
   keys
   values
   pairs
   get
   set
   has
-  include
+  assign
   merge
   query
 }

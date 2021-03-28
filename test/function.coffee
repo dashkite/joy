@@ -87,8 +87,19 @@ do ->
       alpha = x.flow [ a, b, c ]
       assert.equal "Sabc", await alpha "S"
 
-    test "apply", ->
-      assert.equal 1, (x.apply x.identity, [1])
+    test "flowWith", ->
+      r = []
+      log = (f) -> (args...) -> r.push args; f args...
+      a = (x) -> Promise.resolve x + "a"
+      b = (x) -> Promise.resolve x + "b"
+      c = (x) -> Promise.resolve x + "c"
+      alpha = x.flowWith log, [ a, b, c ]
+      assert.equal "Sabc", await alpha "S"
+      assert.deepEqual r, [
+        [ "S" ]
+        [ "Sa" ]
+        [ "Sab" ]
+      ]
 
     test "spread", ->
       assert.equal "ab", (x.spread (a, b) -> a + b)(["a", "b"])
@@ -102,8 +113,17 @@ do ->
 
     test "memoize", ->
       count = 0
-      f = x.memoize (x) -> count++
-      assert.equal 0, f 1
-      assert.equal 0, f 1
-      assert.equal 1, f 2
+      f = x.memoize (x, y) -> count++
+      assert.equal 0, f 1, 1
+      assert.equal 0, f 1, 1
+      assert.equal 1, f 1, 2
+
+    test "apply", ->
+      assert.equal 1, (x.apply x.identity, [1])
+
+    test "bind", -> assert (x.bind (-> @x), {x: 1})() == 1
+
+    test "detach", ->
+      assert.deepEqual (x.detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
+
   ]
