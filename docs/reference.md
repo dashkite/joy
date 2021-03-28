@@ -13,117 +13,163 @@
 ## Function
 
 
-### identity _value_ &rarr; _value_
+### identity
+
+_identity value &rarr; value_
 
 Returns its argument.
 
 
-### wrap _value_ &rarr; _function_
+### wrap
+
+_wrap value &rarr; function_
 
 Returns a function that returns its argument.
 
 
-### unary _function_ &rarr; _function_
+### unary
+
+_unary function &rarr; function_
 
 Returns a unary function that passes its argument to the given function.
 
 
-### binary _function_ &rarr; _function_
+### binary
+
+_binary function &rarr; function_
 
 Returns a binary function that passes its arguments to the given function.
 
 
-### ternary _function_ &rarr; _function_
+### ternary
+
+_ternary function &rarr; function_
 
 Returns a ternary function that passes its arguments to the given function.
 
 
-### arity _n, function_ &rarr; _function_
+### arity
+
+_arity n, function &rarr; function_
 
 Returns an n-ary function that passes its arguments to the given function.
 
 
-### curry _function_ &rarr; _function_
+### curry
+
+_curry function &rarr; function_
 
 Returns a curryable function that passes its arguments to the given function.
 
 
-### substitute _pattern, values_ &rarr; _array_
+### substitute
+
+_substitute pattern, values &rarr; array_
 
 Given a pattern array and an array of values, returns an array with the values substited for the special value \_ in the pattern array.
 
 
-### partial _function, pattern_ &rarr; _function_
+### partial
+
+_partial function, pattern &rarr; function_
 
 Returns a function that substitutes arguments using the given pattern array before passing them to the given function.
 
 
-### flip _function_ &rarr; _function_
+### flip
+
+_flip function &rarr; function_
 
 Returns a function that reverses its arguments before passing them to the given function.
 
 
-### tee _function_ &rarr; _function_
+### tee
+
+_tee function &rarr; function_
 
 Returns a function that calls the given function but always returns its first argument.
 
 
-### rtee _function_ &rarr; _function_
+### rtee
+
+_rtee function &rarr; function_
 
 Returns a function that calls the given function but always returns its last argument.
 
 
-### wait _function_ &rarr; _function_
+### wait
+
+_wait function &rarr; function_
 
 Returns a function that awaits on its arguments before passing it to the given function.
 
 
-### pipe _function_ &rarr; _function_
+### pipe
+
+_pipe function &rarr; function_
 
 Returns a function that composes the given functions, calling them in the order given.
 
 
-### pipeWith __ &rarr; __
+### pipeWith
+
+_pipeWith  &rarr; _
 
 
 
 
-### compose __ &rarr; __
+### compose
+
+_compose  &rarr; _
 
 
 
 
-### flow __ &rarr; __
+### flow
+
+_flow  &rarr; _
 
 
 
 
-### apply __ &rarr; __
+### apply
+
+_apply  &rarr; _
 
 
 
 
-### call __ &rarr; __
+### call
+
+_call  &rarr; _
 
 
 
 
-### spread __ &rarr; __
+### spread
+
+_spread  &rarr; _
 
 
 
 
-### stack __ &rarr; __
+### stack
+
+_stack  &rarr; _
 
 
 
 
-### once __ &rarr; __
+### once
+
+_once  &rarr; _
 
 
 
 
-### memoize __ &rarr; __
+### memoize
+
+_memoize  &rarr; _
 
 
 
@@ -132,7 +178,9 @@ Returns a function that composes the given functions, calling them in the order 
 ## Object
 
 
-### keys _object_ &rarr; _array_
+### keys
+
+_keys object &rarr; array_
 
 Returns the property names for the given object.
 

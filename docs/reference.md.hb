@@ -16,7 +16,9 @@
 
 {{#each functions}}
 
-### {{name}} _{{arguments}}_ &rarr; _{{returns}}_
+### {{name}}
+
+_{{name}} {{arguments}} &rarr; {{returns}}_
 
 {{description}}
 
