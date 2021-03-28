@@ -30,6 +30,8 @@
     "@dashkite/genie": "^0.1.0",
     "@dashkite/masonry": "^0.4.0",
     "amen": "^3.0.0",
-    "coffeescript": "^2.5.1"
+    "coffeescript": "^2.5.1",
+    "handlebars": "^4.7.7",
+    "js-yaml": "^4.0.0"
   }
 }

@@ -1,0 +1,108 @@
+- name: Function
+  functions:
+    - name: identity
+      arguments: value
+      returns: value
+      description: Returns its argument.
+
+    - name: wrap
+      arguments: value
+      returns: function
+      description: Returns a function that returns its argument.
+
+    - name: unary
+      arguments: function
+      returns: function
+      description: >-
+        Returns a unary function that passes its argument to the given function.
+
+    - name: binary
+      arguments: function
+      returns: function
+      description: >-
+        Returns a binary function that passes its arguments to the given function.
+
+    - name: ternary
+      arguments: function
+      returns: function
+      description: >-
+        Returns a ternary function that passes its arguments to the given function.
+
+    - name: arity
+      arguments: n, function
+      returns: function
+      description: >-
+        Returns an n-ary function that passes its arguments to the given function.
+
+    - name: curry
+      arguments: function
+      returns: function
+      description: >-
+        Returns a curryable function that passes its arguments to the given function.
+
+    - name: substitute
+      arguments: pattern, values
+      returns: array
+      description: >-
+        Given a pattern array and an array of values, returns an array with the values substited for the special value \_ in the pattern array.
+
+    - name: partial
+      arguments: function, pattern
+      returns: function
+      description: >-
+        Returns a function that substitutes arguments using the given pattern array before passing them to the given function.
+
+    - name: flip
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that reverses its arguments before passing them to the given function.
+
+    - name: tee
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that calls the given function but always returns its first argument.
+
+    - name: rtee
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that calls the given function but always returns its last argument.
+
+    - name: wait
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that awaits on its arguments before passing it to the given function.
+
+    - name: pipe
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that composes the given functions, calling them in the order given.
+
+    - name: pipeWith
+
+    - name: compose
+
+    - name: flow
+
+    - name: apply
+
+    - name: call
+
+    - name: spread
+
+    - name: stack
+
+    - name: once
+
+    - name: memoize
+
+- name: Object
+  functions:
+    - name: keys
+      arguments: object
+      returns: array
+      description: Returns the property names for the given object.

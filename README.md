@@ -9,5 +9,7 @@ TBD
 
 ## Install
 
+## Resources
 
-## Reference
+- [API Reference](./docs/reference.md)
+

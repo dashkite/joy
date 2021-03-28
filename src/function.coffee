@@ -1,3 +1,7 @@
+identity = (x) -> x
+
+wrap = (x) -> -> x
+
 # Based on _arity from Rambda:
 # https://github.com/ramda/ramda/blob/v0.26.1/source/internal/_arity.js
 arity  = (N, f) ->
@@ -64,10 +68,6 @@ flip = (f) ->
     else
       (ax...) -> f.apply @, ax.reverse()
 
-identity = (x) -> x
-
-wrap = (x) -> -> x
-
 curry = (f) ->
   arity f.length, (ax...) ->
     if ax.length >= f.length
@@ -95,7 +95,7 @@ partial = (f, ax) ->
 
 spread = (f) -> (ax) -> f ax...
 
-variadic = (f) -> (ax...) -> f ax
+stack = (f) -> (ax...) -> f ax
 
 # Inspired by Rambda: https://ramdajs.com/docs/#pipeWith
 pipeWith = curry (c, fx) ->
@@ -144,12 +144,29 @@ call = (f, ax...) -> (f ax...)
 
 apply = (f, ax) -> (f ax...)
 
-export {identity, wrap, curry,
-  arity, unary, binary, ternary,
-  _, substitute, partial,
-  spread, variadic, flip,
-  pipeWith, pipe, compose, wait, flow,
-  tee, rtee,
-  negate,
-  once, memoize,
-  call, apply}
+export {
+  identity
+  wrap
+  arity
+  unary
+  binary
+  ternary
+  flip
+  curry
+  _
+  substitute
+  partial
+  spread
+  stack
+  pipeWith
+  pipe
+  compose
+  wait
+  flow
+  tee
+  rtee
+  once
+  memoize
+  call
+  apply
+}
