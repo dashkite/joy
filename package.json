@@ -5,6 +5,7 @@
   "main": "build/src/index.js",
   "exports": {
     ".": "./build/src/index.js",
+    "./function": "./build/src/function.js",
     "./object": "./build/src/object.js"
   },
   "files": [

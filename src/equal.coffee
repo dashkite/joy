@@ -18,7 +18,7 @@ equal = create
 define equal, isObject, isObject, (a, b) ->
   return true if a == b
   return false if !equal (Object.keys a), (Object.keys b)
-  for k, v in a when !equal v, b[k]
+  for k, v in a when !(equal v, b[k])
     return false
   true
 

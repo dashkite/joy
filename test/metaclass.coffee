@@ -14,7 +14,7 @@ do ->
 
   print await test "object helpers", [
 
-    test "include/extend", ->
+    test "include", ->
       a = x: 1, y: 2
       b = z: 3
       include a, b
