@@ -732,3 +732,72 @@
       Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
 
       [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+- name: Array
+  functions:
+
+  - name: first
+
+  - name: second
+
+  - name: third
+
+  - name: fourth
+
+  - name: fifth
+
+  - name: nth
+
+  - name: last
+
+  - name: rest
+
+  - name: includes
+
+  - name: findIndexOf
+
+  - name: findLastIndexOf
+
+  - name: push/enqueue
+
+  - name: pop/dequeue
+
+  - name: shift
+
+  - name: unshift
+
+  - name: cat
+
+  - name: slice
+
+  - name: splice
+
+  - name: uniqueBy
+
+  - name: unique
+
+  - name: dupes
+
+  - name: union
+
+  - name: intersection
+
+  - name: difference
+
+  - name: complement
+
+  - name: insert
+
+  - name: remove
+
+  - name: range
+
+  - name: join
+
+  - name: fill
+
+  - name: pluck
+
+  - name: pair
+  
+  - name: shuffle

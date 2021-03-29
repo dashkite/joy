@@ -1,8 +1,6 @@
 import {curry, flip, compose, partial, _, identity,
-  unary, binary, ternary} from "panda-garden"
-import {equal} from "./equal"
-
-import {detach} from "./object"
+  unary, binary, ternary, detach} from "./function"
+import {equal} from "./value"
 
 nth = curry (i, ax) -> ax[i - 1]
 first  = nth 1
@@ -81,7 +79,7 @@ dupes = ([a, ax...]) ->
     bx = dupes ax
     if a in ax && !(a in bx) then [a, bx...] else bx
 
-union = curry compose unique, cat
+union = curry compose [ unique, cat ]
 
 intersection = (first, rest...) ->
   if empty rest
@@ -103,10 +101,10 @@ range = curry (start, finish) -> [start..finish]
 pluck = (ax) -> ax[(round random() * (ax.length - 1))]
 
 pair = curry (a, b) -> [a, b]
-{floor, random} = Math
 
 # https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 #
+{floor, random} = Math
 shuffle = (ax) ->
   bx = cat ax
   i = bx.length
@@ -121,11 +119,42 @@ shuffle = (ax) ->
   else
     bx
 
-export {first, second, third, fourth, fifth, nth, last, rest,
-  empty, includes, findIndexOf, findLastIndexOf,
-  uniqueBy, unique, uniq, dupes,
-  union, intersection, difference, complement,
-  push, pop, shift, unshift, enqueue, dequeue,
-  splice, insert, remove, cat,
-  slice, join, fill,
-  range, pluck, pair, shuffle}
+export {
+  first
+  second
+  third
+  fourth
+  fifth
+  nth
+  last
+  rest
+  empty
+  includes
+  findIndexOf
+  findLastIndexOf
+  uniqueBy
+  unique
+  uniq
+  dupes
+  union
+  intersection
+  difference
+  complement
+  push
+  pop
+  shift
+  unshift
+  enqueue
+  dequeue
+  splice
+  insert
+  remove
+  cat
+  slice
+  join
+  fill
+  range
+  pluck
+  pair
+  shuffle
+}

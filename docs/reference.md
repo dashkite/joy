@@ -33,6 +33,10 @@
 
 [toString](#tostring) | [toUpperCase](#touppercase) | [toLowerCase](#tolowercase) | [trim](#trim) | [split](#split) | [w](#w) | [isBlank](#isblank) | [match](#match) | [isMatch](#ismatch) | [replace](#replace)
 
+**Array**
+
+[first](#first) | [second](#second) | [third](#third) | [fourth](#fourth) | [fifth](#fifth) | [nth](#nth) | [last](#last) | [rest](#rest) | [includes](#includes) | [findIndexOf](#findindexof) | [findLastIndexOf](#findlastindexof) | [push/enqueue](#push/enqueue) | [pop/dequeue](#pop/dequeue) | [shift](#shift) | [unshift](#unshift) | [cat](#cat) | [slice](#slice) | [splice](#splice) | [uniqueBy](#uniqueby) | [unique](#unique) | [dupes](#dupes) | [union](#union) | [intersection](#intersection) | [difference](#difference) | [complement](#complement) | [insert](#insert) | [remove](#remove) | [range](#range) | [join](#join) | [fill](#fill) | [pluck](#pluck) | [pair](#pair) | [shuffle](#shuffle)
+
 
 ## Function
 
@@ -882,5 +886,242 @@ _replace pattern, replacement, string &rarr; string_
 
 Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+
+
+## Array
+
+_@dashkite/joy/array_
+
+
+### first
+
+_first  &rarr; _
+
+
+
+
+### second
+
+_second  &rarr; _
+
+
+
+
+### third
+
+_third  &rarr; _
+
+
+
+
+### fourth
+
+_fourth  &rarr; _
+
+
+
+
+### fifth
+
+_fifth  &rarr; _
+
+
+
+
+### nth
+
+_nth  &rarr; _
+
+
+
+
+### last
+
+_last  &rarr; _
+
+
+
+
+### rest
+
+_rest  &rarr; _
+
+
+
+
+### includes
+
+_includes  &rarr; _
+
+
+
+
+### findIndexOf
+
+_findIndexOf  &rarr; _
+
+
+
+
+### findLastIndexOf
+
+_findLastIndexOf  &rarr; _
+
+
+
+
+### push/enqueue
+
+_push/enqueue  &rarr; _
+
+
+
+
+### pop/dequeue
+
+_pop/dequeue  &rarr; _
+
+
+
+
+### shift
+
+_shift  &rarr; _
+
+
+
+
+### unshift
+
+_unshift  &rarr; _
+
+
+
+
+### cat
+
+_cat  &rarr; _
+
+
+
+
+### slice
+
+_slice  &rarr; _
+
+
+
+
+### splice
+
+_splice  &rarr; _
+
+
+
+
+### uniqueBy
+
+_uniqueBy  &rarr; _
+
+
+
+
+### unique
+
+_unique  &rarr; _
+
+
+
+
+### dupes
+
+_dupes  &rarr; _
+
+
+
+
+### union
+
+_union  &rarr; _
+
+
+
+
+### intersection
+
+_intersection  &rarr; _
+
+
+
+
+### difference
+
+_difference  &rarr; _
+
+
+
+
+### complement
+
+_complement  &rarr; _
+
+
+
+
+### insert
+
+_insert  &rarr; _
+
+
+
+
+### remove
+
+_remove  &rarr; _
+
+
+
+
+### range
+
+_range  &rarr; _
+
+
+
+
+### join
+
+_join  &rarr; _
+
+
+
+
+### fill
+
+_fill  &rarr; _
+
+
+
+
+### pluck
+
+_pluck  &rarr; _
+
+
+
+
+### pair
+
+_pair  &rarr; _
+
+
+
+
+### shuffle
+
+_shuffle  &rarr; _
+
+
 
 
