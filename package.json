@@ -7,7 +7,8 @@
     ".": "./build/src/index.js",
     "./function": "./build/src/function.js",
     "./predicate": "./build/src/predicate.js",
-    "./object": "./build/src/object.js"
+    "./object": "./build/src/object.js",
+    "./metaclass": "./build/src/metaclass.js"
   },
   "files": [
     "build/src",

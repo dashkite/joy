@@ -13,6 +13,10 @@
 
 [keys](#keys) | [values](#values) | [pairs](#pairs) | [has](#has) | [get](#get) | [set](#set) | [assign](#assign) | [merge](#merge) | [query](#query)
 
+**Metaclass**
+
+[property](#property) | [properties](#properties) | [getter](#getter) | [getters](#getters) | [setter](#setter) | [setters](#setters) | [method](#method) | [methods](#methods) | [mixin](#mixin)
+
 
 ## Function
 
@@ -335,4 +339,73 @@ assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
 assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}
 
 ```
+
+
+## Metaclass
+
+_@dashkite/joy/metaclass_
+
+
+### property
+
+_property  &rarr; _
+
+
+
+
+### properties
+
+_properties  &rarr; _
+
+
+
+
+### getter
+
+_getter  &rarr; _
+
+
+
+
+### getters
+
+_getters  &rarr; _
+
+
+
+
+### setter
+
+_setter  &rarr; _
+
+
+
+
+### setters
+
+_setters  &rarr; _
+
+
+
+
+### method
+
+_method  &rarr; _
+
+
+
+
+### methods
+
+_methods  &rarr; _
+
+
+
+
+### mixin
+
+_mixin  &rarr; _
+
+
+
 

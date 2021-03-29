@@ -1,71 +1,65 @@
 import assert from "assert"
 import {test, print} from "amen"
 
-import {property, bind, detach,
-  properties, methods,
-  has, keys, values, pairs,
-  pick, omit,
-  assign, include, extend, merge,
-  toJSON, fromJSON} from "../src/object"
-
-import {isDefined} from "../src/type"
+# module under test
+import * as x from "@dashkite/joy/metaclass"
 
 do ->
 
-  print await test "object helpers", [
+  print await test "metaclass", [
 
-    test "include", ->
-      a = x: 1, y: 2
-      b = z: 3
-      include a, b
-      assert.deepEqual a, {x: 1, y: 2, z: 3}
+    test "property", ->
+      f = x.property "x", get: -> "bar"
+      f r = {}
+      assert.equal r.x, "bar"
 
-    test "merge", ->
-      a = x: 1, y: 2
-      b = z: 3
-      c = merge a, b
-      assert.deepEqual a, {x: 1, y: 2}
-      assert.deepEqual c, {x: 1, y: 2, z: 3}
+    test "getter", ->
+      f = x.getter "x", -> "bar"
+      f r = {}
+      assert.equal r.x, "bar"
 
-    test "property", -> assert (property "x", { x: 1 }) == 1
+    test "setter", ->
+      f = x.setter "x", (z) -> @_x = z
+      f r = {}
+      r.x = "bar"
+      assert.equal r._x, "bar"
 
-    test "bind", -> assert (bind (-> @x), {x: 1})() == 1
-
-    test "detach", ->
-      assert.deepEqual (detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
+    test "method", ->
+      f = x.method "x", (z) -> @_x = z
+      f r = {}
+      r.x "bar"
+      assert.equal r._x, "bar"
 
     test "properties", ->
-      properties (a = {}), x: get: (-> @_x), set: ((x) -> @_x = x)
-      a.x = 1
-      assert a._x == 1
-      a._x = 2
-      assert a.x == 2
+      f = x.properties x: get: -> "bar"
+      f r = {}
+      assert.equal r.x, "bar"
+
+    test "getters", ->
+      f = x.getters x: -> "bar"
+      f r = {}
+      assert.equal r.x, "bar"
+
+    test "setters", ->
+      f = x.setters x: (z) -> @_x = z
+      f r = {}
+      r.x = "bar"
+      assert.equal r._x, "bar"
 
     test "methods", ->
-      methods (a = {}), x: (-> true), y: (-> false)
-      assert a.x() && !a.y()
+      f = x.methods x: (z) -> @_x = z
+      f r = {}
+      r.x "bar"
+      assert.equal r._x, "bar"
 
-    test "has", ->
-      assert (has "x", x: 1)
-      assert !(has "y", x: 1)
+    test "mixin", ->
+      x.mixin r = {}, [
+        x.methods x: (z) -> @_x = z
+      ]
+      r.x "bar"
+      assert.equal r._x, "bar"
 
-    test "keys", ->
-      assert.deepEqual (keys x: 1, y: 2), [ "x", "y" ]
 
-    test "values", ->
-      assert.deepEqual (values x: 1, y: 2), [ 1, 2 ]
 
-    test "pairs", ->
-      assert.deepEqual (pairs {a: 1, b: 2, c: 3}),
-        [["a", 1], ["b", 2], ["c", 3]]
-
-    test "pick", ->
-      assert.deepEqual (pick ((k,v) -> v?), x: 1, y: null), { x: 1 }
-
-    test "omit", ->
-      assert.deepEqual (omit ((k,v) -> v?), x: 1, y: null), { y: undefined }
-
-    test "toJSON/fromJSON", ->
-      assert.deepEqual (fromJSON toJSON x: 1, y: 2), x: 1, y: 2
 
   ]
