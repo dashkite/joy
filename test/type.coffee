@@ -23,7 +23,6 @@ import {
   isAsyncFunction
   Type
   instanceOf
-  isEmpty
   areType
   areKind
 } from "../src/type"
@@ -149,18 +148,5 @@ do ->
           assert ! check [1, 2, 3]
       ]
 
-
-
-    test "isEmpty", ->
-      assert isEmpty ""
-      assert ! isEmpty " "
-      assert isEmpty []
-      assert ! isEmpty [ 0 ]
-      assert isEmpty {}
-      assert ! isEmpty x: 1
-      assert isEmpty new Map
-      assert ! isEmpty new Map [[ "x", 1 ]]
-      assert isEmpty new Set
-      assert ! isEmpty new Set [ 0 ]
   ]
 ]

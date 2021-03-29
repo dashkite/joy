@@ -19,15 +19,19 @@
 
 **Type**
 
-[prototype](#prototype) | [isPrototype](#isprototype) | [isTransitivePrototype](#istransitiveprototype) | [isType](#istype) | [isKind](#iskind) | [areType](#aretype) | [areKind](#arekind) | [Type.define](#type.define) | [Type.create](#type.create) | [instanceOf](#instanceof) | [isDefined](#isdefined) | [isUndefined](#isundefined) | [isBoolean](#isboolean) | [isString](#isstring) | [isSymbol](#issymbol) | [isNumber](#isnumber) | [isNaN](#isnan) | [isFinite](#isfinite) | [isInteger](#isinteger) | [isDate](#isdate) | [isError](#iserror) | [isRegExp](#isregexp) | [isPromise](#ispromise) | [isObject](#isobject) | [isArray](#isarray) | [isBuffer](#isbuffer) | [isArrayBuffer](#isarraybuffer) | [isDataView](#isdataview) | [isTypedArray](#istypedarray) | [isMap](#ismap) | [isWeakMap](#isweakmap) | [isSet](#isset) | [isRegularFunction](#isregularfunction) | [isGeneratorFunction](#isgeneratorfunction) | [isAsyncFunction](#isasyncfunction) | [isFunction](#isfunction) | [size](#size) | [length](#length) | [isEmpty](#isempty)
+[prototype](#prototype) | [isPrototype](#isprototype) | [isTransitivePrototype](#istransitiveprototype) | [isType](#istype) | [isKind](#iskind) | [areType](#aretype) | [areKind](#arekind) | [Type.define](#type.define) | [Type.create](#type.create) | [instanceOf](#instanceof) | [isDefined](#isdefined) | [isUndefined](#isundefined) | [isBoolean](#isboolean) | [isString](#isstring) | [isSymbol](#issymbol) | [isNumber](#isnumber) | [isNaN](#isnan) | [isFinite](#isfinite) | [isInteger](#isinteger) | [isDate](#isdate) | [isError](#iserror) | [isRegExp](#isregexp) | [isPromise](#ispromise) | [isObject](#isobject) | [isArray](#isarray) | [isBuffer](#isbuffer) | [isArrayBuffer](#isarraybuffer) | [isDataView](#isdataview) | [isTypedArray](#istypedarray) | [isMap](#ismap) | [isWeakMap](#isweakmap) | [isSet](#isset) | [isRegularFunction](#isregularfunction) | [isGeneratorFunction](#isgeneratorfunction) | [isAsyncFunction](#isasyncfunction) | [isFunction](#isfunction)
 
 **Value**
 
-[equal](#equal) | [clone](#clone)
+[equal](#equal) | [clone](#clone) | [size](#size) | [isEmpty](#isempty)
 
 **Promise**
 
 [promise](#promise) | [resolve](#resolve) | [reject](#reject) | [all](#all) | [any](#any) | [race](#race) | [map](#map)
+
+**Text**
+
+[toString](#tostring) | [toUpperCase](#touppercase) | [toLowerCase](#tolowercase) | [trim](#trim) | [split](#split) | [w](#w) | [isBlank](#isblank) | [match](#match) | [isMatch](#ismatch) | [replace](#replace)
 
 
 ## Function
@@ -698,28 +702,6 @@ _isFunction value &rarr; boolean_
 Returns true if _value_ is a function.
 
 
-### size
-
-_size value &rarr; integer_
-
-Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-
-
-### length
-
-_length value &rarr; integer_
-
-Alias for [`size`](#size)
-
-
-### isEmpty
-
-_isEmpty value &rarr; boolean_
-
-Returns true if the size of _value_ is zero, false otherwise.
-
-
 
 ## Value
 
@@ -738,6 +720,21 @@ Returns true if the given values are equal, false otherwise. Performs a deep com
 _clone value &rarr; value_
 
 Returns a deep clone of the given value.
+
+
+### size
+
+_size value &rarr; integer_
+
+Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+
+### isEmpty
+
+_isEmpty value &rarr; boolean_
+
+Returns true if the size of _value_ is zero, false otherwise.
 
 
 
@@ -801,5 +798,89 @@ _map iterable &rarr; promise_
 Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results. Convenience wrapper for [`Promise.allSettled`][mdn]:
 > For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
 [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+
+
+
+## Text
+
+_@dashkite/joy/text_
+
+
+### toString
+
+_toString value &rarr; string_
+
+Returns a string representation of _value_. Convenience wrapper for the [`toString`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+
+
+### toUpperCase
+
+_toUpperCase string &rarr; string_
+
+Returns a the given string in upper case. Convenience wrapper for the [`toUpperCase`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+
+### toLowerCase
+
+_toLowerCase string &rarr; string_
+
+Returns a the given string in lower case. Convenience wrapper for the [`toLowerCase`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+
+### trim
+
+_trim string &rarr; string_
+
+Returns a the given string with leading and trailing whitespace removed. Convenience wrapper for the [`trim`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+
+
+### split
+
+_split pattern, string &rarr; array_
+
+Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_. Convenience wrapper for the [`split`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+
+### w
+
+_w string &rarr; array_
+
+Returns an array obtained by splitting _string_ on whitespace.
+
+
+### isBlank
+
+_isBlank string &rarr; boolean_
+
+Returns true if the string is empty, false otherwise.
+
+
+### match
+
+_match pattern, string &rarr; match_
+
+Returns the [match data][mdn-a] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match. Convenience wrapper for the [`match`][mdn-b] method.
+[mdn-a]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value [mdn-b]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+
+
+### isMatch
+
+_isMatch pattern, string &rarr; boolean_
+
+Returns true if the given Regular Expression _pattern_ matches, false otherwise. Convenience wrapper for the [`RegExp::test`][mdn] method.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+
+
+### replace
+
+_replace pattern, replacement, string &rarr; string_
+
+Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
 

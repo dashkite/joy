@@ -43,7 +43,6 @@ define equal, isDataView, isDataView, (a, b) ->
 define equal, isBuffer, isBuffer, (a, b) ->
   a.equals b
 
-
 isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
 
 define equal, isPrimitive, isPrimitive, (a, b) ->
@@ -77,16 +76,12 @@ define equal, isMap, isMap, (a, b) ->
       return false
   true
 
-
-
 define equal, isSet, isSet, (a, b) ->
   throw new Error "equal: Comparing Sets is potentially costly in terms of memory or computation, so implementation is left to the developer."
 
 define equal, isWeakMap, isWeakMap, (a, b) ->
   throw new Error "equal: does not compare WeakMap."
 
-
-export {equal}
 
 clone = create
   name: "clone"
@@ -120,8 +115,6 @@ define clone, isDataView, (original) ->
 define clone, isBuffer, (original) ->
   Buffer.from original
 
-
-
 cloneIterator = (original, add) ->
   copy = new original.constructor()
   add copy, entry for entry from original
@@ -136,8 +129,6 @@ define clone, isArray, (original) ->
 
 define clone, isSet, (original) ->
   cloneIterator original, (copy, entry) -> copy.add clone entry
-
-
 
 isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
 
@@ -155,7 +146,6 @@ define clone, isRegExp, do (flags=/\w*$/) ->
     copy.lastIndex = original.lastIndex
     copy
 
-
 define clone, isFunction, (original) ->
   throw new Error "clone: does not clone Function"
 
@@ -165,4 +155,21 @@ define clone, isWeakMap, (original) ->
 define clone, isError, (original) ->
   throw new Error "clone: does not clone Error"
 
-export {clone}
+size = create
+  name: "size"
+  description: "Returns the size of a given entity, if it has one."
+  default: (x) ->
+    throw new TypeError "size: not valid for type #{x.constructor}"
+
+hasLength = (x) -> x.length?
+hasByteLength = (x) -> x.byteLength?
+hasSize = (x) -> x.size?
+
+define size, hasByteLength, (x) -> x.byteLength
+define size, isObject, (x) -> (Object.keys x).length
+define size, hasSize, (x) -> x.size
+define size, hasLength, (x) -> x.length
+
+isEmpty = (x) -> (size x) == 0
+
+export {equal, clone, size, isEmpty}

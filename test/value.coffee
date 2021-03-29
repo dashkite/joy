@@ -2,7 +2,7 @@ import assert from "assert"
 import {test, print} from "amen"
 
 import {sleep} from "../src/time"
-import {equal, clone} from "../src/value"
+import {equal, clone, size, isEmpty} from "../src/value"
 
 do ->
 
@@ -131,6 +131,23 @@ do ->
 
       test "set", ->
         assert.throws (-> equal new Set(), new Set())
+
+    ]
+
+    test "size", [
+
+      test "isEmpty", ->
+        assert isEmpty ""
+        assert ! isEmpty " "
+        assert isEmpty []
+        assert ! isEmpty [ 0 ]
+        assert isEmpty {}
+        assert ! isEmpty x: 1
+        assert isEmpty new Map
+        assert ! isEmpty new Map [[ "x", 1 ]]
+        assert isEmpty new Set
+        assert ! isEmpty new Set [ 0 ]
+
     ]
 
 

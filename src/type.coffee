@@ -71,23 +71,6 @@ Type =
   create: (type) -> new type
   define: (parent = Object) -> class extends parent
 
-size = length = create
-  name: "size"
-  description: "Returns the size of a given entity, if it has one."
-  default: (x) ->
-    throw new TypeError "size: not valid for type #{x.constructor}"
-
-hasLength = (x) -> x.length?
-hasByteLength = (x) -> x.byteLength?
-hasSize = (x) -> x.size?
-
-define size, hasByteLength, (x) -> x.byteLength
-define size, isObject, (x) -> (Object.keys x).length
-define size, hasSize, (x) -> x.size
-define size, hasLength, (x) -> x.length
-
-isEmpty = (x) -> (size x) == 0
-
 if Buffer?
   isBuffer = isType Buffer
 else
@@ -139,9 +122,6 @@ export {
   isGeneratorFunction
   isAsyncFunction
   isFunction
-  size
-  length
-  isEmpty
   isBuffer
   isArrayBuffer
   isDataView

@@ -562,26 +562,6 @@
     description: >-
       Returns true if _value_ is a function.
 
-  - name: size
-    arguments: value
-    returns: integer
-    description: >-
-      Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
-
-  - name: length
-    arguments: value
-    returns: integer
-    description: >-
-      Alias for [`size`](#size)
-
-  - name: isEmpty
-    arguments: value
-    returns: boolean
-    description: >-
-      Returns true if the size of _value_ is zero, false otherwise.
-
 - name: Value
   functions:
 
@@ -596,6 +576,21 @@
     returns: value
     description: >-
       Returns a deep clone of the given value.
+
+  - name: size
+    arguments: value
+    returns: integer
+    description: >-
+      Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+  - name: isEmpty
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if the size of _value_ is zero, false otherwise.
+
 
 - name: Promise
   functions:
@@ -657,3 +652,83 @@
       > For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
 
       [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+
+- name: Text
+  functions:
+
+  - name: toString
+    arguments: value
+    returns: string
+    description: >-
+      Returns a string representation of _value_. Convenience wrapper for the [`toString`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+
+  - name: toUpperCase
+    arguments: string
+    returns: string
+    description: >-
+      Returns a the given string in upper case. Convenience wrapper for the [`toUpperCase`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+  - name: toLowerCase
+    arguments: string
+    returns: string
+    description: >-
+      Returns a the given string in lower case. Convenience wrapper for the [`toLowerCase`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+  - name: trim
+    arguments: string
+    returns: string
+    description: >-
+      Returns a the given string with leading and trailing whitespace removed. Convenience wrapper for the [`trim`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+
+  - name: split
+    arguments: pattern, string
+    returns: array
+    description: >-
+      Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_. Convenience wrapper for the [`split`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+  - name: w
+    arguments: string
+    returns: array
+    description: >-
+      Returns an array obtained by splitting _string_ on whitespace.
+
+  - name: isBlank
+    arguments: string
+    returns: boolean
+    description: >-
+      Returns true if the string is empty, false otherwise.
+
+  - name: match
+    arguments: pattern, string
+    returns: match
+    description: >-
+      Returns the [match data][mdn-a] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match. Convenience wrapper for the [`match`][mdn-b] method.
+
+      [mdn-a]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value
+      [mdn-b]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+
+  - name: isMatch
+    arguments: pattern, string
+    returns: boolean
+    description: >-
+      Returns true if the given Regular Expression _pattern_ matches, false otherwise. Convenience wrapper for the [`RegExp::test`][mdn] method.
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+
+  - name: replace
+    arguments: pattern, replacement, string
+    returns: string
+    description: >-
+      Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
