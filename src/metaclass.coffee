@@ -26,7 +26,7 @@ methods = curry (dictionary, target) ->
   for key, f of dictionary
     method key, f, target
 
-mixin = curry (target, fx) -> call f, target for f in fx
+mixin = curry (target, fx) -> call f, target for f in fx ; target
 
 export {
   property
