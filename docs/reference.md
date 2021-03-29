@@ -7,7 +7,7 @@
 
 **Predicate**
 
-[negate](#negate)
+[negate](#negate) | [any](#any) | [all](#all) | [test](#test) | [branch](#branch) | [attempt](#attempt)
 
 **Object**
 
@@ -212,9 +212,44 @@ _@dashkite/joy/predicate_
 
 ### negate
 
-_negate  &rarr; _
+_negate function &rarr; function_
+
+Returns a function that returns the negation of the given function.
 
 
+### any
+
+_any functions &rarr; function_
+
+Returns a function that returns true if any of the given _functions_, attempted in the order given, returns true, and false otherwise.
+
+
+### all
+
+_all functions &rarr; function_
+
+Returns a function that returns true if all of the given _functions_, attempted in the order given, return true, and false otherwise.
+
+
+### test
+
+_test predicate, consequent[, alternative] &rarr; function_
+
+Returns a function that calls the _consequent_ if the _predicate_ returns true, and the (optional) _alternative_ otherwise.
+
+
+### branch
+
+_branch conditions &rarr; function_
+
+Returns a function evaluates a list of _conditions_ (and associative array consisting of pairs of predicates and consequents), in the order given, until one of the predicates matches. Calls the corresponding consquent if a match is found.
+
+
+### attempt
+
+_attempt function &rarr; function_
+
+Returns a function that calls the given function, returning false if the function throws an exception or returns a rejected promise, and true otherwise.
 
 
 

@@ -161,7 +161,42 @@
 
 - name: Predicate
   functions:
+
     - name: negate
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that returns the negation of the given function.
+
+    - name: any
+      arguments: functions
+      returns: function
+      description: >-
+        Returns a function that returns true if any of the given _functions_, attempted in the order given, returns true, and false otherwise.
+
+    - name: all
+      arguments: functions
+      returns: function
+      description: >-
+        Returns a function that returns true if all of the given _functions_, attempted in the order given, return true, and false otherwise.
+
+    - name: test
+      arguments: predicate, consequent[, alternative]
+      returns: function
+      description: >-
+        Returns a function that calls the _consequent_ if the _predicate_ returns true, and the (optional) _alternative_ otherwise.
+
+    - name: branch
+      arguments: conditions
+      returns: function
+      description: >-
+        Returns a function evaluates a list of _conditions_ (and associative array consisting of pairs of predicates and consequents), in the order given, until one of the predicates matches. Calls the corresponding consquent if a match is found.
+
+    - name: attempt
+      arguments: function
+      returns: function
+      description: >-
+        Returns a function that calls the given function, returning false if the function throws an exception or returns a rejected promise, and true otherwise.
 
 - name: Object
   functions:
