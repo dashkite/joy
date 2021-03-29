@@ -1,25 +1,58 @@
 import assert from "assert"
 import {test, print} from "amen"
 
-import {promise, resolve, reject, all} from "../src/promise"
+import {get} from "../src/object"
 
-do -> print await test "promise helpers", [
+import {promise, resolve, reject, all, any, race, map} from "../src/promise"
+
+do -> print await test "promise", [
 
   test "promise", ->
-    assert (promise ->).then?
-
-  test "resolve/follow", ->
-    assert (do -> resolve "foo").then?
+    assert.equal true, (promise ->).then?
 
   test "resolve", ->
-    try
-      await do -> reject new Error "this is a test"
-      assert.fail "the function should have rejected."
-    catch e
-      assert e.message == "this is a test"
+    assert.equal true, await resolve true
+
+  test "reject", ->
+    assert.rejects -> reject false
 
   test "all", ->
-    A = await all [(resolve 1), (resolve 2), (resolve 3)]
-    assert.deepEqual A, [1, 2, 3]
+    assert.deepEqual [ true, true ],
+      await all [
+        resolve true
+        resolve true
+      ]
 
+    assert.rejects ->
+      await all [
+        resolve true
+        reject false
+      ]
+
+  test "any", ->
+    assert.equal true,
+      await any [
+        resolve true
+        reject false
+      ]
+
+    assert.rejects ->
+      await any [
+        reject false
+        reject false
+      ]
+
+  test "race", ->
+    assert.equal true,
+      await race [
+        resolve true
+        reject false
+      ]
+
+  test "map", ->
+    assert.deepEqual [ true, undefined ],
+      (await map [
+        resolve true
+        reject false
+      ]).map get "value"
 ]

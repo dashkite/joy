@@ -1,13 +1,10 @@
 
 promise = (f) -> new Promise f
-
 reject = (x) -> Promise.reject x
 resolve = (x) -> Promise.resolve x
-
-# follow reads better in some cases and avoids naming
-# conflicts within promise-returning functions
-follow = resolve
-
 all = (px) -> Promise.all px
+any = (px) -> Promise.any px
+race = (px) -> Promise.race px
+map = (px) -> Promise.allSettled px
 
-export {promise, resolve, follow, reject, all}
+export {promise, resolve, reject, all, any, race, map}

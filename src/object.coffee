@@ -1,6 +1,6 @@
 import {curry, negate} from "panda-garden"
 import {isObject, isArray, isFunction, isRegExp} from "./type"
-import {equal} from "./equal"
+import {equal} from "./value"
 
 keys = Object.keys
 

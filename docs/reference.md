@@ -25,6 +25,10 @@
 
 [equal](#equal) | [clone](#clone)
 
+**Promise**
+
+[promise](#promise) | [resolve](#resolve) | [reject](#reject) | [all](#all) | [any](#any) | [race](#race) | [map](#map)
+
 
 ## Function
 
@@ -734,5 +738,68 @@ Returns true if the given values are equal, false otherwise. Performs a deep com
 _clone value &rarr; value_
 
 Returns a deep clone of the given value.
+
+
+
+## Promise
+
+_@dashkite/joy/promise_
+
+
+### promise
+
+_promise function &rarr; promise_
+
+Convenience wrapper for the [`Promise` constructor][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
+
+
+### resolve
+
+_resolve value &rarr; promise_
+
+Returns a promise that resolve to _value_. Convenience wrapper for [`Promise.resolve`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
+
+
+### reject
+
+_reject error &rarr; promise_
+
+Returns a promise that rejects with _error_. Convenience wrapper for [`Promise.reject`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
+
+
+### all
+
+_all iterable &rarr; promise_
+
+Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected. Convenience wrapper for [`Promise.all`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+
+
+### any
+
+_any iterable &rarr; promise_
+
+Returns a promise that resolves to the values of the first resolved promise of the _iterable_. If none of the promises resolve, the promise rejects. Convenience wrapper for [`Promise.any`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
+
+
+### race
+
+_race iterable &rarr; promise_
+
+Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise. Convenience wrapper for [`Promise.race`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
+
+
+### map
+
+_map iterable &rarr; promise_
+
+Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results. Convenience wrapper for [`Promise.allSettled`][mdn]:
+> For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
 
 
