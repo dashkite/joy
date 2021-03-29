@@ -342,3 +342,122 @@
     returns: object
     description: >-
       Applies each function to the given target. See [`getters`](#getters) for an example of how to use it with object modifiers like `getters` or `methods` to create reusable mixins.
+
+- name: Type
+  functions:
+
+  - name: prototype
+    arguments: value
+    returns: prototype
+    description: >-
+      Returns the prototype of the given _value_.
+
+  - name: isPrototype
+    arguments: prototype, value
+    returns: boolean
+    description: >-
+      Returns true if _prototype_ is the prototype for _value_, false otherwise.
+
+  - name: isTransitivePrototype
+    arguments: prototype, value
+    returns: boolean
+    description: >-
+      Returns true if _prototype_ is a transitive prototype of _value_, false otherwise.
+
+  - name: isType
+    arguments: type, value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of _type_, false otherwise.
+
+  - name: isKind
+    arguments: type, value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
+
+  - name: Type.define
+    arguments: parent
+    returns: class
+    description: >-
+      Creates a new type (class) that extends _parent_, if defined, or `Object` otherwise. Convenience wrapper for `class`.
+
+  - name: Type.create
+    arguments: type
+    returns: instance
+    description: >-
+      Creates a new instance of a type (class). Convenience wrapper for `new`.
+
+  - name: instanceOf
+    arguments: type, instance
+    returns: boolean
+    description: >-
+      Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#isKind) is less likely to throw.
+
+  - name: isDefined
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is defined, false otherwise.
+
+  - name: isUndefined
+
+  - name: isBoolean
+
+  - name: isString
+
+  - name: isSymbol
+
+  - name: isNumber
+
+  - name: isNaN
+
+  - name: isFinite
+
+  - name: isInteger
+
+  - name: isFloat
+
+  - name: isDate
+
+  - name: isError
+
+  - name: isRegExp
+
+  - name: isPromise
+
+  - name: isObject
+
+  - name: isArray
+
+  - name: isMap
+
+  - name: isWeakMap
+
+  - name: isSet
+
+  - name: isRegularFunction
+
+  - name: isGeneratorFunction
+
+  - name: isAsyncFunction
+
+  - name: isFunction
+
+  - name: size
+
+  - name: length
+
+  - name: isEmpty
+
+  - name: isBuffer
+
+  - name: isArrayBuffer
+
+  - name: isDataView
+
+  - name: isTypedArray
+
+  - name: areType
+
+  - name: areKind

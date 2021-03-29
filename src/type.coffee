@@ -13,18 +13,19 @@ isTransitivePrototype = curry (p, value) ->
   p? && (p == (q = prototype value) || (q? && isTransitivePrototype p, q))
 
 isKind = curry (type, value) -> isTransitivePrototype type?.prototype, value
+# isKind = curry (t, x) -> x instanceof t
 
 # TODO: is this correct? to check generally for a derived type
 # needs tests ....
-isDerived = curry (type, value) -> isKind type, value::
+# isDerived = curry (type, value) -> isKind type, value::
 
 isNumber = isType Number
 
-isNaN = (n) -> Number.isNaN n
+isNaN = Number.isNaN
 
-isFinite = (n) -> Number.isFinite n
+isFinite = Number.isFinite
 
-isInteger = (n) -> Number.isInteger n
+isInteger = Number.isInteger
 
 isFloat = (n) -> n == +n && n != (n|0)
 
@@ -42,7 +43,7 @@ isRegularFunction = isType Function
 
 isObject = isType Object
 
-isArray = isType Array
+isArray = Array.isArray
 
 isMap = isType Map
 
@@ -69,7 +70,7 @@ isFunction = isKind Function
 instanceOf = curry (t, x) -> x instanceof t
 
 Type =
-  create: (type) -> if type? then new type
+  create: (type) -> new type
   define: (parent = Object) -> class extends parent
 
 size = length = create
@@ -110,16 +111,44 @@ areKind = curry (kind, array) ->
     return false unless isKind kind, item
   true
 
-export {prototype, isPrototype, isTransitivePrototype,
-  isType, isKind, Type, instanceOf,
-  isDefined, isUndefined,
-  isBoolean, isString, isSymbol
-  isNumber, isNaN, isFinite, isInteger, isFloat,
-  isDate, isError, isRegExp, isPromise,
-  isObject, isArray, isMap, isWeakMap, isSet,
-  isRegularFunction, isGeneratorFunction, isAsyncFunction, isFunction,
-  size, length, isEmpty,
-  isBuffer,
-  isArrayBuffer, isDataView, isTypedArray
-  areType, areKind
+export {
+  prototype
+  isPrototype
+  isTransitivePrototype
+  isType
+  isKind
+  Type
+  instanceOf
+  isDefined
+  isUndefined
+  isBoolean
+  isString
+  isSymbol
+  isNumber
+  isNaN
+  isFinite
+  isInteger
+  isFloat
+  isDate
+  isError
+  isRegExp
+  isPromise
+  isObject
+  isArray
+  isMap
+  isWeakMap
+  isSet
+  isRegularFunction
+  isGeneratorFunction
+  isAsyncFunction
+  isFunction
+  size
+  length
+  isEmpty
+  isBuffer
+  isArrayBuffer
+  isDataView
+  isTypedArray
+  areType
+  areKind
 }

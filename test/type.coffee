@@ -10,19 +10,21 @@ import {prototype, isType, isKind,
 
 do ->
 
-  print await test "type helpers", [
+  print await test "type", [
 
     test "prototype", [
 
       # isType and isKind relies on prototype
 
       test "isKind", ->
-        A = prototype: {}
-        B = prototype: Object.create A.prototype
-        b = Object.create B.prototype
+        A = class
+        B = class extends A
+        b = new B
         assert isKind B, b
-        assert isKind A, b
-        assert !(isKind A, {})
+        b2 = Object.create b
+        assert isKind B, b2
+        assert !isKind B, {}
+        assert !isKind b, B
 
       test "isType", [
 

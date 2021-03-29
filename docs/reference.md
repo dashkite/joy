@@ -17,6 +17,10 @@
 
 [property](#property) | [properties](#properties) | [getter](#getter) | [getters](#getters) | [setter](#setter) | [setters](#setters) | [method](#method) | [methods](#methods) | [mixin](#mixin)
 
+**Type**
+
+[prototype](#prototype) | [isPrototype](#isPrototype) | [isTransitivePrototype](#isTransitivePrototype) | [isType](#isType) | [isKind](#isKind) | [Type.define](#Type.define) | [Type.create](#Type.create) | [instanceOf](#instanceOf) | [isDefined](#isDefined) | [isUndefined](#isUndefined) | [isBoolean](#isBoolean) | [isString](#isString) | [isSymbol](#isSymbol) | [isNumber](#isNumber) | [isNaN](#isNaN) | [isFinite](#isFinite) | [isInteger](#isInteger) | [isFloat](#isFloat) | [isDate](#isDate) | [isError](#isError) | [isRegExp](#isRegExp) | [isPromise](#isPromise) | [isObject](#isObject) | [isArray](#isArray) | [isMap](#isMap) | [isWeakMap](#isWeakMap) | [isSet](#isSet) | [isRegularFunction](#isRegularFunction) | [isGeneratorFunction](#isGeneratorFunction) | [isAsyncFunction](#isAsyncFunction) | [isFunction](#isFunction) | [size](#size) | [length](#length) | [isEmpty](#isEmpty) | [isBuffer](#isBuffer) | [isArrayBuffer](#isArrayBuffer) | [isDataView](#isDataView) | [isTypedArray](#isTypedArray) | [areType](#areType) | [areKind](#areKind)
+
 
 ## Function
 
@@ -426,5 +430,291 @@ Defines methods on _target_ using the given _dictionary_ of keys and methods. Co
 _mixin target, functions &rarr; object_
 
 Applies each function to the given target. See [`getters`](#getters) for an example of how to use it with object modifiers like `getters` or `methods` to create reusable mixins.
+
+
+
+## Type
+
+_@dashkite/joy/type_
+
+
+### prototype
+
+_prototype value &rarr; prototype_
+
+Returns the prototype of the given _value_.
+
+
+### isPrototype
+
+_isPrototype prototype, value &rarr; boolean_
+
+Returns true if _prototype_ is the prototype for _value_, false otherwise.
+
+
+### isTransitivePrototype
+
+_isTransitivePrototype prototype, value &rarr; boolean_
+
+Returns true if _prototype_ is a transitive prototype of _value_, false otherwise.
+
+
+### isType
+
+_isType type, value &rarr; boolean_
+
+Returns true if _value_ is an instance of _type_, false otherwise.
+
+
+### isKind
+
+_isKind type, value &rarr; boolean_
+
+Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
+
+
+### Type.define
+
+_Type.define parent &rarr; class_
+
+Creates a new type (class) that extends _parent_, if defined, or `Object` otherwise. Convenience wrapper for `class`.
+
+
+### Type.create
+
+_Type.create type &rarr; instance_
+
+Creates a new instance of a type (class). Convenience wrapper for `new`.
+
+
+### instanceOf
+
+_instanceOf type, instance &rarr; boolean_
+
+Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#isKind) is less likely to throw.
+
+
+### isDefined
+
+_isDefined value &rarr; boolean_
+
+Returns true if _value_ is defined, false otherwise.
+
+
+### isUndefined
+
+_isUndefined  &rarr; _
+
+
+
+
+### isBoolean
+
+_isBoolean  &rarr; _
+
+
+
+
+### isString
+
+_isString  &rarr; _
+
+
+
+
+### isSymbol
+
+_isSymbol  &rarr; _
+
+
+
+
+### isNumber
+
+_isNumber  &rarr; _
+
+
+
+
+### isNaN
+
+_isNaN  &rarr; _
+
+
+
+
+### isFinite
+
+_isFinite  &rarr; _
+
+
+
+
+### isInteger
+
+_isInteger  &rarr; _
+
+
+
+
+### isFloat
+
+_isFloat  &rarr; _
+
+
+
+
+### isDate
+
+_isDate  &rarr; _
+
+
+
+
+### isError
+
+_isError  &rarr; _
+
+
+
+
+### isRegExp
+
+_isRegExp  &rarr; _
+
+
+
+
+### isPromise
+
+_isPromise  &rarr; _
+
+
+
+
+### isObject
+
+_isObject  &rarr; _
+
+
+
+
+### isArray
+
+_isArray  &rarr; _
+
+
+
+
+### isMap
+
+_isMap  &rarr; _
+
+
+
+
+### isWeakMap
+
+_isWeakMap  &rarr; _
+
+
+
+
+### isSet
+
+_isSet  &rarr; _
+
+
+
+
+### isRegularFunction
+
+_isRegularFunction  &rarr; _
+
+
+
+
+### isGeneratorFunction
+
+_isGeneratorFunction  &rarr; _
+
+
+
+
+### isAsyncFunction
+
+_isAsyncFunction  &rarr; _
+
+
+
+
+### isFunction
+
+_isFunction  &rarr; _
+
+
+
+
+### size
+
+_size  &rarr; _
+
+
+
+
+### length
+
+_length  &rarr; _
+
+
+
+
+### isEmpty
+
+_isEmpty  &rarr; _
+
+
+
+
+### isBuffer
+
+_isBuffer  &rarr; _
+
+
+
+
+### isArrayBuffer
+
+_isArrayBuffer  &rarr; _
+
+
+
+
+### isDataView
+
+_isDataView  &rarr; _
+
+
+
+
+### isTypedArray
+
+_isTypedArray  &rarr; _
+
+
+
+
+### areType
+
+_areType  &rarr; _
+
+
+
+
+### areKind
+
+_areKind  &rarr; _
+
+
 
 
