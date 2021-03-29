@@ -27,8 +27,6 @@ isFinite = Number.isFinite
 
 isInteger = Number.isInteger
 
-isFloat = (n) -> n == +n && n != (n|0)
-
 isBoolean = isType Boolean
 
 isSymbol = isType Symbol
@@ -128,7 +126,6 @@ export {
   isNaN
   isFinite
   isInteger
-  isFloat
   isDate
   isError
   isRegExp

@@ -1,12 +1,32 @@
 import assert from "assert"
 import {test, print} from "amen"
 
-import {prototype, isType, isKind,
-    isBoolean, isNumber, isNaN, isFinite, isInteger, isFloat,
-    isString, isBuffer, isFunction, isObject, isArray,
-    isRegExp, isDate, isDefined, isGeneratorFunction, isPromise,
-    isAsyncFunction, Type, instanceOf, isEmpty,
-    areType, areKind} from "../src/type"
+import {
+  prototype
+  isType
+  isKind
+  isBoolean
+  isNumber
+  isNaN
+  isFinite
+  isInteger
+  isString
+  isBuffer
+  isFunction
+  isObject
+  isArray
+  isRegExp
+  isDate
+  isDefined
+  isGeneratorFunction
+  isPromise
+  isAsyncFunction
+  Type
+  instanceOf
+  isEmpty
+  areType
+  areKind
+} from "../src/type"
 
 do ->
 
@@ -88,12 +108,6 @@ do ->
           assert ! isInteger 3.5
           assert ! isInteger "5"
           assert ! isInteger NaN
-
-        test "isFloat", ->
-          assert isFloat 3.5
-          assert ! isFloat 5
-          assert ! isFloat "3.5"
-          assert ! isFloat NaN
 
         test "isDefined", ->
           assert isDefined {}

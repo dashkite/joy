@@ -376,6 +376,18 @@
     description: >-
       Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
 
+  - name: areType
+    arguments: type, values
+    returns: boolean
+    description: >-
+      Returns true if each element in an array of _values_ is an instance of _type_, false otherwise.
+
+  - name: areKind
+    arguments: type, values
+    returns: boolean
+    description: >-
+      Returns true if each element of in an array of _values_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
+
   - name: Type.define
     arguments: parent
     returns: class
@@ -392,7 +404,7 @@
     arguments: type, instance
     returns: boolean
     description: >-
-      Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#isKind) is less likely to throw.
+      Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#iskind) is less likely to throw.
 
   - name: isDefined
     arguments: value
@@ -401,63 +413,171 @@
       Returns true if _value_ is defined, false otherwise.
 
   - name: isUndefined
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is undefined, false otherwise.
 
   - name: isBoolean
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Boolean`.
 
   - name: isString
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `String`.
 
   - name: isSymbol
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Symbol`.
 
   - name: isNumber
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Number`.
 
   - name: isNaN
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is not a number. Equivalent to `Number.isNaN`.
 
   - name: isFinite
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is fine. Equivalent to `Number.isFinite`.
 
   - name: isInteger
-
-  - name: isFloat
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is fine. Equivalent to `Number.isInteger`.
 
   - name: isDate
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Date`.
 
   - name: isError
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Error`.
 
   - name: isRegExp
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `RegExp`.
 
   - name: isPromise
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Promise`.
 
   - name: isObject
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Object`.
 
   - name: isArray
-
-  - name: isMap
-
-  - name: isWeakMap
-
-  - name: isSet
-
-  - name: isRegularFunction
-
-  - name: isGeneratorFunction
-
-  - name: isAsyncFunction
-
-  - name: isFunction
-
-  - name: size
-
-  - name: length
-
-  - name: isEmpty
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Array`. Equivalent to `Array.isArray`.
 
   - name: isBuffer
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Buffer`.
 
   - name: isArrayBuffer
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `ArrayBuffer`.
 
   - name: isDataView
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `DataView`.
 
   - name: isTypedArray
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Uint8Array`.
 
-  - name: areType
+  - name: isMap
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Map`.
 
-  - name: areKind
+  - name: isWeakMap
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `WeakMap`.
+
+  - name: isSet
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Set`.
+
+  - name: isRegularFunction
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an instance of `Function`.
+
+  - name: isGeneratorFunction
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is a generator function.
+
+  - name: isAsyncFunction
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is an asynchronous function.
+
+  - name: isFunction
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if _value_ is a function.
+
+  - name: size
+    arguments: value
+    returns: integer
+    description: >-
+      Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
+
+      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+  - name: length
+    arguments: value
+    returns: integer
+    description: >-
+      Alias for [`size`](#size)
+
+  - name: isEmpty
+    arguments: value
+    returns: boolean
+    description: >-
+      Returns true if the size of _value_ is zero, false otherwise.

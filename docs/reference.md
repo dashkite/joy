@@ -3,7 +3,7 @@
 
 **Function**
 
-[identity](#identity) | [wrap](#wrap) | [unary](#unary) | [binary](#binary) | [ternary](#ternary) | [arity](#arity) | [curry](#curry) | [substitute](#substitute) | [partial](#partial) | [flip](#flip) | [tee](#tee) | [rtee](#rtee) | [wait](#wait) | [pipe](#pipe) | [pipeWith](#pipeWith) | [compose](#compose) | [flow](#flow) | [flowWith](#flowWith) | [apply](#apply) | [call](#call) | [spread](#spread) | [stack](#stack) | [once](#once) | [memoize](#memoize)
+[identity](#identity) | [wrap](#wrap) | [unary](#unary) | [binary](#binary) | [ternary](#ternary) | [arity](#arity) | [curry](#curry) | [substitute](#substitute) | [partial](#partial) | [flip](#flip) | [tee](#tee) | [rtee](#rtee) | [wait](#wait) | [pipe](#pipe) | [pipeWith](#pipewith) | [compose](#compose) | [flow](#flow) | [flowWith](#flowwith) | [apply](#apply) | [call](#call) | [spread](#spread) | [stack](#stack) | [once](#once) | [memoize](#memoize)
 
 **Predicate**
 
@@ -19,7 +19,7 @@
 
 **Type**
 
-[prototype](#prototype) | [isPrototype](#isPrototype) | [isTransitivePrototype](#isTransitivePrototype) | [isType](#isType) | [isKind](#isKind) | [Type.define](#Type.define) | [Type.create](#Type.create) | [instanceOf](#instanceOf) | [isDefined](#isDefined) | [isUndefined](#isUndefined) | [isBoolean](#isBoolean) | [isString](#isString) | [isSymbol](#isSymbol) | [isNumber](#isNumber) | [isNaN](#isNaN) | [isFinite](#isFinite) | [isInteger](#isInteger) | [isFloat](#isFloat) | [isDate](#isDate) | [isError](#isError) | [isRegExp](#isRegExp) | [isPromise](#isPromise) | [isObject](#isObject) | [isArray](#isArray) | [isMap](#isMap) | [isWeakMap](#isWeakMap) | [isSet](#isSet) | [isRegularFunction](#isRegularFunction) | [isGeneratorFunction](#isGeneratorFunction) | [isAsyncFunction](#isAsyncFunction) | [isFunction](#isFunction) | [size](#size) | [length](#length) | [isEmpty](#isEmpty) | [isBuffer](#isBuffer) | [isArrayBuffer](#isArrayBuffer) | [isDataView](#isDataView) | [isTypedArray](#isTypedArray) | [areType](#areType) | [areKind](#areKind)
+[prototype](#prototype) | [isPrototype](#isprototype) | [isTransitivePrototype](#istransitiveprototype) | [isType](#istype) | [isKind](#iskind) | [areType](#aretype) | [areKind](#arekind) | [Type.define](#type.define) | [Type.create](#type.create) | [instanceOf](#instanceof) | [isDefined](#isdefined) | [isUndefined](#isundefined) | [isBoolean](#isboolean) | [isString](#isstring) | [isSymbol](#issymbol) | [isNumber](#isnumber) | [isNaN](#isnan) | [isFinite](#isfinite) | [isInteger](#isinteger) | [isDate](#isdate) | [isError](#iserror) | [isRegExp](#isregexp) | [isPromise](#ispromise) | [isObject](#isobject) | [isArray](#isarray) | [isBuffer](#isbuffer) | [isArrayBuffer](#isarraybuffer) | [isDataView](#isdataview) | [isTypedArray](#istypedarray) | [isMap](#ismap) | [isWeakMap](#isweakmap) | [isSet](#isset) | [isRegularFunction](#isregularfunction) | [isGeneratorFunction](#isgeneratorfunction) | [isAsyncFunction](#isasyncfunction) | [isFunction](#isfunction) | [size](#size) | [length](#length) | [isEmpty](#isempty)
 
 
 ## Function
@@ -473,6 +473,20 @@ _isKind type, value &rarr; boolean_
 Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
 
 
+### areType
+
+_areType type, values &rarr; boolean_
+
+Returns true if each element in an array of _values_ is an instance of _type_, false otherwise.
+
+
+### areKind
+
+_areKind type, values &rarr; boolean_
+
+Returns true if each element of in an array of _values_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
+
+
 ### Type.define
 
 _Type.define parent &rarr; class_
@@ -491,7 +505,7 @@ Creates a new instance of a type (class). Convenience wrapper for `new`.
 
 _instanceOf type, instance &rarr; boolean_
 
-Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#isKind) is less likely to throw.
+Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#iskind) is less likely to throw.
 
 
 ### isDefined
@@ -503,218 +517,198 @@ Returns true if _value_ is defined, false otherwise.
 
 ### isUndefined
 
-_isUndefined  &rarr; _
+_isUndefined value &rarr; boolean_
 
-
+Returns true if _value_ is undefined, false otherwise.
 
 
 ### isBoolean
 
-_isBoolean  &rarr; _
+_isBoolean value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Boolean`.
 
 
 ### isString
 
-_isString  &rarr; _
+_isString value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `String`.
 
 
 ### isSymbol
 
-_isSymbol  &rarr; _
+_isSymbol value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Symbol`.
 
 
 ### isNumber
 
-_isNumber  &rarr; _
+_isNumber value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Number`.
 
 
 ### isNaN
 
-_isNaN  &rarr; _
+_isNaN value &rarr; boolean_
 
-
+Returns true if _value_ is not a number. Equivalent to `Number.isNaN`.
 
 
 ### isFinite
 
-_isFinite  &rarr; _
+_isFinite value &rarr; boolean_
 
-
+Returns true if _value_ is fine. Equivalent to `Number.isFinite`.
 
 
 ### isInteger
 
-_isInteger  &rarr; _
+_isInteger value &rarr; boolean_
 
-
-
-
-### isFloat
-
-_isFloat  &rarr; _
-
-
+Returns true if _value_ is fine. Equivalent to `Number.isInteger`.
 
 
 ### isDate
 
-_isDate  &rarr; _
+_isDate value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Date`.
 
 
 ### isError
 
-_isError  &rarr; _
+_isError value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Error`.
 
 
 ### isRegExp
 
-_isRegExp  &rarr; _
+_isRegExp value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `RegExp`.
 
 
 ### isPromise
 
-_isPromise  &rarr; _
+_isPromise value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Promise`.
 
 
 ### isObject
 
-_isObject  &rarr; _
+_isObject value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Object`.
 
 
 ### isArray
 
-_isArray  &rarr; _
+_isArray value &rarr; boolean_
 
-
-
-
-### isMap
-
-_isMap  &rarr; _
-
-
-
-
-### isWeakMap
-
-_isWeakMap  &rarr; _
-
-
-
-
-### isSet
-
-_isSet  &rarr; _
-
-
-
-
-### isRegularFunction
-
-_isRegularFunction  &rarr; _
-
-
-
-
-### isGeneratorFunction
-
-_isGeneratorFunction  &rarr; _
-
-
-
-
-### isAsyncFunction
-
-_isAsyncFunction  &rarr; _
-
-
-
-
-### isFunction
-
-_isFunction  &rarr; _
-
-
-
-
-### size
-
-_size  &rarr; _
-
-
-
-
-### length
-
-_length  &rarr; _
-
-
-
-
-### isEmpty
-
-_isEmpty  &rarr; _
-
-
+Returns true if _value_ is an instance of `Array`. Equivalent to `Array.isArray`.
 
 
 ### isBuffer
 
-_isBuffer  &rarr; _
+_isBuffer value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `Buffer`.
 
 
 ### isArrayBuffer
 
-_isArrayBuffer  &rarr; _
+_isArrayBuffer value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `ArrayBuffer`.
 
 
 ### isDataView
 
-_isDataView  &rarr; _
+_isDataView value &rarr; boolean_
 
-
+Returns true if _value_ is an instance of `DataView`.
 
 
 ### isTypedArray
 
-_isTypedArray  &rarr; _
+_isTypedArray value &rarr; boolean_
+
+Returns true if _value_ is an instance of `Uint8Array`.
 
 
+### isMap
+
+_isMap value &rarr; boolean_
+
+Returns true if _value_ is an instance of `Map`.
 
 
-### areType
+### isWeakMap
 
-_areType  &rarr; _
+_isWeakMap value &rarr; boolean_
 
-
-
-
-### areKind
-
-_areKind  &rarr; _
+Returns true if _value_ is an instance of `WeakMap`.
 
 
+### isSet
+
+_isSet value &rarr; boolean_
+
+Returns true if _value_ is an instance of `Set`.
+
+
+### isRegularFunction
+
+_isRegularFunction value &rarr; boolean_
+
+Returns true if _value_ is an instance of `Function`.
+
+
+### isGeneratorFunction
+
+_isGeneratorFunction value &rarr; boolean_
+
+Returns true if _value_ is a generator function.
+
+
+### isAsyncFunction
+
+_isAsyncFunction value &rarr; boolean_
+
+Returns true if _value_ is an asynchronous function.
+
+
+### isFunction
+
+_isFunction value &rarr; boolean_
+
+Returns true if _value_ is a function.
+
+
+### size
+
+_size value &rarr; integer_
+
+Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
+[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+
+
+### length
+
+_length value &rarr; integer_
+
+Alias for [`size`](#size)
+
+
+### isEmpty
+
+_isEmpty value &rarr; boolean_
+
+Returns true if the size of _value_ is zero, false otherwise.
 
 
