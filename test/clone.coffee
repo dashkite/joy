@@ -1,8 +1,7 @@
 import assert from "assert"
 import {test, print} from "amen"
 
-import {clone} from "../src/clone"
-import {equal} from "../src/equal"
+import {equal, clone} from "../src/value"
 
 do ->
 

@@ -1,4 +1,4 @@
-import {curry} from "panda-garden"
+import {identity, curry} from "./function"
 import Method from "panda-generics"
 import {
   isSymbol, isRegExp,
@@ -17,8 +17,8 @@ equal = create
 
 define equal, isObject, isObject, (a, b) ->
   return true if a == b
-  return false if !equal (Object.keys a), (Object.keys b)
-  for k, v in a when !(equal v, b[k])
+  return false if !(equal (Object.keys a), (Object.keys b))
+  for k, v of a when !(equal v, b[k])
     return false
   true
 

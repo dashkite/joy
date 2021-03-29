@@ -581,3 +581,18 @@
     returns: boolean
     description: >-
       Returns true if the size of _value_ is zero, false otherwise.
+
+- name: Value
+  functions:
+
+  - name: equal
+    arguments: a, b
+    returns: boolean
+    description: >-
+      Returns true if the given values are equal, false otherwise. Performs a deep comparison.
+
+  - name: clone
+    arguments: value
+    returns: value
+    description: >-
+      Returns a deep clone of the given value.

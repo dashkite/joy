@@ -21,6 +21,10 @@
 
 [prototype](#prototype) | [isPrototype](#isprototype) | [isTransitivePrototype](#istransitiveprototype) | [isType](#istype) | [isKind](#iskind) | [areType](#aretype) | [areKind](#arekind) | [Type.define](#type.define) | [Type.create](#type.create) | [instanceOf](#instanceof) | [isDefined](#isdefined) | [isUndefined](#isundefined) | [isBoolean](#isboolean) | [isString](#isstring) | [isSymbol](#issymbol) | [isNumber](#isnumber) | [isNaN](#isnan) | [isFinite](#isfinite) | [isInteger](#isinteger) | [isDate](#isdate) | [isError](#iserror) | [isRegExp](#isregexp) | [isPromise](#ispromise) | [isObject](#isobject) | [isArray](#isarray) | [isBuffer](#isbuffer) | [isArrayBuffer](#isarraybuffer) | [isDataView](#isdataview) | [isTypedArray](#istypedarray) | [isMap](#ismap) | [isWeakMap](#isweakmap) | [isSet](#isset) | [isRegularFunction](#isregularfunction) | [isGeneratorFunction](#isgeneratorfunction) | [isAsyncFunction](#isasyncfunction) | [isFunction](#isfunction) | [size](#size) | [length](#length) | [isEmpty](#isempty)
 
+**Value**
+
+[equal](#equal) | [clone](#clone)
+
 
 ## Function
 
@@ -710,5 +714,25 @@ Alias for [`size`](#size)
 _isEmpty value &rarr; boolean_
 
 Returns true if the size of _value_ is zero, false otherwise.
+
+
+
+## Value
+
+_@dashkite/joy/value_
+
+
+### equal
+
+_equal a, b &rarr; boolean_
+
+Returns true if the given values are equal, false otherwise. Performs a deep comparison.
+
+
+### clone
+
+_clone value &rarr; value_
+
+Returns a deep clone of the given value.
 
 
