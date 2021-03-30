@@ -799,5 +799,43 @@
   - name: pluck
 
   - name: pair
-  
+
   - name: shuffle
+
+- name: Math
+  functions:
+
+  - name: gt
+
+  - name: lt
+
+  - name: gte
+
+  - name: lte
+
+  - name: add
+
+  - name: sub
+
+  - name: mul
+
+  - name: div
+
+  - name: mod
+
+  - name: even
+
+  - name: odd
+
+  - name: min
+
+  - name: max
+
+  - name: abs
+
+- name: Time
+  functions:
+
+  - name: timer
+
+  - name: sleep

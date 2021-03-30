@@ -4,20 +4,24 @@
   "description": "",
   "main": "build/src/index.js",
   "exports": {
-    ".": "./build/src/index.js",
-    "./function": "./build/src/function.js",
-    "./predicate": "./build/src/predicate.js",
-    "./object": "./build/src/object.js",
-    "./metaclass": "./build/src/metaclass.js",
-    "./type": "./build/src/type.js",
-    "./value": "./build/src/value.js",
-    "./promise": "./build/src/promise.js",
-    "./text": "./build/src/text.js",
-    "./array": "./build/src/array.js",
-    "./math": "./build/src/math.js"
+    "default": {
+      ".": "./build/node/src/index.js",
+      "./function": "./build/node/src/function.js",
+      "./predicate": "./build/node/src/predicate.js",
+      "./object": "./build/node/src/object.js",
+      "./metaclass": "./build/node/src/metaclass.js",
+      "./type": "./build/node/src/type.js",
+      "./value": "./build/node/src/value.js",
+      "./promise": "./build/node/src/promise.js",
+      "./text": "./build/node/src/text.js",
+      "./array": "./build/node/src/array.js",
+      "./math": "./build/node/src/math.js",
+      "./time": "./build/node/src/time.js"
+    }
   },
   "files": [
-    "build/src",
+    "build/src/node",
+    "build/src/browser",
     "src"
   ],
   "scripts": {

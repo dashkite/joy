@@ -37,6 +37,14 @@
 
 [first](#first) | [second](#second) | [third](#third) | [fourth](#fourth) | [fifth](#fifth) | [nth](#nth) | [last](#last) | [rest](#rest) | [includes](#includes) | [findIndexOf](#findindexof) | [findLastIndexOf](#findlastindexof) | [push/enqueue](#push/enqueue) | [pop/dequeue](#pop/dequeue) | [shift](#shift) | [unshift](#unshift) | [cat](#cat) | [slice](#slice) | [splice](#splice) | [uniqueBy](#uniqueby) | [unique](#unique) | [dupes](#dupes) | [union](#union) | [intersection](#intersection) | [difference](#difference) | [complement](#complement) | [insert](#insert) | [remove](#remove) | [range](#range) | [join](#join) | [fill](#fill) | [pluck](#pluck) | [pair](#pair) | [shuffle](#shuffle)
 
+**Math**
+
+[gt](#gt) | [lt](#lt) | [gte](#gte) | [lte](#lte) | [add](#add) | [sub](#sub) | [mul](#mul) | [div](#div) | [mod](#mod) | [even](#even) | [odd](#odd) | [min](#min) | [max](#max) | [abs](#abs)
+
+**Time**
+
+[timer](#timer) | [sleep](#sleep)
+
 
 ## Function
 
@@ -1121,6 +1129,130 @@ _pair  &rarr; _
 ### shuffle
 
 _shuffle  &rarr; _
+
+
+
+
+
+## Math
+
+_@dashkite/joy/math_
+
+
+### gt
+
+_gt  &rarr; _
+
+
+
+
+### lt
+
+_lt  &rarr; _
+
+
+
+
+### gte
+
+_gte  &rarr; _
+
+
+
+
+### lte
+
+_lte  &rarr; _
+
+
+
+
+### add
+
+_add  &rarr; _
+
+
+
+
+### sub
+
+_sub  &rarr; _
+
+
+
+
+### mul
+
+_mul  &rarr; _
+
+
+
+
+### div
+
+_div  &rarr; _
+
+
+
+
+### mod
+
+_mod  &rarr; _
+
+
+
+
+### even
+
+_even  &rarr; _
+
+
+
+
+### odd
+
+_odd  &rarr; _
+
+
+
+
+### min
+
+_min  &rarr; _
+
+
+
+
+### max
+
+_max  &rarr; _
+
+
+
+
+### abs
+
+_abs  &rarr; _
+
+
+
+
+
+## Time
+
+_@dashkite/joy/time_
+
+
+### timer
+
+_timer  &rarr; _
+
+
+
+
+### sleep
+
+_sleep  &rarr; _
 
 
 
