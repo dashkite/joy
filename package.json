@@ -4,7 +4,7 @@
   "description": "",
   "main": "build/src/node/index.js",
   "exports": {
-    "browser": {
+    "import": {
       ".": "./build/browser/src/index.js",
       "./function": "./build/browser/src/function.js",
       "./predicate": "./build/browser/src/predicate.js",
@@ -34,8 +34,8 @@
     }
   },
   "files": [
-    "build/src/node",
-    "build/src/browser",
+    "build/node/src",
+    "build/browser/src",
     "src"
   ],
   "scripts": {
