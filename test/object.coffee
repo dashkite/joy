@@ -5,7 +5,7 @@ import {isDefined} from "../src/type"
 
 
 # module under test
-import * as x from "@dashkite/joy/object"
+import * as x from "../src/object"
 
 
 export default do ->

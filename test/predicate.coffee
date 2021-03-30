@@ -1,10 +1,10 @@
 import assert from "assert"
 import {print, test, success} from "amen"
 
-import * as fn from "@dashkite/joy/function"
+import * as fn from "../src/function"
 
 # module under text
-import * as x from "@dashkite/joy/predicate"
+import * as x from "../src/predicate"
 
 do ->
 

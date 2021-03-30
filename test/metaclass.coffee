@@ -2,7 +2,7 @@ import assert from "assert"
 import {test, print} from "amen"
 
 # module under test
-import * as x from "@dashkite/joy/metaclass"
+import * as x from "../src/metaclass"
 
 do ->
 

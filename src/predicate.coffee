@@ -1,4 +1,4 @@
-import {arity, curry, tee, apply} from "@dashkite/joy/function"
+import {arity, curry, tee, apply} from "./function"
 
 negate = (f) -> arity f.length, (ax...) ->
   if (r = apply f, ax)?.then?

@@ -1,5 +1,5 @@
-import {curry, call} from "@dashkite/joy/function"
-import {merge} from "@dashkite/joy/object"
+import {curry, call} from "./function"
+import {merge} from "./object"
 
 property = curry (key, description, target) ->
   Object.defineProperty target, key,
