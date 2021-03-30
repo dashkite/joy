@@ -76,13 +76,6 @@ define equal, isMap, isMap, (a, b) ->
       return false
   true
 
-define equal, isSet, isSet, (a, b) ->
-  throw new Error "equal: Comparing Sets is potentially costly in terms of memory or computation, so implementation is left to the developer."
-
-define equal, isWeakMap, isWeakMap, (a, b) ->
-  throw new Error "equal: does not compare WeakMap."
-
-
 clone = create
   name: "clone"
   description: "Creates a deep clone of an entity."

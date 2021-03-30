@@ -2,8 +2,22 @@
   "name": "@dashkite/joy",
   "version": "0.0.0",
   "description": "",
-  "main": "build/src/index.js",
+  "main": "build/src/node/index.js",
   "exports": {
+    "browser": {
+      ".": "./build/browser/src/index.js",
+      "./function": "./build/browser/src/function.js",
+      "./predicate": "./build/browser/src/predicate.js",
+      "./object": "./build/browser/src/object.js",
+      "./metaclass": "./build/browser/src/metaclass.js",
+      "./type": "./build/browser/src/type.js",
+      "./value": "./build/browser/src/value.js",
+      "./promise": "./build/browser/src/promise.js",
+      "./text": "./build/browser/src/text.js",
+      "./array": "./build/browser/src/array.js",
+      "./math": "./build/browser/src/math.js",
+      "./time": "./build/browser/src/time.js"
+    },
     "default": {
       ".": "./build/node/src/index.js",
       "./function": "./build/node/src/function.js",

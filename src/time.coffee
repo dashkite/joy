@@ -15,7 +15,7 @@ sleep = (interval) ->
 
 # benchmark = create
 #   name: "benchmark"
-#   description: "Times a function's execution with up to microsecond resolution"
+#   description: "Time a function's execution with up to microsecond resolution"
 #
 # define benchmark, isFunction, (fn) ->
 #   start = microseconds()

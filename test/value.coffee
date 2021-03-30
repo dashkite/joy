@@ -40,7 +40,8 @@ do ->
           do scenario x: 1, y: { z: map }
         test "buffer", scenario x: 1, y: { z: Buffer.from "panda" }
         test "array buffer", scenario x: 1, y: { z: new ArrayBuffer 8 }
-        test "data view", scenario x: 1, y: { z: new DataView new ArrayBuffer 8 }
+        test "data view",
+          scenario x: 1, y: { z: new DataView new ArrayBuffer 8 }
 
         # Negative tests
         test "function", failScenario x: 1, y: { z: -> }
@@ -126,11 +127,11 @@ do ->
 
 
       # Negative tests
-      test "weak map", ->
-        assert.throws (-> equal new WeakMap(), new WeakMap())
-
-      test "set", ->
-        assert.throws (-> equal new Set(), new Set())
+      # test "weak map", ->
+      #   assert.throws (-> equal new WeakMap(), new WeakMap())
+      #
+      # test "set", ->
+      #   assert.throws (-> equal new Set(), new Set())
 
     ]
 
