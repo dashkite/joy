@@ -136,22 +136,19 @@ once = (f) ->
   do (k=undefined) ->
     -> if k? then k else (k = f())
 
-memoize = do (cache = new WeakMap)->
-  (f) ->
-    (ax...) ->
-      key = JSON.stringify ax
-      if cache.has key
-        cache.get key
-      else
-        cache.set _.apply f, ax
-
-call = (f, ax...) -> (f ax...)
+memoize = (f) ->
+  do (cache = {}) ->
+    arity f.length, (ax...) ->
+      console.log cache[ JSON.stringify ax ]
+      cache[ JSON.stringify ax ] ?= apply f, ax
 
 apply = (f, ax) -> (f ax...)
 
 bind = curry (f, x) -> f.bind x
 
-detach = (f) -> curry (x, args...) -> f.apply x, args
+detach = (f) -> arity f.length, curry (x, args...) -> f.apply x, args
+
+send = curry (name, ax, object) -> object[name] ax...
 
 export {
   identity
@@ -177,8 +174,8 @@ export {
   rtee
   once
   memoize
-  call
   apply
   bind
   detach
+  send
 }

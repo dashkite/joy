@@ -31,7 +31,8 @@ t.define "node:test", [ "build" ], ->
     "./build/node/test/index.js"
   ]
 
-t.define "test", -> require "../test"
+t.define "test", [ "clean" ], ->
+  require "../test"
 
 Handlebars.registerHelper "lower", (text) ->
   text = Handlebars.escapeExpression text

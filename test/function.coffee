@@ -2,7 +2,7 @@ import assert from "assert"
 import {print, test, success} from "amen"
 
 # module under text
-import * as x from "@dashkite/joy/function"
+import * as x from "../src/function"
 
 do ->
 
@@ -113,10 +113,13 @@ do ->
 
     test "memoize", ->
       count = 0
-      f = x.memoize (x, y) -> count++
-      assert.equal 0, f 1, 1
-      assert.equal 0, f 1, 1
-      assert.equal 1, f 1, 2
+      f = x.memoize (x, y) -> ++count
+      assert.equal 1, f 1, 1
+      assert.equal 1, f 1, 1
+      assert.equal 2, f 1, 2
+      assert.equal 3, f 2, 1
+      assert.equal 2, f 1, 2
+      assert.equal 3, f 2, 1
 
     test "apply", ->
       assert.equal 1, (x.apply x.identity, [1])
@@ -125,5 +128,12 @@ do ->
 
     test "detach", ->
       assert.deepEqual (x.detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
+
+    test "send", ->
+      class Foo
+        bar: (t) -> "foo#{t}"
+      f = x.send "bar", [ "baz" ]
+      foo = new Foo
+      assert.equal "foobaz", f foo
 
   ]

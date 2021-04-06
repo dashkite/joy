@@ -16,13 +16,9 @@ do ->
         name: "fib"
         description: "Fibonacci sequence"
 
-      try
-        generic fib, (gte 1), (n) -> (fib n - 1) + (fib n - 2)
-        generic fib, (eq 1), -> 1
-        generic fib, (eq 2), -> 1
-
-      catch e
-        console.log e
+      generic fib, (gte 1), (n) -> (fib n - 1) + (fib n - 2)
+      generic fib, (eq 1), -> 1
+      generic fib, (eq 2), -> 1
 
       [
 
