@@ -136,8 +136,14 @@ once = (f) ->
   do (k=undefined) ->
     -> if k? then k else (k = f())
 
-memoize = (f) ->
-  do (cache={}) -> (args...) -> cache[args] ?= f args...
+memoize = do (cache = new WeakMap)->
+  (f) ->
+    (ax...) ->
+      key = JSON.stringify ax
+      if cache.has key
+        cache.get key
+      else
+        cache.set _.apply f, ax
 
 call = (f, ax...) -> (f ax...)
 

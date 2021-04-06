@@ -160,6 +160,46 @@
     description: >-
       Returns a function that calls the given function once for a given set arguments. Subsequent invocations with the same arguments will simply return the value returned by the initial invocation. The arguments must be serializable with `toString`.
 
+- name: Generic
+  functions:
+
+  - name: generic (create)
+    arguments: name, description | description
+    returns: function
+    description: >-
+      Generic function wrapper around [`Generic.create`](#Generic.create).
+    example: |
+      fib = generic
+        name: "fib"
+        description: "Fibonacci sequence"
+      generic fib, (gte 1), (n) -> (fib n - 1) + (fib n - 2)
+      generic fib, (eq 1), -> 1
+      generic fib, (eq 2), -> 1
+
+  - name: generic (define)
+    arguments: function, arguments...
+    returns: GenericFunction
+    description: >-
+      Generic function wrapper around [`Generic.define`](#Generic.define).
+
+  - name: Generic.create
+    arguments: name, description | description
+    returns: function
+    description: >-
+      Creates a generic function. Returns a function whose `_` property references te corresponding `GenericFunction` instance.
+
+  - name: Generic.define
+    arguments: function, terms..., implementation
+    returns: GenericFunction
+    description: >-
+      Defines a specialization for given generic function using the given _terms_ and _implementation_ function. Returns the corresponding `GenericFunction` instance.
+
+  - name: Generic.lookup
+    arguments: function, arguments...
+    returns: function
+    description: >-
+      Returns the implementation that matches the given _arguments_, if any.
+
 - name: Predicate
   functions:
 

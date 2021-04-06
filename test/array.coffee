@@ -7,8 +7,6 @@ import {first, second, third, fourth, fifth, nth, last, rest,
   enqueue, dequeue, splice, insert, remove, cat, slice, join, fill,
   range, pluck, pair, shuffle} from "../src/array"
 
-# import sinon from "sinon"
-
 do ->
 
   print await test "array helpers", [

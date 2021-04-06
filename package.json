@@ -2,40 +2,48 @@
   "name": "@dashkite/joy",
   "version": "0.0.0",
   "description": "",
-  "main": "build/src/node/index.js",
+  "main": "./build/node/src/index.js",
   "exports": {
-    "import": {
-      ".": "./build/browser/src/index.js",
-      "./function": "./build/browser/src/function.js",
-      "./predicate": "./build/browser/src/predicate.js",
-      "./object": "./build/browser/src/object.js",
-      "./metaclass": "./build/browser/src/metaclass.js",
-      "./type": "./build/browser/src/type.js",
-      "./value": "./build/browser/src/value.js",
-      "./promise": "./build/browser/src/promise.js",
-      "./text": "./build/browser/src/text.js",
-      "./array": "./build/browser/src/array.js",
-      "./math": "./build/browser/src/math.js",
-      "./time": "./build/browser/src/time.js"
+    ".": {
+      "node": "./build/node/src/index.js"
     },
-    "default": {
-      ".": "./build/node/src/index.js",
-      "./function": "./build/node/src/function.js",
-      "./predicate": "./build/node/src/predicate.js",
-      "./object": "./build/node/src/object.js",
-      "./metaclass": "./build/node/src/metaclass.js",
-      "./type": "./build/node/src/type.js",
-      "./value": "./build/node/src/value.js",
-      "./promise": "./build/node/src/promise.js",
-      "./text": "./build/node/src/text.js",
-      "./array": "./build/node/src/array.js",
-      "./math": "./build/node/src/math.js",
-      "./time": "./build/node/src/time.js"
-    }
+    "./function": {
+        "node": "./build/node/src/function.js"
+      },
+    "./predicate": {
+        "node": "./build/node/src/predicate.js"
+      },
+    "./object": {
+        "node": "./build/node/src/object.js"
+      },
+    "./metaclass": {
+        "node": "./build/node/src/metaclass.js"
+      },
+    "./type": {
+        "node": "./build/node/src/type.js"
+      },
+    "./value": {
+        "node": "./build/node/src/value.js"
+      },
+    "./promise": {
+        "node": "./build/node/src/promise.js"
+      },
+    "./text": {
+        "node": "./build/node/src/text.js"
+      },
+    "./array": {
+        "node": "./build/node/src/array.js"
+      },
+    "./math": {
+        "node": "./build/node/src/math.js"
+      },
+    "./time": {
+        "node": "./build/node/src/time.js"
+      }
   },
   "files": [
     "build/node/src",
-    "build/browser/src",
+    "build/import/src",
     "src"
   ],
   "scripts": {
@@ -54,7 +62,7 @@
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
     "@dashkite/genie": "^0.1.0",
-    "@dashkite/masonry": "^0.4.0",
+    "@dashkite/masonry": "^0.6.0",
     "amen": "^3.0.0",
     "coffeescript": "^2.5.1",
     "handlebars": "^4.7.7",

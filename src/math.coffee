@@ -1,4 +1,5 @@
-import {curry, partial, negate} from "panda-garden"
+import {curry, partial} from "./function"
+import {negate} from "./predicate"
 
 eq = curry (x, y) -> x == y
 neq = curry (x, y) -> x != y

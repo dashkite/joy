@@ -5,6 +5,10 @@
 
 [identity](#identity) | [wrap](#wrap) | [unary](#unary) | [binary](#binary) | [ternary](#ternary) | [arity](#arity) | [curry](#curry) | [substitute](#substitute) | [partial](#partial) | [flip](#flip) | [tee](#tee) | [rtee](#rtee) | [wait](#wait) | [pipe](#pipe) | [pipeWith](#pipewith) | [compose](#compose) | [flow](#flow) | [flowWith](#flowwith) | [apply](#apply) | [call](#call) | [spread](#spread) | [stack](#stack) | [once](#once) | [memoize](#memoize)
 
+**Generic**
+
+[generic (create)](#generic (create)) | [generic (define)](#generic (define)) | [Generic.create](#generic.create) | [Generic.define](#generic.define) | [Generic.lookup](#generic.lookup)
+
 **Predicate**
 
 [negate](#negate) | [any](#any) | [all](#all) | [test](#test) | [branch](#branch) | [attempt](#attempt)
@@ -234,6 +238,58 @@ Returns a function that calls the given function once. Subsequent invocations wi
 _memoize function &rarr; function_
 
 Returns a function that calls the given function once for a given set arguments. Subsequent invocations with the same arguments will simply return the value returned by the initial invocation. The arguments must be serializable with `toString`.
+
+
+
+## Generic
+
+_@dashkite/joy/generic_
+
+
+### generic (create)
+
+_generic (create) name, description | description &rarr; function_
+
+Generic function wrapper around [`Generic.create`](#Generic.create).
+
+#### Example
+
+```coffeescript
+fib = generic
+  name: "fib"
+  description: "Fibonacci sequence"
+generic fib, (gte 1), (n) -> (fib n - 1) + (fib n - 2)
+generic fib, (eq 1), -> 1
+generic fib, (eq 2), -> 1
+
+```
+
+### generic (define)
+
+_generic (define) function, arguments... &rarr; GenericFunction_
+
+Generic function wrapper around [`Generic.define`](#Generic.define).
+
+
+### Generic.create
+
+_Generic.create name, description | description &rarr; function_
+
+Creates a generic function. Returns a function whose `_` property references te corresponding `GenericFunction` instance.
+
+
+### Generic.define
+
+_Generic.define function, terms..., implementation &rarr; GenericFunction_
+
+Defines a specialization for given generic function using the given _terms_ and _implementation_ function. Returns the corresponding `GenericFunction` instance.
+
+
+### Generic.lookup
+
+_Generic.lookup function, arguments... &rarr; function_
+
+Returns the implementation that matches the given _arguments_, if any.
 
 
 

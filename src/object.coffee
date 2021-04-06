@@ -1,4 +1,4 @@
-import {curry, negate} from "panda-garden"
+import {curry} from "./function"
 import {isObject, isArray, isFunction, isRegExp} from "./type"
 import {equal} from "./value"
 

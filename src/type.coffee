@@ -1,4 +1,4 @@
-import {curry} from "panda-garden"
+import {curry} from "./function"
 import Method from "panda-generics"
 
 {create, define} = Method

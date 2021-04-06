@@ -19,9 +19,9 @@ t.define "build", "clean", m.start [
     m.write p.join "build", "node"
   ]
   flow [
-    m.tr coffee "browser"
+    m.tr coffee "import"
     m.extension ".js"
-    m.write p.join "build", "browser"
+    m.write p.join "build", "import"
   ]
 ]
 

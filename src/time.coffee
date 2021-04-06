@@ -1,4 +1,4 @@
-import {curry} from "panda-garden"
+import {curry} from "./function"
 import Method from "panda-generics"
 import {promise} from "./promise"
 import {isFunction, isAsyncFunction} from "./type"

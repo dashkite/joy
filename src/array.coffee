@@ -63,6 +63,14 @@ fill = curry (ax, a) -> ax.fill a
 # Set operations...
 
 # TODO: some of these could be implemented in terms of producers
+# TODO: replace with:
+# unique = (f, ax) ->
+#   bx = []
+#   for a in ax
+#     if !(bx.find (b) -> f a, b)?
+#       bx.push a
+#   bx
+
 uniqueBy = curry (f, ax) ->
   bx = []
   for a in ax
