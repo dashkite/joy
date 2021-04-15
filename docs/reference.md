@@ -1148,18 +1148,18 @@ Returns an array containing the elements in _array_ from _start_ up to, but not 
 
 Convenience wrapper for [`Array::slice`][].
 
-[Array::slice]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+[`Array::slice`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 
 
 ### push/enqueue
 
 _push/enqueue array, value &rarr; array_
 
-Adds _value_ to the end of _array_ and returns the mutated array. Convenience wrapper for [Array::push][mdn].
+Adds _value_ to the end of _array_ and returns the mutated array.
 
 Convenience wrapper for [`Array::push`][].
 
-[Array::push]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+[`Array::push`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
 
 ### pop/dequeue
