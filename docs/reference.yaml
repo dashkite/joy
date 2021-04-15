@@ -777,59 +777,114 @@
   functions:
 
   - name: first
+    arguments: array
+    returns: value
+    description: >-
+      Returns the first element of _array_.
 
   - name: second
+    arguments: array
+    returns: value
+    description: >-
+      Returns the second element of _array_.
 
   - name: third
+    arguments: array
+    returns: value
+    description: >-
+      Returns the third element of _array_.
 
   - name: fourth
+    arguments: array
+    returns: value
+    description: >-
+      Returns the fourth element of _array_.
 
   - name: fifth
+    arguments: array
+    returns: value
+    description: >-
+      Returns the fifth element of _array_.
 
   - name: nth
+    arguments: n, array
+    returns: value
+    description: >-
+      Returns the _nth_ element of _array_.
 
   - name: last
+    arguments: array
+    returns: value
+    description: >-
+      Returns the last element of _array_.
 
   - name: rest
-
-  - name: includes
-
-  - name: findIndexOf
-
-  - name: findLastIndexOf
-
-  - name: push/enqueue
-
-  - name: pop/dequeue
-
-  - name: shift
-
-  - name: unshift
-
-  - name: cat
+    arguments: array
+    returns: array
+    description: >-
+      Returns a new array consisting of all but the first element of the given array.
 
   - name: slice
+    arguments: start, end, array
+    returns: array
+    description: >-
+      Returns an array containing the elements in _array_ from _start_ up to, but not including, _end_.
+    wrapper:
+      for: Array::slice
+      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+
+  - name: push/enqueue
+    arguments: array, value
+    returns: array
+    description: >-
+      Adds _value_ to the end of _array_ and returns the mutated array.
+    wrapper:
+      for: Array::push
+      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+
+  - name: pop/dequeue
+    arguments: array
+    returns: value
+    description: >-
+      Removes _value_ from the end of _array_ and returns it, mutating the array.
+
+  - name: shift
+    arguments: array, value
+    returns: array
+    description: >-
+      Removes _value_ from the start of the _array_ and returns it, mutating the array.
+
+  - name: unshift
+    arguments: array, value
+    returns: array
+    description: >-
+      Adds _value_ to the start of the _array_ and returns the mutated array.
+
+  - name: cat
+    arguments: array, array, ...
+    returns: array
+    description: >-
+      Concatenates arrays passed as arguments, returning a new array.
 
   - name: splice
-
-  - name: uniqueBy
-
-  - name: unique
-
-  - name: dupes
-
-  - name: union
-
-  - name: intersection
-
-  - name: difference
-
-  - name: complement
+    arguments: start, end, array
+    returns: array
+    description: >-
+      Removes the elements in _array_ from _start_ up to, but not including, _end_, and returns the mutated array.
 
   - name: insert
+    arguments: index, value, array
+    returns: array
+    description: >-
+      Inserts _value_ into array at _index_, returning the mutated array.
 
   - name: remove
+    arguments: value, array
+    returns: array
+    description: >-
+      Removes _value_ from array, if it exists within it, returning the mutated array.
 
+ # TODO remember to add the MDN references for fns that are basically wrappers functions
   - name: range
 
   - name: join
@@ -841,6 +896,29 @@
   - name: pair
 
   - name: shuffle
+
+- name: Set
+  functions:
+
+  - name: union
+
+  - name: intersection
+
+  - name: complement
+
+  - name: difference
+
+  - name: unique
+
+  - name: dupes
+
+
+- name: Iterable
+  functions:
+
+  - name: includes
+
+  - name: uniqueBy
 
 - name: Math
   functions:

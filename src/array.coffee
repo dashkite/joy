@@ -11,16 +11,11 @@ fifth  = nth 5
 last = ([rest..., last]) -> last
 rest = ([first, rest...]) -> rest
 
-# curryable index variations that can use ? operator or equivalent
-# ex: if (i = findIndexOf ax, a)? then ...
-findIndexOf = curry (a, ax) -> if (i = ax.indexOf a) != -1 then i
-findLastIndexOf = curry (a, ax) -> if (i = ax.lastIndexOf a) != -1 then i
-
 # Array mutators
-push = curry (ax, a...) -> ax.push a...; ax
+push = curry (ax, a) -> ax.push a; ax
 pop = detach Array::pop
 shift = detach Array::shift
-unshift = detach Array::unshift
+unshift = curry (ax, a) -> ax.unshift a; ax
 enqueue = unshift
 dequeue = pop
 
@@ -34,7 +29,7 @@ insert = curry (i, a, ax) ->
   ax.splice i, 0, a
   ax
 
-remove = curry (ax, a) ->
+remove = curry (a, ax) ->
   (ax.splice i, 1) if (i = ax.indexOf( a )) != -1
   ax
 
