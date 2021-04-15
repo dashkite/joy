@@ -1,4 +1,4 @@
-import {curry, call} from "./function"
+import {curry} from "./function"
 import {merge} from "./object"
 
 property = curry (key, description, target) ->
@@ -26,7 +26,7 @@ methods = curry (dictionary, target) ->
   for key, f of dictionary
     method key, f, target
 
-mixin = curry (target, fx) -> call f, target for f in fx ; target
+mixin = curry (target, fx) -> f target for f in fx ; target
 
 export {
   property

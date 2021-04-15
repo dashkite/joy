@@ -134,12 +134,12 @@ rtee = (f) ->
 
 once = (f) ->
   do (k=undefined) ->
-    -> if k? then k else (k = f())
+    arity f.length,
+      (ax...) -> if k? then k else (k = apply f, ax)
 
 memoize = (f) ->
   do (cache = {}) ->
     arity f.length, (ax...) ->
-      console.log cache[ JSON.stringify ax ]
       cache[ JSON.stringify ax ] ?= apply f, ax
 
 apply = (f, ax) -> (f ax...)

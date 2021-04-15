@@ -5,41 +5,13 @@
   "main": "./build/node/src/index.js",
   "exports": {
     ".": {
-      "node": "./build/node/src/index.js"
+      "node": "./build/node/src/index.js",
+      "import": "./build/node/src/index.js"
     },
-    "./function": {
-        "node": "./build/node/src/function.js"
-      },
-    "./predicate": {
-        "node": "./build/node/src/predicate.js"
-      },
-    "./object": {
-        "node": "./build/node/src/object.js"
-      },
-    "./metaclass": {
-        "node": "./build/node/src/metaclass.js"
-      },
-    "./type": {
-        "node": "./build/node/src/type.js"
-      },
-    "./value": {
-        "node": "./build/node/src/value.js"
-      },
-    "./promise": {
-        "node": "./build/node/src/promise.js"
-      },
-    "./text": {
-        "node": "./build/node/src/text.js"
-      },
-    "./array": {
-        "node": "./build/node/src/array.js"
-      },
-    "./math": {
-        "node": "./build/node/src/math.js"
-      },
-    "./time": {
-        "node": "./build/node/src/time.js"
-      }
+    "./*": {
+      "node": "./build/node/src/*.js",
+      "import": "./build/node/src/*.js"
+    }
   },
   "files": [
     "build/node/src",
