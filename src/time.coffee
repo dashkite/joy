@@ -1,34 +1,26 @@
 import {curry} from "./function"
-import Method from "panda-generics"
-import {promise} from "./promise"
-import {isFunction, isAsyncFunction} from "./type"
 
-{create, define} = Method
-
-timer = (wait, action) ->
-  id = setTimeout(action, wait)
+timer = curry (interval, action) ->
+  id = setTimeout(action, interval)
   -> clearTimeout( id )
 
 sleep = (interval) ->
-  promise (resolve, reject) ->
-    timer interval, -> resolve()
+  new Promise (resolve) -> setTimeout resolve, interval
 
-# benchmark = create
-#   name: "benchmark"
-#   description: "Time a function's execution with up to microsecond resolution"
-#
-# define benchmark, isFunction, (fn) ->
-#   start = microseconds()
-#   fn()
-#   microseconds() - start
-#
-# define benchmark, isAsyncFunction, (fn) ->
-#   start = microseconds()
-#   await fn()
-#   microseconds() - start
+{performance} = window ? (require "perf_hooks")
+
+milliseconds = -> performance.now()
+
+benchmark = (f) ->
+  start = milliseconds()
+  if (r = f())?.then?
+    r.then -> milliseconds() - start
+  else
+    milliseconds() - start
 
 export {
   sleep
   timer
-  # benchmark
+  milliseconds
+  benchmark
 }

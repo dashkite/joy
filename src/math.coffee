@@ -1,4 +1,4 @@
-import {curry, partial} from "./function"
+import {curry, apply} from "./function"
 import {negate} from "./predicate"
 
 eq = curry (x, y) -> x == y
@@ -13,12 +13,18 @@ add = curry (x, y) -> x + y
 sub = curry (x, y) -> y - x
 mul = curry (x, y) -> x * y
 div = curry (x, y) -> y / x
-mod = curry (x, y) -> y % x == 0
+mod = curry (x, y) -> y % x
 
-even = mod 2
+isModulo = curry (x, y) -> y % x == 0
+even = isModulo 2
 odd = negate even
 
-{min, max, abs, pow} = Math
+min = (ax) -> apply Math.min, ax
+max = (ax) -> apply Math.max, ax
+
+{abs} = Math
+
+pow = curry (x, y) -> x ** y
 
 export {eq, neq, gt, lt, gte, lte, add, sub, mul, div, mod,
-  even, odd, min, max, abs}
+  isModulo, even, odd, min, max, abs, pow}

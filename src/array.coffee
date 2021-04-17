@@ -37,9 +37,9 @@ cat = detach Array::concat
 
 slice = curry (i, j, ax) -> ax[i...j]
 
-sort = curry binary detach Array::sort
-join = curry binary detach Array::join
-fill = curry (ax, a) -> ax.fill a
+join = curry (a, ax) -> ax.join a
+
+fill = curry (a, ax) -> ax.fill a
 
 range = curry (start, finish) -> [start..finish]
 
@@ -47,6 +47,8 @@ range = curry (start, finish) -> [start..finish]
 pluck = (ax) -> ax[(round random() * (ax.length - 1))]
 
 pair = curry (a, b) -> [a, b]
+
+sort = curry (f, ax) -> ax.sort f, ax
 
 # https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 #
@@ -74,8 +76,6 @@ export {
   nth
   last
   rest
-  findIndexOf
-  findLastIndexOf
   push
   pop
   shift
@@ -92,5 +92,6 @@ export {
   range
   pluck
   pair
+  sort
   shuffle
 }

@@ -3,7 +3,7 @@
 
 **Function**
 
-[identity](#identity) | [wrap](#wrap) | [unary](#unary) | [binary](#binary) | [ternary](#ternary) | [arity](#arity) | [curry](#curry) | [substitute](#substitute) | [partial](#partial) | [flip](#flip) | [tee](#tee) | [rtee](#rtee) | [wait](#wait) | [pipe](#pipe) | [pipeWith](#pipewith) | [compose](#compose) | [flow](#flow) | [flowWith](#flowwith) | [apply](#apply) | [call](#call) | [spread](#spread) | [stack](#stack) | [once](#once) | [memoize](#memoize)
+[identity](#identity) | [wrap](#wrap) | [unary](#unary) | [binary](#binary) | [ternary](#ternary) | [arity](#arity) | [curry](#curry) | [substitute](#substitute) | [partial](#partial) | [flip](#flip) | [tee](#tee) | [rtee](#rtee) | [wait](#wait) | [pipe](#pipe) | [pipeWith](#pipewith) | [compose](#compose) | [flow](#flow) | [flowWith](#flowwith) | [apply](#apply) | [send](#send) | [spread](#spread) | [stack](#stack) | [once](#once) | [memoize](#memoize)
 
 **Generic**
 
@@ -39,7 +39,7 @@
 
 **Array**
 
-[first](#first) | [second](#second) | [third](#third) | [fourth](#fourth) | [fifth](#fifth) | [nth](#nth) | [last](#last) | [rest](#rest) | [slice](#slice) | [push/enqueue](#push/enqueue) | [pop/dequeue](#pop/dequeue) | [shift](#shift) | [unshift](#unshift) | [cat](#cat) | [splice](#splice) | [insert](#insert) | [remove](#remove) | [range](#range) | [join](#join) | [fill](#fill) | [pluck](#pluck) | [pair](#pair) | [shuffle](#shuffle)
+[first](#first) | [second](#second) | [third](#third) | [fourth](#fourth) | [fifth](#fifth) | [nth](#nth) | [last](#last) | [rest](#rest) | [slice](#slice) | [push/enqueue](#push/enqueue) | [pop/dequeue](#pop/dequeue) | [shift](#shift) | [unshift](#unshift) | [cat](#cat) | [splice](#splice) | [insert](#insert) | [remove](#remove) | [range](#range) | [join](#join) | [fill](#fill) | [sort](#sort) | [pluck](#pluck) | [pair](#pair) | [shuffle](#shuffle)
 
 **Set**
 
@@ -51,11 +51,11 @@
 
 **Math**
 
-[gt](#gt) | [lt](#lt) | [gte](#gte) | [lte](#lte) | [add](#add) | [sub](#sub) | [mul](#mul) | [div](#div) | [mod](#mod) | [even](#even) | [odd](#odd) | [min](#min) | [max](#max) | [abs](#abs)
+[gt](#gt) | [lt](#lt) | [gte](#gte) | [lte](#lte) | [add](#add) | [sub](#sub) | [mul](#mul) | [div](#div) | [mod](#mod) | [isModulo](#ismodulo) | [even](#even) | [odd](#odd) | [min](#min) | [max](#max) | [abs](#abs) | [pow](#pow)
 
 **Time**
 
-[timer](#timer) | [sleep](#sleep)
+[timer](#timer) | [sleep](#sleep) | [milliseconds](#milliseconds) | [benchmark](#benchmark)
 
 
 ## Function
@@ -70,13 +70,11 @@ _identity value &rarr; value_
 Returns its argument.
 
 
-
 ### wrap
 
 _wrap value &rarr; function_
 
 Returns a function that returns its argument.
-
 
 
 ### unary
@@ -86,13 +84,11 @@ _unary function &rarr; function_
 Returns a unary function that passes its argument to the given function.
 
 
-
 ### binary
 
 _binary function &rarr; function_
 
 Returns a binary function that passes its arguments to the given function.
-
 
 
 ### ternary
@@ -102,13 +98,11 @@ _ternary function &rarr; function_
 Returns a ternary function that passes its arguments to the given function.
 
 
-
 ### arity
 
 _arity n, function &rarr; function_
 
 Returns an n-ary function that passes its arguments to the given function.
-
 
 
 ### curry
@@ -118,13 +112,11 @@ _curry function &rarr; function_
 Returns a curryable function that passes its arguments to the given function.
 
 
-
 ### substitute
 
 _substitute pattern, values &rarr; array_
 
 Given a pattern array and an array of values, returns an array with the values substited for the special value \_ in the pattern array.
-
 
 
 ### partial
@@ -134,13 +126,11 @@ _partial function, pattern &rarr; function_
 Returns a function that substitutes arguments using the given pattern array before passing them to the given function.
 
 
-
 ### flip
 
 _flip function &rarr; function_
 
 Returns a function that reverses its arguments before passing them to the given function.
-
 
 
 ### tee
@@ -150,13 +140,11 @@ _tee function &rarr; function_
 Returns a function that calls the given function but always returns its first argument.
 
 
-
 ### rtee
 
 _rtee function &rarr; function_
 
 Returns a function that calls the given function but always returns its last argument.
-
 
 
 ### wait
@@ -166,7 +154,6 @@ _wait function &rarr; function_
 Returns a function that awaits on its arguments before passing it to the given function.
 
 
-
 ### pipe
 
 _pipe functions &rarr; function_
@@ -174,13 +161,11 @@ _pipe functions &rarr; function_
 Returns a function that composes the given functions, calling them in the order given.
 
 
-
 ### pipeWith
 
 _pipeWith adapter, functions &rarr; function_
 
 Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
-
 
 #### Example
 
@@ -197,12 +182,12 @@ pipeWith trace, [
 ]
 ```
 
+
 ### compose
 
 _compose functions &rarr; function_
 
 Returns a function that composes the given functions, calling them in reverse of the order given.
-
 
 
 ### flow
@@ -213,7 +198,6 @@ Returns an async function that composes the given functions, which may be async,
 Convenience for `pipeWith wait`.
 
 
-
 ### flowWith
 
 _flowWith adapter, functions &rarr; function_
@@ -221,23 +205,22 @@ _flowWith adapter, functions &rarr; function_
 Works like [`flow`](#flow), except transforms each function with the given adaper before composing them.
 
 
-
 ### apply
 
 _apply function, arguments &rarr; value_
 
-Calls the given function with the given arguments. Convenience for [`Function::apply`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+Calls the given function with the given arguments. Use with [`bind`](#bind) to bind `this`.
+
+Convenience wrapper for [`Function::apply`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
 
+### send
 
-### call
+_send name, arguments, object &rarr; value_
 
-_call function, arguments... &rarr; value_
-
-Calls the given function with the given arguments. Convenience for [`Function::call`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
-
+Invokes the named method on _object_ with _arguments_.
 
 
 ### spread
@@ -247,13 +230,11 @@ _spread function &rarr; function_
 Returns a function that accepts an array of arguments and passes them to the given function.
 
 
-
 ### stack
 
 _stack function &rarr; function_
 
 Returns a function that passes its arguments to the given function as an array.
-
 
 
 ### once
@@ -263,14 +244,11 @@ _once function &rarr; function_
 Returns a function that calls the given function once. Subsequent invocations will simply return the value returned by the initial invocation.
 
 
-
 ### memoize
 
 _memoize function &rarr; function_
 
 Returns a function that calls the given function once for a given set arguments. Subsequent invocations with the same arguments will simply return the value returned by the initial invocation. The arguments must be serializable with `toString`.
-
-
 
 
 ## Generic
@@ -284,7 +262,6 @@ _generic (create) name, description | description &rarr; function_
 
 Generic function wrapper around [`Generic.create`](#Generic.create).
 
-
 #### Example
 
 ```coffeescript
@@ -294,15 +271,14 @@ fib = generic
 generic fib, (gte 1), (n) -> (fib n - 1) + (fib n - 2)
 generic fib, (eq 1), -> 1
 generic fib, (eq 2), -> 1
-
 ```
+
 
 ### generic (define)
 
 _generic (define) function, arguments... &rarr; GenericFunction_
 
 Generic function wrapper around [`Generic.define`](#Generic.define).
-
 
 
 ### Generic.create
@@ -312,7 +288,6 @@ _Generic.create name, description | description &rarr; function_
 Creates a generic function. Returns a function whose `_` property references te corresponding `GenericFunction` instance.
 
 
-
 ### Generic.define
 
 _Generic.define function, terms..., implementation &rarr; GenericFunction_
@@ -320,14 +295,11 @@ _Generic.define function, terms..., implementation &rarr; GenericFunction_
 Defines a specialization for given generic function using the given _terms_ and _implementation_ function. Returns the corresponding `GenericFunction` instance.
 
 
-
 ### Generic.lookup
 
 _Generic.lookup function, arguments... &rarr; function_
 
 Returns the implementation that matches the given _arguments_, if any.
-
-
 
 
 ## Predicate
@@ -342,13 +314,11 @@ _negate function &rarr; function_
 Returns a function that returns the negation of the given function.
 
 
-
 ### any
 
 _any functions &rarr; function_
 
 Returns a function that returns true if any of the given _functions_, attempted in the order given, returns true, and false otherwise.
-
 
 
 ### all
@@ -358,13 +328,11 @@ _all functions &rarr; function_
 Returns a function that returns true if all of the given _functions_, attempted in the order given, return true, and false otherwise.
 
 
-
 ### test
 
 _test predicate, consequent[, alternative] &rarr; function_
 
 Returns a function that calls the _consequent_ if the _predicate_ returns true, and the (optional) _alternative_ otherwise.
-
 
 
 ### branch
@@ -374,14 +342,11 @@ _branch conditions &rarr; function_
 Returns a function evaluates a list of _conditions_ (and associative array consisting of pairs of predicates and consequents), in the order given, until one of the predicates matches. Calls the corresponding consquent if a match is found.
 
 
-
 ### attempt
 
 _attempt function &rarr; function_
 
 Returns a function that calls the given function, returning false if the function throws an exception or returns a rejected promise, and true otherwise.
-
-
 
 
 ## Object
@@ -396,13 +361,11 @@ _keys object &rarr; array_
 Returns the property names for the given object.
 
 
-
 ### values
 
 _values object &rarr; array_
 
 Returns the property values for the given object.
-
 
 
 ### pairs
@@ -411,21 +374,19 @@ _pairs object &rarr; array_
 
 Returns the properties for the given object as an associative array (an array of two-element arrays).
 
-
 #### Example
 
 ```coffeescript
 assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
   [["a", 1], ["b", 2], ["c", 3]]
-
 ```
+
 
 ### has
 
 _has key, object &rarr; boolean_
 
 Returns the true if the given object has a property matching the given key, false otherwise.
-
 
 
 ### get
@@ -436,13 +397,11 @@ Returns the value of the property matching the given key for the given object. L
 [ramda]: https://ramdajs.com/docs/#pluck
 
 
-
 ### set
 
 _set key, value, object &rarr; boolean_
 
 Sets the value of the property matching the given key for the given object.
-
 
 
 ### assign
@@ -452,13 +411,11 @@ _assign object, objects... &rarr; object_
 Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
 
 
-
 ### merge
 
 _merge object, objects... &rarr; object_
 
 Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
-
 
 
 ### query
@@ -467,13 +424,11 @@ _query exemplar, object &rarr; object_
 
 Returns true if _object_ matches _exemplar_, false otherwise. An exemplar matches if all of its properties are equal to the corresponding properties in the target object. Matching is done recursively, so the exemplar can contain nested values.
 
-
 #### Example
 
 ```coffeescript
 assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
 assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}
-
 ```
 
 
@@ -486,9 +441,11 @@ _@dashkite/joy/metaclass_
 
 _property key, description, target &rarr; object_
 
-Defines a property on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `property` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+Defines a property on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `property` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
+Convenience wrapper for [`Object.defineProperty`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
 
 ### properties
@@ -496,17 +453,17 @@ Defines a property on _target_ using the given _key_ (the property name) and _de
 _properties dictionary, target &rarr; object_
 
 Defines properties on _target_ using the given _dictionary_ of keys and property names. Convenience wrapper for [`property`](#property). Like most Joy functions, `properties` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
 
 
 ### getter
 
 _getter key, function, target &rarr; object_
 
-Defines a getter on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `getter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+Defines a getter on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `getter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
+Convenience wrapper for [`Object.defineProperty`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
 
 ### getters
@@ -514,8 +471,6 @@ Defines a getter on _target_ using the given _key_ (the property name) and _desc
 _getters dictionary, target &rarr; object_
 
 Defines getters on _target_ using the given _dictionary_ of keys and getter functions. Convenience wrapper for [`getter`](#getter). Like most Joy functions, `getters` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
 
 #### Example
 
@@ -526,16 +481,18 @@ class Foo
       bar: -> "bar"
   ]
 assert.equal "bar", (new Foo).bar
-
 ```
+
 
 ### setter
 
 _setter key, function, target &rarr; object_
 
-Defines a setter on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `setter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+Defines a setter on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `setter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
+Convenience wrapper for [`Object.defineProperty`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
 
 ### setters
@@ -543,17 +500,13 @@ Defines a setter on _target_ using the given _key_ (the property name) and _desc
 _setters dictionary, target &rarr; object_
 
 Defines setters on _target_ using the given _dictionary_ of keys and setter functions. Convenience wrapper for [`setter`](#setter). Like most Joy functions, `setters` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
 
 
 ### method
 
 _method key, function, target &rarr; object_
 
-Defines a method on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `method` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
+Defines a method on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `method` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
 
 ### methods
@@ -561,8 +514,6 @@ Defines a method on _target_ using the given _key_ (the property name) and _desc
 _methods dictionary, target &rarr; object_
 
 Defines methods on _target_ using the given _dictionary_ of keys and methods. Convenience wrapper for [`method`](#method). Like most Joy functions, `methods` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
 
 
 ### mixin
@@ -570,8 +521,6 @@ Defines methods on _target_ using the given _dictionary_ of keys and methods. Co
 _mixin target, functions &rarr; object_
 
 Applies each function to the given target. See [`getters`](#getters) for an example of how to use it with object modifiers like `getters` or `methods` to create reusable mixins.
-
-
 
 
 ## Type
@@ -586,13 +535,11 @@ _prototype value &rarr; prototype_
 Returns the prototype of the given _value_.
 
 
-
 ### isPrototype
 
 _isPrototype prototype, value &rarr; boolean_
 
 Returns true if _prototype_ is the prototype for _value_, false otherwise.
-
 
 
 ### isTransitivePrototype
@@ -602,13 +549,11 @@ _isTransitivePrototype prototype, value &rarr; boolean_
 Returns true if _prototype_ is a transitive prototype of _value_, false otherwise.
 
 
-
 ### isType
 
 _isType type, value &rarr; boolean_
 
 Returns true if _value_ is an instance of _type_, false otherwise.
-
 
 
 ### isKind
@@ -618,13 +563,11 @@ _isKind type, value &rarr; boolean_
 Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
 
 
-
 ### areType
 
 _areType type, values &rarr; boolean_
 
 Returns true if each element in an array of _values_ is an instance of _type_, false otherwise.
-
 
 
 ### areKind
@@ -634,13 +577,11 @@ _areKind type, values &rarr; boolean_
 Returns true if each element of in an array of _values_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
 
 
-
 ### Type.define
 
 _Type.define parent &rarr; class_
 
 Creates a new type (class) that extends _parent_, if defined, or `Object` otherwise. Convenience wrapper for `class`.
-
 
 
 ### Type.create
@@ -650,13 +591,11 @@ _Type.create type &rarr; instance_
 Creates a new instance of a type (class). Convenience wrapper for `new`.
 
 
-
 ### instanceOf
 
 _instanceOf type, instance &rarr; boolean_
 
 Returns true if `instanceof` returns true for the given instance and type, false otherwise. Convenience wrapper for `instanceof`. However, [`isKind`](#iskind) is less likely to throw.
-
 
 
 ### isDefined
@@ -666,13 +605,11 @@ _isDefined value &rarr; boolean_
 Returns true if _value_ is defined, false otherwise.
 
 
-
 ### isUndefined
 
 _isUndefined value &rarr; boolean_
 
 Returns true if _value_ is undefined, false otherwise.
-
 
 
 ### isBoolean
@@ -682,13 +619,11 @@ _isBoolean value &rarr; boolean_
 Returns true if _value_ is an instance of `Boolean`.
 
 
-
 ### isString
 
 _isString value &rarr; boolean_
 
 Returns true if _value_ is an instance of `String`.
-
 
 
 ### isSymbol
@@ -698,13 +633,11 @@ _isSymbol value &rarr; boolean_
 Returns true if _value_ is an instance of `Symbol`.
 
 
-
 ### isNumber
 
 _isNumber value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Number`.
-
 
 
 ### isNaN
@@ -714,13 +647,11 @@ _isNaN value &rarr; boolean_
 Returns true if _value_ is not a number. Equivalent to `Number.isNaN`.
 
 
-
 ### isFinite
 
 _isFinite value &rarr; boolean_
 
 Returns true if _value_ is fine. Equivalent to `Number.isFinite`.
-
 
 
 ### isInteger
@@ -730,13 +661,11 @@ _isInteger value &rarr; boolean_
 Returns true if _value_ is fine. Equivalent to `Number.isInteger`.
 
 
-
 ### isDate
 
 _isDate value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Date`.
-
 
 
 ### isError
@@ -746,13 +675,11 @@ _isError value &rarr; boolean_
 Returns true if _value_ is an instance of `Error`.
 
 
-
 ### isRegExp
 
 _isRegExp value &rarr; boolean_
 
 Returns true if _value_ is an instance of `RegExp`.
-
 
 
 ### isPromise
@@ -762,13 +689,11 @@ _isPromise value &rarr; boolean_
 Returns true if _value_ is an instance of `Promise`.
 
 
-
 ### isObject
 
 _isObject value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Object`.
-
 
 
 ### isArray
@@ -778,13 +703,11 @@ _isArray value &rarr; boolean_
 Returns true if _value_ is an instance of `Array`. Equivalent to `Array.isArray`.
 
 
-
 ### isBuffer
 
 _isBuffer value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Buffer`.
-
 
 
 ### isArrayBuffer
@@ -794,13 +717,11 @@ _isArrayBuffer value &rarr; boolean_
 Returns true if _value_ is an instance of `ArrayBuffer`.
 
 
-
 ### isDataView
 
 _isDataView value &rarr; boolean_
 
 Returns true if _value_ is an instance of `DataView`.
-
 
 
 ### isTypedArray
@@ -810,13 +731,11 @@ _isTypedArray value &rarr; boolean_
 Returns true if _value_ is an instance of `Uint8Array`.
 
 
-
 ### isMap
 
 _isMap value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Map`.
-
 
 
 ### isWeakMap
@@ -826,13 +745,11 @@ _isWeakMap value &rarr; boolean_
 Returns true if _value_ is an instance of `WeakMap`.
 
 
-
 ### isSet
 
 _isSet value &rarr; boolean_
 
 Returns true if _value_ is an instance of `Set`.
-
 
 
 ### isRegularFunction
@@ -842,13 +759,11 @@ _isRegularFunction value &rarr; boolean_
 Returns true if _value_ is an instance of `Function`.
 
 
-
 ### isGeneratorFunction
 
 _isGeneratorFunction value &rarr; boolean_
 
 Returns true if _value_ is a generator function.
-
 
 
 ### isAsyncFunction
@@ -858,14 +773,11 @@ _isAsyncFunction value &rarr; boolean_
 Returns true if _value_ is an asynchronous function.
 
 
-
 ### isFunction
 
 _isFunction value &rarr; boolean_
 
 Returns true if _value_ is a function.
-
-
 
 
 ## Value
@@ -880,7 +792,6 @@ _equal a, b &rarr; boolean_
 Returns true if the given values are equal, false otherwise. Performs a deep comparison.
 
 
-
 ### clone
 
 _clone value &rarr; value_
@@ -888,14 +799,13 @@ _clone value &rarr; value_
 Returns a deep clone of the given value.
 
 
-
 ### size
 
 _size value &rarr; integer_
 
-Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][Object.keys].
 
+[Object.keys]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
 
 ### isEmpty
@@ -903,8 +813,6 @@ Returns the size of _value_, if possible. A value is considered to have a size i
 _isEmpty value &rarr; boolean_
 
 Returns true if the size of _value_ is zero, false otherwise.
-
-
 
 
 ## Promise
@@ -916,65 +824,78 @@ _@dashkite/joy/promise_
 
 _promise function &rarr; promise_
 
-Convenience wrapper for the [`Promise` constructor][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
+Creates a promise.
 
+Convenience wrapper for [`Promise` constructor][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
 
 
 ### resolve
 
 _resolve value &rarr; promise_
 
-Returns a promise that resolve to _value_. Convenience wrapper for [`Promise.resolve`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
+Returns a promise that resolve to _value_.
 
+Convenience wrapper for [`Promise.resolve`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
 
 
 ### reject
 
 _reject error &rarr; promise_
 
-Returns a promise that rejects with _error_. Convenience wrapper for [`Promise.reject`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
+Returns a promise that rejects with _error_.
 
+Convenience wrapper for [`Promise.reject`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
 
 
 ### all
 
 _all iterable &rarr; promise_
 
-Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected. Convenience wrapper for [`Promise.all`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected.
 
+Convenience wrapper for [`Promise.all`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 
 
 ### any
 
 _any iterable &rarr; promise_
 
-Returns a promise that resolves to the values of the first resolved promise of the _iterable_. If none of the promises resolve, the promise rejects. Convenience wrapper for [`Promise.any`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
+Returns a promise that resolves to the values of the first resolved promise of the _iterable_. If none of the promises resolve, the promise rejects.
 
+Convenience wrapper for [`Promise.any`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
 
 
 ### race
 
 _race iterable &rarr; promise_
 
-Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise. Convenience wrapper for [`Promise.race`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
+Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise.
 
+Convenience wrapper for [`Promise.race`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
 
 
 ### map
 
 _map iterable &rarr; promise_
 
-Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results. Convenience wrapper for [`Promise.allSettled`][mdn]:
-> For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results.
+For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
 
+Convenience wrapper for [`Promise.allSettled`][wraps].
 
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
 
 
 ## Text
@@ -986,45 +907,55 @@ _@dashkite/joy/text_
 
 _toString value &rarr; string_
 
-Returns a string representation of _value_. Convenience wrapper for the [`toString`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+Returns a string representation of _value_.
 
+Convenience wrapper for [`Object::toString`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
 
 
 ### toUpperCase
 
 _toUpperCase string &rarr; string_
 
-Returns a the given string in upper case. Convenience wrapper for the [`toUpperCase`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+Returns a the given string in upper case.
 
+Convenience wrapper for [`String::toUpperCase`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 
 
 ### toLowerCase
 
 _toLowerCase string &rarr; string_
 
-Returns a the given string in lower case. Convenience wrapper for the [`toLowerCase`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+Returns a the given string in lower case.
 
+Convenience wrapper for [`String::toLowerCase`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 
 
 ### trim
 
 _trim string &rarr; string_
 
-Returns a the given string with leading and trailing whitespace removed. Convenience wrapper for the [`trim`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+Returns a the given string with leading and trailing whitespace removed.
 
+Convenience wrapper for [`String::trim`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
 
 
 ### split
 
 _split pattern, string &rarr; array_
 
-Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_. Convenience wrapper for the [`split`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_.
 
+Convenience wrapper for [`String::split`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 
 
 ### w
@@ -1034,7 +965,6 @@ _w string &rarr; array_
 Returns an array obtained by splitting _string_ on whitespace.
 
 
-
 ### isBlank
 
 _isBlank string &rarr; boolean_
@@ -1042,33 +972,30 @@ _isBlank string &rarr; boolean_
 Returns true if the string is empty, false otherwise.
 
 
-
 ### match
 
 _match pattern, string &rarr; match_
 
-Returns the [match data][mdn-a] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match. Convenience wrapper for the [`match`][mdn-b] method.
-[mdn-a]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value [mdn-b]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+Returns the [match data][] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match.
 
+Convenience wrapper for [`String::match`][wraps].
+
+[match data]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
 
 
 ### isMatch
 
 _isMatch pattern, string &rarr; boolean_
 
-Returns true if the given Regular Expression _pattern_ matches, false otherwise. Convenience wrapper for the [`RegExp::test`][mdn] method.
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
-
+Returns true if the given Regular Expression _pattern_ matches, false otherwise.
 
 
 ### replace
 
 _replace pattern, replacement, string &rarr; string_
 
-Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
-[mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-
-
+Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string.
 
 
 ## Array
@@ -1083,13 +1010,11 @@ _first array &rarr; value_
 Returns the first element of _array_.
 
 
-
 ### second
 
 _second array &rarr; value_
 
 Returns the second element of _array_.
-
 
 
 ### third
@@ -1099,13 +1024,11 @@ _third array &rarr; value_
 Returns the third element of _array_.
 
 
-
 ### fourth
 
 _fourth array &rarr; value_
 
 Returns the fourth element of _array_.
-
 
 
 ### fifth
@@ -1115,13 +1038,11 @@ _fifth array &rarr; value_
 Returns the fifth element of _array_.
 
 
-
 ### nth
 
 _nth n, array &rarr; value_
 
 Returns the _nth_ element of _array_.
-
 
 
 ### last
@@ -1131,13 +1052,11 @@ _last array &rarr; value_
 Returns the last element of _array_.
 
 
-
 ### rest
 
 _rest array &rarr; array_
 
 Returns a new array consisting of all but the first element of the given array.
-
 
 
 ### slice
@@ -1146,9 +1065,9 @@ _slice start, end, array &rarr; array_
 
 Returns an array containing the elements in _array_ from _start_ up to, but not including, _end_.
 
-Convenience wrapper for [`Array::slice`][].
+Convenience wrapper for [`Array::slice`][wraps].
 
-[`Array::slice`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 
 
 ### push/enqueue
@@ -1157,9 +1076,9 @@ _push/enqueue array, value &rarr; array_
 
 Adds _value_ to the end of _array_ and returns the mutated array.
 
-Convenience wrapper for [`Array::push`][].
+Convenience wrapper for [`Array::push`][wraps].
 
-[`Array::push`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
 
 ### pop/dequeue
@@ -1168,6 +1087,9 @@ _pop/dequeue array &rarr; value_
 
 Removes _value_ from the end of _array_ and returns it, mutating the array.
 
+Convenience wrapper for [`Array::pop`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
 
 
 ### shift
@@ -1176,6 +1098,9 @@ _shift array, value &rarr; array_
 
 Removes _value_ from the start of the _array_ and returns it, mutating the array.
 
+Convenience wrapper for [`Array::shift`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
 
 
 ### unshift
@@ -1184,6 +1109,9 @@ _unshift array, value &rarr; array_
 
 Adds _value_ to the start of the _array_ and returns the mutated array.
 
+Convenience wrapper for [`Array::unshift`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
 
 
 ### cat
@@ -1192,6 +1120,9 @@ _cat array, array, ... &rarr; array_
 
 Concatenates arrays passed as arguments, returning a new array.
 
+Convenience wrapper for [`Array::concat`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 
 
 ### splice
@@ -1200,6 +1131,9 @@ _splice start, end, array &rarr; array_
 
 Removes the elements in _array_ from _start_ up to, but not including, _end_, and returns the mutated array.
 
+Convenience wrapper for [`Array::splice`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
 
 ### insert
@@ -1209,7 +1143,6 @@ _insert index, value, array &rarr; array_
 Inserts _value_ into array at _index_, returning the mutated array.
 
 
-
 ### remove
 
 _remove value, array &rarr; array_
@@ -1217,54 +1150,65 @@ _remove value, array &rarr; array_
 Removes _value_ from array, if it exists within it, returning the mutated array.
 
 
-
 ### range
 
-_range  &rarr; _
+_range start, finish &rarr; array_
 
-
-
+Returns a numeric array with consecutive values from _start_ to _finish_.
 
 
 ### join
 
-_join  &rarr; _
+_join text, array &rarr; string_
 
+Returns a string formed by concatening consecutive elements of _array_ with _text_.
 
+Convenience wrapper for [`Array::join`][wraps].
 
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 
 
 ### fill
 
-_fill  &rarr; _
+_fill value, array &rarr; array_
+
+Sets each element of _array_ to _value_ and returns the mutated array.
+
+Convenience wrapper for [`Array::fill`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
 
 
+### sort
 
+_sort comparator, array &rarr; array_
+
+Sorts the given array in place using the _comparator_ function. Returns the sorted (mutated) array.
+
+Convenience wrapper for [`Array::sort`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
 
 ### pluck
 
-_pluck  &rarr; _
+_pluck array &rarr; value_
 
-
-
+Returns a random element from _array_.
 
 
 ### pair
 
-_pair  &rarr; _
+_pair value, value &rarr; array_
 
-
-
+Returns its arguments as an array.
 
 
 ### shuffle
 
-_shuffle  &rarr; _
+_shuffle array &rarr; array_
 
-
-
-
+Randomly shuffles the elements of the array.
 
 
 ## Set
@@ -1274,51 +1218,44 @@ _@dashkite/joy/set_
 
 ### union
 
-_union  &rarr; _
+_union iterable, iterable &rarr; set_
 
-
-
+Returns a set that is the union of the given iterables.
 
 
 ### intersection
 
-_intersection  &rarr; _
+_intersection iterable, iterable &rarr; set_
 
-
-
+Returns a set that is the intersection (the common elements) of the given iterables.
 
 
 ### complement
 
-_complement  &rarr; _
+_complement iterable, iterable &rarr; set_
 
-
-
+Returns a set that is the complement (values that are only produced by one iterable) of the given iterables.
 
 
 ### difference
 
-_difference  &rarr; _
+_difference iterable, iterable &rarr; set_
 
-
-
+Returns a set that is consists of the elements of the first iterable after removing the elements of the second.
 
 
 ### unique
 
-_unique  &rarr; _
+_unique iterable &rarr; set_
 
-
-
+Returns a set that is consists only of the unique elements of _iterable_.
 
 
 ### dupes
 
-_dupes  &rarr; _
+_dupes iterable &rarr; set_
 
-
-
-
+Returns a set that is consists only of the non-unique elements of _iterable_.
 
 
 ## Iterable
@@ -1328,19 +1265,20 @@ _@dashkite/joy/iterable_
 
 ### includes
 
-_includes  &rarr; _
+_includes value, iterable &rarr; boolean_
 
+Returns true if _value_ is produced by _iterable_, false otherwise. Specialized for array.
 
+Convenience wrapper for [`Array::includes`][wraps].
 
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 
 
 ### uniqueBy
 
-_uniqueBy  &rarr; _
+_uniqueBy comparator, iterable &rarr; array_
 
-
-
-
+Returns an array of the unique values of _iterable_ as determined by the _comparator_ function.
 
 
 ## Math
@@ -1350,115 +1288,114 @@ _@dashkite/joy/math_
 
 ### gt
 
-_gt  &rarr; _
+_gt x, y &rarr; boolean_
 
-
-
+Returns true if x > y, false otherwise.
 
 
 ### lt
 
-_lt  &rarr; _
+_lt x, y &rarr; boolean_
 
-
-
+Returns true if x < y, false otherwise.
 
 
 ### gte
 
-_gte  &rarr; _
+_gte x, y &rarr; boolean_
 
-
-
+Returns true if x >= y, false otherwise.
 
 
 ### lte
 
-_lte  &rarr; _
+_lte x, y &rarr; boolean_
 
-
-
+Returns true if x <= y, false otherwise.
 
 
 ### add
 
-_add  &rarr; _
+_add x, y &rarr; number_
 
-
-
+Returns x + y.
 
 
 ### sub
 
-_sub  &rarr; _
+_sub x, y &rarr; number_
 
-
-
+Returns x - y.
 
 
 ### mul
 
-_mul  &rarr; _
+_mul x, y &rarr; number_
 
-
-
+Returns x * y.
 
 
 ### div
 
-_div  &rarr; _
+_div x, y &rarr; number_
 
-
-
+Returns x / y.
 
 
 ### mod
 
-_mod  &rarr; _
+_mod x, y &rarr; number_
+
+Returns x % y.
 
 
+### isModulo
 
+_isModulo x, y &rarr; boolean_
+
+Returns true if y % x is zero, false otherwise.
 
 
 ### even
 
-_even  &rarr; _
+_even x &rarr; boolean_
 
-
-
+Returns true if x % 2 is zero, false otherwise.
 
 
 ### odd
 
-_odd  &rarr; _
+_odd x &rarr; boolean_
 
-
-
+Returns true if x % 2 is non-zero, false otherwise.
 
 
 ### min
 
-_min  &rarr; _
+_min array &rarr; number_
 
-
-
+Returns the minimum number in _array_.
 
 
 ### max
 
-_max  &rarr; _
+_max array &rarr; number_
 
-
-
+Returns the maximum number in _array_.
 
 
 ### abs
 
-_abs  &rarr; _
+_abs x &rarr; number_
+
+Returns the absolute value of _x_.
 
 
+### pow
 
+_pow x, y &rarr; number_
 
+Returns the x to the power of y. The arguments may be BigInt instances.
 
 
 ## Time
@@ -1468,17 +1405,44 @@ _@dashkite/joy/time_
 
 ### timer
 
-_timer  &rarr; _
+_timer interval, action &rarr; cancel_
 
+Calls _action_ function after the _interval_ (in milliseconds) has expired. Returns a function to cancel the timer.
 
+Convenience wrapper for [`setTimeout`][wraps].
 
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
 
 
 ### sleep
 
-_sleep  &rarr; _
+_sleep interval &rarr; promise_
+
+Returns a promise that resolves after the _interval_ (in milliseconds) has expired.
+
+Convenience wrapper for [`setTimeout`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
 
 
+### milliseconds
+
+_milliseconds () &rarr; number_
+
+Returns the current time in milliseconds, with precision to microseconds if available.
+
+Convenience wrapper for [`Performance::now`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
 
 
+### benchmark
+
+_benchmark function &rarr; number_
+
+Runs _function_ returning the elapsed time in milliseconds, with precision to microseconds if available. If _function_ returns a promise, returns a promise that resolves to the elapsed time.
+
+Convenience wrapper for [`Performance::now`][wraps].
+
+[wraps]: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
 

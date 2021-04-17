@@ -24,11 +24,15 @@ _{{name}} {{arguments}} &rarr; {{returns}}_
 
 {{{description}}}
 
-{{#if wrapper}}
-Convenience wrapper for [`{{wrapper.for}}`][].
+{{#if wraps}}
+Convenience wrapper for [`{{wraps}}`][wraps].
 
-[`{{wrapper.for}}`]: {{wrapper.link}}
-{{/if}}
+{{/if~}}
+
+{{#if _wraps}}
+Convenience wrapper for [{{{_wraps}}}][wraps].
+
+{{/if~}}
 
 {{#if example}}
 #### Example
@@ -36,8 +40,16 @@ Convenience wrapper for [`{{wrapper.for}}`][].
 ```coffeescript
 {{{example}}}
 ```
+
 {{/if~}}
 
+{{#if links}}
+{{#each links}}
+[{{@key}}]: {{.}}
 {{/each}}
 
-{{/each}}
+{{/if~}}
+
+{{/each~}}
+
+{{/each~}}

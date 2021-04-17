@@ -124,17 +124,16 @@
     arguments: function, arguments
     returns: value
     description: >-
-      Calls the given function with the given arguments. Convenience for [`Function::apply`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
+      Calls the given function with the given arguments. Use with [`bind`](#bind) to bind `this`.
+    wraps: Function::apply
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
-
-  - name: call
-    arguments: function, arguments...
+  - name: send
+    arguments: name, arguments, object
     returns: value
     description: >-
-      Calls the given function with the given arguments. Convenience for [`Function::call`][mdn], except without a `this` argument. (Compose with [`bind`](#bind) to bind `this`.)
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+      Invokes the named method on _object_ with _arguments_.
 
   - name: spread
     arguments: function
@@ -168,7 +167,7 @@
     returns: function
     description: >-
       Generic function wrapper around [`Generic.create`](#Generic.create).
-    example: |
+    example: |-
       fib = generic
         name: "fib"
         description: "Fibonacci sequence"
@@ -257,7 +256,7 @@
     returns: array
     description: >-
       Returns the properties for the given object as an associative array (an array of two-element arrays).
-    example: |
+    example: |-
       assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
         [["a", 1], ["b", 2], ["c", 3]]
 
@@ -298,7 +297,7 @@
     returns: object
     description: >-
       Returns true if _object_ matches _exemplar_, false otherwise. An exemplar matches if all of its properties are equal to the corresponding properties in the target object. Matching is done recursively, so the exemplar can contain nested values.
-    example: |
+    example: |-
       assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
       assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}
 
@@ -309,9 +308,10 @@
     arguments: key, description, target
     returns: object
     description: >-
-      Defines a property on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `property` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+      Defines a property on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `property` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
+    wraps: Object.defineProperty
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
   - name: properties
     arguments: dictionary, target
@@ -319,15 +319,14 @@
     description: >-
       Defines properties on _target_ using the given _dictionary_ of keys and property names. Convenience wrapper for [`property`](#property). Like most Joy functions, `properties` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
   - name: getter
     arguments: key, function, target
     returns: object
     description: >-
-      Defines a getter on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `getter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+      Defines a getter on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `getter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
+    wraps: Object.defineProperty
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
   - name: getters
     arguments: dictionary, target
@@ -335,9 +334,7 @@
     description: >-
       Defines getters on _target_ using the given _dictionary_ of keys and getter functions. Convenience wrapper for [`getter`](#getter). Like most Joy functions, `getters` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
-    example: |
+    example: |-
       class Foo
         mixin @::, [
           getters
@@ -349,9 +346,10 @@
     arguments: key, function, target
     returns: object
     description: >-
-      Defines a setter on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `setter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+      Defines a setter on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `setter` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
+    wraps: Object.defineProperty
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
   - name: setters
     arguments: dictionary, target
@@ -359,23 +357,17 @@
     description: >-
       Defines setters on _target_ using the given _dictionary_ of keys and setter functions. Convenience wrapper for [`setter`](#setter). Like most Joy functions, `setters` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
-
   - name: method
     arguments: key, function, target
     returns: object
     description: >-
-      Defines a method on _target_ using the given _key_ (the property name) and _description_. Convenience for [`Object.defineProperty`][mdn]. Like most Joy functions, `method` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+      Defines a method on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `method` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
 
   - name: methods
     arguments: dictionary, target
     returns: object
     description: >-
       Defines methods on _target_ using the given _dictionary_ of keys and methods. Convenience wrapper for [`method`](#method). Like most Joy functions, `methods` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
 
   - name: mixin
     arguments: target, functions
@@ -621,9 +613,9 @@
     arguments: value
     returns: integer
     description: >-
-      Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+      Returns the size of _value_, if possible. A value is considered to have a size is it has a `length`, `size`, or `byteLength` property, or if it is an object, in which case we use the length of the array returned by [`Object.keys`][Object.keys].
+    links:
+      Object.keys: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 
   - name: isEmpty
     arguments: value
@@ -639,59 +631,66 @@
     arguments: function
     returns: promise
     description: >-
-      Convenience wrapper for the [`Promise` constructor][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
+      Creates a promise.
+    _wraps: '`Promise` constructor'
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise
 
   - name: resolve
     arguments: value
     returns: promise
     description: >-
-      Returns a promise that resolve to _value_. Convenience wrapper for [`Promise.resolve`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
+      Returns a promise that resolve to _value_.
+    wraps: Promise.resolve
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve
 
   - name: reject
     arguments: error
     returns: promise
     description: >-
-      Returns a promise that rejects with _error_. Convenience wrapper for [`Promise.reject`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
+      Returns a promise that rejects with _error_.
+    wraps: Promise.reject
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/reject
 
   - name: all
     arguments: iterable
     returns: promise
     description: >-
-      Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected. Convenience wrapper for [`Promise.all`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+      Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected.
+    wraps: Promise.all
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
 
   - name: any
     arguments: iterable
     returns: promise
     description: >-
-      Returns a promise that resolves to the values of the first resolved promise of the _iterable_. If none of the promises resolve, the promise rejects. Convenience wrapper for [`Promise.any`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/any
+      Returns a promise that resolves to the values of the first resolved promise of the _iterable_. If none of the promises resolve, the promise rejects.
+    wraps: Promise.any
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
 
   - name: race
     arguments: iterable
     returns: promise
     description: >-
-      Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise. Convenience wrapper for [`Promise.race`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
+      Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise.
+    wraps: Promise.race
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race
 
   - name: map
     arguments: iterable
     returns: promise
     description: >-
-      Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results. Convenience wrapper for [`Promise.allSettled`][mdn]:
+      Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results.
 
-      > For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
+      For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.
+    wraps: Promise.allSettled
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled
 
 - name: Text
   functions:
@@ -700,41 +699,46 @@
     arguments: value
     returns: string
     description: >-
-      Returns a string representation of _value_. Convenience wrapper for the [`toString`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
+      Returns a string representation of _value_.
+    wraps: Object::toString
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString
 
   - name: toUpperCase
     arguments: string
     returns: string
     description: >-
-      Returns a the given string in upper case. Convenience wrapper for the [`toUpperCase`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+      Returns a the given string in upper case.
+    wraps: String::toUpperCase
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
 
   - name: toLowerCase
     arguments: string
     returns: string
     description: >-
-      Returns a the given string in lower case. Convenience wrapper for the [`toLowerCase`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+      Returns a the given string in lower case.
+    wraps: String::toLowerCase
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
 
   - name: trim
     arguments: string
     returns: string
     description: >-
-      Returns a the given string with leading and trailing whitespace removed. Convenience wrapper for the [`trim`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+      Returns a the given string with leading and trailing whitespace removed.
+    wraps: String::trim
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
 
   - name: split
     arguments: pattern, string
     returns: array
     description: >-
-      Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_. Convenience wrapper for the [`split`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
+      Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_.
+    wraps: String::split
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
 
   - name: w
     arguments: string
@@ -752,26 +756,29 @@
     arguments: pattern, string
     returns: match
     description: >-
-      Returns the [match data][mdn-a] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match. Convenience wrapper for the [`match`][mdn-b] method.
-
-      [mdn-a]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value
-      [mdn-b]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
+      Returns the [match data][] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match.
+    wraps: String::match
+    links:
+      match data: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match
 
   - name: isMatch
     arguments: pattern, string
     returns: boolean
     description: >-
-      Returns true if the given Regular Expression _pattern_ matches, false otherwise. Convenience wrapper for the [`RegExp::test`][mdn] method.
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
+      Returns true if the given Regular Expression _pattern_ matches, false otherwise.
+    wrapper:
+      for: RegExp::test
+      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
 
   - name: replace
     arguments: pattern, replacement, string
     returns: string
     description: >-
-      Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string. Convenience wrapper for [`replace`][mdn].
-
-      [mdn]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+      Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string.
+    wrapper:
+      for: String::replace
+      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
 - name: Array
   functions:
@@ -829,48 +836,63 @@
     returns: array
     description: >-
       Returns an array containing the elements in _array_ from _start_ up to, but not including, _end_.
-    wrapper:
-      for: Array::slice
-      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+    wraps: Array::slice
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 
   - name: push/enqueue
     arguments: array, value
     returns: array
     description: >-
       Adds _value_ to the end of _array_ and returns the mutated array.
-    wrapper:
-      for: Array::push
-      link: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+    wraps: Array::push
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push
 
   - name: pop/dequeue
     arguments: array
     returns: value
     description: >-
       Removes _value_ from the end of _array_ and returns it, mutating the array.
+    wraps: Array::pop
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
 
   - name: shift
     arguments: array, value
     returns: array
     description: >-
       Removes _value_ from the start of the _array_ and returns it, mutating the array.
+    wraps: Array::shift
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
 
   - name: unshift
     arguments: array, value
     returns: array
     description: >-
       Adds _value_ to the start of the _array_ and returns the mutated array.
+    wraps: Array::unshift
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
 
   - name: cat
     arguments: array, array, ...
     returns: array
     description: >-
       Concatenates arrays passed as arguments, returning a new array.
+    wraps: Array::concat
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 
   - name: splice
     arguments: start, end, array
     returns: array
     description: >-
       Removes the elements in _array_ from _start_ up to, but not including, _end_, and returns the mutated array.
+    wraps: Array::splice
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 
   - name: insert
     arguments: index, value, array
@@ -884,76 +906,244 @@
     description: >-
       Removes _value_ from array, if it exists within it, returning the mutated array.
 
- # TODO remember to add the MDN references for fns that are basically wrappers functions
   - name: range
+    arguments: start, finish
+    returns: array
+    description: >-
+      Returns a numeric array with consecutive values from _start_ to _finish_.
 
   - name: join
+    arguments: text, array
+    returns: string
+    description: >-
+      Returns a string formed by concatening consecutive elements of _array_ with _text_.
+    wraps: Array::join
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
 
   - name: fill
+    arguments: value, array
+    returns: array
+    description: >-
+      Sets each element of _array_ to _value_ and returns the mutated array.
+    wraps: Array::fill
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill
+
+  - name: sort
+    arguments: comparator, array
+    returns: array
+    description: >-
+      Sorts the given array in place using the _comparator_ function. Returns the sorted (mutated) array.
+    wraps: Array::sort
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 
   - name: pluck
+    arguments: array
+    returns: value
+    description: >-
+      Returns a random element from _array_.
 
   - name: pair
+    arguments: value, value
+    returns: array
+    description:
+      Returns its arguments as an array.
 
   - name: shuffle
+    arguments: array
+    returns: array
+    description: >-
+      Randomly shuffles the elements of the array.
 
 - name: Set
   functions:
 
   - name: union
+    arguments: iterable, iterable
+    returns: set
+    description: >-
+      Returns a set that is the union of the given iterables.
 
   - name: intersection
+    arguments: iterable, iterable
+    returns: set
+    description: >-
+      Returns a set that is the intersection (the common elements) of the given iterables.
 
   - name: complement
+    arguments: iterable, iterable
+    returns: set
+    description: >-
+      Returns a set that is the complement (values that are only produced by one iterable) of the given iterables.
 
   - name: difference
+    arguments: iterable, iterable
+    returns: set
+    description: >-
+      Returns a set that is consists of the elements of the first iterable after removing the elements of the second.
 
   - name: unique
+    arguments: iterable
+    returns: set
+    description: >-
+      Returns a set that is consists only of the unique elements of _iterable_.
 
   - name: dupes
-
+    arguments: iterable
+    returns: set
+    description: >-
+      Returns a set that is consists only of the non-unique elements of _iterable_.
 
 - name: Iterable
   functions:
 
+  # TODO maybe document this as separate variants?
   - name: includes
+    arguments: value, iterable
+    returns: boolean
+    description: >-
+      Returns true if _value_ is produced by _iterable_, false otherwise. Specialized for array.
+    wraps: Array::includes
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
 
   - name: uniqueBy
+    arguments: comparator, iterable
+    returns: array
+    description: >-
+      Returns an array of the unique values of _iterable_ as determined by the _comparator_ function.
 
 - name: Math
   functions:
 
   - name: gt
+    arguments: x, y
+    returns: boolean
+    description: >-
+      Returns true if x > y, false otherwise.
 
   - name: lt
+    arguments: x, y
+    returns: boolean
+    description: >-
+      Returns true if x < y, false otherwise.
 
   - name: gte
+    arguments: x, y
+    returns: boolean
+    description: >-
+      Returns true if x >= y, false otherwise.
 
   - name: lte
+    arguments: x, y
+    returns: boolean
+    description: >-
+      Returns true if x <= y, false otherwise.
 
   - name: add
+    arguments: x, y
+    returns: number
+    description: Returns x + y.
 
   - name: sub
+    arguments: x, y
+    returns: number
+    description: Returns x - y.
 
   - name: mul
+    arguments: x, y
+    returns: number
+    description: Returns x * y.
 
   - name: div
+    arguments: x, y
+    returns: number
+    description: Returns x / y.
 
   - name: mod
+    arguments: x, y
+    returns: number
+    description: Returns x % y.
+
+  - name: isModulo
+    arguments: x, y
+    returns: boolean
+    description: >-
+      Returns true if y % x is zero, false otherwise.
 
   - name: even
+    arguments: x
+    returns: boolean
+    description: >-
+      Returns true if x % 2 is zero, false otherwise.
 
   - name: odd
+    arguments: x
+    returns: boolean
+    description: >-
+      Returns true if x % 2 is non-zero, false otherwise.
 
   - name: min
+    arguments: array
+    returns: number
+    description: >-
+      Returns the minimum number in _array_.
 
   - name: max
+    arguments: array
+    returns: number
+    description: >-
+      Returns the maximum number in _array_.
 
   - name: abs
+    arguments: x
+    returns: number
+    description: >-
+      Returns the absolute value of _x_.
+
+  - name: pow
+    arguments: x, y
+    returns: number
+    description: >-
+      Returns the x to the power of y. The arguments may be BigInt instances.
 
 - name: Time
   functions:
 
   - name: timer
+    arguments: interval, action
+    returns: cancel
+    description: >-
+      Calls _action_ function after the _interval_ (in milliseconds) has expired. Returns a function to cancel the timer.
+    wraps: setTimeout
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
 
   - name: sleep
+    arguments: interval
+    returns: promise
+    description: >-
+      Returns a promise that resolves after the _interval_ (in milliseconds) has expired.
+    wraps: setTimeout
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout
+
+  - name: milliseconds
+    arguments: ()
+    returns: number
+    description: >-
+      Returns the current time in milliseconds, with precision to microseconds if available.
+    wraps: Performance::now
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
+
+  - name: benchmark
+    arguments: function
+    returns: number
+    description: >-
+      Runs _function_ returning the elapsed time in milliseconds, with precision to microseconds if available. If _function_ returns a promise, returns a promise that resolves to the elapsed time.
+    wraps: Performance::now
+    links:
+      wraps: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
