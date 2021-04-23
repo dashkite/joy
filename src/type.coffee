@@ -80,6 +80,16 @@ isArrayBuffer = isType ArrayBuffer
 isDataView = isType DataView
 isTypedArray = isKind prototype Uint8Array
 
+isIterable = (x) ->
+  (isFunction x?[Symbol.iterator]) || (isGeneratorFunction x)
+
+isIterator = (x) -> (isFunction x?.next) && (isIterable x)
+
+isReagent = isAsyncIterable = (x) ->
+  (isFunction x?[Symbol.asyncIterator]) || (isAsyncGeneratorFunction x)
+
+isReactor = isAsyncIterator = (x) -> (isFunction x?.next) && (isReagent x)
+
 areType = curry (type, array) ->
   return false unless isArray array
   for item in array
@@ -126,6 +136,12 @@ export {
   isArrayBuffer
   isDataView
   isTypedArray
+  isIterable
+  isIterator
+  isReagent
+  isAsyncIterable
+  isReactor
+  isAsyncIterator
   areType
   areKind
 }
