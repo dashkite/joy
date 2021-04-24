@@ -6,7 +6,7 @@ import {isType, isKind, isFunction, isString, isNumber,
 
 import { Generic, generic } from "../src/generic"
 
-do ->
+export default ->
 
   print await test "Generics", [
 

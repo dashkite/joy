@@ -5,25 +5,19 @@ import {
   toString
   toUpperCase
   toLowerCase
-  capitalize
-  titleCase
-  camelCase
-  underscored
-  dashed
-  plainText
-  htmlEscape
+  trim
+  split
   w
   isBlank
   match
   isMatch
   replace
-  trim
-  split
+  template
 } from "../src/text"
 
-do ->
+export default ->
 
-  print await test "string helpers", [
+  print await test "text helpers", [
 
     test "toString", ->
       assert (toString 1) == Number(1).toString()
@@ -53,5 +47,11 @@ do ->
 
     test "replace", ->
       assert (replace /bar/, "baz", "foobar") == "foobaz"
+
+    test "template", ->
+      f = template "foo {{ bar | reverse }} baz",
+        reverse: (s) -> s.split("").reverse().join("")
+      assert.equal "foo xuaf baz", f bar: "faux"
+
 
 ]

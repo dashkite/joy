@@ -5,7 +5,7 @@ import * as _ from "../src/time"
 
 import { performance } from "perf_hooks"
 
-export default do ->
+export default ->
 
   print await test "time helpers", [
 

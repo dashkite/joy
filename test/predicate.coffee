@@ -6,7 +6,7 @@ import * as fn from "../src/function"
 # module under text
 import * as x from "../src/predicate"
 
-do ->
+export default ->
 
   print await test "predicates", [
 

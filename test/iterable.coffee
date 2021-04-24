@@ -4,7 +4,7 @@ import {test, print} from "amen"
 # under test
 import * as _ from "../src/iterable"
 
-do ->
+export default ->
 
   print await test "iterable", [
 

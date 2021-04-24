@@ -4,7 +4,7 @@ import {test, print} from "amen"
 # module under test
 import * as x from "../src/metaclass"
 
-do ->
+export default ->
 
   print await test "metaclass", [
 

@@ -33,6 +33,17 @@ isMatch = curry (pattern, string) -> pattern.test string
 replace = curry (pattern, replacement, string) ->
   string.replace pattern, replacement
 
+template = (string, filters = {}) ->
+  do ({ key, apply } = {}) ->
+    filters = Object.assign {},
+      {toString, toUpperCase, toLowerCase, trim},
+      filters
+    apply = (string, name) -> filters[name] string
+    (context) ->
+      string.replace /\{\{([\s\S]+)\}\}/g, (_, target) ->
+        [key, names...] = target.split("|").map trim
+        names.reduce apply, context[key]
+
 export {
   toString
   toUpperCase
@@ -44,4 +55,5 @@ export {
   match
   isMatch
   replace
+  template
 }

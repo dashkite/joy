@@ -19,6 +19,12 @@ unshift = curry (ax, a) -> ax.unshift a; ax
 enqueue = unshift
 dequeue = pop
 
+# TODO there are a whole bunch of these kinds of search fns
+#      we're not including b/c of some philosophical questions
+#      about the role of this module, but i'm including this
+#      one for now b/c it comes up frequently
+includes = curry (a, ax) -> a in ax
+
 # true splice without weird insertion option
 # or compose-breaking return value
 splice = curry (i, n, ax) ->

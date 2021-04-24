@@ -4,7 +4,7 @@ import {test, print} from "amen"
 import {sleep} from "../src/time"
 import {equal, clone, size, isEmpty} from "../src/value"
 
-do ->
+export default ->
 
   print await test "value", [
 

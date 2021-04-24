@@ -3,7 +3,8 @@ import {test, print} from "amen"
 
 import * as _ from "../src/math"
 
-do ->
+export default ->
+  
   print await test "numeric helpers", [
     test "gt", -> assert _.gt 5, 6
     test "lt", -> assert _.lt 6, 5

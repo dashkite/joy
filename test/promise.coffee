@@ -5,7 +5,7 @@ import {get} from "../src/object"
 
 import {promise, resolve, reject, all, any, race, map} from "../src/promise"
 
-do -> print await test "promise", [
+export default -> print await test "promise", [
 
   test "promise", ->
     assert.equal true, (promise ->).then?

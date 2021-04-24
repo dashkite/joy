@@ -4,9 +4,9 @@ import {print, test, success} from "amen"
 # module under text
 import * as _ from "../src/function"
 
-do ->
+export default ->
 
-  print await test "Core functions", [
+  print await test "function", [
 
     test "identity", -> assert.equal 7, _.identity 7
     test "wrap", -> assert.equal 7, (_.wrap 7)()

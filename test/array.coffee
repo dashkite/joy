@@ -4,9 +4,9 @@ import {test, print} from "amen"
 # module under test
 import * as _ from "../src/array"
 
-do ->
+export default ->
 
-  print await test "array helpers", [
+  print await test "array", [
 
     test "first", -> assert (_.first [1..5]) == 1
     test "second", -> assert (_.second [1..5]) == 2

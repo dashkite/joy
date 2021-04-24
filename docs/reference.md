@@ -35,7 +35,7 @@
 
 **Text**
 
-[toString](#tostring) | [toUpperCase](#touppercase) | [toLowerCase](#tolowercase) | [trim](#trim) | [split](#split) | [w](#w) | [isBlank](#isblank) | [match](#match) | [isMatch](#ismatch) | [replace](#replace)
+[toString](#tostring) | [toUpperCase](#touppercase) | [toLowerCase](#tolowercase) | [trim](#trim) | [split](#split) | [w](#w) | [isBlank](#isblank) | [match](#match) | [isMatch](#ismatch) | [replace](#replace) | [template](#template)
 
 **Array**
 
@@ -996,6 +996,22 @@ Returns true if the given Regular Expression _pattern_ matches, false otherwise.
 _replace pattern, replacement, string &rarr; string_
 
 Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string.
+
+
+### template
+
+_template string[, filters] &rarr; function_
+
+Returns a function that will substitute the properties of its argument into the given string, processing it using the optional filters.
+Lightweight but relatively limited and slow. Uses regexp substitution and does not support common templating features, such as control flow, iteration, or escaping.
+
+#### Example
+
+```coffeescript
+f = template "foo {{ bar | reverse }} baz",
+  reverse: (s) -> s.split("").reverse().join("")
+assert.equal "foo xuaf baz", f bar: "faux"
+```
 
 
 ## Array

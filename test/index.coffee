@@ -2,7 +2,7 @@ import {success} from "amen"
 import p from "path"
 import * as q from "panda-quill"
 
-run = (target) -> (require "./#{target}").default
+run = (target) -> ((await import("./#{target}")).default)()
 
 do ->
 

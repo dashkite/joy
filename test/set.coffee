@@ -4,7 +4,7 @@ import {test, print} from "amen"
 # under test
 import * as _ from "../src/set"
 
-do ->
+export default ->
 
   print await test "set", [
 

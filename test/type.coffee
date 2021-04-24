@@ -27,7 +27,7 @@ import {
   areKind
 } from "../src/type"
 
-do ->
+export default ->
 
   print await test "type", [
 

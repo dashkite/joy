@@ -8,7 +8,7 @@ import {isDefined} from "../src/type"
 import * as x from "../src/object"
 
 
-export default do ->
+export default ->
 
   print await test "object helpers", [
 
