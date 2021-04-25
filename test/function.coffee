@@ -71,6 +71,7 @@ export default ->
       b = (x) -> x + "b"
       c = (x) -> x + "c"
       f = _.pipe [ a, b, c ]
+      assert.equal 1, f.length
       assert.equal "Sabc", f "S"
 
     test "compose", ->
@@ -78,14 +79,16 @@ export default ->
       b = (x) -> x + "b"
       c = (x) -> x + "c"
       f = _.compose [ c, b, a ]
+      assert.equal 1, f.length
       assert.equal "Sabc", f "S"
 
     test "flow", ->
       a = (x) -> Promise.resolve x + "a"
       b = (x) -> Promise.resolve x + "b"
       c = (x) -> Promise.resolve x + "c"
-      alpha = _.flow [ a, b, c ]
-      assert.equal "Sabc", await alpha "S"
+      f = _.flow [ a, b, c ]
+      assert.equal 1, f.length
+      assert.equal "Sabc", await f "S"
 
     test "flowWith", ->
       r = []
@@ -93,8 +96,9 @@ export default ->
       a = (x) -> Promise.resolve x + "a"
       b = (x) -> Promise.resolve x + "b"
       c = (x) -> Promise.resolve x + "c"
-      alpha = _.flowWith log, [ a, b, c ]
-      assert.equal "Sabc", await alpha "S"
+      f = _.flowWith log, [ a, b, c ]
+      assert.equal 1, f.length
+      assert.equal "Sabc", await f "S"
       assert.deepEqual r, [
         [ "S" ]
         [ "Sa" ]

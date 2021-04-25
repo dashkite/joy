@@ -119,6 +119,7 @@ export default ->
         test "isAsyncFunction", ->
           f = -> await true
           assert isAsyncFunction f
+
       ]
 
     test "Type", do ->

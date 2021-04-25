@@ -100,7 +100,7 @@ stack = (f) -> (ax...) -> f ax
 # Inspired by Rambda: https://ramdajs.com/docs/#pipeWith
 pipeWith = curry (c, fx) ->
   gx = ((c f) for f in fx)
-  (ax...) ->
+  arity fx[0].length, (ax...) ->
     for f, i in gx
       ax = [ f ax... ]
     ax[0]
