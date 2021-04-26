@@ -10,6 +10,7 @@ export default ->
 
     test "includes", ->
       assert (_.includes 3, [1..5]) && !(_.includes 6, [1..5])
+      assert.throws -> _.includes [1..5], 3
 
     test "uniqueBy", ->
       even = (x) -> x % 2 == 0

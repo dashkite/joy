@@ -46,8 +46,9 @@ class GenericFunction
           break
 
         # if the term may be variadic (indicated by taking 0 arguments)
+        # and this is the last available term
         # try the term with the remaining arguments
-        if term.length == 0
+        if (terms.length == i + 1) && term.length == 0
           match = term args[i..]...
           break
 
