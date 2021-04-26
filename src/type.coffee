@@ -9,11 +9,17 @@ isPrototype = curry (p, value) -> p? && p == prototype value
 
 isType = curry (type, value) -> isPrototype type?.prototype, value
 
-isTransitivePrototype = curry (p, value) ->
-  p? && (p == (q = prototype value) || (q? && isTransitivePrototype p, q))
+isSynonymousType = curry (type, value) ->
+  type?.name == value.constructor.name
 
-# we don't use instanceof because it throws if the type argument is not a type
-isKind = curry (type, value) -> isTransitivePrototype type?.prototype, value
+isKind = curry (type, value) ->
+  try
+    value instanceof type
+  catch
+    false
+
+isSynonymousKind = curry (type, value) ->
+  value? && ((isType type, value) || isKind type, (prototype value))
 
 # TODO: is this correct? to check generally for a derived type
 # needs tests ....
@@ -90,24 +96,13 @@ isReagent = isAsyncIterable = (x) ->
 
 isReactor = isAsyncIterator = (x) -> (isFunction x?.next) && (isReagent x)
 
-areType = curry (type, array) ->
-  return false unless isArray array
-  for item in array
-    return false unless isType type, item
-  true
-
-areKind = curry (kind, array) ->
-  return false unless isArray array
-  for item in array
-    return false unless isKind kind, item
-  true
-
 export {
   prototype
   isPrototype
-  isTransitivePrototype
   isType
   isKind
+  isSynonymousType
+  isSynonymousKind
   Type
   instanceOf
   isDefined
@@ -142,6 +137,4 @@ export {
   isAsyncIterable
   isReactor
   isAsyncIterator
-  areType
-  areKind
 }
