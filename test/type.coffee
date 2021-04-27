@@ -16,12 +16,13 @@ export default ->
       b1 = new B
       b2 = Object.create b1
 
-      [ C, D ] = do ->
-        eval """
+      [ C, D ] = eval """
+        (function() {
           class A {}
           class B extends A {}
+          return [ A, B ]
+        })()
         """
-        return [ A, B ]
 
       [
 
@@ -31,7 +32,8 @@ export default ->
           assert ! $.isType b1, b2
           assert ! $.isType A, b1
           assert ! $.isType b1, B
-          assert ! $.isType b1, D
+          assert ! $.isType C, b1
+          assert ! $.isType D, b1
 
         test "isSynonymousType", ->
           assert $.isSynonymousType B, b1
@@ -54,8 +56,8 @@ export default ->
           assert ! $.isSynonymousKind B, {}
           assert $.isSynonymousKind B, b2
           assert $.isSynonymousKind A, b2
-          assert $.isSynonymousKind D, b1
           assert $.isSynonymousKind C, b1
+          assert $.isSynonymousKind D, b1
 
       ]
 

@@ -19,7 +19,8 @@ isKind = curry (type, value) ->
     false
 
 isSynonymousKind = curry (type, value) ->
-  value? && ((isType type, value) || isKind type, (prototype value))
+  value? && ((isSynonymousType type, value) ||
+    (isSynonymousKind type, (prototype value)))
 
 # TODO: is this correct? to check generally for a derived type
 # needs tests ....
