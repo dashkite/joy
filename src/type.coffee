@@ -1,7 +1,4 @@
-import {curry} from "./function"
-import Method from "panda-generics"
-
-{create, define} = Method
+import { curry } from "./function"
 
 prototype = (value) -> if value? then Object.getPrototypeOf value
 

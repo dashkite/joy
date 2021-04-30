@@ -25,8 +25,20 @@
     "type": "git",
     "url": "git+https://github.com/dashkite/module.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "lodash",
+    "rambda",
+    "functional",
+    "functional programming",
+    "coffeescript",
+    "generic function",
+    "metaclass",
+    "metaprogramming"
+  ],
+  "contributors": [
+    "Dan Yoder <dan@dashkite.com>",
+    "David Harper <david@dashkite.com>"
+  ],
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/dashkite/module/issues"
