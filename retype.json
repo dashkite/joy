@@ -1,5 +1,5 @@
 {
-  "input": ".",
+  "input": "docs",
   "output": ".retype",
   "base": "joy",
   "branding":
