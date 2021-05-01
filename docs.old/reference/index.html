@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-cache-control" content="no-cache">
+
+    <title>Joy API Reference</title>
+
+    <meta name="description" content="**Function**" />
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="/resources/css/retype.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/resources/js/retype.js" defer></script>
+</head>
+    <body>
+        <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+
+    <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+    <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
+        <!-- Mobile menu button skeleton -->
+        <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center flex-shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+        <div v-cloak id="docs-sidebar-toggle"></div>
+
+        <!-- Logo -->
+        <div class="flex items-center justify-between h-full py-2 md:w-75">
+            <div class="flex items-center px-2 md:px-6">
+                <span id="docs-site-logo" class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                    <a href="/">Project Name</a>
+                </span>
+                <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+            </div>
+
+            <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+        </div>
+
+        <div class="flex justify-between md:flex-grow">
+            <!-- Top Nav -->
+            <nav class="hidden md:flex">
+    <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+        <li class="md:mr-6">
+            <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://retype.com/guides/getting_started/">Getting Started</a>
+        </li>
+    </ul>
+</nav>
+
+            <!-- Header Right Skeleton -->
+            <div v-cloak class="flex justify-end flex-grow skeleton">
+
+                <!-- Search input mock -->
+                <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                    <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                    </div>
+
+                    <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                    style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search docs" />
+                </div>
+
+                <!-- Mobile search button mock -->
+                <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                </div>
+
+                <!-- Dark mode switch placehokder -->
+                <div class="w-10 h-10 lg:ml-2"></div>
+
+                <!-- History button mock -->
+                <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                </div>
+            </div>
+
+            <div v-cloak class="flex items-center justify-end flex-grow">
+                <div id="docs-mobile-search-button"></div>
+                <doc-search-desktop></doc-search-desktop>
+
+                <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                <doc-history></doc-history>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+<div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+
+    <!-- Render this div, if config.showSidebarFilter is `true` -->
+    <div class="flex items-center h-16 px-6">
+        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+    </div>
+
+    <div class="pl-6 mb-4 mt-1">
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+    </div>
+
+    <div class="flex-shrink-0 mt-auto bg-transparent dark:border-dark-650">
+        <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+    </div>
+</div>
+
+<!-- Sidebar component -->
+<doc-sidebar v-cloak>
+    <template #sidebar-footer>
+        <div
+            class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
+        >
+
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://retype.com/guides/getting_started/">Getting Started</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+        </div>
+    </template>
+</doc-sidebar>
+
+
+        <div class="flex-grow min-w-0 dark:bg-dark-850">
+            <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+            <div class="flex">
+    <div class="flex-grow min-w-0 px-6 md:px-16">
+        <main class="relative pt-6 pb-16">
+            <div class="docs-markdown" id="docs-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="docs-sidebar-right-toggle"></div>
+               
+                <!-- Page content  -->
+<doc-anchor-target id="joy-api-reference" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#joy-api-reference">#</doc-anchor-trigger>
+        <span>Joy API Reference</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Function</strong></p>
+<p><a href="#identity">identity</a> | <a href="#wrap">wrap</a> | <a href="#unary">unary</a> | <a href="#binary">binary</a> | <a href="#ternary">ternary</a> | <a href="#arity">arity</a> | <a href="#curry">curry</a> | <a href="#substitute">substitute</a> | <a href="#partial">partial</a> | <a href="#flip">flip</a> | <a href="#tee">tee</a> | <a href="#rtee">rtee</a> | <a href="#wait">wait</a> | <a href="#pipe">pipe</a> | <a href="#pipewith">pipeWith</a> | <a href="#compose">compose</a> | <a href="#flow">flow</a> | <a href="#flowwith">flowWith</a> | <a href="#apply">apply</a> | <a href="#send">send</a> | <a href="#spread">spread</a> | <a href="#stack">stack</a> | <a href="#once">once</a> | <a href="#memoize">memoize</a></p>
+<p><strong>Generic</strong></p>
+<p><a href="#generic" title="create">generic (create)</a> | <a href="#generic" title="define">generic (define)</a> | <a href="#generic.create">Generic.create</a> | <a href="#generic.define">Generic.define</a> | <a href="#generic.lookup">Generic.lookup</a></p>
+<p><strong>Predicate</strong></p>
+<p><a href="#negate">negate</a> | <a href="#any">any</a> | <a href="#all">all</a> | <a href="#test">test</a> | <a href="#branch">branch</a> | <a href="#attempt">attempt</a></p>
+<p><strong>Object</strong></p>
+<p><a href="#keys">keys</a> | <a href="#values">values</a> | <a href="#pairs">pairs</a> | <a href="#has">has</a> | <a href="#get">get</a> | <a href="#set">set</a> | <a href="#assign">assign</a> | <a href="#merge">merge</a> | <a href="#query">query</a></p>
+<p><strong>Metaclass</strong></p>
+<p><a href="#property">property</a> | <a href="#properties">properties</a> | <a href="#getter">getter</a> | <a href="#getters">getters</a> | <a href="#setter">setter</a> | <a href="#setters">setters</a> | <a href="#method">method</a> | <a href="#methods">methods</a> | <a href="#mixin">mixin</a></p>
+<p><strong>Type</strong></p>
+<p><a href="#prototype">prototype</a> | <a href="#isprototype">isPrototype</a> | <a href="#istransitiveprototype">isTransitivePrototype</a> | <a href="#istype">isType</a> | <a href="#iskind">isKind</a> | <a href="#aretype">areType</a> | <a href="#arekind">areKind</a> | <a href="#type.define">Type.define</a> | <a href="#type.create">Type.create</a> | <a href="#instanceof">instanceOf</a> | <a href="#isdefined">isDefined</a> | <a href="#isundefined">isUndefined</a> | <a href="#isboolean">isBoolean</a> | <a href="#isstring">isString</a> | <a href="#issymbol">isSymbol</a> | <a href="#isnumber">isNumber</a> | <a href="#isnan">isNaN</a> | <a href="#isfinite">isFinite</a> | <a href="#isinteger">isInteger</a> | <a href="#isdate">isDate</a> | <a href="#iserror">isError</a> | <a href="#isregexp">isRegExp</a> | <a href="#ispromise">isPromise</a> | <a href="#isobject">isObject</a> | <a href="#isarray">isArray</a> | <a href="#isbuffer">isBuffer</a> | <a href="#isarraybuffer">isArrayBuffer</a> | <a href="#isdataview">isDataView</a> | <a href="#istypedarray">isTypedArray</a> | <a href="#ismap">isMap</a> | <a href="#isweakmap">isWeakMap</a> | <a href="#isset">isSet</a> | <a href="#isregularfunction">isRegularFunction</a> | <a href="#isgeneratorfunction">isGeneratorFunction</a> | <a href="#isasyncfunction">isAsyncFunction</a> | <a href="#isfunction">isFunction</a></p>
+<p><strong>Value</strong></p>
+<p><a href="#equal">equal</a> | <a href="#clone">clone</a> | <a href="#size">size</a> | <a href="#isempty">isEmpty</a></p>
+<p><strong>Promise</strong></p>
+<p><a href="#promise">promise</a> | <a href="#resolve">resolve</a> | <a href="#reject">reject</a> | <a href="#all">all</a> | <a href="#any">any</a> | <a href="#race">race</a> | <a href="#map">map</a></p>
+<p><strong>Text</strong></p>
+<p><a href="#tostring">toString</a> | <a href="#touppercase">toUpperCase</a> | <a href="#tolowercase">toLowerCase</a> | <a href="#trim">trim</a> | <a href="#split">split</a> | <a href="#w">w</a> | <a href="#isblank">isBlank</a> | <a href="#match">match</a> | <a href="#ismatch">isMatch</a> | <a href="#replace">replace</a> | <a href="#template">template</a></p>
+<p><strong>Array</strong></p>
+<p><a href="#first">first</a> | <a href="#second">second</a> | <a href="#third">third</a> | <a href="#fourth">fourth</a> | <a href="#fifth">fifth</a> | <a href="#nth">nth</a> | <a href="#last">last</a> | <a href="#rest">rest</a> | <a href="#slice">slice</a> | <a href="#push/enqueue">push/enqueue</a> | <a href="#pop/dequeue">pop/dequeue</a> | <a href="#shift">shift</a> | <a href="#unshift">unshift</a> | <a href="#cat">cat</a> | <a href="#splice">splice</a> | <a href="#insert">insert</a> | <a href="#remove">remove</a> | <a href="#range">range</a> | <a href="#join">join</a> | <a href="#fill">fill</a> | <a href="#sort">sort</a> | <a href="#pluck">pluck</a> | <a href="#pair">pair</a> | <a href="#shuffle">shuffle</a></p>
+<p><strong>Set</strong></p>
+<p><a href="#union">union</a> | <a href="#intersection">intersection</a> | <a href="#complement">complement</a> | <a href="#difference">difference</a> | <a href="#unique">unique</a> | <a href="#dupes">dupes</a></p>
+<p><strong>Iterable</strong></p>
+<p><a href="#includes">includes</a> | <a href="#uniqueby">uniqueBy</a></p>
+<p><strong>Math</strong></p>
+<p><a href="#gt">gt</a> | <a href="#lt">lt</a> | <a href="#gte">gte</a> | <a href="#lte">lte</a> | <a href="#add">add</a> | <a href="#sub">sub</a> | <a href="#mul">mul</a> | <a href="#div">div</a> | <a href="#mod">mod</a> | <a href="#ismodulo">isModulo</a> | <a href="#even">even</a> | <a href="#odd">odd</a> | <a href="#min">min</a> | <a href="#max">max</a> | <a href="#abs">abs</a> | <a href="#pow">pow</a></p>
+<p><strong>Time</strong></p>
+<p><a href="#timer">timer</a> | <a href="#sleep">sleep</a> | <a href="#milliseconds">milliseconds</a> | <a href="#benchmark">benchmark</a></p>
+<doc-anchor-target id="function">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#function">#</doc-anchor-trigger>
+        <span>Function</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/function</em></p>
+<doc-anchor-target id="identity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#identity">#</doc-anchor-trigger>
+        <span>identity</span>
+    </h3>
+</doc-anchor-target>
+<p><em>identity value → value</em></p>
+<p>Returns its argument.</p>
+<doc-anchor-target id="wrap">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wrap">#</doc-anchor-trigger>
+        <span>wrap</span>
+    </h3>
+</doc-anchor-target>
+<p><em>wrap value → function</em></p>
+<p>Returns a function that returns its argument.</p>
+<doc-anchor-target id="unary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unary">#</doc-anchor-trigger>
+        <span>unary</span>
+    </h3>
+</doc-anchor-target>
+<p><em>unary function → function</em></p>
+<p>Returns a unary function that passes its argument to the given function.</p>
+<doc-anchor-target id="binary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#binary">#</doc-anchor-trigger>
+        <span>binary</span>
+    </h3>
+</doc-anchor-target>
+<p><em>binary function → function</em></p>
+<p>Returns a binary function that passes its arguments to the given function.</p>
+<doc-anchor-target id="ternary">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ternary">#</doc-anchor-trigger>
+        <span>ternary</span>
+    </h3>
+</doc-anchor-target>
+<p><em>ternary function → function</em></p>
+<p>Returns a ternary function that passes its arguments to the given function.</p>
+<doc-anchor-target id="arity">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arity">#</doc-anchor-trigger>
+        <span>arity</span>
+    </h3>
+</doc-anchor-target>
+<p><em>arity n, function → function</em></p>
+<p>Returns an n-ary function that passes its arguments to the given function.</p>
+<doc-anchor-target id="curry">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#curry">#</doc-anchor-trigger>
+        <span>curry</span>
+    </h3>
+</doc-anchor-target>
+<p><em>curry function → function</em></p>
+<p>Returns a curryable function that passes its arguments to the given function.</p>
+<doc-anchor-target id="substitute">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#substitute">#</doc-anchor-trigger>
+        <span>substitute</span>
+    </h3>
+</doc-anchor-target>
+<p><em>substitute pattern, values → array</em></p>
+<p>Given a pattern array and an array of values, returns an array with the values substited for the special value _ in the pattern array.</p>
+<doc-anchor-target id="partial">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#partial">#</doc-anchor-trigger>
+        <span>partial</span>
+    </h3>
+</doc-anchor-target>
+<p><em>partial function, pattern → function</em></p>
+<p>Returns a function that substitutes arguments using the given pattern array before passing them to the given function.</p>
+<doc-anchor-target id="flip">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flip">#</doc-anchor-trigger>
+        <span>flip</span>
+    </h3>
+</doc-anchor-target>
+<p><em>flip function → function</em></p>
+<p>Returns a function that reverses its arguments before passing them to the given function.</p>
+<doc-anchor-target id="tee">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tee">#</doc-anchor-trigger>
+        <span>tee</span>
+    </h3>
+</doc-anchor-target>
+<p><em>tee function → function</em></p>
+<p>Returns a function that calls the given function but always returns its first argument.</p>
+<doc-anchor-target id="rtee">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rtee">#</doc-anchor-trigger>
+        <span>rtee</span>
+    </h3>
+</doc-anchor-target>
+<p><em>rtee function → function</em></p>
+<p>Returns a function that calls the given function but always returns its last argument.</p>
+<doc-anchor-target id="wait">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#wait">#</doc-anchor-trigger>
+        <span>wait</span>
+    </h3>
+</doc-anchor-target>
+<p><em>wait function → function</em></p>
+<p>Returns a function that awaits on its arguments before passing it to the given function.</p>
+<doc-anchor-target id="pipe">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipe">#</doc-anchor-trigger>
+        <span>pipe</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pipe functions → function</em></p>
+<p>Returns a function that composes the given functions, calling them in the order given.</p>
+<doc-anchor-target id="pipewith">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipewith">#</doc-anchor-trigger>
+        <span>pipeWith</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pipeWith adapter, functions → function</em></p>
+<p>Works like <a href="#pipe"><code v-pre>pipe</code></a>, except transforms each function with the given adaper before composing them.</p>
+<doc-anchor-target id="example">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">trace = (f) -&gt;
+  (args...) -&gt;
+    console.log &quot;function:&quot;, f.name
+    console.log &quot;-- arguments:&quot;, args
+    console.log &quot;-- returns:&quot;, r = f args...
+    r
+
+pipeWith trace, [
+  # functions to trace...
+]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="compose">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#compose">#</doc-anchor-trigger>
+        <span>compose</span>
+    </h3>
+</doc-anchor-target>
+<p><em>compose functions → function</em></p>
+<p>Returns a function that composes the given functions, calling them in reverse of the order given.</p>
+<doc-anchor-target id="flow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flow">#</doc-anchor-trigger>
+        <span>flow</span>
+    </h3>
+</doc-anchor-target>
+<p><em>flow functions → function</em></p>
+<p>Returns an async function that composes the given functions, which may be async, calling them in the order given.
+Convenience for <code v-pre>pipeWith wait</code>.</p>
+<doc-anchor-target id="flowwith">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flowwith">#</doc-anchor-trigger>
+        <span>flowWith</span>
+    </h3>
+</doc-anchor-target>
+<p><em>flowWith adapter, functions → function</em></p>
+<p>Works like <a href="#flow"><code v-pre>flow</code></a>, except transforms each function with the given adaper before composing them.</p>
+<doc-anchor-target id="apply">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apply">#</doc-anchor-trigger>
+        <span>apply</span>
+    </h3>
+</doc-anchor-target>
+<p><em>apply function, arguments → value</em></p>
+<p>Calls the given function with the given arguments. Use with <a href="#bind"><code v-pre>bind</code></a> to bind <code v-pre>this</code>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Function::apply</code></a>.</p>
+<doc-anchor-target id="send">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#send">#</doc-anchor-trigger>
+        <span>send</span>
+    </h3>
+</doc-anchor-target>
+<p><em>send name, arguments, object → value</em></p>
+<p>Invokes the named method on <em>object</em> with <em>arguments</em>.</p>
+<doc-anchor-target id="spread">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#spread">#</doc-anchor-trigger>
+        <span>spread</span>
+    </h3>
+</doc-anchor-target>
+<p><em>spread function → function</em></p>
+<p>Returns a function that accepts an array of arguments and passes them to the given function.</p>
+<doc-anchor-target id="stack">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#stack">#</doc-anchor-trigger>
+        <span>stack</span>
+    </h3>
+</doc-anchor-target>
+<p><em>stack function → function</em></p>
+<p>Returns a function that passes its arguments to the given function as an array.</p>
+<doc-anchor-target id="once">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#once">#</doc-anchor-trigger>
+        <span>once</span>
+    </h3>
+</doc-anchor-target>
+<p><em>once function → function</em></p>
+<p>Returns a function that calls the given function once. Subsequent invocations will simply return the value returned by the initial invocation.</p>
+<doc-anchor-target id="memoize">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memoize">#</doc-anchor-trigger>
+        <span>memoize</span>
+    </h3>
+</doc-anchor-target>
+<p><em>memoize function → function</em></p>
+<p>Returns a function that calls the given function once for a given set arguments. Subsequent invocations with the same arguments will simply return the value returned by the initial invocation. The arguments must be serializable with <code v-pre>toString</code>.</p>
+<doc-anchor-target id="generic">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic">#</doc-anchor-trigger>
+        <span>Generic</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/generic</em></p>
+<doc-anchor-target id="generic-create">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic-create">#</doc-anchor-trigger>
+        <span>generic (create)</span>
+    </h3>
+</doc-anchor-target>
+<p><em>generic (create) name, description | description → function</em></p>
+<p>Generic function wrapper around <a href="#Generic.create"><code v-pre>Generic.create</code></a>.</p>
+<doc-anchor-target id="example-1">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-1">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">fib = generic
+  name: &quot;fib&quot;
+  description: &quot;Fibonacci sequence&quot;
+generic fib, (gte 1), (n) -&gt; (fib n - 1) + (fib n - 2)
+generic fib, (eq 1), -&gt; 1
+generic fib, (eq 2), -&gt; 1</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="generic-define">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic-define">#</doc-anchor-trigger>
+        <span>generic (define)</span>
+    </h3>
+</doc-anchor-target>
+<p><em>generic (define) function, arguments... → GenericFunction</em></p>
+<p>Generic function wrapper around <a href="#Generic.define"><code v-pre>Generic.define</code></a>.</p>
+<doc-anchor-target id="generic-create">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic-create">#</doc-anchor-trigger>
+        <span>Generic.create</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Generic.create name, description | description → function</em></p>
+<p>Creates a generic function. Returns a function whose <code v-pre>_</code> property references te corresponding <code v-pre>GenericFunction</code> instance.</p>
+<doc-anchor-target id="generic-define">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic-define">#</doc-anchor-trigger>
+        <span>Generic.define</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Generic.define function, terms..., implementation → GenericFunction</em></p>
+<p>Defines a specialization for given generic function using the given <em>terms</em> and <em>implementation</em> function. Returns the corresponding <code v-pre>GenericFunction</code> instance.</p>
+<doc-anchor-target id="generic-lookup">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#generic-lookup">#</doc-anchor-trigger>
+        <span>Generic.lookup</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Generic.lookup function, arguments... → function</em></p>
+<p>Returns the implementation that matches the given <em>arguments</em>, if any.</p>
+<doc-anchor-target id="predicate">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#predicate">#</doc-anchor-trigger>
+        <span>Predicate</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/predicate</em></p>
+<doc-anchor-target id="negate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#negate">#</doc-anchor-trigger>
+        <span>negate</span>
+    </h3>
+</doc-anchor-target>
+<p><em>negate function → function</em></p>
+<p>Returns a function that returns the negation of the given function.</p>
+<doc-anchor-target id="any">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#any">#</doc-anchor-trigger>
+        <span>any</span>
+    </h3>
+</doc-anchor-target>
+<p><em>any functions → function</em></p>
+<p>Returns a function that returns true if any of the given <em>functions</em>, attempted in the order given, returns true, and false otherwise.</p>
+<doc-anchor-target id="all">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#all">#</doc-anchor-trigger>
+        <span>all</span>
+    </h3>
+</doc-anchor-target>
+<p><em>all functions → function</em></p>
+<p>Returns a function that returns true if all of the given <em>functions</em>, attempted in the order given, return true, and false otherwise.</p>
+<doc-anchor-target id="test">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#test">#</doc-anchor-trigger>
+        <span>test</span>
+    </h3>
+</doc-anchor-target>
+<p><em>test predicate, consequent[, alternative] → function</em></p>
+<p>Returns a function that calls the <em>consequent</em> if the <em>predicate</em> returns true, and the (optional) <em>alternative</em> otherwise.</p>
+<doc-anchor-target id="branch">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#branch">#</doc-anchor-trigger>
+        <span>branch</span>
+    </h3>
+</doc-anchor-target>
+<p><em>branch conditions → function</em></p>
+<p>Returns a function evaluates a list of <em>conditions</em> (and associative array consisting of pairs of predicates and consequents), in the order given, until one of the predicates matches. Calls the corresponding consquent if a match is found.</p>
+<doc-anchor-target id="attempt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#attempt">#</doc-anchor-trigger>
+        <span>attempt</span>
+    </h3>
+</doc-anchor-target>
+<p><em>attempt function → function</em></p>
+<p>Returns a function that calls the given function, returning false if the function throws an exception or returns a rejected promise, and true otherwise.</p>
+<doc-anchor-target id="object">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#object">#</doc-anchor-trigger>
+        <span>Object</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/object</em></p>
+<doc-anchor-target id="keys">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#keys">#</doc-anchor-trigger>
+        <span>keys</span>
+    </h3>
+</doc-anchor-target>
+<p><em>keys object → array</em></p>
+<p>Returns the property names for the given object.</p>
+<doc-anchor-target id="values">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#values">#</doc-anchor-trigger>
+        <span>values</span>
+    </h3>
+</doc-anchor-target>
+<p><em>values object → array</em></p>
+<p>Returns the property values for the given object.</p>
+<doc-anchor-target id="pairs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pairs">#</doc-anchor-trigger>
+        <span>pairs</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pairs object → array</em></p>
+<p>Returns the properties for the given object as an associative array (an array of two-element arrays).</p>
+<doc-anchor-target id="example-2">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-2">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
+  [[&quot;a&quot;, 1], [&quot;b&quot;, 2], [&quot;c&quot;, 3]]</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="has">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#has">#</doc-anchor-trigger>
+        <span>has</span>
+    </h3>
+</doc-anchor-target>
+<p><em>has key, object → boolean</em></p>
+<p>Returns the true if the given object has a property matching the given key, false otherwise.</p>
+<doc-anchor-target id="get">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#get">#</doc-anchor-trigger>
+        <span>get</span>
+    </h3>
+</doc-anchor-target>
+<p><em>get key, object → boolean</em></p>
+<p>Returns the value of the property matching the given key for the given object. Like most Joy functions, <code v-pre>get</code> is curryable, so <code v-pre>get</code> can be used like Ramda&#39;s [<code v-pre>pluck</code>][ramda].
+[ramda]: https://ramdajs.com/docs/#pluck</p>
+<doc-anchor-target id="set">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set">#</doc-anchor-trigger>
+        <span>set</span>
+    </h3>
+</doc-anchor-target>
+<p><em>set key, value, object → boolean</em></p>
+<p>Sets the value of the property matching the given key for the given object.</p>
+<doc-anchor-target id="assign">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assign">#</doc-anchor-trigger>
+        <span>assign</span>
+    </h3>
+</doc-anchor-target>
+<p><em>assign object, objects... → object</em></p>
+<p>Adds the properties for <em>objects</em> to <em>object</em>. Modifies <em>object</em>. If you want to create a new object, use <a href="#merge"><code v-pre>merge</code></a>.</p>
+<doc-anchor-target id="merge">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#merge">#</doc-anchor-trigger>
+        <span>merge</span>
+    </h3>
+</doc-anchor-target>
+<p><em>merge object, objects... → object</em></p>
+<p>Adds the properties for <em>objects</em> to <em>object</em>. Modifies <em>object</em>. If you want to create a new object, use <a href="#merge"><code v-pre>merge</code></a>.</p>
+<doc-anchor-target id="query">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#query">#</doc-anchor-trigger>
+        <span>query</span>
+    </h3>
+</doc-anchor-target>
+<p><em>query exemplar, object → object</em></p>
+<p>Returns true if <em>object</em> matches <em>exemplar</em>, false otherwise. An exemplar matches if all of its properties are equal to the corresponding properties in the target object. Matching is done recursively, so the exemplar can contain nested values.</p>
+<doc-anchor-target id="example-3">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-3">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
+assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="metaclass">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#metaclass">#</doc-anchor-trigger>
+        <span>Metaclass</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/metaclass</em></p>
+<doc-anchor-target id="property">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#property">#</doc-anchor-trigger>
+        <span>property</span>
+    </h3>
+</doc-anchor-target>
+<p><em>property key, description, target → object</em></p>
+<p>Defines a property on <em>target</em> using the given <em>key</em> (the property name) and <em>description</em>. Like most Joy functions, <code v-pre>property</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Object.defineProperty</code></a>.</p>
+<doc-anchor-target id="properties">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#properties">#</doc-anchor-trigger>
+        <span>properties</span>
+    </h3>
+</doc-anchor-target>
+<p><em>properties dictionary, target → object</em></p>
+<p>Defines properties on <em>target</em> using the given <em>dictionary</em> of keys and property names. Convenience wrapper for <a href="#property"><code v-pre>property</code></a>. Like most Joy functions, <code v-pre>properties</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<doc-anchor-target id="getter">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getter">#</doc-anchor-trigger>
+        <span>getter</span>
+    </h3>
+</doc-anchor-target>
+<p><em>getter key, function, target → object</em></p>
+<p>Defines a getter on <em>target</em> using the given <em>key</em> (the property name) and <em>description</em>. Like most Joy functions, <code v-pre>getter</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Object.defineProperty</code></a>.</p>
+<doc-anchor-target id="getters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#getters">#</doc-anchor-trigger>
+        <span>getters</span>
+    </h3>
+</doc-anchor-target>
+<p><em>getters dictionary, target → object</em></p>
+<p>Defines getters on <em>target</em> using the given <em>dictionary</em> of keys and getter functions. Convenience wrapper for <a href="#getter"><code v-pre>getter</code></a>. Like most Joy functions, <code v-pre>getters</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<doc-anchor-target id="example-4">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-4">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">class Foo
+  mixin @::, [
+    getters
+      bar: -&gt; &quot;bar&quot;
+  ]
+assert.equal &quot;bar&quot;, (new Foo).bar</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="setter">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setter">#</doc-anchor-trigger>
+        <span>setter</span>
+    </h3>
+</doc-anchor-target>
+<p><em>setter key, function, target → object</em></p>
+<p>Defines a setter on <em>target</em> using the given <em>key</em> (the property name) and <em>description</em>. Like most Joy functions, <code v-pre>setter</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Object.defineProperty</code></a>.</p>
+<doc-anchor-target id="setters">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#setters">#</doc-anchor-trigger>
+        <span>setters</span>
+    </h3>
+</doc-anchor-target>
+<p><em>setters dictionary, target → object</em></p>
+<p>Defines setters on <em>target</em> using the given <em>dictionary</em> of keys and setter functions. Convenience wrapper for <a href="#setter"><code v-pre>setter</code></a>. Like most Joy functions, <code v-pre>setters</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<doc-anchor-target id="method">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#method">#</doc-anchor-trigger>
+        <span>method</span>
+    </h3>
+</doc-anchor-target>
+<p><em>method key, function, target → object</em></p>
+<p>Defines a method on <em>target</em> using the given <em>key</em> (the property name) and <em>description</em>. Like most Joy functions, <code v-pre>method</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<doc-anchor-target id="methods">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#methods">#</doc-anchor-trigger>
+        <span>methods</span>
+    </h3>
+</doc-anchor-target>
+<p><em>methods dictionary, target → object</em></p>
+<p>Defines methods on <em>target</em> using the given <em>dictionary</em> of keys and methods. Convenience wrapper for <a href="#method"><code v-pre>method</code></a>. Like most Joy functions, <code v-pre>methods</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <a href="#mixin"><code v-pre>mixin</code></a> to create reusable mixins.</p>
+<doc-anchor-target id="mixin">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mixin">#</doc-anchor-trigger>
+        <span>mixin</span>
+    </h3>
+</doc-anchor-target>
+<p><em>mixin target, functions → object</em></p>
+<p>Applies each function to the given target. See <a href="#getters"><code v-pre>getters</code></a> for an example of how to use it with object modifiers like <code v-pre>getters</code> or <code v-pre>methods</code> to create reusable mixins.</p>
+<doc-anchor-target id="type">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type">#</doc-anchor-trigger>
+        <span>Type</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/type</em></p>
+<doc-anchor-target id="prototype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#prototype">#</doc-anchor-trigger>
+        <span>prototype</span>
+    </h3>
+</doc-anchor-target>
+<p><em>prototype value → prototype</em></p>
+<p>Returns the prototype of the given <em>value</em>.</p>
+<doc-anchor-target id="isprototype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isprototype">#</doc-anchor-trigger>
+        <span>isPrototype</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isPrototype prototype, value → boolean</em></p>
+<p>Returns true if <em>prototype</em> is the prototype for <em>value</em>, false otherwise.</p>
+<doc-anchor-target id="istransitiveprototype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#istransitiveprototype">#</doc-anchor-trigger>
+        <span>isTransitivePrototype</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isTransitivePrototype prototype, value → boolean</em></p>
+<p>Returns true if <em>prototype</em> is a transitive prototype of <em>value</em>, false otherwise.</p>
+<doc-anchor-target id="istype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#istype">#</doc-anchor-trigger>
+        <span>isType</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isType type, value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <em>type</em>, false otherwise.</p>
+<doc-anchor-target id="iskind">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iskind">#</doc-anchor-trigger>
+        <span>isKind</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isKind type, value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <em>type</em> or one of its descendents (as defined by the prototype chain for <em>value</em>), false otherwise.</p>
+<doc-anchor-target id="aretype">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aretype">#</doc-anchor-trigger>
+        <span>areType</span>
+    </h3>
+</doc-anchor-target>
+<p><em>areType type, values → boolean</em></p>
+<p>Returns true if each element in an array of <em>values</em> is an instance of <em>type</em>, false otherwise.</p>
+<doc-anchor-target id="arekind">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arekind">#</doc-anchor-trigger>
+        <span>areKind</span>
+    </h3>
+</doc-anchor-target>
+<p><em>areKind type, values → boolean</em></p>
+<p>Returns true if each element of in an array of <em>values</em> is an instance of <em>type</em> or one of its descendents (as defined by the prototype chain for <em>value</em>), false otherwise.</p>
+<doc-anchor-target id="type-define">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-define">#</doc-anchor-trigger>
+        <span>Type.define</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Type.define parent → class</em></p>
+<p>Creates a new type (class) that extends <em>parent</em>, if defined, or <code v-pre>Object</code> otherwise. Convenience wrapper for <code v-pre>class</code>.</p>
+<doc-anchor-target id="type-create">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#type-create">#</doc-anchor-trigger>
+        <span>Type.create</span>
+    </h3>
+</doc-anchor-target>
+<p><em>Type.create type → instance</em></p>
+<p>Creates a new instance of a type (class). Convenience wrapper for <code v-pre>new</code>.</p>
+<doc-anchor-target id="instanceof">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instanceof">#</doc-anchor-trigger>
+        <span>instanceOf</span>
+    </h3>
+</doc-anchor-target>
+<p><em>instanceOf type, instance → boolean</em></p>
+<p>Returns true if <code v-pre>instanceof</code> returns true for the given instance and type, false otherwise. Convenience wrapper for <code v-pre>instanceof</code>. However, <a href="#iskind"><code v-pre>isKind</code></a> is less likely to throw.</p>
+<doc-anchor-target id="isdefined">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isdefined">#</doc-anchor-trigger>
+        <span>isDefined</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isDefined value → boolean</em></p>
+<p>Returns true if <em>value</em> is defined, false otherwise.</p>
+<doc-anchor-target id="isundefined">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isundefined">#</doc-anchor-trigger>
+        <span>isUndefined</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isUndefined value → boolean</em></p>
+<p>Returns true if <em>value</em> is undefined, false otherwise.</p>
+<doc-anchor-target id="isboolean">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isboolean">#</doc-anchor-trigger>
+        <span>isBoolean</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isBoolean value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Boolean</code>.</p>
+<doc-anchor-target id="isstring">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isstring">#</doc-anchor-trigger>
+        <span>isString</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isString value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>String</code>.</p>
+<doc-anchor-target id="issymbol">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#issymbol">#</doc-anchor-trigger>
+        <span>isSymbol</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isSymbol value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Symbol</code>.</p>
+<doc-anchor-target id="isnumber">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isnumber">#</doc-anchor-trigger>
+        <span>isNumber</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isNumber value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Number</code>.</p>
+<doc-anchor-target id="isnan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isnan">#</doc-anchor-trigger>
+        <span>isNaN</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isNaN value → boolean</em></p>
+<p>Returns true if <em>value</em> is not a number. Equivalent to <code v-pre>Number.isNaN</code>.</p>
+<doc-anchor-target id="isfinite">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isfinite">#</doc-anchor-trigger>
+        <span>isFinite</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isFinite value → boolean</em></p>
+<p>Returns true if <em>value</em> is fine. Equivalent to <code v-pre>Number.isFinite</code>.</p>
+<doc-anchor-target id="isinteger">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isinteger">#</doc-anchor-trigger>
+        <span>isInteger</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isInteger value → boolean</em></p>
+<p>Returns true if <em>value</em> is fine. Equivalent to <code v-pre>Number.isInteger</code>.</p>
+<doc-anchor-target id="isdate">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isdate">#</doc-anchor-trigger>
+        <span>isDate</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isDate value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Date</code>.</p>
+<doc-anchor-target id="iserror">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iserror">#</doc-anchor-trigger>
+        <span>isError</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isError value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Error</code>.</p>
+<doc-anchor-target id="isregexp">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isregexp">#</doc-anchor-trigger>
+        <span>isRegExp</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isRegExp value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>RegExp</code>.</p>
+<doc-anchor-target id="ispromise">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ispromise">#</doc-anchor-trigger>
+        <span>isPromise</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isPromise value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Promise</code>.</p>
+<doc-anchor-target id="isobject">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isobject">#</doc-anchor-trigger>
+        <span>isObject</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isObject value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Object</code>.</p>
+<doc-anchor-target id="isarray">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isarray">#</doc-anchor-trigger>
+        <span>isArray</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isArray value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Array</code>. Equivalent to <code v-pre>Array.isArray</code>.</p>
+<doc-anchor-target id="isbuffer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isbuffer">#</doc-anchor-trigger>
+        <span>isBuffer</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isBuffer value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Buffer</code>.</p>
+<doc-anchor-target id="isarraybuffer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isarraybuffer">#</doc-anchor-trigger>
+        <span>isArrayBuffer</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isArrayBuffer value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>ArrayBuffer</code>.</p>
+<doc-anchor-target id="isdataview">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isdataview">#</doc-anchor-trigger>
+        <span>isDataView</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isDataView value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>DataView</code>.</p>
+<doc-anchor-target id="istypedarray">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#istypedarray">#</doc-anchor-trigger>
+        <span>isTypedArray</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isTypedArray value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Uint8Array</code>.</p>
+<doc-anchor-target id="ismap">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ismap">#</doc-anchor-trigger>
+        <span>isMap</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isMap value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Map</code>.</p>
+<doc-anchor-target id="isweakmap">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isweakmap">#</doc-anchor-trigger>
+        <span>isWeakMap</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isWeakMap value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>WeakMap</code>.</p>
+<doc-anchor-target id="isset">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isset">#</doc-anchor-trigger>
+        <span>isSet</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isSet value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Set</code>.</p>
+<doc-anchor-target id="isregularfunction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isregularfunction">#</doc-anchor-trigger>
+        <span>isRegularFunction</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isRegularFunction value → boolean</em></p>
+<p>Returns true if <em>value</em> is an instance of <code v-pre>Function</code>.</p>
+<doc-anchor-target id="isgeneratorfunction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isgeneratorfunction">#</doc-anchor-trigger>
+        <span>isGeneratorFunction</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isGeneratorFunction value → boolean</em></p>
+<p>Returns true if <em>value</em> is a generator function.</p>
+<doc-anchor-target id="isasyncfunction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isasyncfunction">#</doc-anchor-trigger>
+        <span>isAsyncFunction</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isAsyncFunction value → boolean</em></p>
+<p>Returns true if <em>value</em> is an asynchronous function.</p>
+<doc-anchor-target id="isfunction">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isfunction">#</doc-anchor-trigger>
+        <span>isFunction</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isFunction value → boolean</em></p>
+<p>Returns true if <em>value</em> is a function.</p>
+<doc-anchor-target id="value">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#value">#</doc-anchor-trigger>
+        <span>Value</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/value</em></p>
+<doc-anchor-target id="equal">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#equal">#</doc-anchor-trigger>
+        <span>equal</span>
+    </h3>
+</doc-anchor-target>
+<p><em>equal a, b → boolean</em></p>
+<p>Returns true if the given values are equal, false otherwise. Performs a deep comparison.</p>
+<doc-anchor-target id="clone">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clone">#</doc-anchor-trigger>
+        <span>clone</span>
+    </h3>
+</doc-anchor-target>
+<p><em>clone value → value</em></p>
+<p>Returns a deep clone of the given value.</p>
+<doc-anchor-target id="size">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#size">#</doc-anchor-trigger>
+        <span>size</span>
+    </h3>
+</doc-anchor-target>
+<p><em>size value → integer</em></p>
+<p>Returns the size of <em>value</em>, if possible. A value is considered to have a size is it has a <code v-pre>length</code>, <code v-pre>size</code>, or <code v-pre>byteLength</code> property, or if it is an object, in which case we use the length of the array returned by <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys"><code v-pre>Object.keys</code></a>.</p>
+<doc-anchor-target id="isempty">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isempty">#</doc-anchor-trigger>
+        <span>isEmpty</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isEmpty value → boolean</em></p>
+<p>Returns true if the size of <em>value</em> is zero, false otherwise.</p>
+<doc-anchor-target id="promise">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#promise">#</doc-anchor-trigger>
+        <span>Promise</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/promise</em></p>
+<doc-anchor-target id="promise-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#promise-1">#</doc-anchor-trigger>
+        <span>promise</span>
+    </h3>
+</doc-anchor-target>
+<p><em>promise function → promise</em></p>
+<p>Creates a promise.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise</code> constructor</a>.</p>
+<doc-anchor-target id="resolve">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#resolve">#</doc-anchor-trigger>
+        <span>resolve</span>
+    </h3>
+</doc-anchor-target>
+<p><em>resolve value → promise</em></p>
+<p>Returns a promise that resolve to <em>value</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.resolve</code></a>.</p>
+<doc-anchor-target id="reject">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#reject">#</doc-anchor-trigger>
+        <span>reject</span>
+    </h3>
+</doc-anchor-target>
+<p><em>reject error → promise</em></p>
+<p>Returns a promise that rejects with <em>error</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.reject</code></a>.</p>
+<doc-anchor-target id="all-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#all-1">#</doc-anchor-trigger>
+        <span>all</span>
+    </h3>
+</doc-anchor-target>
+<p><em>all iterable → promise</em></p>
+<p>Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.all</code></a>.</p>
+<doc-anchor-target id="any-1">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#any-1">#</doc-anchor-trigger>
+        <span>any</span>
+    </h3>
+</doc-anchor-target>
+<p><em>any iterable → promise</em></p>
+<p>Returns a promise that resolves to the values of the first resolved promise of the <em>iterable</em>. If none of the promises resolve, the promise rejects.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.any</code></a>.</p>
+<doc-anchor-target id="race">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#race">#</doc-anchor-trigger>
+        <span>race</span>
+    </h3>
+</doc-anchor-target>
+<p><em>race iterable → promise</em></p>
+<p>Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.race</code></a>.</p>
+<doc-anchor-target id="map">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#map">#</doc-anchor-trigger>
+        <span>map</span>
+    </h3>
+</doc-anchor-target>
+<p><em>map iterable → promise</em></p>
+<p>Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results.
+For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Promise.allSettled</code></a>.</p>
+<doc-anchor-target id="text">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#text">#</doc-anchor-trigger>
+        <span>Text</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/text</em></p>
+<doc-anchor-target id="tostring">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tostring">#</doc-anchor-trigger>
+        <span>toString</span>
+    </h3>
+</doc-anchor-target>
+<p><em>toString value → string</em></p>
+<p>Returns a string representation of <em>value</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Object::toString</code></a>.</p>
+<doc-anchor-target id="touppercase">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#touppercase">#</doc-anchor-trigger>
+        <span>toUpperCase</span>
+    </h3>
+</doc-anchor-target>
+<p><em>toUpperCase string → string</em></p>
+<p>Returns a the given string in upper case.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>String::toUpperCase</code></a>.</p>
+<doc-anchor-target id="tolowercase">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tolowercase">#</doc-anchor-trigger>
+        <span>toLowerCase</span>
+    </h3>
+</doc-anchor-target>
+<p><em>toLowerCase string → string</em></p>
+<p>Returns a the given string in lower case.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>String::toLowerCase</code></a>.</p>
+<doc-anchor-target id="trim">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#trim">#</doc-anchor-trigger>
+        <span>trim</span>
+    </h3>
+</doc-anchor-target>
+<p><em>trim string → string</em></p>
+<p>Returns a the given string with leading and trailing whitespace removed.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>String::trim</code></a>.</p>
+<doc-anchor-target id="split">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#split">#</doc-anchor-trigger>
+        <span>split</span>
+    </h3>
+</doc-anchor-target>
+<p><em>split pattern, string → array</em></p>
+<p>Returns an array obtained by splitting <em>string</em> using the given Regular Expression <em>pattern</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>String::split</code></a>.</p>
+<doc-anchor-target id="w">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#w">#</doc-anchor-trigger>
+        <span>w</span>
+    </h3>
+</doc-anchor-target>
+<p><em>w string → array</em></p>
+<p>Returns an array obtained by splitting <em>string</em> on whitespace.</p>
+<doc-anchor-target id="isblank">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#isblank">#</doc-anchor-trigger>
+        <span>isBlank</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isBlank string → boolean</em></p>
+<p>Returns true if the string is empty, false otherwise.</p>
+<doc-anchor-target id="match">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#match">#</doc-anchor-trigger>
+        <span>match</span>
+    </h3>
+</doc-anchor-target>
+<p><em>match pattern, string → match</em></p>
+<p>Returns the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match#return_value">match data</a> for the given Regular Expression <em>pattern</em> or undefined if the pattern doesn&#39;t match.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>String::match</code></a>.</p>
+<doc-anchor-target id="ismatch">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ismatch">#</doc-anchor-trigger>
+        <span>isMatch</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isMatch pattern, string → boolean</em></p>
+<p>Returns true if the given Regular Expression <em>pattern</em> matches, false otherwise.</p>
+<doc-anchor-target id="replace">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#replace">#</doc-anchor-trigger>
+        <span>replace</span>
+    </h3>
+</doc-anchor-target>
+<p><em>replace pattern, replacement, string → string</em></p>
+<p>Returns the string resulting from replacing matches of the Regular Expression <em>pattern</em> using <em>replacement</em>, which may be a string or function returning a string.</p>
+<doc-anchor-target id="template">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#template">#</doc-anchor-trigger>
+        <span>template</span>
+    </h3>
+</doc-anchor-target>
+<p><em>template string[, filters] → function</em></p>
+<p>Returns a function that will substitute the properties of its argument into the given string, processing it using the optional filters.
+Lightweight but relatively limited and slow. Uses regexp substitution and does not support common templating features, such as control flow, iteration, or escaping.</p>
+<doc-anchor-target id="example-5">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-5">#</doc-anchor-trigger>
+        <span>Example</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">f = template &quot;foo {{ bar | reverse }} baz&quot;,
+  reverse: (s) -&gt; s.split(&quot;&quot;).reverse().join(&quot;&quot;)
+assert.equal &quot;foo xuaf baz&quot;, f bar: &quot;faux&quot;</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="array">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#array">#</doc-anchor-trigger>
+        <span>Array</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/array</em></p>
+<doc-anchor-target id="first">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#first">#</doc-anchor-trigger>
+        <span>first</span>
+    </h3>
+</doc-anchor-target>
+<p><em>first array → value</em></p>
+<p>Returns the first element of <em>array</em>.</p>
+<doc-anchor-target id="second">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#second">#</doc-anchor-trigger>
+        <span>second</span>
+    </h3>
+</doc-anchor-target>
+<p><em>second array → value</em></p>
+<p>Returns the second element of <em>array</em>.</p>
+<doc-anchor-target id="third">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#third">#</doc-anchor-trigger>
+        <span>third</span>
+    </h3>
+</doc-anchor-target>
+<p><em>third array → value</em></p>
+<p>Returns the third element of <em>array</em>.</p>
+<doc-anchor-target id="fourth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fourth">#</doc-anchor-trigger>
+        <span>fourth</span>
+    </h3>
+</doc-anchor-target>
+<p><em>fourth array → value</em></p>
+<p>Returns the fourth element of <em>array</em>.</p>
+<doc-anchor-target id="fifth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fifth">#</doc-anchor-trigger>
+        <span>fifth</span>
+    </h3>
+</doc-anchor-target>
+<p><em>fifth array → value</em></p>
+<p>Returns the fifth element of <em>array</em>.</p>
+<doc-anchor-target id="nth">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nth">#</doc-anchor-trigger>
+        <span>nth</span>
+    </h3>
+</doc-anchor-target>
+<p><em>nth n, array → value</em></p>
+<p>Returns the <em>nth</em> element of <em>array</em>.</p>
+<doc-anchor-target id="last">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#last">#</doc-anchor-trigger>
+        <span>last</span>
+    </h3>
+</doc-anchor-target>
+<p><em>last array → value</em></p>
+<p>Returns the last element of <em>array</em>.</p>
+<doc-anchor-target id="rest">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rest">#</doc-anchor-trigger>
+        <span>rest</span>
+    </h3>
+</doc-anchor-target>
+<p><em>rest array → array</em></p>
+<p>Returns a new array consisting of all but the first element of the given array.</p>
+<doc-anchor-target id="slice">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#slice">#</doc-anchor-trigger>
+        <span>slice</span>
+    </h3>
+</doc-anchor-target>
+<p><em>slice start, end, array → array</em></p>
+<p>Returns an array containing the elements in <em>array</em> from <em>start</em> up to, but not including, <em>end</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::slice</code></a>.</p>
+<doc-anchor-target id="pushenqueue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pushenqueue">#</doc-anchor-trigger>
+        <span>push/enqueue</span>
+    </h3>
+</doc-anchor-target>
+<p><em>push/enqueue array, value → array</em></p>
+<p>Adds <em>value</em> to the end of <em>array</em> and returns the mutated array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::push</code></a>.</p>
+<doc-anchor-target id="popdequeue">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#popdequeue">#</doc-anchor-trigger>
+        <span>pop/dequeue</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pop/dequeue array → value</em></p>
+<p>Removes <em>value</em> from the end of <em>array</em> and returns it, mutating the array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::pop</code></a>.</p>
+<doc-anchor-target id="shift">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#shift">#</doc-anchor-trigger>
+        <span>shift</span>
+    </h3>
+</doc-anchor-target>
+<p><em>shift array, value → array</em></p>
+<p>Removes <em>value</em> from the start of the <em>array</em> and returns it, mutating the array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::shift</code></a>.</p>
+<doc-anchor-target id="unshift">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unshift">#</doc-anchor-trigger>
+        <span>unshift</span>
+    </h3>
+</doc-anchor-target>
+<p><em>unshift array, value → array</em></p>
+<p>Adds <em>value</em> to the start of the <em>array</em> and returns the mutated array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::unshift</code></a>.</p>
+<doc-anchor-target id="cat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cat">#</doc-anchor-trigger>
+        <span>cat</span>
+    </h3>
+</doc-anchor-target>
+<p><em>cat array, array, ... → array</em></p>
+<p>Concatenates arrays passed as arguments, returning a new array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::concat</code></a>.</p>
+<doc-anchor-target id="splice">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#splice">#</doc-anchor-trigger>
+        <span>splice</span>
+    </h3>
+</doc-anchor-target>
+<p><em>splice start, end, array → array</em></p>
+<p>Removes the elements in <em>array</em> from <em>start</em> up to, but not including, <em>end</em>, and returns the mutated array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::splice</code></a>.</p>
+<doc-anchor-target id="insert">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#insert">#</doc-anchor-trigger>
+        <span>insert</span>
+    </h3>
+</doc-anchor-target>
+<p><em>insert index, value, array → array</em></p>
+<p>Inserts <em>value</em> into array at <em>index</em>, returning the mutated array.</p>
+<doc-anchor-target id="remove">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#remove">#</doc-anchor-trigger>
+        <span>remove</span>
+    </h3>
+</doc-anchor-target>
+<p><em>remove value, array → array</em></p>
+<p>Removes <em>value</em> from array, if it exists within it, returning the mutated array.</p>
+<doc-anchor-target id="range">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#range">#</doc-anchor-trigger>
+        <span>range</span>
+    </h3>
+</doc-anchor-target>
+<p><em>range start, finish → array</em></p>
+<p>Returns a numeric array with consecutive values from <em>start</em> to <em>finish</em>.</p>
+<doc-anchor-target id="join">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#join">#</doc-anchor-trigger>
+        <span>join</span>
+    </h3>
+</doc-anchor-target>
+<p><em>join text, array → string</em></p>
+<p>Returns a string formed by concatening consecutive elements of <em>array</em> with <em>text</em>.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::join</code></a>.</p>
+<doc-anchor-target id="fill">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fill">#</doc-anchor-trigger>
+        <span>fill</span>
+    </h3>
+</doc-anchor-target>
+<p><em>fill value, array → array</em></p>
+<p>Sets each element of <em>array</em> to <em>value</em> and returns the mutated array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::fill</code></a>.</p>
+<doc-anchor-target id="sort">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sort">#</doc-anchor-trigger>
+        <span>sort</span>
+    </h3>
+</doc-anchor-target>
+<p><em>sort comparator, array → array</em></p>
+<p>Sorts the given array in place using the <em>comparator</em> function. Returns the sorted (mutated) array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::sort</code></a>.</p>
+<doc-anchor-target id="pluck">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pluck">#</doc-anchor-trigger>
+        <span>pluck</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pluck array → value</em></p>
+<p>Returns a random element from <em>array</em>.</p>
+<doc-anchor-target id="pair">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pair">#</doc-anchor-trigger>
+        <span>pair</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pair value, value → array</em></p>
+<p>Returns its arguments as an array.</p>
+<doc-anchor-target id="shuffle">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#shuffle">#</doc-anchor-trigger>
+        <span>shuffle</span>
+    </h3>
+</doc-anchor-target>
+<p><em>shuffle array → array</em></p>
+<p>Randomly shuffles the elements of the array.</p>
+<doc-anchor-target id="set-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set-1">#</doc-anchor-trigger>
+        <span>Set</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/set</em></p>
+<doc-anchor-target id="union">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#union">#</doc-anchor-trigger>
+        <span>union</span>
+    </h3>
+</doc-anchor-target>
+<p><em>union iterable, iterable → set</em></p>
+<p>Returns a set that is the union of the given iterables.</p>
+<doc-anchor-target id="intersection">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#intersection">#</doc-anchor-trigger>
+        <span>intersection</span>
+    </h3>
+</doc-anchor-target>
+<p><em>intersection iterable, iterable → set</em></p>
+<p>Returns a set that is the intersection (the common elements) of the given iterables.</p>
+<doc-anchor-target id="complement">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#complement">#</doc-anchor-trigger>
+        <span>complement</span>
+    </h3>
+</doc-anchor-target>
+<p><em>complement iterable, iterable → set</em></p>
+<p>Returns a set that is the complement (values that are only produced by one iterable) of the given iterables.</p>
+<doc-anchor-target id="difference">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#difference">#</doc-anchor-trigger>
+        <span>difference</span>
+    </h3>
+</doc-anchor-target>
+<p><em>difference iterable, iterable → set</em></p>
+<p>Returns a set that is consists of the elements of the first iterable after removing the elements of the second.</p>
+<doc-anchor-target id="unique">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#unique">#</doc-anchor-trigger>
+        <span>unique</span>
+    </h3>
+</doc-anchor-target>
+<p><em>unique iterable → set</em></p>
+<p>Returns a set that is consists only of the unique elements of <em>iterable</em>.</p>
+<doc-anchor-target id="dupes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dupes">#</doc-anchor-trigger>
+        <span>dupes</span>
+    </h3>
+</doc-anchor-target>
+<p><em>dupes iterable → set</em></p>
+<p>Returns a set that is consists only of the non-unique elements of <em>iterable</em>.</p>
+<doc-anchor-target id="iterable">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iterable">#</doc-anchor-trigger>
+        <span>Iterable</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/iterable</em></p>
+<doc-anchor-target id="includes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#includes">#</doc-anchor-trigger>
+        <span>includes</span>
+    </h3>
+</doc-anchor-target>
+<p><em>includes value, iterable → boolean</em></p>
+<p>Returns true if <em>value</em> is produced by <em>iterable</em>, false otherwise. Specialized for array.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Array::includes</code></a>.</p>
+<doc-anchor-target id="uniqueby">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#uniqueby">#</doc-anchor-trigger>
+        <span>uniqueBy</span>
+    </h3>
+</doc-anchor-target>
+<p><em>uniqueBy comparator, iterable → array</em></p>
+<p>Returns an array of the unique values of <em>iterable</em> as determined by the <em>comparator</em> function.</p>
+<doc-anchor-target id="math">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#math">#</doc-anchor-trigger>
+        <span>Math</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/math</em></p>
+<doc-anchor-target id="gt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gt">#</doc-anchor-trigger>
+        <span>gt</span>
+    </h3>
+</doc-anchor-target>
+<p><em>gt x, y → boolean</em></p>
+<p>Returns true if x &gt; y, false otherwise.</p>
+<doc-anchor-target id="lt">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lt">#</doc-anchor-trigger>
+        <span>lt</span>
+    </h3>
+</doc-anchor-target>
+<p><em>lt x, y → boolean</em></p>
+<p>Returns true if x &lt; y, false otherwise.</p>
+<doc-anchor-target id="gte">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gte">#</doc-anchor-trigger>
+        <span>gte</span>
+    </h3>
+</doc-anchor-target>
+<p><em>gte x, y → boolean</em></p>
+<p>Returns true if x &gt;= y, false otherwise.</p>
+<doc-anchor-target id="lte">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lte">#</doc-anchor-trigger>
+        <span>lte</span>
+    </h3>
+</doc-anchor-target>
+<p><em>lte x, y → boolean</em></p>
+<p>Returns true if x &lt;= y, false otherwise.</p>
+<doc-anchor-target id="add">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#add">#</doc-anchor-trigger>
+        <span>add</span>
+    </h3>
+</doc-anchor-target>
+<p><em>add x, y → number</em></p>
+<p>Returns x + y.</p>
+<doc-anchor-target id="sub">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sub">#</doc-anchor-trigger>
+        <span>sub</span>
+    </h3>
+</doc-anchor-target>
+<p><em>sub x, y → number</em></p>
+<p>Returns x - y.</p>
+<doc-anchor-target id="mul">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mul">#</doc-anchor-trigger>
+        <span>mul</span>
+    </h3>
+</doc-anchor-target>
+<p><em>mul x, y → number</em></p>
+<p>Returns x * y.</p>
+<doc-anchor-target id="div">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#div">#</doc-anchor-trigger>
+        <span>div</span>
+    </h3>
+</doc-anchor-target>
+<p><em>div x, y → number</em></p>
+<p>Returns x / y.</p>
+<doc-anchor-target id="mod">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mod">#</doc-anchor-trigger>
+        <span>mod</span>
+    </h3>
+</doc-anchor-target>
+<p><em>mod x, y → number</em></p>
+<p>Returns x % y.</p>
+<doc-anchor-target id="ismodulo">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ismodulo">#</doc-anchor-trigger>
+        <span>isModulo</span>
+    </h3>
+</doc-anchor-target>
+<p><em>isModulo x, y → boolean</em></p>
+<p>Returns true if y % x is zero, false otherwise.</p>
+<doc-anchor-target id="even">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#even">#</doc-anchor-trigger>
+        <span>even</span>
+    </h3>
+</doc-anchor-target>
+<p><em>even x → boolean</em></p>
+<p>Returns true if x % 2 is zero, false otherwise.</p>
+<doc-anchor-target id="odd">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#odd">#</doc-anchor-trigger>
+        <span>odd</span>
+    </h3>
+</doc-anchor-target>
+<p><em>odd x → boolean</em></p>
+<p>Returns true if x % 2 is non-zero, false otherwise.</p>
+<doc-anchor-target id="min">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#min">#</doc-anchor-trigger>
+        <span>min</span>
+    </h3>
+</doc-anchor-target>
+<p><em>min array → number</em></p>
+<p>Returns the minimum number in <em>array</em>.</p>
+<doc-anchor-target id="max">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#max">#</doc-anchor-trigger>
+        <span>max</span>
+    </h3>
+</doc-anchor-target>
+<p><em>max array → number</em></p>
+<p>Returns the maximum number in <em>array</em>.</p>
+<doc-anchor-target id="abs">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#abs">#</doc-anchor-trigger>
+        <span>abs</span>
+    </h3>
+</doc-anchor-target>
+<p><em>abs x → number</em></p>
+<p>Returns the absolute value of <em>x</em>.</p>
+<doc-anchor-target id="pow">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pow">#</doc-anchor-trigger>
+        <span>pow</span>
+    </h3>
+</doc-anchor-target>
+<p><em>pow x, y → number</em></p>
+<p>Returns the x to the power of y. The arguments may be BigInt instances.</p>
+<doc-anchor-target id="time">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#time">#</doc-anchor-trigger>
+        <span>Time</span>
+    </h2>
+</doc-anchor-target>
+<p><em>@dashkite/joy/time</em></p>
+<doc-anchor-target id="timer">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#timer">#</doc-anchor-trigger>
+        <span>timer</span>
+    </h3>
+</doc-anchor-target>
+<p><em>timer interval, action → cancel</em></p>
+<p>Calls <em>action</em> function after the <em>interval</em> (in milliseconds) has expired. Returns a function to cancel the timer.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>setTimeout</code></a>.</p>
+<doc-anchor-target id="sleep">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sleep">#</doc-anchor-trigger>
+        <span>sleep</span>
+    </h3>
+</doc-anchor-target>
+<p><em>sleep interval → promise</em></p>
+<p>Returns a promise that resolves after the <em>interval</em> (in milliseconds) has expired.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>setTimeout</code></a>.</p>
+<doc-anchor-target id="milliseconds">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#milliseconds">#</doc-anchor-trigger>
+        <span>milliseconds</span>
+    </h3>
+</doc-anchor-target>
+<p><em>milliseconds () → number</em></p>
+<p>Returns the current time in milliseconds, with precision to microseconds if available.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Performance::now</code></a>.</p>
+<doc-anchor-target id="benchmark">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#benchmark">#</doc-anchor-trigger>
+        <span>benchmark</span>
+    </h3>
+</doc-anchor-target>
+<p><em>benchmark function → number</em></p>
+<p>Runs <em>function</em> returning the elapsed time in milliseconds, with precision to microseconds if available. If <em>function</em> returns a promise, returns a promise that resolves to the elapsed time.</p>
+<p>Convenience wrapper for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply"><code v-pre>Performance::now</code></a>.</p>
+
+    
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results />
+            </div>
+
+            
+<nav class="flex mt-14">
+    <div class="w-1/2">
+        <a class="px-6 py-4 h-full flex items-center break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+            <span>
+                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                <span class="block mt-1">Joy</span>
+            </span>
+        </a>
+    </div>
+
+    <div class="w-1/2">
+        <a class="px-6 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/docs">
+            <span>
+                <span class="block text-right text-xs font-normal text-gray-400 dark:text-dark-400">Next</span>
+                <span class="block mt-1">Joy</span>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+        </a>
+    </div>
+</nav>
+
+
+        </main>
+
+        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+            <footer class="flex flex-wrap items-center justify-between">
+    <div>
+        <ul class="flex flex-wrap items-center text-sm">
+</ul>
+
+    </div>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2021. All rights reserved.</p>
+</div>
+</footer>
+
+        </div>
+    </div>
+    
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+        </div>
+    </div>
+    
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+        <div id="docs-overlay-target"></div>
+
+        <script>window.__DOCS__ = { "title": "Joy API Reference", icon: "file" }</script>
+    </body>
+</html>
