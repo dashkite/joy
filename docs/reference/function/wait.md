@@ -10,6 +10,6 @@ Returns a function that awaits on its arguments before passing it to the given f
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

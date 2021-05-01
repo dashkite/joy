@@ -11,6 +11,6 @@ Calls the given function with the given arguments. Use with [&#x60;bind&#x60;](#
 |------|------|-------------|
 |function|any||
 |arguments|any||
-|value|||
+|value|any||
 
 

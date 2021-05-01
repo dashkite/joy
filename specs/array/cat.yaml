@@ -5,7 +5,12 @@ summary: Concatenates arrays passed as arguments, returning a new array.
 signatures:
   - arguments:
       - name: array
+        type: Array
+        description: Array to concatenate.
       - name: array
-      - name: ...
+        type: Array
+        description: Array to concatenate.
     returns:
       name: array
+      type: Array
+      description: New array resulting from concatening the given arrays.

@@ -11,7 +11,7 @@ Works like [&#x60;pipe&#x60;](#pipe), except transforms each function with the g
 |------|------|-------------|
 |adapter|any||
 |functions|any||
-|function|||
+|function|any||
 
 
 ## Examples

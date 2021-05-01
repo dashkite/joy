@@ -12,6 +12,6 @@ Returns a function that calls the _consequent_ if the _predicate_ returns true, 
 |predicate|any||
 |consequent[|any||
 |alternative]|any||
-|function|||
+|function|any||
 
 

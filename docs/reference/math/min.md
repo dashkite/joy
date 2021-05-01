@@ -10,6 +10,6 @@ Returns the minimum number in _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|number|||
+|number|any||
 
 

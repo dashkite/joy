@@ -12,6 +12,6 @@ Returns an array containing the elements in _array_ from _start_ up to, but not 
 |start|any||
 |end|any||
 |array|any||
-|array|||
+|array|any||
 
 

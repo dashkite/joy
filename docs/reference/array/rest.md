@@ -10,6 +10,6 @@ Returns a new array consisting of all but the first element of the given array.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|array|||
+|array|any||
 
 

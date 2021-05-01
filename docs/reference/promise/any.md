@@ -10,6 +10,6 @@ Returns a promise that resolves to the values of the first resolved promise of t
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|promise|||
+|promise|any||
 
 

@@ -10,6 +10,6 @@ Returns a promise that rejects with _error_.
 | name | type | description |
 |------|------|-------------|
 |error|any||
-|promise|||
+|promise|any||
 
 

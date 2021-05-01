@@ -10,6 +10,6 @@ Returns true if _value_ is fine. Equivalent to &#x60;Number.isInteger&#x60;.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|||
+|boolean|any||
 
 

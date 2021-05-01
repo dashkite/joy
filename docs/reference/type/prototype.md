@@ -10,6 +10,6 @@ Returns the prototype of the given _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|prototype|||
+|prototype|any||
 
 

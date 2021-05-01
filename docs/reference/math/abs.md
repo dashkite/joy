@@ -10,6 +10,6 @@ Returns the absolute value of _x_.
 | name | type | description |
 |------|------|-------------|
 |x|any||
-|number|||
+|number|any||
 
 

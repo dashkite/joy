@@ -10,6 +10,6 @@ Removes _value_ from the end of _array_ and returns it, mutating the array.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|value|||
+|value|any||
 
 

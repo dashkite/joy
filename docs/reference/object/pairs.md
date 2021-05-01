@@ -10,7 +10,7 @@ Returns the properties for the given object as an associative array (an array of
 | name | type | description |
 |------|------|-------------|
 |object|any||
-|array|||
+|array|any||
 
 
 ## Examples

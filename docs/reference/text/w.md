@@ -10,6 +10,6 @@ Returns an array obtained by splitting _string_ on whitespace.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|array|||
+|array|any||
 
 

@@ -11,6 +11,6 @@ Returns an array of the unique values of _iterable_ as determined by the _compar
 |------|------|-------------|
 |comparator|any||
 |iterable|any||
-|array|||
+|array|any||
 
 

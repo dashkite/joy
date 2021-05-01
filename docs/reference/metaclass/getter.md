@@ -12,6 +12,6 @@ Defines a getter on _target_ using the given _key_ (the property name) and _desc
 |key|any||
 |function|any||
 |target|any||
-|object|||
+|object|any||
 
 

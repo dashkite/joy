@@ -10,6 +10,6 @@ Returns its argument.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|value|||
+|value|any||
 
 

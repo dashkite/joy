@@ -11,6 +11,6 @@ Returns true if x &gt;&#x3D; y, false otherwise.
 |------|------|-------------|
 |x|any||
 |y|any||
-|boolean|||
+|boolean|any||
 
 

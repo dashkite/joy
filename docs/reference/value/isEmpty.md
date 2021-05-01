@@ -10,6 +10,6 @@ Returns true if the size of _value_ is zero, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|||
+|boolean|any||
 
 

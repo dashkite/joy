@@ -11,7 +11,7 @@ Returns true if _object_ matches _exemplar_, false otherwise. An exemplar matche
 |------|------|-------------|
 |exemplar|any||
 |object|any||
-|object|||
+|object|any||
 
 
 ## Examples

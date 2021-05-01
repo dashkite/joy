@@ -11,6 +11,6 @@ Defines setters on _target_ using the given _dictionary_ of keys and setter func
 |------|------|-------------|
 |dictionary|any||
 |target|any||
-|object|||
+|object|any||
 
 

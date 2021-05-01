@@ -10,6 +10,6 @@ Returns a deep clone of the given value.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|value|||
+|value|any||
 
 

@@ -10,6 +10,6 @@ Returns true if _value_ is not a number. Equivalent to &#x60;Number.isNaN&#x60;.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|||
+|boolean|any||
 
 

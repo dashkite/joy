@@ -12,6 +12,6 @@ Sets the value of the property matching the given key for the given object.
 |key|any||
 |value|any||
 |object|any||
-|boolean|||
+|boolean|any||
 
 

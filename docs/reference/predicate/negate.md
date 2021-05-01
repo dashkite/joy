@@ -10,6 +10,6 @@ Returns a function that returns the negation of the given function.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

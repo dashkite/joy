@@ -11,6 +11,6 @@ Returns true if the given values are equal, false otherwise. Performs a deep com
 |------|------|-------------|
 |a|any||
 |b|any||
-|boolean|||
+|boolean|any||
 
 

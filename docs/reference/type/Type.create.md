@@ -10,6 +10,6 @@ Creates a new instance of a type (class). Convenience wrapper for &#x60;new&#x60
 | name | type | description |
 |------|------|-------------|
 |type|any||
-|instance|||
+|instance|any||
 
 

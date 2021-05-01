@@ -10,6 +10,6 @@ Randomly shuffles the elements of the array.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|array|||
+|array|any||
 
 

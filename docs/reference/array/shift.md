@@ -11,6 +11,6 @@ Removes _value_ from the start of the _array_ and returns it, mutating the array
 |------|------|-------------|
 |array|any||
 |value|any||
-|array|||
+|array|any||
 
 

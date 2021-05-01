@@ -11,6 +11,6 @@ Returns true if x &lt; y, false otherwise.
 |------|------|-------------|
 |x|any||
 |y|any||
-|boolean|||
+|boolean|any||
 
 

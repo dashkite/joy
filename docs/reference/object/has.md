@@ -11,6 +11,6 @@ Returns the true if the given object has a property matching the given key, fals
 |------|------|-------------|
 |key|any||
 |object|any||
-|boolean|||
+|boolean|any||
 
 

@@ -11,6 +11,6 @@ Returns a numeric array with consecutive values from _start_ to _finish_.
 |------|------|-------------|
 |start|any||
 |finish|any||
-|array|||
+|array|any||
 
 

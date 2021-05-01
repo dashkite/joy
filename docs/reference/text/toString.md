@@ -10,6 +10,6 @@ Returns a string representation of _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|string|||
+|string|any||
 
 

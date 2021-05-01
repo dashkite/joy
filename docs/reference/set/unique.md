@@ -10,6 +10,6 @@ Returns a set that is consists only of the unique elements of _iterable_.
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|set|||
+|set|any||
 
 

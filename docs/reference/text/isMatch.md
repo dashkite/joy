@@ -11,6 +11,6 @@ Returns true if the given Regular Expression _pattern_ matches, false otherwise.
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|boolean|||
+|boolean|any||
 
 

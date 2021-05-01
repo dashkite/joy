@@ -10,6 +10,6 @@ Returns a promise that resolve to an array of the values of of the resolved prom
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|promise|||
+|promise|any||
 
 

@@ -5,5 +5,8 @@ summary: Returns the fifth element of _array_.
 signatures:
   - arguments:
       - name: array
+        type: Array
+        description: The target array.
     returns:
       name: value
+      description: The fifth element of the given array.

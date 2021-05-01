@@ -11,6 +11,6 @@ Given a pattern array and an array of values, returns an array with the values s
 |------|------|-------------|
 |pattern|any||
 |values|any||
-|array|||
+|array|any||
 
 

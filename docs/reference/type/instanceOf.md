@@ -11,6 +11,6 @@ Returns true if &#x60;instanceof&#x60; returns true for the given instance and t
 |------|------|-------------|
 |type|any||
 |instance|any||
-|boolean|||
+|boolean|any||
 
 

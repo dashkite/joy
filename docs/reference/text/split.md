@@ -11,6 +11,6 @@ Returns an array obtained by splitting _string_ using the given Regular Expressi
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|array|||
+|array|any||
 
 

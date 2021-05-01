@@ -10,6 +10,6 @@ Returns a ternary function that passes its arguments to the given function.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

@@ -35,7 +35,6 @@ t.define "node:test", [ "build" ], ->
 t.define "test", [ "clean" ], ->
   require "../test"
 
-
 t.define "docs:clean", ->
   fs.rm "docs/reference", recursive: true, force: true
 
@@ -57,3 +56,7 @@ t.define "site:configure", ->
 
 t.define "site:build", [ "docs:build", "site:configure" ], ->
   fs.copyFile "./README.md", "docs/index.md"
+
+t.define "site:watch", ->
+  t.run "site:build"
+  m.watch "specs", -> t.run "site:build"

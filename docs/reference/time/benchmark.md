@@ -10,6 +10,6 @@ Runs _function_ returning the elapsed time in milliseconds, with precision to mi
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|number|||
+|number|any||
 
 

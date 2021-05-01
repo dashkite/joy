@@ -10,6 +10,6 @@ Returns a promise that resolves or rejects as soon as one of the promises in an 
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|promise|||
+|promise|any||
 
 

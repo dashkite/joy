@@ -11,6 +11,6 @@ Adds the properties for _objects_ to _object_. Modifies _object_. If you want to
 |------|------|-------------|
 |object|any||
 |objects...|any||
-|object|||
+|object|any||
 
 

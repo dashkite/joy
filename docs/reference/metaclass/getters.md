@@ -11,7 +11,7 @@ Defines getters on _target_ using the given _dictionary_ of keys and getter func
 |------|------|-------------|
 |dictionary|any||
 |target|any||
-|object|||
+|object|any||
 
 
 ## Examples

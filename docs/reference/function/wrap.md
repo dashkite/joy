@@ -10,6 +10,6 @@ Returns a function that returns its argument.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|function|||
+|function|any||
 
 

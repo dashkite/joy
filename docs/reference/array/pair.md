@@ -11,6 +11,6 @@ Returns its arguments as an array.
 |------|------|-------------|
 |value|any||
 |value|any||
-|array|||
+|array|any||
 
 

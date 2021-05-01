@@ -9,8 +9,8 @@ Sets each element of _array_ to _value_ and returns the mutated array.
 
 | name | type | description |
 |------|------|-------------|
-|value|any||
-|array|any||
-|array|||
+|value|any|The value with which to fill the array.|
+|array|Array|The array to fill.|
+|array|Array|The resulting filled array.|
 
 

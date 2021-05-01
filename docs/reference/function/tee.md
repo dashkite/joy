@@ -10,6 +10,6 @@ Returns a function that calls the given function but always returns its first ar
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

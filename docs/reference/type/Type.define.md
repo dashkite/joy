@@ -10,6 +10,6 @@ Creates a new type (class) that extends _parent_, if defined, or &#x60;Object&#x
 | name | type | description |
 |------|------|-------------|
 |parent|any||
-|class|||
+|class|any||
 
 

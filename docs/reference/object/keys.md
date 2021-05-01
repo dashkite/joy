@@ -10,6 +10,6 @@ Returns the property names for the given object.
 | name | type | description |
 |------|------|-------------|
 |object|any||
-|array|||
+|array|any||
 
 

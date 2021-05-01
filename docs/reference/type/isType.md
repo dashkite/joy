@@ -11,6 +11,6 @@ Returns true if _value_ is an instance of _type_, false otherwise.
 |------|------|-------------|
 |type|any||
 |value|any||
-|boolean|||
+|boolean|any||
 
 

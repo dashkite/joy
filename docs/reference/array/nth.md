@@ -11,6 +11,6 @@ Returns the _nth_ element of _array_.
 |------|------|-------------|
 |n|any||
 |array|any||
-|value|||
+|value|any||
 
 

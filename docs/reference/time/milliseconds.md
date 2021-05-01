@@ -10,6 +10,6 @@ Returns the current time in milliseconds, with precision to microseconds if avai
 | name | type | description |
 |------|------|-------------|
 |()|any||
-|number|||
+|number|any||
 
 

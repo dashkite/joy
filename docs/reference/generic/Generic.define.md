@@ -12,6 +12,6 @@ Defines a specialization for given generic function using the given _terms_ and 
 |function|any||
 |terms...|any||
 |implementation|any||
-|GenericFunction|||
+|GenericFunction|any||
 
 

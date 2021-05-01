@@ -12,6 +12,6 @@ Removes the elements in _array_ from _start_ up to, but not including, _end_, an
 |start|any||
 |end|any||
 |array|any||
-|array|||
+|array|any||
 
 

@@ -11,6 +11,6 @@ Generic function wrapper around [&#x60;Generic.define&#x60;](#Generic.define).
 |------|------|-------------|
 |function|any||
 |arguments...|any||
-|GenericFunction|||
+|GenericFunction|any||
 
 

@@ -9,7 +9,7 @@ Returns the fifth element of _array_.
 
 | name | type | description |
 |------|------|-------------|
-|array|any||
-|value|||
+|array|Array|The target array.|
+|value|any|The fifth element of the given array.|
 
 

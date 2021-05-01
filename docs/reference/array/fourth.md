@@ -10,6 +10,6 @@ Returns the fourth element of _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|value|||
+|value|any||
 
 

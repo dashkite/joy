@@ -10,6 +10,6 @@ Creates a promise.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|promise|||
+|promise|any||
 
 

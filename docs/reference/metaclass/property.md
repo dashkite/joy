@@ -12,6 +12,6 @@ Defines a property on _target_ using the given _key_ (the property name) and _de
 |key|any||
 |description|any||
 |target|any||
-|object|||
+|object|any||
 
 

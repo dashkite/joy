@@ -12,7 +12,7 @@ Lightweight but relatively limited and slow. Uses regexp substitution and does n
 |------|------|-------------|
 |string[|any||
 |filters]|any||
-|function|||
+|function|any||
 
 
 ## Examples

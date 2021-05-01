@@ -11,6 +11,6 @@ Returns a string formed by concatening consecutive elements of _array_ with _tex
 |------|------|-------------|
 |text|any||
 |array|any||
-|string|||
+|string|any||
 
 

@@ -11,6 +11,6 @@ Returns true if _value_ is an instance of _type_ or one of its descendents (as d
 |------|------|-------------|
 |type|any||
 |value|any||
-|boolean|||
+|boolean|any||
 
 

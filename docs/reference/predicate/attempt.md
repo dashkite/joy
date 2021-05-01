@@ -10,6 +10,6 @@ Returns a function that calls the given function, returning false if the functio
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

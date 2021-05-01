@@ -10,6 +10,6 @@ Returns a unary function that passes its argument to the given function.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

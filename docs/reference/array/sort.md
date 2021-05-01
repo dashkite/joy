@@ -11,6 +11,6 @@ Sorts the given array in place using the _comparator_ function. Returns the sort
 |------|------|-------------|
 |comparator|any||
 |array|any||
-|array|||
+|array|any||
 
 

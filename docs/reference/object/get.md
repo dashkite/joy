@@ -12,6 +12,6 @@ Returns the value of the property matching the given key for the given object. L
 |------|------|-------------|
 |key|any||
 |object|any||
-|boolean|||
+|boolean|any||
 
 

@@ -10,6 +10,6 @@ Returns a the given string in upper case.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|string|||
+|string|any||
 
 

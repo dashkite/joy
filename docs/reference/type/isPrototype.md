@@ -11,6 +11,6 @@ Returns true if _prototype_ is the prototype for _value_, false otherwise.
 |------|------|-------------|
 |prototype|any||
 |value|any||
-|boolean|||
+|boolean|any||
 
 

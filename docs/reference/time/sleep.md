@@ -10,6 +10,6 @@ Returns a promise that resolves after the _interval_ (in milliseconds) has expir
 | name | type | description |
 |------|------|-------------|
 |interval|any||
-|promise|||
+|promise|any||
 
 

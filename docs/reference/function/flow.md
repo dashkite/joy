@@ -11,6 +11,6 @@ Convenience for &#x60;pipeWith wait&#x60;.
 | name | type | description |
 |------|------|-------------|
 |functions|any||
-|function|||
+|function|any||
 
 

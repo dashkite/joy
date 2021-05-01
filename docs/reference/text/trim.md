@@ -10,6 +10,6 @@ Returns a the given string with leading and trailing whitespace removed.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|string|||
+|string|any||
 
 

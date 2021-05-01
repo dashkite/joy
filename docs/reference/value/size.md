@@ -10,6 +10,6 @@ Returns the size of _value_, if possible. A value is considered to have a size i
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|integer|||
+|integer|any||
 
 

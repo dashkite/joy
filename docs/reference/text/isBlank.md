@@ -10,6 +10,6 @@ Returns true if the string is empty, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|boolean|||
+|boolean|any||
 
 

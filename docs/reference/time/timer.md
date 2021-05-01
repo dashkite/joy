@@ -11,6 +11,6 @@ Calls _action_ function after the _interval_ (in milliseconds) has expired. Retu
 |------|------|-------------|
 |interval|any||
 |action|any||
-|cancel|||
+|cancel|any||
 
 

@@ -11,6 +11,6 @@ Returns an n-ary function that passes its arguments to the given function.
 |------|------|-------------|
 |n|any||
 |function|any||
-|function|||
+|function|any||
 
 

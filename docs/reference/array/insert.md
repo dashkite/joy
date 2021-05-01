@@ -12,6 +12,6 @@ Inserts _value_ into array at _index_, returning the mutated array.
 |index|any||
 |value|any||
 |array|any||
-|array|||
+|array|any||
 
 

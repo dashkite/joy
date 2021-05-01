@@ -10,6 +10,6 @@ Returns a function that passes its arguments to the given function as an array.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

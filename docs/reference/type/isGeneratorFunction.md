@@ -10,6 +10,6 @@ Returns true if _value_ is a generator function.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|||
+|boolean|any||
 
 

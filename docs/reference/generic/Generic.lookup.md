@@ -11,6 +11,6 @@ Returns the implementation that matches the given _arguments_, if any.
 |------|------|-------------|
 |function|any||
 |arguments...|any||
-|function|||
+|function|any||
 
 

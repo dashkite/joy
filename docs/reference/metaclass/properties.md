@@ -11,6 +11,6 @@ Defines properties on _target_ using the given _dictionary_ of keys and property
 |------|------|-------------|
 |dictionary|any||
 |target|any||
-|object|||
+|object|any||
 
 

@@ -5,6 +5,11 @@ summary: Sets each element of _array_ to _value_ and returns the mutated array.
 signatures:
   - arguments:
       - name: value
+        description: The value with which to fill the array.
       - name: array
+        type: Array
+        description: The array to fill.
     returns:
       name: array
+      type: Array
+      description: The resulting filled array.

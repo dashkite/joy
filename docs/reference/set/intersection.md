@@ -11,6 +11,6 @@ Returns a set that is the intersection (the common elements) of the given iterab
 |------|------|-------------|
 |iterable|any||
 |iterable|any||
-|set|||
+|set|any||
 
 

@@ -10,6 +10,6 @@ Returns true if x % 2 is zero, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |x|any||
-|boolean|||
+|boolean|any||
 
 

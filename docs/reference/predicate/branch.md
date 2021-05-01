@@ -10,6 +10,6 @@ Returns a function evaluates a list of _conditions_ (and associative array consi
 | name | type | description |
 |------|------|-------------|
 |conditions|any||
-|function|||
+|function|any||
 
 

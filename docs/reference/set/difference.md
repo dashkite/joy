@@ -11,6 +11,6 @@ Returns a set that is consists of the elements of the first iterable after remov
 |------|------|-------------|
 |iterable|any||
 |iterable|any||
-|set|||
+|set|any||
 
 

@@ -11,6 +11,6 @@ Returns the x to the power of y. The arguments may be BigInt instances.
 |------|------|-------------|
 |x|any||
 |y|any||
-|number|||
+|number|any||
 
 

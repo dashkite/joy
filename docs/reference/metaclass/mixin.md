@@ -11,6 +11,6 @@ Applies each function to the given target. See [&#x60;getters&#x60;](#getters) f
 |------|------|-------------|
 |target|any||
 |functions|any||
-|object|||
+|object|any||
 
 

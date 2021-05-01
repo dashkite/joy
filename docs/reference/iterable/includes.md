@@ -11,6 +11,6 @@ Returns true if _value_ is produced by _iterable_, false otherwise. Specialized 
 |------|------|-------------|
 |value|any||
 |iterable|any||
-|boolean|||
+|boolean|any||
 
 

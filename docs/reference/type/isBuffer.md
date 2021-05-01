@@ -10,6 +10,6 @@ Returns true if _value_ is an instance of &#x60;Buffer&#x60;.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|||
+|boolean|any||
 
 

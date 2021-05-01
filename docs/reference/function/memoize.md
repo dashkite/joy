@@ -10,6 +10,6 @@ Returns a function that calls the given function once for a given set arguments.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

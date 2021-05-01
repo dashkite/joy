@@ -10,6 +10,6 @@ Returns a function that reverses its arguments before passing them to the given 
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|||
+|function|any||
 
 

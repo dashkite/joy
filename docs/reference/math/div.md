@@ -11,6 +11,6 @@ Returns x / y.
 |------|------|-------------|
 |x|any||
 |y|any||
-|number|||
+|number|any||
 
 

@@ -11,6 +11,6 @@ Returns the [match data][] for the given Regular Expression _pattern_ or undefin
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|match|||
+|match|any||
 
 

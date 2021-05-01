@@ -11,6 +11,6 @@ Works like [&#x60;flow&#x60;](#flow), except transforms each function with the g
 |------|------|-------------|
 |adapter|any||
 |functions|any||
-|function|||
+|function|any||
 
 

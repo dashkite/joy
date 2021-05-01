@@ -11,6 +11,6 @@ Returns a set that is the union of the given iterables.
 |------|------|-------------|
 |iterable|any||
 |iterable|any||
-|set|||
+|set|any||
 
 

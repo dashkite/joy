@@ -11,6 +11,6 @@ Returns true if each element in an array of _values_ is an instance of _type_, f
 |------|------|-------------|
 |type|any||
 |values|any||
-|boolean|||
+|boolean|any||
 
 

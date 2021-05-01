@@ -10,6 +10,6 @@ Returns a promise that resolve to _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|promise|||
+|promise|any||
 
 

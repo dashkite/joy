@@ -10,6 +10,6 @@ Returns a random element from _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|value|||
+|value|any||
 
 

@@ -12,6 +12,6 @@ Returns the string resulting from replacing matches of the Regular Expression _p
 |pattern|any||
 |replacement|any||
 |string|any||
-|string|||
+|string|any||
 
 

@@ -11,6 +11,6 @@ Returns a function that substitutes arguments using the given pattern array befo
 |------|------|-------------|
 |function|any||
 |pattern|any||
-|function|||
+|function|any||
 
 

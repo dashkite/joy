@@ -11,6 +11,6 @@ Creates a generic function. Returns a function whose &#x60;_&#x60; property refe
 |------|------|-------------|
 |name|any||
 |description | description|any||
-|function|||
+|function|any||
 
 

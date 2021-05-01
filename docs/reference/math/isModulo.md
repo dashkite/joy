@@ -11,6 +11,6 @@ Returns true if y % x is zero, false otherwise.
 |------|------|-------------|
 |x|any||
 |y|any||
-|boolean|||
+|boolean|any||
 
 

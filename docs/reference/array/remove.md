@@ -11,6 +11,6 @@ Removes _value_ from array, if it exists within it, returning the mutated array.
 |------|------|-------------|
 |value|any||
 |array|any||
-|array|||
+|array|any||
 
 
