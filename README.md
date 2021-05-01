@@ -1,6 +1,8 @@
 # Joy
 
-*Convenient like Lodash, functional like Rambda.*
+*The simplicity of Lodash with the functional flair of Rambda.*
+
+[dashkite.github.io/joy](https://dashkite.github.io/joy/)
 
 ## Features
 
@@ -14,7 +16,3 @@
 `npm i @dashkite/joy`
 
 Works with your favorite bundler. Or use ES Modules with SnowPack or JSPM.
-
-## Resources
-
-- [API Reference](./docs/reference.md)

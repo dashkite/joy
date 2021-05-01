@@ -4,13 +4,15 @@
   "base": "joy",
   "branding":
   {
+    "favicon": "favicon.ico",
     "title": "Joy",
     "label": "0.1.8"
   },
   "links": [
     {
-      "text": "Getting Started",
-      "link": "https://retype.com/guides/getting_started/"
+      "icon": "code",
+      "text": "View On GitHub",
+      "link": "https://github.com/dashkite/joy"
     }
   ],
   "footer":
