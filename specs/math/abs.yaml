@@ -1,0 +1,9 @@
+title: abs
+name: abs
+type: function
+summary: Returns the absolute value of _x_.
+signatures:
+  - arguments:
+      - name: x
+    returns:
+      name: number

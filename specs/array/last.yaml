@@ -1,0 +1,9 @@
+title: last
+name: last
+type: function
+summary: Returns the last element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

@@ -1,0 +1,9 @@
+title: isDate
+name: isDate
+type: function
+summary: Returns true if _value_ is an instance of `Date`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

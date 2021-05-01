@@ -1,0 +1,12 @@
+title: match
+name: match
+type: function
+summary: >-
+  Returns the [match data][] for the given Regular Expression _pattern_ or
+  undefined if the pattern doesn't match.
+signatures:
+  - arguments:
+      - name: pattern
+      - name: string
+    returns:
+      name: match

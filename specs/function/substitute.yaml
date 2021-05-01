@@ -1,0 +1,12 @@
+title: substitute
+name: substitute
+type: function
+summary: >-
+  Given a pattern array and an array of values, returns an array with the values
+  substited for the special value \_ in the pattern array.
+signatures:
+  - arguments:
+      - name: pattern
+      - name: values
+    returns:
+      name: array

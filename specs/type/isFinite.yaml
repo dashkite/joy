@@ -1,0 +1,9 @@
+title: isFinite
+name: isFinite
+type: function
+summary: Returns true if _value_ is fine. Equivalent to `Number.isFinite`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

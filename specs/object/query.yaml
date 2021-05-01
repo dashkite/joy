@@ -1,0 +1,19 @@
+title: query
+name: query
+type: function
+summary: >-
+  Returns true if _object_ matches _exemplar_, false otherwise. An exemplar
+  matches if all of its properties are equal to the corresponding properties in
+  the target object. Matching is done recursively, so the exemplar can contain
+  nested values.
+signatures:
+  - arguments:
+      - name: exemplar
+      - name: object
+    returns:
+      name: object
+examples:
+  - code:
+      CoffeeScript: |-
+        assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
+        assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}

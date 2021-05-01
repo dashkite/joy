@@ -1,0 +1,9 @@
+title: isMap
+name: isMap
+type: function
+summary: Returns true if _value_ is an instance of `Map`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

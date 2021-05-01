@@ -1,0 +1,9 @@
+title: third
+name: third
+type: function
+summary: Returns the third element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

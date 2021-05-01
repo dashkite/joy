@@ -1,0 +1,10 @@
+title: pow
+name: pow
+type: function
+summary: Returns the x to the power of y. The arguments may be BigInt instances.
+signatures:
+  - arguments:
+      - name: x
+      - name: 'y'
+    returns:
+      name: number

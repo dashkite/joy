@@ -1,0 +1,13 @@
+title: slice
+name: slice
+type: function
+summary: >-
+  Returns an array containing the elements in _array_ from _start_ up to, but
+  not including, _end_.
+signatures:
+  - arguments:
+      - name: start
+      - name: end
+      - name: array
+    returns:
+      name: array

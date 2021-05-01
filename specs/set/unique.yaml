@@ -1,0 +1,9 @@
+title: unique
+name: unique
+type: function
+summary: Returns a set that is consists only of the unique elements of _iterable_.
+signatures:
+  - arguments:
+      - name: iterable
+    returns:
+      name: set

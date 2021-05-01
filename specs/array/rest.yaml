@@ -1,0 +1,11 @@
+title: rest
+name: rest
+type: function
+summary: >-
+  Returns a new array consisting of all but the first element of the given
+  array.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: array

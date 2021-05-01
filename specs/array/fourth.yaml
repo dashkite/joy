@@ -1,0 +1,9 @@
+title: fourth
+name: fourth
+type: function
+summary: Returns the fourth element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

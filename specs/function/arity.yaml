@@ -1,0 +1,10 @@
+title: arity
+name: arity
+type: function
+summary: Returns an n-ary function that passes its arguments to the given function.
+signatures:
+  - arguments:
+      - name: 'n'
+      - name: function
+    returns:
+      name: function

@@ -1,0 +1,9 @@
+title: negate
+name: negate
+type: function
+summary: Returns a function that returns the negation of the given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

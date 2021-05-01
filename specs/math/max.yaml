@@ -1,0 +1,9 @@
+title: max
+name: max
+type: function
+summary: Returns the maximum number in _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: number

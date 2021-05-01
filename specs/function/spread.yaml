@@ -1,0 +1,11 @@
+title: spread
+name: spread
+type: function
+summary: >-
+  Returns a function that accepts an array of arguments and passes them to the
+  given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

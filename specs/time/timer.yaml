@@ -1,0 +1,12 @@
+title: timer
+name: timer
+type: function
+summary: >-
+  Calls _action_ function after the _interval_ (in milliseconds) has expired.
+  Returns a function to cancel the timer.
+signatures:
+  - arguments:
+      - name: interval
+      - name: action
+    returns:
+      name: cancel

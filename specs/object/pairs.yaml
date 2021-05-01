@@ -1,0 +1,16 @@
+title: pairs
+name: pairs
+type: function
+summary: >-
+  Returns the properties for the given object as an associative array (an array
+  of two-element arrays).
+signatures:
+  - arguments:
+      - name: object
+    returns:
+      name: array
+examples:
+  - code:
+      CoffeeScript: |-
+        assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
+          [["a", 1], ["b", 2], ["c", 3]]

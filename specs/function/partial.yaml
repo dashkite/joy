@@ -1,0 +1,12 @@
+title: partial
+name: partial
+type: function
+summary: >-
+  Returns a function that substitutes arguments using the given pattern array
+  before passing them to the given function.
+signatures:
+  - arguments:
+      - name: function
+      - name: pattern
+    returns:
+      name: function

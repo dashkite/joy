@@ -1,0 +1,9 @@
+title: isDataView
+name: isDataView
+type: function
+summary: Returns true if _value_ is an instance of `DataView`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

@@ -1,0 +1,9 @@
+title: isArrayBuffer
+name: isArrayBuffer
+type: function
+summary: Returns true if _value_ is an instance of `ArrayBuffer`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

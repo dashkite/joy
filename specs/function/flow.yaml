@@ -1,0 +1,13 @@
+title: flow
+name: flow
+type: function
+summary: >-
+  Returns an async function that composes the given functions, which may be
+  async, calling them in the order given.
+
+  Convenience for `pipeWith wait`.
+signatures:
+  - arguments:
+      - name: functions
+    returns:
+      name: function

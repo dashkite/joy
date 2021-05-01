@@ -1,0 +1,10 @@
+title: isPrototype
+name: isPrototype
+type: function
+summary: Returns true if _prototype_ is the prototype for _value_, false otherwise.
+signatures:
+  - arguments:
+      - name: prototype
+      - name: value
+    returns:
+      name: boolean

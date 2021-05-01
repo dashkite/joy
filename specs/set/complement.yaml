@@ -1,0 +1,12 @@
+title: complement
+name: complement
+type: function
+summary: >-
+  Returns a set that is the complement (values that are only produced by one
+  iterable) of the given iterables.
+signatures:
+  - arguments:
+      - name: iterable
+      - name: iterable
+    returns:
+      name: set

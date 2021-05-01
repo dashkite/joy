@@ -1,0 +1,9 @@
+title: min
+name: min
+type: function
+summary: Returns the minimum number in _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: number

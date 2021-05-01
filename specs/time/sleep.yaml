@@ -1,0 +1,11 @@
+title: sleep
+name: sleep
+type: function
+summary: >-
+  Returns a promise that resolves after the _interval_ (in milliseconds) has
+  expired.
+signatures:
+  - arguments:
+      - name: interval
+    returns:
+      name: promise

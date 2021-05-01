@@ -1,0 +1,10 @@
+title: fill
+name: fill
+type: function
+summary: Sets each element of _array_ to _value_ and returns the mutated array.
+signatures:
+  - arguments:
+      - name: value
+      - name: array
+    returns:
+      name: array

@@ -1,0 +1,9 @@
+title: Type.create
+name: Type.create
+type: function
+summary: Creates a new instance of a type (class). Convenience wrapper for `new`.
+signatures:
+  - arguments:
+      - name: type
+    returns:
+      name: instance

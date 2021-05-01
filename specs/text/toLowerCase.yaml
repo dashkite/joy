@@ -1,0 +1,9 @@
+title: toLowerCase
+name: toLowerCase
+type: function
+summary: Returns a the given string in lower case.
+signatures:
+  - arguments:
+      - name: string
+    returns:
+      name: string

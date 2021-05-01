@@ -1,0 +1,11 @@
+title: set
+name: set
+type: function
+summary: Sets the value of the property matching the given key for the given object.
+signatures:
+  - arguments:
+      - name: key
+      - name: value
+      - name: object
+    returns:
+      name: boolean

@@ -1,0 +1,9 @@
+title: w
+name: w
+type: function
+summary: Returns an array obtained by splitting _string_ on whitespace.
+signatures:
+  - arguments:
+      - name: string
+    returns:
+      name: array

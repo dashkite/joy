@@ -1,0 +1,11 @@
+title: compose
+name: compose
+type: function
+summary: >-
+  Returns a function that composes the given functions, calling them in reverse
+  of the order given.
+signatures:
+  - arguments:
+      - name: functions
+    returns:
+      name: function

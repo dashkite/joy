@@ -1,0 +1,9 @@
+title: shuffle
+name: shuffle
+type: function
+summary: Randomly shuffles the elements of the array.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: array

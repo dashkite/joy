@@ -1,0 +1,9 @@
+title: resolve
+name: resolve
+type: function
+summary: Returns a promise that resolve to _value_.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: promise

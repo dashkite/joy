@@ -1,0 +1,10 @@
+title: Generic.lookup
+name: Generic.lookup
+type: function
+summary: Returns the implementation that matches the given _arguments_, if any.
+signatures:
+  - arguments:
+      - name: function
+      - name: arguments...
+    returns:
+      name: function

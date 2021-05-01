@@ -1,0 +1,12 @@
+title: benchmark
+name: benchmark
+type: function
+summary: >-
+  Runs _function_ returning the elapsed time in milliseconds, with precision to
+  microseconds if available. If _function_ returns a promise, returns a promise
+  that resolves to the elapsed time.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: number

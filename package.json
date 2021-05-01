@@ -47,6 +47,7 @@
   "devDependencies": {
     "@dashkite/genie": "^0.1.0",
     "@dashkite/masonry": "^0.6.0",
+    "@dashkite/writeme": "file:../writeme",
     "amen": "^3.0.0",
     "coffeescript": "^2.5.1",
     "handlebars": "^4.7.7",

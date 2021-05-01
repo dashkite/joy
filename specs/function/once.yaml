@@ -1,0 +1,11 @@
+title: once
+name: once
+type: function
+summary: >-
+  Returns a function that calls the given function once. Subsequent invocations
+  will simply return the value returned by the initial invocation.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

@@ -1,0 +1,12 @@
+title: intersection
+name: intersection
+type: function
+summary: >-
+  Returns a set that is the intersection (the common elements) of the given
+  iterables.
+signatures:
+  - arguments:
+      - name: iterable
+      - name: iterable
+    returns:
+      name: set

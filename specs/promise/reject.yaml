@@ -1,0 +1,9 @@
+title: reject
+name: reject
+type: function
+summary: Returns a promise that rejects with _error_.
+signatures:
+  - arguments:
+      - name: error
+    returns:
+      name: promise

@@ -1,0 +1,11 @@
+title: pop/dequeue
+name: pop
+aliases:
+  - dequeue
+type: function
+summary: Removes _value_ from the end of _array_ and returns it, mutating the array.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

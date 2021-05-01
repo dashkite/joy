@@ -1,0 +1,9 @@
+title: prototype
+name: prototype
+type: function
+summary: Returns the prototype of the given _value_.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: prototype

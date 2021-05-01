@@ -1,0 +1,14 @@
+title: replace
+name: replace
+type: function
+summary: >-
+  Returns the string resulting from replacing matches of the Regular Expression
+  _pattern_ using _replacement_, which may be a string or function returning a
+  string.
+signatures:
+  - arguments:
+      - name: pattern
+      - name: replacement
+      - name: string
+    returns:
+      name: string

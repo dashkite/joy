@@ -1,0 +1,9 @@
+title: isUndefined
+name: isUndefined
+type: function
+summary: Returns true if _value_ is undefined, false otherwise.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

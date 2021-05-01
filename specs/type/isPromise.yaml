@@ -1,0 +1,9 @@
+title: isPromise
+name: isPromise
+type: function
+summary: Returns true if _value_ is an instance of `Promise`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

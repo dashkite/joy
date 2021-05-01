@@ -1,0 +1,10 @@
+title: generic (define)
+name: generic
+type: function
+summary: Generic function wrapper around [`Generic.define`](#Generic.define).
+signatures:
+  - arguments:
+      - name: function
+      - name: arguments...
+    returns:
+      name: GenericFunction

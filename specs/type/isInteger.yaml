@@ -1,0 +1,9 @@
+title: isInteger
+name: isInteger
+type: function
+summary: Returns true if _value_ is fine. Equivalent to `Number.isInteger`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

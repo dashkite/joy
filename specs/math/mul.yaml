@@ -1,0 +1,10 @@
+title: mul
+name: mul
+type: function
+summary: Returns x * y.
+signatures:
+  - arguments:
+      - name: x
+      - name: 'y'
+    returns:
+      name: number

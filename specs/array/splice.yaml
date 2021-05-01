@@ -1,0 +1,13 @@
+title: splice
+name: splice
+type: function
+summary: >-
+  Removes the elements in _array_ from _start_ up to, but not including, _end_,
+  and returns the mutated array.
+signatures:
+  - arguments:
+      - name: start
+      - name: end
+      - name: array
+    returns:
+      name: array

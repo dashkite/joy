@@ -1,0 +1,9 @@
+title: isTypedArray
+name: isTypedArray
+type: function
+summary: Returns true if _value_ is an instance of `Uint8Array`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

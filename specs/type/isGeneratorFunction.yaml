@@ -1,0 +1,9 @@
+title: isGeneratorFunction
+name: isGeneratorFunction
+type: function
+summary: Returns true if _value_ is a generator function.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

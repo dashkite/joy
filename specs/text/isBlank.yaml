@@ -1,0 +1,9 @@
+title: isBlank
+name: isBlank
+type: function
+summary: Returns true if the string is empty, false otherwise.
+signatures:
+  - arguments:
+      - name: string
+    returns:
+      name: boolean

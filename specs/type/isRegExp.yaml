@@ -1,0 +1,9 @@
+title: isRegExp
+name: isRegExp
+type: function
+summary: Returns true if _value_ is an instance of `RegExp`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

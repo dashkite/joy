@@ -1,0 +1,9 @@
+title: clone
+name: clone
+type: function
+summary: Returns a deep clone of the given value.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: value

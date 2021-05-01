@@ -1,0 +1,12 @@
+title: isTransitivePrototype
+name: isTransitivePrototype
+type: function
+summary: >-
+  Returns true if _prototype_ is a transitive prototype of _value_, false
+  otherwise.
+signatures:
+  - arguments:
+      - name: prototype
+      - name: value
+    returns:
+      name: boolean

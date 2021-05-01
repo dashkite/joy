@@ -1,0 +1,16 @@
+# lte
+
+_Function_
+
+Returns true if x &lt;&#x3D; y, false otherwise.
+
+<pre><code>lte x, y &rarr; boolean</code></pre>
+<br>
+
+| name | type | description |
+|------|------|-------------|
+|x|any||
+|y|any||
+|boolean|||
+
+

@@ -1,0 +1,9 @@
+title: isBuffer
+name: isBuffer
+type: function
+summary: Returns true if _value_ is an instance of `Buffer`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

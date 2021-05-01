@@ -1,0 +1,12 @@
+title: isMatch
+name: isMatch
+type: function
+summary: >-
+  Returns true if the given Regular Expression _pattern_ matches, false
+  otherwise.
+signatures:
+  - arguments:
+      - name: pattern
+      - name: string
+    returns:
+      name: boolean

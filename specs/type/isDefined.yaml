@@ -1,0 +1,9 @@
+title: isDefined
+name: isDefined
+type: function
+summary: Returns true if _value_ is defined, false otherwise.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

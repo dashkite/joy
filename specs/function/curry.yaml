@@ -1,0 +1,9 @@
+title: curry
+name: curry
+type: function
+summary: Returns a curryable function that passes its arguments to the given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

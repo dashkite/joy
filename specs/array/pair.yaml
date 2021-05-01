@@ -1,0 +1,10 @@
+title: pair
+name: pair
+type: function
+summary: Returns its arguments as an array.
+signatures:
+  - arguments:
+      - name: value
+      - name: value
+    returns:
+      name: array

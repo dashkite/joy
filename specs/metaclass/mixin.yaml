@@ -1,0 +1,13 @@
+title: mixin
+name: mixin
+type: function
+summary: >-
+  Applies each function to the given target. See [`getters`](#getters) for an
+  example of how to use it with object modifiers like `getters` or `methods` to
+  create reusable mixins.
+signatures:
+  - arguments:
+      - name: target
+      - name: functions
+    returns:
+      name: object

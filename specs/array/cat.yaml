@@ -1,0 +1,11 @@
+title: cat
+name: cat
+type: function
+summary: Concatenates arrays passed as arguments, returning a new array.
+signatures:
+  - arguments:
+      - name: array
+      - name: array
+      - name: ...
+    returns:
+      name: array

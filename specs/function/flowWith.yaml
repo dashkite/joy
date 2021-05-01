@@ -1,0 +1,12 @@
+title: flowWith
+name: flowWith
+type: function
+summary: >-
+  Works like [`flow`](#flow), except transforms each function with the given
+  adaper before composing them.
+signatures:
+  - arguments:
+      - name: adapter
+      - name: functions
+    returns:
+      name: function

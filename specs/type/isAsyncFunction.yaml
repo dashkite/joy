@@ -1,0 +1,9 @@
+title: isAsyncFunction
+name: isAsyncFunction
+type: function
+summary: Returns true if _value_ is an asynchronous function.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

@@ -1,0 +1,9 @@
+title: toUpperCase
+name: toUpperCase
+type: function
+summary: Returns a the given string in upper case.
+signatures:
+  - arguments:
+      - name: string
+    returns:
+      name: string

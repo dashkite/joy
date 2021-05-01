@@ -1,0 +1,11 @@
+title: any
+name: any
+type: function
+summary: >-
+  Returns a promise that resolves to the values of the first resolved promise of
+  the _iterable_. If none of the promises resolve, the promise rejects.
+signatures:
+  - arguments:
+      - name: iterable
+    returns:
+      name: promise

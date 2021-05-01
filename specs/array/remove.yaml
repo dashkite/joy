@@ -1,0 +1,12 @@
+title: remove
+name: remove
+type: function
+summary: >-
+  Removes _value_ from array, if it exists within it, returning the mutated
+  array.
+signatures:
+  - arguments:
+      - name: value
+      - name: array
+    returns:
+      name: array

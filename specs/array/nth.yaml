@@ -1,0 +1,10 @@
+title: nth
+name: nth
+type: function
+summary: Returns the _nth_ element of _array_.
+signatures:
+  - arguments:
+      - name: 'n'
+      - name: array
+    returns:
+      name: value

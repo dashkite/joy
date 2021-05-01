@@ -1,0 +1,9 @@
+title: isNaN
+name: isNaN
+type: function
+summary: Returns true if _value_ is not a number. Equivalent to `Number.isNaN`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

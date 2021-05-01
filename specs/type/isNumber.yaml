@@ -1,0 +1,9 @@
+title: isNumber
+name: isNumber
+type: function
+summary: Returns true if _value_ is an instance of `Number`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

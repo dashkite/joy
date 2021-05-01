@@ -1,0 +1,11 @@
+title: send
+name: send
+type: function
+summary: Invokes the named method on _object_ with _arguments_.
+signatures:
+  - arguments:
+      - name: name
+      - name: arguments
+      - name: object
+    returns:
+      name: value

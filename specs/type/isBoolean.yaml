@@ -1,0 +1,9 @@
+title: isBoolean
+name: isBoolean
+type: function
+summary: Returns true if _value_ is an instance of `Boolean`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

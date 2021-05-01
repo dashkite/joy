@@ -1,0 +1,12 @@
+title: merge
+name: merge
+type: function
+summary: >-
+  Adds the properties for _objects_ to _object_. Modifies _object_. If you want
+  to create a new object, use [`merge`](#merge).
+signatures:
+  - arguments:
+      - name: object
+      - name: objects...
+    returns:
+      name: object

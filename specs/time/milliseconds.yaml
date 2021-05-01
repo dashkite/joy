@@ -1,0 +1,11 @@
+title: milliseconds
+name: milliseconds
+type: function
+summary: >-
+  Returns the current time in milliseconds, with precision to microseconds if
+  available.
+signatures:
+  - arguments:
+      - name: ()
+    returns:
+      name: number

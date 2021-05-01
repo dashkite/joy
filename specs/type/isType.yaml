@@ -1,0 +1,10 @@
+title: isType
+name: isType
+type: function
+summary: Returns true if _value_ is an instance of _type_, false otherwise.
+signatures:
+  - arguments:
+      - name: type
+      - name: value
+    returns:
+      name: boolean

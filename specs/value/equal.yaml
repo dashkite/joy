@@ -1,0 +1,12 @@
+title: equal
+name: equal
+type: function
+summary: >-
+  Returns true if the given values are equal, false otherwise. Performs a deep
+  comparison.
+signatures:
+  - arguments:
+      - name: a
+      - name: b
+    returns:
+      name: boolean

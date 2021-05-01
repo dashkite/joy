@@ -1,0 +1,11 @@
+title: wait
+name: wait
+type: function
+summary: >-
+  Returns a function that awaits on its arguments before passing it to the given
+  function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

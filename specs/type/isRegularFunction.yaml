@@ -1,0 +1,9 @@
+title: isRegularFunction
+name: isRegularFunction
+type: function
+summary: Returns true if _value_ is an instance of `Function`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

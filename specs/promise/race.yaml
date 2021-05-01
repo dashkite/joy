@@ -1,0 +1,11 @@
+title: race
+name: race
+type: function
+summary: >-
+  Returns a promise that resolves or rejects as soon as one of the promises in
+  an iterable resolves or rejects, with the value or reason from that promise.
+signatures:
+  - arguments:
+      - name: iterable
+    returns:
+      name: promise

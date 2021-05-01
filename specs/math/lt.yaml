@@ -1,0 +1,10 @@
+title: lt
+name: lt
+type: function
+summary: Returns true if x < y, false otherwise.
+signatures:
+  - arguments:
+      - name: x
+      - name: 'y'
+    returns:
+      name: boolean

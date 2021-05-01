@@ -1,0 +1,11 @@
+title: Type.define
+name: Type.define
+type: function
+summary: >-
+  Creates a new type (class) that extends _parent_, if defined, or `Object`
+  otherwise. Convenience wrapper for `class`.
+signatures:
+  - arguments:
+      - name: parent
+    returns:
+      name: class

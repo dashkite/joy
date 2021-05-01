@@ -1,0 +1,9 @@
+title: second
+name: second
+type: function
+summary: Returns the second element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

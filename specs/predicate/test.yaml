@@ -1,0 +1,13 @@
+title: test
+name: test
+type: function
+summary: >-
+  Returns a function that calls the _consequent_ if the _predicate_ returns
+  true, and the (optional) _alternative_ otherwise.
+signatures:
+  - arguments:
+      - name: predicate
+      - name: consequent[
+      - name: alternative]
+    returns:
+      name: function

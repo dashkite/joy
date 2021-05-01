@@ -1,0 +1,9 @@
+title: ternary
+name: ternary
+type: function
+summary: Returns a ternary function that passes its arguments to the given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

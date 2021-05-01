@@ -1,0 +1,12 @@
+title: uniqueBy
+name: uniqueBy
+type: function
+summary: >-
+  Returns an array of the unique values of _iterable_ as determined by the
+  _comparator_ function.
+signatures:
+  - arguments:
+      - name: comparator
+      - name: iterable
+    returns:
+      name: array

@@ -1,0 +1,9 @@
+title: values
+name: values
+type: function
+summary: Returns the property values for the given object.
+signatures:
+  - arguments:
+      - name: object
+    returns:
+      name: array

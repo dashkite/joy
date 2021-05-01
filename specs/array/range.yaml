@@ -1,0 +1,10 @@
+title: range
+name: range
+type: function
+summary: Returns a numeric array with consecutive values from _start_ to _finish_.
+signatures:
+  - arguments:
+      - name: start
+      - name: finish
+    returns:
+      name: array

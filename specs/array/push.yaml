@@ -1,0 +1,12 @@
+title: push/enqueue
+name: push
+aliases:
+  - enqueue
+type: function
+summary: Adds _value_ to the end of _array_ and returns the mutated array.
+signatures:
+  - arguments:
+      - name: array
+      - name: value
+    returns:
+      name: array

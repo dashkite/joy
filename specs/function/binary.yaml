@@ -1,0 +1,9 @@
+title: binary
+name: binary
+type: function
+summary: Returns a binary function that passes its arguments to the given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

@@ -1,0 +1,12 @@
+title: attempt
+name: attempt
+type: function
+summary: >-
+  Returns a function that calls the given function, returning false if the
+  function throws an exception or returns a rejected promise, and true
+  otherwise.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

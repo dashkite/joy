@@ -1,0 +1,9 @@
+title: pluck
+name: pluck
+type: function
+summary: Returns a random element from _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

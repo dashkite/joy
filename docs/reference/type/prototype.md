@@ -1,0 +1,15 @@
+# prototype
+
+_Function_
+
+Returns the prototype of the given _value_.
+
+<pre><code>prototype value &rarr; prototype</code></pre>
+<br>
+
+| name | type | description |
+|------|------|-------------|
+|value|any||
+|prototype|||
+
+

@@ -1,0 +1,9 @@
+title: promise
+name: promise
+type: function
+summary: Creates a promise.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: promise

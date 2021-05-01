@@ -1,0 +1,9 @@
+title: identity
+name: identity
+type: function
+summary: Returns its argument.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: value

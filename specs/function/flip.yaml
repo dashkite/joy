@@ -1,0 +1,11 @@
+title: flip
+name: flip
+type: function
+summary: >-
+  Returns a function that reverses its arguments before passing them to the
+  given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

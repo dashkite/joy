@@ -1,0 +1,9 @@
+title: fifth
+name: fifth
+type: function
+summary: Returns the fifth element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

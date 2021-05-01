@@ -1,0 +1,9 @@
+title: odd
+name: odd
+type: function
+summary: Returns true if x % 2 is non-zero, false otherwise.
+signatures:
+  - arguments:
+      - name: x
+    returns:
+      name: boolean

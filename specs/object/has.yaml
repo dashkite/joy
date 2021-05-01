@@ -1,0 +1,12 @@
+title: has
+name: has
+type: function
+summary: >-
+  Returns the true if the given object has a property matching the given key,
+  false otherwise.
+signatures:
+  - arguments:
+      - name: key
+      - name: object
+    returns:
+      name: boolean

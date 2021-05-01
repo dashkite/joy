@@ -1,0 +1,12 @@
+title: Generic.create
+name: Generic.create
+type: function
+summary: >-
+  Creates a generic function. Returns a function whose `_` property references
+  te corresponding `GenericFunction` instance.
+signatures:
+  - arguments:
+      - name: name
+      - name: description | description
+    returns:
+      name: function

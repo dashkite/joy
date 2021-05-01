@@ -1,0 +1,11 @@
+title: stack
+name: stack
+type: function
+summary: >-
+  Returns a function that passes its arguments to the given function as an
+  array.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

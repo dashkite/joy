@@ -1,0 +1,9 @@
+title: isSet
+name: isSet
+type: function
+summary: Returns true if _value_ is an instance of `Set`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

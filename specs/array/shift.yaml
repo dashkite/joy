@@ -1,0 +1,12 @@
+title: shift
+name: shift
+type: function
+summary: >-
+  Removes _value_ from the start of the _array_ and returns it, mutating the
+  array.
+signatures:
+  - arguments:
+      - name: array
+      - name: value
+    returns:
+      name: array

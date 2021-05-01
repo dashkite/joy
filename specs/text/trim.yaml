@@ -1,0 +1,9 @@
+title: trim
+name: trim
+type: function
+summary: Returns a the given string with leading and trailing whitespace removed.
+signatures:
+  - arguments:
+      - name: string
+    returns:
+      name: string

@@ -1,0 +1,9 @@
+title: isWeakMap
+name: isWeakMap
+type: function
+summary: Returns true if _value_ is an instance of `WeakMap`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

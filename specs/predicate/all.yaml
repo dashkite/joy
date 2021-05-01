@@ -1,0 +1,11 @@
+title: all
+name: all
+type: function
+summary: >-
+  Returns a function that returns true if all of the given _functions_,
+  attempted in the order given, return true, and false otherwise.
+signatures:
+  - arguments:
+      - name: functions
+    returns:
+      name: function

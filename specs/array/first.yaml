@@ -1,0 +1,9 @@
+title: first
+name: first
+type: function
+summary: Returns the first element of _array_.
+signatures:
+  - arguments:
+      - name: array
+    returns:
+      name: value

@@ -1,0 +1,24 @@
+title: getters
+name: getters
+type: function
+summary: >-
+  Defines getters on _target_ using the given _dictionary_ of keys and getter
+  functions. Convenience wrapper for [`getter`](#getter). Like most Joy
+  functions, `getters` is curryable, so you can define a function that will
+  define a property on any object. Use in combination with [`mixin`](#mixin) to
+  create reusable mixins.
+signatures:
+  - arguments:
+      - name: dictionary
+      - name: target
+    returns:
+      name: object
+examples:
+  - code:
+      CoffeeScript: |-
+        class Foo
+          mixin @::, [
+            getters
+              bar: -> "bar"
+          ]
+        assert.equal "bar", (new Foo).bar

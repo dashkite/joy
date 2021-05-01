@@ -1,0 +1,25 @@
+title: pipeWith
+name: pipeWith
+type: function
+summary: >-
+  Works like [`pipe`](#pipe), except transforms each function with the given
+  adaper before composing them.
+signatures:
+  - arguments:
+      - name: adapter
+      - name: functions
+    returns:
+      name: function
+examples:
+  - code:
+      CoffeeScript: |-
+        trace = (f) ->
+          (args...) ->
+            console.log "function:", f.name
+            console.log "-- arguments:", args
+            console.log "-- returns:", r = f args...
+            r
+
+        pipeWith trace, [
+          # functions to trace...
+        ]

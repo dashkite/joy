@@ -1,0 +1,9 @@
+title: isFunction
+name: isFunction
+type: function
+summary: Returns true if _value_ is a function.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

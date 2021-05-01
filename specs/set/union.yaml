@@ -1,0 +1,10 @@
+title: union
+name: union
+type: function
+summary: Returns a set that is the union of the given iterables.
+signatures:
+  - arguments:
+      - name: iterable
+      - name: iterable
+    returns:
+      name: set

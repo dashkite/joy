@@ -1,0 +1,9 @@
+title: toString
+name: toString
+type: function
+summary: Returns a string representation of _value_.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: string

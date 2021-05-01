@@ -1,0 +1,12 @@
+title: areType
+name: areType
+type: function
+summary: >-
+  Returns true if each element in an array of _values_ is an instance of _type_,
+  false otherwise.
+signatures:
+  - arguments:
+      - name: type
+      - name: values
+    returns:
+      name: boolean

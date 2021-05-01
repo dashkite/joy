@@ -1,0 +1,12 @@
+title: includes
+name: includes
+type: function
+summary: >-
+  Returns true if _value_ is produced by _iterable_, false otherwise.
+  Specialized for array.
+signatures:
+  - arguments:
+      - name: value
+      - name: iterable
+    returns:
+      name: boolean

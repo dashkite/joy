@@ -1,0 +1,9 @@
+title: isEmpty
+name: isEmpty
+type: function
+summary: Returns true if the size of _value_ is zero, false otherwise.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

@@ -1,0 +1,11 @@
+title: isArray
+name: isArray
+type: function
+summary: >-
+  Returns true if _value_ is an instance of `Array`. Equivalent to
+  `Array.isArray`.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: boolean

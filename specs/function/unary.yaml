@@ -1,0 +1,9 @@
+title: unary
+name: unary
+type: function
+summary: Returns a unary function that passes its argument to the given function.
+signatures:
+  - arguments:
+      - name: function
+    returns:
+      name: function

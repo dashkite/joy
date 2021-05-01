@@ -1,0 +1,12 @@
+title: join
+name: join
+type: function
+summary: >-
+  Returns a string formed by concatening consecutive elements of _array_ with
+  _text_.
+signatures:
+  - arguments:
+      - name: text
+      - name: array
+    returns:
+      name: string

@@ -1,0 +1,10 @@
+title: isModulo
+name: isModulo
+type: function
+summary: Returns true if y % x is zero, false otherwise.
+signatures:
+  - arguments:
+      - name: x
+      - name: 'y'
+    returns:
+      name: boolean

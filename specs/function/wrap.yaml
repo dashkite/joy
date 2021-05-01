@@ -1,0 +1,9 @@
+title: wrap
+name: wrap
+type: function
+summary: Returns a function that returns its argument.
+signatures:
+  - arguments:
+      - name: value
+    returns:
+      name: function
