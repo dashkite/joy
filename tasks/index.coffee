@@ -65,7 +65,8 @@ t.define "site:configure", ->
       expanded: true
       icon: "book"
 
-t.define "site:build", [ "docs:build", "site:configure" ]
+t.define "site:build", [ "docs:build", "site:configure" ], ->
+  fs.copyFile "./README.md", "docs/index.md"
 
 t.define "docs:migrate", ->
   console.info "Cleaning ..."
