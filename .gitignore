@@ -1,4 +1,4 @@
 build
 node_modules
 .DS_Store
-docs/retype.json
+retype.json.local
