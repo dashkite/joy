@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if x &gt;&#x3D; y, false otherwise.
+Returns true if x >= y, false otherwise.
 
 <pre><code>gte x, y &rarr; boolean</code></pre>
 <br>

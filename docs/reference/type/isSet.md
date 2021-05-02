@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Set&#x60;.
+Returns true if _value_ is an instance of `Set`.
 
 <pre><code>isSet value &rarr; boolean</code></pre>
 <br>

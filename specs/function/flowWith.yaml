@@ -2,7 +2,7 @@ title: flowWith
 name: flowWith
 type: function
 summary: >-
-  Works like [`flow`](#flow), except transforms each function with the given
+  Works like [`flow`][], except transforms each function with the given
   adaper before composing them.
 signatures:
   - arguments:

@@ -2,7 +2,7 @@
 
 _Function_
 
-Applies each function to the given target. See [&#x60;getters&#x60;](#getters) for an example of how to use it with object modifiers like &#x60;getters&#x60; or &#x60;methods&#x60; to create reusable mixins.
+Applies each function to the given target. See [`getters`](#getters) for an example of how to use it with object modifiers like `getters` or `methods` to create reusable mixins.
 
 <pre><code>mixin target, functions &rarr; object</code></pre>
 <br>

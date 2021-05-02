@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Buffer&#x60;.
+Returns true if _value_ is an instance of `Buffer`.
 
 <pre><code>isBuffer value &rarr; boolean</code></pre>
 <br>

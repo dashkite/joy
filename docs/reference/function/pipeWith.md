@@ -2,7 +2,7 @@
 
 _Function_
 
-Works like [&#x60;pipe&#x60;](#pipe), except transforms each function with the given adaper before composing them.
+Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
 
 <pre><code>pipeWith adapter, functions &rarr; function</code></pre>
 <br>

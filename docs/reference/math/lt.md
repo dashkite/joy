@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if x &lt; y, false otherwise.
+Returns true if x < y, false otherwise.
 
 <pre><code>lt x, y &rarr; boolean</code></pre>
 <br>

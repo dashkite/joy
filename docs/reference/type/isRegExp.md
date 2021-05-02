@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;RegExp&#x60;.
+Returns true if _value_ is an instance of `RegExp`.
 
 <pre><code>isRegExp value &rarr; boolean</code></pre>
 <br>

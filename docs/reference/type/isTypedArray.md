@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Uint8Array&#x60;.
+Returns true if _value_ is an instance of `Uint8Array`.
 
 <pre><code>isTypedArray value &rarr; boolean</code></pre>
 <br>

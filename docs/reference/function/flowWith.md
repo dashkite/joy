@@ -2,7 +2,7 @@
 
 _Function_
 
-Works like [&#x60;flow&#x60;](#flow), except transforms each function with the given adaper before composing them.
+Works like [`flow`][flow], except transforms each function with the given adaper before composing them.
 
 <pre><code>flowWith adapter, functions &rarr; function</code></pre>
 <br>
@@ -14,3 +14,5 @@ Works like [&#x60;flow&#x60;](#flow), except transforms each function with the g
 |function|any||
 
 
+
+[flow]: /reference/function/flow

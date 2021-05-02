@@ -10,7 +10,9 @@ Sets each element of _array_ to _value_ and returns the mutated array.
 | name | type | description |
 |------|------|-------------|
 |value|any|The value with which to fill the array.|
-|array|Array|The array to fill.|
-|array|Array|The resulting filled array.|
+|array|[`Array`][array]|The array to fill.|
+|array|[`Array`][array]|The resulting filled array.|
 
 
+
+[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

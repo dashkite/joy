@@ -9,8 +9,10 @@ Concatenates arrays passed as arguments, returning a new array.
 
 | name | type | description |
 |------|------|-------------|
-|array|Array|Array to concatenate.|
-|array|Array|Array to concatenate.|
-|array|Array|New array resulting from concatening the given arrays.|
+|array|[`Array`][array]|Array to concatenate.|
+|array|[`Array`][array]|Array to concatenate.|
+|array|[`Array`][array]|New array resulting from concatening the given arrays.|
 
 
+
+[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

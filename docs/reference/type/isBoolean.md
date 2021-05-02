@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Boolean&#x60;.
+Returns true if _value_ is an instance of `Boolean`.
 
 <pre><code>isBoolean value &rarr; boolean</code></pre>
 <br>

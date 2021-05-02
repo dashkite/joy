@@ -2,7 +2,7 @@
 
 _Function_
 
-Calls the given function with the given arguments. Use with [&#x60;bind&#x60;](#bind) to bind &#x60;this&#x60;.
+Calls the given function with the given arguments. Use with [`bind`][bind] to bind `this`.
 
 <pre><code>apply function, arguments &rarr; value</code></pre>
 <br>
@@ -14,3 +14,5 @@ Calls the given function with the given arguments. Use with [&#x60;bind&#x60;](#
 |value|any||
 
 
+
+[bind]: #

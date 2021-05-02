@@ -9,7 +9,9 @@ Returns the fifth element of _array_.
 
 | name | type | description |
 |------|------|-------------|
-|array|Array|The target array.|
+|array|[`Array`][array]|The target array.|
 |value|any|The fifth element of the given array.|
 
 
+
+[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

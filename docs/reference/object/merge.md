@@ -2,7 +2,7 @@
 
 _Function_
 
-Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [&#x60;merge&#x60;](#merge).
+Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
 
 <pre><code>merge object, objects... &rarr; object</code></pre>
 <br>

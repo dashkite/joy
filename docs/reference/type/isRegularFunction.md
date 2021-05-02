@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Function&#x60;.
+Returns true if _value_ is an instance of `Function`.
 
 <pre><code>isRegularFunction value &rarr; boolean</code></pre>
 <br>

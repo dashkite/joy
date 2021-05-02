@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Symbol&#x60;.
+Returns true if _value_ is an instance of `Symbol`.
 
 <pre><code>isSymbol value &rarr; boolean</code></pre>
 <br>

@@ -2,7 +2,7 @@
 
 _Function_
 
-Generic function wrapper around [&#x60;Generic.define&#x60;](#Generic.define).
+Generic function wrapper around [`Generic.define`](#Generic.define).
 
 <pre><code>generic function, arguments... &rarr; GenericFunction</code></pre>
 <br>

@@ -2,7 +2,7 @@
 
 _Function_
 
-Returns true if _value_ is an instance of &#x60;Object&#x60;.
+Returns true if _value_ is an instance of `Object`.
 
 <pre><code>isObject value &rarr; boolean</code></pre>
 <br>

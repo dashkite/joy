@@ -2,7 +2,7 @@
 
 _Function_
 
-Creates a new type (class) that extends _parent_, if defined, or &#x60;Object&#x60; otherwise. Convenience wrapper for &#x60;class&#x60;.
+Creates a new type (class) that extends _parent_, if defined, or `Object` otherwise. Convenience wrapper for `class`.
 
 <pre><code>Type.define parent &rarr; class</code></pre>
 <br>

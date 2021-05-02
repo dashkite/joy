@@ -35,14 +35,26 @@ t.define "node:test", [ "build" ], ->
 t.define "test", [ "clean" ], ->
   require "../test"
 
+
+index = undefined
 t.define "docs:clean", ->
   fs.rm "docs/reference", recursive: true, force: true
+  index = YAML.load await fs.readFile "docs/references.yaml", "utf8"
 
-t.define "docs:build", "docs:clean", m.start [
+t.define "docs:index", m.start [
+  m.glob [ "**/*.yaml" ], "./specs"
+  m.read
+  m.tr ({source, input}) ->
+    data = YAML.load input
+    index[data.name] = "/reference/#{source.directory}/#{source.name}"
+]
+
+
+t.define "docs:build", [ "docs:clean", "docs:index" ], m.start [
   m.glob [ "**/*.yaml" ], "./specs"
   m.read
   flow [
-    m.tr ({input}) -> writeme.compile YAML.load input
+    m.tr ({input}) -> writeme.compile (YAML.load input), index
     m.extension ".md"
     m.write "docs/reference"
   ]
