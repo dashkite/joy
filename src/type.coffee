@@ -1,4 +1,5 @@
 import { curry } from "./function"
+import { any } from "./predicate"
 
 prototype = (value) -> if value? then Object.getPrototypeOf value
 
@@ -23,7 +24,10 @@ isSynonymousKind = curry (type, value) ->
 # needs tests ....
 # isDerived = curry (type, value) -> isKind type, value::
 
-isNumber = isType Number
+isNumber = any [
+  isType Number
+  isType BigInt
+]
 
 isNaN = Number.isNaN
 

@@ -49,7 +49,6 @@ t.define "docs:index", m.start [
     index[data.name] = "/reference/#{source.directory}/#{source.name}"
 ]
 
-
 t.define "docs:build", [ "docs:clean", "docs:index" ], m.start [
   m.glob [ "**/*.yaml" ], "./specs"
   m.read
