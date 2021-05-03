@@ -1,6 +1,6 @@
 # fifth
 
-_Function_ &bull; Returns the fifth element of _array_.
+_Function_ &bull; Returns the fifth element of an array.
 
 <pre><code>fifth array &rarr; value</code></pre>
 <br>
