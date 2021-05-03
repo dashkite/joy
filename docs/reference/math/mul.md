@@ -1,8 +1,6 @@
 # mul
 
-_Function_
-
-Returns x * y.
+_Function_ &bull; Returns x * y.
 
 <pre><code>mul x, y &rarr; number</code></pre>
 <br>

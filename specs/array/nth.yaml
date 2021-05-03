@@ -1,10 +1,14 @@
-title: nth
 name: nth
 type: function
 summary: Returns the _nth_ element of _array_.
 signatures:
   - arguments:
-      - name: 'n'
+      - name: n
+        description: The index of the element to return.
+        type: Number
       - name: array
+        description: The target array.
+        type: Array
     returns:
       name: value
+      description: The element to return.

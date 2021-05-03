@@ -1,8 +1,6 @@
 # fifth
 
-_Function_
-
-Returns the fifth element of _array_.
+_Function_ &bull; Returns the fifth element of _array_.
 
 <pre><code>fifth array &rarr; value</code></pre>
 <br>
@@ -10,7 +8,7 @@ Returns the fifth element of _array_.
 | name | type | description |
 |------|------|-------------|
 |array|[`Array`][array]|The target array.|
-|value|any|The fifth element of the given array.|
+|value|any|The selected element.|
 
 
 

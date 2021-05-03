@@ -1,8 +1,6 @@
 # pairs
 
-_Function_
-
-Returns the properties for the given object as an associative array (an array of two-element arrays).
+_Function_ &bull; Returns the properties for the given object as an associative array (an array of two-element arrays).
 
 <pre><code>pairs object &rarr; array</code></pre>
 <br>

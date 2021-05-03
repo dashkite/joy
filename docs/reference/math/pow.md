@@ -1,8 +1,6 @@
 # pow
 
-_Function_
-
-Returns the x to the power of y. The arguments may be BigInt instances.
+_Function_ &bull; Returns the x to the power of y. The arguments may be BigInt instances.
 
 <pre><code>pow x, y &rarr; number</code></pre>
 <br>

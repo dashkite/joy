@@ -1,8 +1,6 @@
 # lte
 
-_Function_
-
-Returns true if x <= y, false otherwise.
+_Function_ &bull; Returns true if x <= y, false otherwise.
 
 <pre><code>lte x, y &rarr; boolean</code></pre>
 <br>

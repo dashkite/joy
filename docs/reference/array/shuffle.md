@@ -1,8 +1,6 @@
 # shuffle
 
-_Function_
-
-Randomly shuffles the elements of the array.
+_Function_ &bull; Randomly shuffles the elements of the array.
 
 <pre><code>shuffle array &rarr; array</code></pre>
 <br>

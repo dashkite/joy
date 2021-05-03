@@ -1,8 +1,6 @@
 # range
 
-_Function_
-
-Returns a numeric array with consecutive values from _start_ to _finish_.
+_Function_ &bull; Returns a numeric array with consecutive values from _start_ to _finish_.
 
 <pre><code>range start, finish &rarr; array</code></pre>
 <br>

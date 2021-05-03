@@ -1,10 +1,14 @@
 title: pair
 name: pair
 type: function
-summary: Returns its arguments as an array.
+summary: Returns it's arguments as an array representing a pair.
 signatures:
   - arguments:
       - name: value
+        description: First item of the pair.
       - name: value
+        description: Second item of the pair.
     returns:
       name: array
+      description: A two-element array representing a pair.
+      type: Array

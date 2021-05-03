@@ -1,8 +1,6 @@
 # isObject
 
-_Function_
-
-Returns true if _value_ is an instance of `Object`.
+_Function_ &bull; Returns true if _value_ is an instance of `Object`.
 
 <pre><code>isObject value &rarr; boolean</code></pre>
 <br>

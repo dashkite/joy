@@ -1,8 +1,6 @@
 # min
 
-_Function_
-
-Returns the minimum number in _array_.
+_Function_ &bull; Returns the minimum number in _array_.
 
 <pre><code>min array &rarr; number</code></pre>
 <br>

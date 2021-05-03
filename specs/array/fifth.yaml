@@ -9,4 +9,4 @@ signatures:
         description: The target array.
     returns:
       name: value
-      description: The fifth element of the given array.
+      description: The selected element.

@@ -1,8 +1,6 @@
 # template
 
-_Function_
-
-Returns a function that will substitute the properties of its argument into the given string, processing it using the optional filters.
+_Function_ &bull; Returns a function that will substitute the properties of its argument into the given string, processing it using the optional filters.
 Lightweight but relatively limited and slow. Uses regexp substitution and does not support common templating features, such as control flow, iteration, or escaping.
 
 <pre><code>template string[, filters] &rarr; function</code></pre>

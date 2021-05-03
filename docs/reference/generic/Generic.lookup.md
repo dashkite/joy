@@ -1,8 +1,6 @@
 # Generic.lookup
 
-_Function_
-
-Returns the implementation that matches the given _arguments_, if any.
+_Function_ &bull; Returns the implementation that matches the given _arguments_, if any.
 
 <pre><code>Generic.lookup function, arguments... &rarr; function</code></pre>
 <br>

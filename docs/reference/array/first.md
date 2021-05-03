@@ -1,15 +1,15 @@
 # first
 
-_Function_
-
-Returns the first element of _array_.
+_Function_ &bull; Returns the first element of _array_.
 
 <pre><code>first array &rarr; value</code></pre>
 <br>
 
 | name | type | description |
 |------|------|-------------|
-|array|any||
-|value|any||
+|array|[`Array`][array]|The target array.|
+|value|any|The selected element.|
 
 
+
+[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

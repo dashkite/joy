@@ -1,8 +1,6 @@
 # mod
 
-_Function_
-
-Returns x % y.
+_Function_ &bull; Returns x % y.
 
 <pre><code>mod x, y &rarr; number</code></pre>
 <br>

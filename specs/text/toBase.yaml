@@ -1,0 +1,15 @@
+name: toBase
+type: function
+summary: Returns a string representation of a number with a given radix.
+signatures:
+  - arguments:
+      - name: radix
+        description: The radix to which to convert the number.
+        type: Number
+      - name: number
+        description: The number to convert.
+        type: Number
+    returns:
+      name: string
+      description: The string representation of the number.
+      type: String

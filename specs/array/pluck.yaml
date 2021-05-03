@@ -1,9 +1,11 @@
-title: pluck
 name: pluck
 type: function
 summary: Returns a random element from _array_.
 signatures:
   - arguments:
-      - name: array
+    - name: array
+      description: The target array.
+      type: Array
     returns:
       name: value
+      description: The selected element.

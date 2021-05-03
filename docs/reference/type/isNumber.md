@@ -1,8 +1,6 @@
 # isNumber
 
-_Function_
-
-Returns true if _value_ is an instance of `Number`.
+_Function_ &bull; Returns true if _value_ is an instance of `Number`.
 
 <pre><code>isNumber value &rarr; boolean</code></pre>
 <br>

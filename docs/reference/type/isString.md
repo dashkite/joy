@@ -1,8 +1,6 @@
 # isString
 
-_Function_
-
-Returns true if _value_ is an instance of `String`.
+_Function_ &bull; Returns true if _value_ is an instance of `String`.
 
 <pre><code>isString value &rarr; boolean</code></pre>
 <br>

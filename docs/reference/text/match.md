@@ -1,8 +1,6 @@
 # match
 
-_Function_
-
-Returns the [match data][match data] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match.
+_Function_ &bull; Returns the [match data][match data] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match.
 
 <pre><code>match pattern, string &rarr; match</code></pre>
 <br>

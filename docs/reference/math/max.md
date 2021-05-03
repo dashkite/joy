@@ -1,8 +1,6 @@
 # max
 
-_Function_
-
-Returns the maximum number in _array_.
+_Function_ &bull; Returns the maximum number in _array_.
 
 <pre><code>max array &rarr; number</code></pre>
 <br>

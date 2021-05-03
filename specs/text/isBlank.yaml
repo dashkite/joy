@@ -5,5 +5,9 @@ summary: Returns true if the string is empty, false otherwise.
 signatures:
   - arguments:
       - name: string
+        description: The string to test.
+        type: String
     returns:
       name: boolean
+      description: True if the string is empty, false otherwise.
+      type: Boolean

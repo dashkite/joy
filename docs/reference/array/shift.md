@@ -1,8 +1,6 @@
 # shift
 
-_Function_
-
-Removes _value_ from the start of the _array_ and returns it, mutating the array.
+_Function_ &bull; Removes _value_ from the start of the _array_ and returns it, mutating the array.
 
 <pre><code>shift array, value &rarr; array</code></pre>
 <br>

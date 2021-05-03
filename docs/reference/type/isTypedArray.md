@@ -1,8 +1,6 @@
 # isTypedArray
 
-_Function_
-
-Returns true if _value_ is an instance of `Uint8Array`.
+_Function_ &bull; Returns true if _value_ is an instance of `Uint8Array`.
 
 <pre><code>isTypedArray value &rarr; boolean</code></pre>
 <br>

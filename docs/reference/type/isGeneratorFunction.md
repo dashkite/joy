@@ -1,8 +1,6 @@
 # isGeneratorFunction
 
-_Function_
-
-Returns true if _value_ is a generator function.
+_Function_ &bull; Returns true if _value_ is a generator function.
 
 <pre><code>isGeneratorFunction value &rarr; boolean</code></pre>
 <br>

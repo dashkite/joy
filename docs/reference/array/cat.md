@@ -1,8 +1,6 @@
 # cat
 
-_Function_
-
-Concatenates arrays passed as arguments, returning a new array.
+_Function_ &bull; Concatenates arrays passed as arguments, returning a new array.
 
 <pre><code>cat array, array &rarr; array</code></pre>
 <br>

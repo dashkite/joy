@@ -1,8 +1,6 @@
 # isDate
 
-_Function_
-
-Returns true if _value_ is an instance of `Date`.
+_Function_ &bull; Returns true if _value_ is an instance of `Date`.
 
 <pre><code>isDate value &rarr; boolean</code></pre>
 <br>

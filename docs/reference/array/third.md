@@ -1,8 +1,6 @@
 # third
 
-_Function_
-
-Returns the third element of _array_.
+_Function_ &bull; Returns the third element of _array_.
 
 <pre><code>third array &rarr; value</code></pre>
 <br>

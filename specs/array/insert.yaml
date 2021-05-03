@@ -5,7 +5,13 @@ summary: Inserts _value_ into array at _index_, returning the mutated array.
 signatures:
   - arguments:
       - name: index
+        description: The index where the value will be inserted.
+        type: Number
       - name: value
+        description: The value to insert.
       - name: array
+        description: The array into which to insert the value.
+        type: Array
     returns:
       name: array
+      description: The mutated array resulting from inserting the value.

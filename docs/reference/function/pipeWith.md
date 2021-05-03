@@ -1,8 +1,6 @@
 # pipeWith
 
-_Function_
-
-Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
+_Function_ &bull; Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
 
 <pre><code>pipeWith adapter, functions &rarr; function</code></pre>
 <br>

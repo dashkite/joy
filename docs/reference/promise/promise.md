@@ -1,8 +1,6 @@
 # promise
 
-_Function_
-
-Creates a promise.
+_Function_ &bull; Creates a promise.
 
 <pre><code>promise function &rarr; promise</code></pre>
 <br>
