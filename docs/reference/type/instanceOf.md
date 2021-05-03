@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if `instanceof` returns true for the given instan
 |boolean|any||
 
 
+

@@ -1,6 +1,6 @@
 # insert
 
-_Function_ &bull; Inserts _value_ into array at _index_, returning the mutated array.
+_Function_ &bull; Inserts a value into an array, returning the mutated array.
 
 <pre><code>insert index, value, array &rarr; array</code></pre>
 <br>
@@ -11,6 +11,7 @@ _Function_ &bull; Inserts _value_ into array at _index_, returning the mutated a
 |value|any|The value to insert.|
 |array|[`Array`][array]|The array into which to insert the value.|
 |array|any|The mutated array resulting from inserting the value.|
+
 
 
 

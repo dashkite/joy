@@ -11,3 +11,4 @@ _Function_ &bull; Returns the current time in milliseconds, with precision to mi
 |number|any||
 
 
+

@@ -11,3 +11,4 @@ _Function_ &bull; Returns a binary function that passes its arguments to the giv
 |function|any||
 
 
+

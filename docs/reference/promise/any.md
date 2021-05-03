@@ -11,3 +11,4 @@ _Function_ &bull; Returns a promise that resolves to the values of the first res
 |promise|any||
 
 
+

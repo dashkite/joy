@@ -11,3 +11,4 @@ _Function_ &bull; Returns an array obtained by splitting _string_ on whitespace.
 |array|any||
 
 
+

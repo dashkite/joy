@@ -12,3 +12,4 @@ _Function_ &bull; Returns the true if the given object has a property matching t
 |boolean|any||
 
 
+

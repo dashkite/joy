@@ -11,3 +11,4 @@ _Function_ &bull; Creates a promise.
 |promise|any||
 
 
+

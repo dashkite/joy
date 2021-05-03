@@ -11,3 +11,4 @@ _Function_ &bull; Returns the prototype of the given _value_.
 |prototype|any||
 
 
+

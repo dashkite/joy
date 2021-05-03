@@ -1,6 +1,6 @@
 # nth
 
-_Function_ &bull; Returns the _nth_ element of _array_.
+_Function_ &bull; Returns the nth element of an array.
 
 <pre><code>nth n, array &rarr; value</code></pre>
 <br>
@@ -9,7 +9,8 @@ _Function_ &bull; Returns the _nth_ element of _array_.
 |------|------|-------------|
 |n|[`Number`][number]|The index of the element to return.|
 |array|[`Array`][array]|The target array.|
-|value|any|The element to return.|
+|value|any|The selected element.|
+
 
 
 

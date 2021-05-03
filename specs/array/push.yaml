@@ -3,10 +3,15 @@ name: push
 aliases:
   - enqueue
 type: function
-summary: Adds _value_ to the end of _array_ and returns the mutated array.
+summary: Adds to the end of an array, returning the mutated array.
 signatures:
   - arguments:
       - name: array
+        description: The array to which to add.
+        type: Array
       - name: value
+        description: The value to add to the array.
     returns:
       name: array
+      description: The mutated array.
+      type: Array

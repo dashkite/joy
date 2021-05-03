@@ -11,3 +11,4 @@ _Function_ &bull; Returns a promise that resolve to an array of the values of of
 |promise|any||
 
 
+

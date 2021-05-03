@@ -11,3 +11,4 @@ _Function_ &bull; Returns a promise that resolves after the _interval_ (in milli
 |promise|any||
 
 
+

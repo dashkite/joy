@@ -1,6 +1,6 @@
 name: first
 type: function
-summary: Returns the first element of _array_.
+summary: Returns the first element of an array.
 signatures:
   - arguments:
     - name: array

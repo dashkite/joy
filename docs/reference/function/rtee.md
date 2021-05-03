@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function that calls the given function but always re
 |function|any||
 
 
+

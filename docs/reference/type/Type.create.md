@@ -11,3 +11,4 @@ _Function_ &bull; Creates a new instance of a type (class). Convenience wrapper 
 |instance|any||
 
 
+

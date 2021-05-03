@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if the given values are equal, false otherwise. P
 |boolean|any||
 
 
+

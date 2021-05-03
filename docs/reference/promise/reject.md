@@ -11,3 +11,4 @@ _Function_ &bull; Returns a promise that rejects with _error_.
 |promise|any||
 
 
+

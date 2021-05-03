@@ -1,6 +1,6 @@
 name: pluck
 type: function
-summary: Returns a random element from _array_.
+summary: Returns a random element from an array.
 signatures:
   - arguments:
     - name: array

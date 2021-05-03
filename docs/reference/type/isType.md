@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if _value_ is an instance of _type_, false otherw
 |boolean|any||
 
 
+

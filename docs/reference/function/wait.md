@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function that awaits on its arguments before passing
 |function|any||
 
 
+

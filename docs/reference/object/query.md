@@ -12,6 +12,7 @@ _Function_ &bull; Returns true if _object_ matches _exemplar_, false otherwise. 
 |object|any||
 
 
+
 ## Examples
 
 

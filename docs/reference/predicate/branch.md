@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function evaluates a list of _conditions_ (and assoc
 |function|any||
 
 
+

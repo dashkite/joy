@@ -12,3 +12,4 @@ _Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _objec
 |object|any||
 
 
+

@@ -12,5 +12,6 @@ _Function_ &bull; Returns true if the string is empty, false otherwise.
 
 
 
+
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [boolean]: #

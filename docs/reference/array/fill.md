@@ -1,6 +1,6 @@
 # fill
 
-_Function_ &bull; Sets each element of _array_ to _value_ and returns the mutated array.
+_Function_ &bull; Sets each element of an array to a specified value and returns the mutated array.
 
 <pre><code>fill value, array &rarr; array</code></pre>
 <br>
@@ -10,6 +10,7 @@ _Function_ &bull; Sets each element of _array_ to _value_ and returns the mutate
 |value|any|The value with which to fill the array.|
 |array|[`Array`][array]|The array to fill.|
 |array|[`Array`][array]|The resulting filled array.|
+
 
 
 

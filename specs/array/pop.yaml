@@ -3,9 +3,13 @@ name: pop
 aliases:
   - dequeue
 type: function
-summary: Removes _value_ from the end of _array_ and returns it, mutating the array.
+summary: >-
+  Removes the value from the end of an array and returns it, mutating the array.
 signatures:
   - arguments:
       - name: array
+        description: The array from which to remove an element.
+        type: Array
     returns:
       name: value
+      description: The removed element.

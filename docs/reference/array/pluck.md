@@ -1,6 +1,6 @@
 # pluck
 
-_Function_ &bull; Returns a random element from _array_.
+_Function_ &bull; Returns a random element from an array.
 
 <pre><code>pluck array &rarr; value</code></pre>
 <br>
@@ -9,6 +9,7 @@ _Function_ &bull; Returns a random element from _array_.
 |------|------|-------------|
 |array|[`Array`][array]|The target array.|
 |value|any|The selected element.|
+
 
 
 

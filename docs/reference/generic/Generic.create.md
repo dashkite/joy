@@ -12,3 +12,4 @@ _Function_ &bull; Creates a generic function. Returns a function whose `_` prope
 |function|any||
 
 
+

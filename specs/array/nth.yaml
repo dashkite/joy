@@ -1,6 +1,6 @@
 name: nth
 type: function
-summary: Returns the _nth_ element of _array_.
+summary: Returns the nth element of an array.
 signatures:
   - arguments:
       - name: n
@@ -11,4 +11,4 @@ signatures:
         type: Array
     returns:
       name: value
-      description: The element to return.
+      description: The selected element.

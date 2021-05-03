@@ -13,3 +13,4 @@ _Function_ &bull; Defines a getter on _target_ using the given _key_ (the proper
 |object|any||
 
 
+

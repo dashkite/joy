@@ -13,6 +13,7 @@ Lightweight but relatively limited and slow. Uses regexp substitution and does n
 |function|any||
 
 
+
 ## Examples
 
 

@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function that passes its arguments to the given func
 |function|any||
 
 
+

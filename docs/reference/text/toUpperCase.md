@@ -11,3 +11,4 @@ _Function_ &bull; Returns a the given string in upper case.
 |string|any||
 
 
+

@@ -11,3 +11,4 @@ _Function_ &bull; Returns true if the size of _value_ is zero, false otherwise.
 |boolean|any||
 
 
+

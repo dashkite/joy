@@ -12,3 +12,4 @@ _Function_ &bull; Returns a numeric array with consecutive values from _start_ t
 |array|any||
 
 
+

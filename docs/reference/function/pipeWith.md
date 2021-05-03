@@ -12,6 +12,7 @@ _Function_ &bull; Works like [`pipe`](#pipe), except transforms each function wi
 |function|any||
 
 
+
 ## Examples
 
 

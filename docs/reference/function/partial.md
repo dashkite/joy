@@ -12,3 +12,4 @@ _Function_ &bull; Returns a function that substitutes arguments using the given 
 |function|any||
 
 
+

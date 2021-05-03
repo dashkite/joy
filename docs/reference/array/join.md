@@ -13,5 +13,6 @@ _Function_ &bull; Returns a string formed by concatening consecutive elements of
 
 
 
+
 [string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

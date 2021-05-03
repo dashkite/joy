@@ -11,3 +11,4 @@ _Function_ &bull; Returns the maximum number in _array_.
 |number|any||
 
 
+

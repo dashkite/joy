@@ -12,3 +12,4 @@ _Function_ &bull; Calls _action_ function after the _interval_ (in milliseconds)
 |cancel|any||
 
 
+

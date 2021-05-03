@@ -1,7 +1,8 @@
 title: fill
 name: fill
 type: function
-summary: Sets each element of _array_ to _value_ and returns the mutated array.
+summary: >-
+  Sets each element of an array to a specified value and returns the mutated array.
 signatures:
   - arguments:
       - name: value

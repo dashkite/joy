@@ -1,6 +1,6 @@
 name: fourth
 type: function
-summary: Returns the fourth element of _array_.
+summary: Returns the fourth element of an array.
 signatures:
   - arguments:
     - name: array

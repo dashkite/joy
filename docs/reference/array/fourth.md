@@ -1,6 +1,6 @@
 # fourth
 
-_Function_ &bull; Returns the fourth element of _array_.
+_Function_ &bull; Returns the fourth element of an array.
 
 <pre><code>fourth array &rarr; value</code></pre>
 <br>
@@ -9,6 +9,7 @@ _Function_ &bull; Returns the fourth element of _array_.
 |------|------|-------------|
 |array|[`Array`][array]|The target array.|
 |value|any|The selected element.|
+
 
 
 

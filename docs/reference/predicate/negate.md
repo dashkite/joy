@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function that returns the negation of the given func
 |function|any||
 
 
+

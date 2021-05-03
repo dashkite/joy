@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if y % x is zero, false otherwise.
 |boolean|any||
 
 
+

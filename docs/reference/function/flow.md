@@ -12,3 +12,4 @@ Convenience for `pipeWith wait`.
 |function|any||
 
 
+

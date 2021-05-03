@@ -1,4 +1,4 @@
-# generic
+# generic (define)
 
 _Function_ &bull; Generic function wrapper around [`Generic.define`](#Generic.define).
 
@@ -10,5 +10,6 @@ _Function_ &bull; Generic function wrapper around [`Generic.define`](#Generic.de
 |function|any||
 |arguments...|any||
 |GenericFunction|any||
+
 
 

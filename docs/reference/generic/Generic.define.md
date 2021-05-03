@@ -13,3 +13,4 @@ _Function_ &bull; Defines a specialization for given generic function using the 
 |GenericFunction|any||
 
 
+

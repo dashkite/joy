@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if _value_ is produced by _iterable_, false other
 |boolean|any||
 
 
+

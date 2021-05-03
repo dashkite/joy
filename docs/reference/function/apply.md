@@ -13,4 +13,5 @@ _Function_ &bull; Calls the given function with the given arguments. Use with [`
 
 
 
+
 [bind]: #

@@ -11,6 +11,7 @@ _Function_ &bull; Returns the properties for the given object as an associative 
 |array|any||
 
 
+
 ## Examples
 
 

@@ -13,3 +13,4 @@ _Function_ &bull; Returns a function that calls the _consequent_ if the _predica
 |function|any||
 
 
+

@@ -12,3 +12,4 @@ For each outcome object, a status string is present. If the status is fulfilled,
 |promise|any||
 
 
+

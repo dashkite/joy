@@ -1,6 +1,6 @@
 name: last
 type: function
-summary: Returns the last element of _array_.
+summary: Returns the last element of an array.
 signatures:
   - arguments:
     - name: array

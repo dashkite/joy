@@ -11,3 +11,4 @@ _Function_ &bull; Returns a promise that resolves or rejects as soon as one of t
 |promise|any||
 
 
+

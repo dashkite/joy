@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if each element in an array of _values_ is an ins
 |boolean|any||
 
 
+

@@ -12,3 +12,4 @@ _Function_ &bull; Returns true if _prototype_ is the prototype for _value_, fals
 |boolean|any||
 
 
+

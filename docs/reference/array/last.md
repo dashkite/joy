@@ -1,6 +1,6 @@
 # last
 
-_Function_ &bull; Returns the last element of _array_.
+_Function_ &bull; Returns the last element of an array.
 
 <pre><code>last array &rarr; value</code></pre>
 <br>
@@ -9,6 +9,7 @@ _Function_ &bull; Returns the last element of _array_.
 |------|------|-------------|
 |array|[`Array`][array]|The target array.|
 |value|any|The selected element.|
+
 
 
 

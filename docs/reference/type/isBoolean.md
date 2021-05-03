@@ -11,3 +11,4 @@ _Function_ &bull; Returns true if _value_ is an instance of `Boolean`.
 |boolean|any||
 
 
+

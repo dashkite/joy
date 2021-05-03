@@ -11,3 +11,4 @@ _Function_ &bull; Returns a curryable function that passes its arguments to the 
 |function|any||
 
 
+

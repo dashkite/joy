@@ -11,3 +11,4 @@ _Function_ &bull; Runs _function_ returning the elapsed time in milliseconds, wi
 |number|any||
 
 
+

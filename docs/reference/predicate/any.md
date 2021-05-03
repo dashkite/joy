@@ -11,3 +11,4 @@ _Function_ &bull; Returns a function that returns true if any of the given _func
 |function|any||
 
 
+

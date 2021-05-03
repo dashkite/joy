@@ -12,3 +12,4 @@ _Function_ &bull; Applies each function to the given target. See [`getters`](#ge
 |object|any||
 
 
+

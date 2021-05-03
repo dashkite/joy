@@ -11,3 +11,4 @@ _Function_ &bull; Returns true if x % 2 is zero, false otherwise.
 |boolean|any||
 
 
+

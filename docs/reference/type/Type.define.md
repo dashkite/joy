@@ -11,3 +11,4 @@ _Function_ &bull; Creates a new type (class) that extends _parent_, if defined, 
 |class|any||
 
 
+

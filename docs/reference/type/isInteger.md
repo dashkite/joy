@@ -11,3 +11,4 @@ _Function_ &bull; Returns true if _value_ is fine. Equivalent to `Number.isInteg
 |boolean|any||
 
 
+

@@ -12,6 +12,7 @@ _Function_ &bull; Defines getters on _target_ using the given _dictionary_ of ke
 |object|any||
 
 
+
 ## Examples
 
 

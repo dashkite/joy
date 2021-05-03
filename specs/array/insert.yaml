@@ -1,7 +1,7 @@
 title: insert
 name: insert
 type: function
-summary: Inserts _value_ into array at _index_, returning the mutated array.
+summary: Inserts a value into an array, returning the mutated array.
 signatures:
   - arguments:
       - name: index
