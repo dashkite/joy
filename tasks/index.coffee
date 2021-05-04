@@ -35,7 +35,6 @@ t.define "node:test", [ "build" ], ->
 t.define "test", [ "clean" ], ->
   require "../test"
 
-
 index = undefined
 t.define "docs:clean", ->
   fs.rm "docs/reference", recursive: true, force: true

@@ -1,11 +1,11 @@
 import {curry, pipe, detach} from "./function"
-import { isString, isNumber } from "./type"
+import { isString, isNumber, isBigInt } from "./type"
 import {isEmpty} from "./value"
 
 toString = (x) -> x.toString()
 
 toBase = curry (radix, number) ->
-  if (isNumber radix) && (isNumber number)
+  if (isNumber radix) && ((isNumber number) || isBigInt number)
     if 2 <= radix <= 36
       number.toString radix
     else

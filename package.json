@@ -46,6 +46,7 @@
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
     "@dashkite/genie": "^0.1.0",
+    "@dashkite/genie-presets": "file:../genie-presets",
     "@dashkite/masonry": "^0.6.0",
     "@dashkite/writeme": "file:../writeme",
     "amen": "^3.0.0",

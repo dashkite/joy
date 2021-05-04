@@ -35,6 +35,8 @@ isFinite = Number.isFinite
 
 isInteger = Number.isInteger
 
+isBigInt = isType BigInt
+
 isBoolean = isType Boolean
 
 isSymbol = isType Symbol
@@ -116,6 +118,7 @@ export {
   isNaN
   isFinite
   isInteger
+  isBigInt
   isDate
   isError
   isRegExp

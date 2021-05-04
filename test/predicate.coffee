@@ -71,46 +71,77 @@ export default ->
 
       test "sync", ->
         z = ""
-        f = (n) -> -> z += n
+        f = (n) -> fn.wrap n
         T = fn.wrap true
         F = fn.wrap false
-        do x.test T, f "a"
-        do x.test F, f "b"
-        assert.equal "a", z
+        g = x.test T, f "a"
+        h = x.test F, f "b"
+        assert.equal true, do (x.test T, f "a")
+        assert.equal false, do (x.test F, f "b")
 
       test "async", ->
         z = ""
-        f = (n) -> -> z += n
+        f = (n) -> fn.wrap n
         T = fn.wrap Promise.resolve true
         F = fn.wrap Promise.resolve false
-        await do x.test T, f "a"
-        await do x.test F, f "b"
-        assert.equal "a", z
+        g = x.test T, f "a"
+        h = x.test F, f "b"
+        assert.equal true, await do (x.test T, f "a")
+        assert.equal false, await do (x.test F, f "b")
+
     ]
 
     test "branch", [
 
       test "sync", ->
         z = ""
-        f = (n) -> -> z += n
+        f = (n, m) -> -> z += n; m
+        a = f "a", false
+        b = f "b", false
+        c = f "c", true
+        d = f "d", false
         T = fn.wrap true
         F = fn.wrap false
-        assert.equal "b",
-          do x.branch [
-            [ F, f "a" ]
-            [ T, f "b" ]
-          ]
+        assert.equal true, do x.branch [
+          [ F, a ]
+          [ F, b ]
+          [ T, c ]
+          [ F, d ]
+        ]
+        assert.equal "c", z
+        assert.equal false, do x.branch [
+          [ F, a ]
+          [ F, b ]
+          [ F, c ]
+          [ F, d ]
+        ]
+        assert.equal "c", z
+
 
       test "async", ->
         z = ""
         f = (n) -> -> z += n
+        a = f "a"
+        b = f "b"
+        c = f "c"
+        d = f "d"
         T = fn.wrap Promise.resolve true
         F = fn.wrap Promise.resolve false
-        assert.equal "b",
-          await do x.branch [
-            [ F, f "a" ]
-            [ T, f "b" ]
-          ]
+        assert.equal true, await do x.branch [
+          [ F, a ]
+          [ F, b ]
+          [ T, c ]
+          [ F, d ]
+        ]
+        assert.equal "c", z
+        assert.equal false, await do x.branch [
+          [ F, a ]
+          [ F, b ]
+          [ F, c ]
+          [ F, d ]
+        ]
+        assert.equal "c", z
+
     ]
 
     test "attempt", [
