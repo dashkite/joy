@@ -1,0 +1,12 @@
+name: chain
+type: function
+summary: Like `tee`, but for method chaining: always returns `this`.
+signatures:
+  - arguments:
+      - name: function
+        type: Function
+        description: The method to call.
+    returns:
+      name: function
+      type: Function
+      description: The resulting method.

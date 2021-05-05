@@ -150,6 +150,16 @@ detach = (f) -> arity f.length, curry (x, args...) -> f.apply x, args
 
 send = curry (name, ax, object) -> object[name] ax...
 
+isPromise = (k) -> k instanceof Promise
+
+chain = (f) ->
+  arity (Math.max f.length, 1), (ax...) ->
+    self = @
+    if (isPromise (k = (f.apply self, ax)))
+      k.then -> self
+    else
+      self
+
 export {
   identity
   wrap
@@ -178,4 +188,5 @@ export {
   bind
   detach
   send
+  chain
 }

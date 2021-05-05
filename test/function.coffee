@@ -140,4 +140,24 @@ export default ->
       foo = new Foo
       assert.equal "foobaz", f foo
 
+    test "chain", [
+
+      test "sync", ->
+
+        class A
+          foo: _.chain (x) -> @x = x
+        a = new A
+        assert.equal a, a.foo 0
+        assert.equal 0, a.x
+
+      test "async", ->
+
+        class A
+          foo: _.chain (x) -> Promise.resolve @x = x
+        a = new A
+        assert.equal a, await a.foo 0
+        assert.equal 0, a.x
+
+    ]
+
   ]

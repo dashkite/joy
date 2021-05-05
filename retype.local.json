@@ -1,0 +1,23 @@
+{
+  "input": "docs",
+  "output": ".retype",
+  "base": "joy",
+  "branding":
+  {
+    "favicon": "favicon.ico",
+    "title": "Joy",
+    "label": "0.1.8"
+  },
+  "links": [
+    {
+      "icon": "code",
+      "text": "View On GitHub",
+      "link": "https://github.com/dashkite/joy"
+    }
+  ],
+  "footer":
+  {
+    "copyright": "&copy; Copyright {{ year }}. All rights reserved."
+  },
+  "license": "0enj4uXk5Obl/ePh4+D84OH84eD94P/h/eDh4eHh/fs-ClnLxpFJpXO/dNuxYDH//aKggQs4Fpve5+jS62tx0Q0/lsmnUek+Pw"
+}
