@@ -18,6 +18,14 @@ export default ->
 
     test "curry", -> assert.equal 3, (_.curry (x,y) -> x + y)(1)(2)
 
+    test "curry method", ->
+      class A
+        foo: _.curry (a, b, c) -> a + b + c
+
+      a = new A
+      f = a.foo 1
+      assert.equal 6, f 2, 3
+
     test "substitute", -> assert.equal 2, (_.substitute [1, _._, 3], [2])[1]
     test "partial", -> assert.equal 9, (_.partial Math.pow, [ _._, 2 ])(3)
 
@@ -159,5 +167,14 @@ export default ->
         assert.equal 0, a.x
 
     ]
+
+    test "proxy", ->
+
+      class A
+        foo: (a, b, c) -> a + b + c
+        bar: _.proxy "foo", [ 1 ]
+
+      a = new A
+      assert.equal 6, a.bar 2, 3
 
   ]

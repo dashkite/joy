@@ -70,14 +70,15 @@ flip = (f) ->
 
 curry = (f) ->
   arity f.length, (ax...) ->
+    self = @
     if ax.length >= f.length
-      f ax...
+      f.apply self, ax
     else
       length = f.length - ax.length
       if length == 1
-        (x) -> f ax..., x
+        (x) -> f.apply self, [ ax..., x ]
       else
-        curry arity length, (bx...) -> f ax..., bx...
+        curry arity length, (bx...) -> f.apply self, [ ax..., bx... ]
 
 _ = {}
 
@@ -160,6 +161,9 @@ chain = (f) ->
     else
       self
 
+proxy = curry (name, ax) ->
+  (bx...) -> @[name].apply @, [ ax..., bx... ]
+
 export {
   identity
   wrap
@@ -189,4 +193,5 @@ export {
   detach
   send
   chain
+  proxy
 }
