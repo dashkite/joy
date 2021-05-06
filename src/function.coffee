@@ -121,14 +121,16 @@ flowWith = curry (c, fx) -> pipeWith (pipe [ c, wait ]), fx
 
 tee = (f) ->
   arity (Math.max f.length, 1), (a, bx...) ->
-    if (k = (f a, bx...))?.then?
+    self = @
+    if (k = (f.apply self, [ a, bx... ]))?.then?
       k.then -> a
     else
       a
 
 rtee = (f) ->
   arity (Math.max f.length, 1), (ax..., b) ->
-    if (k = (f ax..., b))?.then?
+    self = @
+    if (k = (f.apply self, [ ax..., b ]))?.then?
       k.then -> b
     else
       b

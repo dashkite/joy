@@ -49,6 +49,15 @@ export default ->
         assert.equal 7, await f 7
         assert.equal 1, count
 
+      test "method", ->
+
+        class A
+          constructor: -> @count = 0
+          foo: _.tee (x) -> @count++
+        a = new A
+        assert.equal 7, await a.foo 7
+        assert.equal 1, a.count
+
     ]
 
     test "rtee", [
@@ -68,6 +77,15 @@ export default ->
 
         assert.equal 7, await f 0, 7
         assert.equal 1, count
+
+      test "method", ->
+
+        class A
+          constructor: -> @count = 0
+          foo: _.rtee (x, y) -> @count++
+        a = new A
+        assert.equal 7, await a.foo 0, 7
+        assert.equal 1, a.count
 
     ]
 
