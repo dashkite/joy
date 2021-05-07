@@ -145,13 +145,13 @@ memoize = (f) ->
     arity f.length, (ax...) ->
       cache[ JSON.stringify ax ] ?= apply f, ax
 
-apply = (f, ax) -> (f ax...)
+apply = curry (f, ax) -> (f ax...)
 
 bind = curry (f, x) -> f.bind x
 
 detach = (f) -> arity f.length, curry (x, args...) -> f.apply x, args
 
-send = curry (name, ax, object) -> object[name] ax...
+send = curry (name, ax, object) -> object[name].apply object, ax
 
 isPromise = (k) -> k instanceof Promise
 
