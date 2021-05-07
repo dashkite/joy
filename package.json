@@ -46,7 +46,7 @@
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
     "@dashkite/genie": "^0.1.0",
-    "@dashkite/genie-presets": "^0.0.2",
+    "@dashkite/genie-presets": "^0.0.4",
     "amen": "^3.0.0",
     "coffeescript": "^2.5.1"
   }
