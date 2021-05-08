@@ -149,7 +149,7 @@ apply = curry (f, ax) -> (f ax...)
 
 bind = curry (f, x) -> f.bind x
 
-detach = (f) -> arity f.length, curry (x, args...) -> f.apply x, args
+detach = (f) -> arity (f.length + 1), curry (x, args...) -> f.apply x, args
 
 send = curry (name, ax, object) -> object[name].apply object, ax
 

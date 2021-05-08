@@ -158,6 +158,8 @@ export default ->
 
     test "detach", ->
       assert.deepEqual (_.detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
+      assert.equal 1, (_.detach String::trim).length
+      assert.equal 3, (_.detach String::replace).length
 
     test "send", ->
       class Foo
