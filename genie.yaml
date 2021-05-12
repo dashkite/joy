@@ -1,0 +1,9 @@
+presets:
+  coffeescript:
+    targets:
+      - import
+      - node
+  verify: null
+  release: null
+  writeme: null
+  retype: null

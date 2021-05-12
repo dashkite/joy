@@ -45,9 +45,12 @@
   },
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
-    "@dashkite/genie": "^0.1.0",
-    "@dashkite/genie-presets": "^0.0.4",
+    "@babel/core": "^7.14.2",
+    "@dashkite/genie": "file:../genie",
+    "@dashkite/genie-presets": "file:../genie-presets",
     "amen": "^3.0.0",
-    "coffeescript": "^2.5.1"
+    "coffeescript": "^2.5.1",
+    "panda-quill": "^5.0.0",
+    "sinon": "^10.0.0"
   }
 }

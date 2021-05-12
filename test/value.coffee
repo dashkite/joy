@@ -1,4 +1,4 @@
-import assert from "assert"
+import assert from "assert/strict"
 import {test, print} from "amen"
 
 import {sleep} from "../src/time"
@@ -8,46 +8,53 @@ export default ->
 
   print await test "value", [
 
-    test "clone", do (scenario=null) ->
+    test "clone", [
 
-      scenario = (original) ->
-        ->
-          copy = clone original
-          assert original != copy
-          assert.deepEqual original, copy
+      test "primitive types", do (scenario = undefined) ->
 
-      failScenario = (original) ->
-        -> assert.throws (-> clone original)
+        scenario = (original) ->
+          -> assert.equal original, clone original
 
-      [
-        test "shallow", -> assert.deepEqual "panda", clone "panda"
-        test "deep", scenario x: 1, y: { z: {a: {b: {c: 12}}} }
+        [
+          test "null", scenario null
+          test "number", scenario 3
+          test "NaN", -> scenario NaN
+          test "with bigint", scenario 35n
+          test "string", scenario "hello"
+          test "boolean", scenario true
+        ]
 
-        test "number", scenario x: 1, y: { z: 3 }
-        test "NaN", -> assert isNaN clone NaN
-        test "string", scenario x: 1, y: { z: "3" }
-        test "boolean", scenario x: 1, y: { z: true }
+      test "complex types", do (scenario = undefined) ->
 
-        test "regexp", scenario  x: 1, y: { z: /foo/gi }
-        test "date", scenario  x: 1, y: { z: new Date() }
-        test "symbol", scenario  x: 1, y: { z: [Symbol "z"] }
+        scenario = (original) ->
+          ->
+            copy = clone original
+            assert.notEqual original, copy
+            assert.deepEqual original, copy
 
-        test "array", scenario x: 1, y: { z: [1, 2, 3] }
-        test "set", scenario x: 1, y: { z: new Set [1, 2, 3] }
-        test "map", ->
-          map = new Map()
-          map.set "pandas", "are the best"
-          do scenario x: 1, y: { z: map }
-        test "buffer", scenario x: 1, y: { z: Buffer.from "panda" }
-        test "array buffer", scenario x: 1, y: { z: new ArrayBuffer 8 }
-        test "data view",
-          scenario x: 1, y: { z: new DataView new ArrayBuffer 8 }
+        [
+          test "object", scenario foo: "bar", baz: true
+          test "array", scenario [1..5]
+          # test "set", scenario new Set [ 1, 2, 3 ]
+          # test "map", scenario new Map [ [ "foo", "bar" ] ]
+          # test "buffer", scenario Buffer.from "panda"
+          # test "array buffer", scenario (new Uint8Array.from "hello").buffer
+          # test "data view", scenario new DataView new ArrayBuffer.from "hello"
+          test "regexp", scenario  /foo/gi
+          test "date", scenario  new Date()
+          # test "symbol", scenario  Symbol "z"
+        ]
 
-        # Negative tests
-        test "function", failScenario x: 1, y: { z: -> }
-        test "weak map", failScenario x: 1, y: { z: new WeakMap() }
-        test "error", failScenario x: 1, y: { z: new Error "panda" }
-      ]
+      test "unsupported", do (scenario = undefined) ->
+
+        scenario = (original) -> -> assert.throws (-> clone original)
+
+        [
+          test "function", scenario ->
+          test "weak map", scenario new WeakMap
+          test "error", scenario new Error "foobar"
+        ]
+    ]
 
     test "equal", [
 

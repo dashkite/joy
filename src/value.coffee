@@ -1,7 +1,9 @@
 import {identity, curry} from "./function"
+import { any } from "./predicate"
 import { generic } from "./generic"
 
 import {
+  isUndefined,
   isSymbol, isRegExp,
   isBuffer, isArrayBuffer, isTypedArray, isDataView,
   isMap, isArray, isObject, isSet,
@@ -82,12 +84,20 @@ clone = generic
   default: (entity) ->
     throw new Error "clone: no match on entity #{entity?.constructor?.name}"
 
+isPrimitive = any [
+  isUndefined
+  isNumber
+  isString
+  isBoolean
+]
+
+generic clone, isPrimitive, identity
+
 generic clone, isObject, (original) ->
   copy = new original.constructor()
   for key, value of original
-    copy[clone key] = clone value
+    copy[key] = clone value
   copy
-
 
 generic clone, isArrayBuffer, (original) ->
   copy = new original.constructor original.byteLength
@@ -121,10 +131,6 @@ generic clone, isArray, (original) ->
 
 generic clone, isSet, (original) ->
   cloneIterator original, (copy, entry) -> copy.add clone entry
-
-isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
-
-generic clone, isPrimitive, identity
 
 generic clone, isDate, (original) ->
   new original.constructor original

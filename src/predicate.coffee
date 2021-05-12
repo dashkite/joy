@@ -13,25 +13,25 @@ isPromise = (value) -> value instanceof Promise
 
 all = (px) ->
   arity px[0].length, (ax...) ->
-    bx = ax
     for p, i in px
-      r = apply p, bx
+      r = apply p, ax
       if isPromise r
         return r.then (r) ->
           if r == true
             if i == px.length - 1
               true
             else
-              apply (all px[(i + 1)..]), [ r ]
+              apply (all px[(i + 1)..]), ax
+          else
+            false
       else
-        if r == true then bx = [ r ] else return false
+        if r == false then return false
     true
 
 any = (px) ->
   arity px[0].length, (ax...) ->
-    bx = ax
     for p, i in px
-      r = apply p, bx
+      r = apply p, ax
       if isPromise r
         return r.then (r) ->
           if r == true
@@ -39,9 +39,9 @@ any = (px) ->
           else if i == px.length - 1
             false
           else
-            apply (any px[(i + 1)..]), [ r ]
+            apply (any px[(i + 1)..]), ax
       else
-        if r == true then return true else bx = [ r ]
+        if r == true then return true
     false
 
 test = (f, g) ->
@@ -54,10 +54,13 @@ test = (f, g) ->
         false
     if (r = apply f, ax).then? then (r.then _f) else (_f r)
 
-attempt = (f) ->
-  arity f.length, (ax...) ->
+branch = (fx) -> any ((test f, g) for [f, g] in fx)
+
+_attempt = (f) ->
+  (ax...) ->
     try
-      if (r = f ax...).then?
+      r = apply f, ax
+      if isPromise r
         r
           .then -> true
           .catch -> false
@@ -65,8 +68,9 @@ attempt = (f) ->
         true
     catch
       false
-
-branch = (fx) -> any ((test f, g) for [f, g] in fx)
+      
+attempt = (fx) ->
+  any (_attempt f for f in fx)
 
 export {
   negate

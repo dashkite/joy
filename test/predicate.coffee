@@ -1,10 +1,18 @@
 import assert from "assert"
+import sinon from "sinon"
 import {print, test, success} from "amen"
 
-import * as fn from "../src/function"
+import * as _f from "../src/function"
 
 # module under text
-import * as x from "../src/predicate"
+import * as $ from "../src/predicate"
+
+T = _f.wrap true
+F = _f.wrap false
+
+promised =
+  T: _f.wrap Promise.resolve true
+  F: _f.wrap Promise.resolve false
 
 export default ->
 
@@ -12,149 +20,100 @@ export default ->
 
     test "negate", [
         test "sync", ->
-          f = -> false
-          assert.equal true, (x.negate f)()
+          assert.equal true, do $.negate F
+          assert.equal false, do $.negate T
 
         test "async", ->
-          f = -> Promise.resolve false
-          assert.equal true, await (x.negate f)()
+          assert.equal true, await do $.negate promised.F
+          assert.equal false, await do $.negate promised.T
 
       ]
 
     test "any", [
 
       test "sync", ->
-        z = ""
-        f = (n, m) -> -> z += n; m
-        a = f "a", false
-        b = f "b", false
-        c = f "c", true
-        d = f "d", false
-        do x.any [ a, b, c, d ]
-        assert.equal "abc", z
+        assert.equal true, do $.any [ T, F ]
+        assert.equal true, do $.any [ F, T ]
+        assert.equal false, do $.any [ F, F ]
 
       test "async", ->
-        z = ""
-        f = (n, m) -> -> z += n; Promise.resolve m
-        a = f "a", false
-        b = f "b", false
-        c = f "c", true
-        d = f "d", false
-        await do x.any [ a, b, c, d ]
-        assert.equal "abc", z
+        assert.equal true, await do $.any [ promised.T, promised.F ]
+        assert.equal true, await do $.any [ promised.F, promised.T ]
+        assert.equal false, await do $.any [ promised.F, promised.F ]
+
     ]
 
     test "all", [
 
       test "sync", ->
-        z = ""
-        f = (n, m) -> -> z += n; m
-        a = f "a", true
-        b = f "b", true
-        c = f "c", false
-        d = f "d", true
-        do x.all [ a, b, c, d ]
-        assert.equal "abc", z
+        assert.equal false, do $.all [ T, F ]
+        assert.equal false, do $.all [ F, T ]
+        assert.equal true, do $.all [ T, T ]
 
       test "async", ->
-        z = ""
-        f = (n, m) -> -> z += n; Promise.resolve m
-        a = f "a", true
-        b = f "b", true
-        c = f "c", false
-        d = f "d", true
-        await do x.all [ a, b, c, d ]
-        assert.equal "abc", z
+        assert.equal false, await do $.all [ promised.T, promised.F ]
+        assert.equal false, await do $.all [ promised.F, promised.T ]
+        assert.equal true, await do $.all [ promised.T, promised.T ]
+
     ]
 
     test "test", [
 
       test "sync", ->
-        z = ""
-        f = (n) -> fn.wrap n
-        T = fn.wrap true
-        F = fn.wrap false
-        g = x.test T, f "a"
-        h = x.test F, f "b"
-        assert.equal true, do (x.test T, f "a")
-        assert.equal false, do (x.test F, f "b")
+        f = sinon.fake.returns false
+        t = sinon.fake.returns true
+        assert.equal true, do $.test T, f
+        assert.equal false, do $.test F, t
+        assert.equal true, f.called
+        assert.equal true, t.notCalled
 
       test "async", ->
-        z = ""
-        f = (n) -> fn.wrap n
-        T = fn.wrap Promise.resolve true
-        F = fn.wrap Promise.resolve false
-        g = x.test T, f "a"
-        h = x.test F, f "b"
-        assert.equal true, await do (x.test T, f "a")
-        assert.equal false, await do (x.test F, f "b")
+        f = sinon.fake.returns false
+        t = sinon.fake.returns true
+        assert.equal true, await do $.test promised.T, f
+        assert.equal false, await do $.test promised.F, t
+        assert.equal true, f.called
+        assert.equal true, t.notCalled
 
     ]
 
     test "branch", [
 
       test "sync", ->
-        z = ""
-        f = (n, m) -> -> z += n; m
-        a = f "a", false
-        b = f "b", false
-        c = f "c", true
-        d = f "d", false
-        T = fn.wrap true
-        F = fn.wrap false
-        assert.equal true, do x.branch [
-          [ F, a ]
-          [ F, b ]
-          [ T, c ]
-          [ F, d ]
-        ]
-        assert.equal "c", z
-        assert.equal false, do x.branch [
-          [ F, a ]
-          [ F, b ]
-          [ F, c ]
-          [ F, d ]
-        ]
-        assert.equal "c", z
+        f = sinon.fake.returns false
+        t = sinon.fake.returns true
+        assert.equal true, do $.branch [[T, f], [F, t]]
+        assert.equal true, do $.branch [[F, t], [T, f]]
+        assert.equal false, do $.branch [[F, t], [F, f]]
+        assert.equal 2, f.callCount
+        assert.equal true, t.notCalled
 
 
       test "async", ->
-        z = ""
-        f = (n) -> -> z += n
-        a = f "a"
-        b = f "b"
-        c = f "c"
-        d = f "d"
-        T = fn.wrap Promise.resolve true
-        F = fn.wrap Promise.resolve false
-        assert.equal true, await do x.branch [
-          [ F, a ]
-          [ F, b ]
-          [ T, c ]
-          [ F, d ]
-        ]
-        assert.equal "c", z
-        assert.equal false, await do x.branch [
-          [ F, a ]
-          [ F, b ]
-          [ F, c ]
-          [ F, d ]
-        ]
-        assert.equal "c", z
+        f = sinon.fake.returns false
+        t = sinon.fake.returns true
+        assert.equal true, await do $.branch [[promised.T, f], [promised.F, t]]
+        assert.equal true, await do $.branch [[promised.F, t], [promised.T, f]]
+        assert.equal false, await do $.branch [[promised.F, t], [promised.F, f]]
+        assert.equal 2, f.callCount
+        assert.equal true, t.notCalled
+
 
     ]
 
     test "attempt", [
 
       test "sync", ->
-        f = -> throw new Error "test error"
-        assert.equal false,
-          do x.attempt f
+        f = sinon.fake.throws()
+        assert.equal true, do $.attempt [ f, T ]
+        assert.equal false, do $.attempt [ f, f ]
+        assert.equal 3, f.callCount
 
       test "async", ->
-        f = -> Promise.reject "test error"
-        assert.equal false,
-          await do x.attempt f
+        f = sinon.fake.rejects()
+        assert.equal true, await do $.attempt [ f, promised.T ]
+        assert.equal false, await do $.attempt [ f, f ]
+        assert.equal 3, f.callCount
 
     ]
   ]
