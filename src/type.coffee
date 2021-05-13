@@ -90,13 +90,11 @@ isArrayBuffer = isType ArrayBuffer
 isDataView = isType DataView
 isTypedArray = isKind prototype Uint8Array
 
-isIterable = (x) ->
-  (isFunction x?[Symbol.iterator]) || (isGeneratorFunction x)
+isIterable = (x) -> isFunction x?[Symbol.iterator]
 
 isIterator = (x) -> (isFunction x?.next) && (isIterable x)
 
-isReagent = isAsyncIterable = (x) ->
-  (isFunction x?[Symbol.asyncIterator]) || (isAsyncGeneratorFunction x)
+isReagent = isAsyncIterable = (x) -> isFunction x?[Symbol.asyncIterator]
 
 isReactor = isAsyncIterator = (x) -> (isFunction x?.next) && (isReagent x)
 

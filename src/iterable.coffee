@@ -1,6 +1,7 @@
 import {generic} from "./generic"
-import {wrap, curry, binary} from "./function"
-import {isArray, isIterable} from "./type"
+import {wrap, curry, binary, ternary, tee} from "./function"
+import {isArray, isFunction, isIterable, isReagent} from "./type"
+isAny = wrap true
 
 _includes = generic
   name: "includes"
@@ -19,7 +20,69 @@ uniqueBy = (f, ax) ->
   (bx.push a) for a from ax when !(bx.find (b) -> f a, b)?
   bx
 
+map = generic name: "map"
+generic map, isFunction, isIterable, (f, i) -> yield (f x) for x from i
+generic map, isFunction, isReagent, (f, r) -> yield (f x) for await x from r
+generic map, isFunction, isArray, (f, ax) -> ax.map f
+map = curry binary map
+
+tap = generic name: "tap"
+generic tap, isFunction, isIterable,
+  (f, i) -> yield ((tee f) x) for x from i
+generic tap, isFunction, isReagent,
+  (f, r) -> yield ((tee f) x) for await x from r
+tap = curry binary tap
+
+select = generic name: "select"
+generic select, isFunction, isIterable,
+  (f, i) -> yield x for x from i when f x
+generic select, isFunction, isReagent,
+  (f, r) -> yield x for await x from r when f x
+generic select, isFunction, isArray,
+  (f, ax) -> ax.filter f
+select = curry binary select
+
+reject = curry (f, i) -> select (negate f), i
+
+resolve = curry (filter, producer) ->
+  yield await x for await x from filter producer
+
+collect = generic name: "start"
+generic collect, isIterable, (i) -> Array.from i
+generic collect, isReagent, (r) -> x for await x from r
+
+start = generic name: "start"
+generic start, isIterable, (i) -> undefined for x from i ; undefined
+generic start, isReagent, (r) -> undefined for await x from r ; undefined
+
+each = generic name: "each"
+generic each, isFunction, isIterable,
+  (f, i) -> f x for x from i ; undefined
+generic each, isFunction, isReagent,
+  (f, r) -> f x for await x from r ; undefined
+generic each, isFunction, isArray,
+  (f, ax) -> ax.forEach f
+each = curry binary each
+
+reduce = generic name: "fold/reduce"
+generic reduce, isFunction, isAny, isIterable,
+  (f, k, i) -> (k = f k, x) for x from i ; k
+generic reduce, isFunction, isAny, isReagent,
+  (f, k, r) -> (k = f k, x) for await x from r ; k
+generic reduce, isFunction, isAny, isArray,
+  (f, k, ax) -> ax.reduce f, k
+reduce = fold = curry ternary reduce
+
 export {
   includes
   uniqueBy
+  map
+  tap
+  select
+  reject
+  resolve
+  collect
+  start
+  each
+  reduce
 }

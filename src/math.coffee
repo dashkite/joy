@@ -1,4 +1,4 @@
-import {curry, apply} from "./function"
+import {_, curry, partial, apply} from "./function"
 import {negate} from "./predicate"
 
 eq = curry (x, y) -> x == y
@@ -26,5 +26,8 @@ max = (ax) -> apply Math.max, ax
 
 pow = curry (x, y) -> x ** y
 
+square = partial pow, [ _, 2 ]
+cube = partial pow, [ _, 3 ]
+
 export {eq, neq, gt, lt, gte, lte, add, sub, mul, div, mod,
-  isModulo, even, odd, min, max, abs, pow}
+  isModulo, even, odd, min, max, abs, pow, square, cube}

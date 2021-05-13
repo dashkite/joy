@@ -91,8 +91,10 @@ substitute = curry (ax, bx) ->
       a
 
 partial = (f, ax) ->
-  arity (f.length - ax.length),
-    (bx...) -> f (substitute ax, bx)...
+  n = 0
+  for a in ax when a == _
+    n++
+  arity n, (bx...) -> f (substitute ax, bx)...
 
 spread = (f) -> (ax) -> f ax...
 

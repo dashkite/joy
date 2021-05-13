@@ -98,7 +98,6 @@ export default ->
         assert.equal 2, f.callCount
         assert.equal true, t.notCalled
 
-
     ]
 
     test "attempt", [
