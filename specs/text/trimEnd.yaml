@@ -1,0 +1,12 @@
+name: trimEnd
+type: function
+summary: Removes trailing whitespace from a string.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string from which to remove whitespace.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

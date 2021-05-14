@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # identity
 
 _Function_ &bull; Returns its argument.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns its argument.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|value|any||
+|&rarr; value|any||
 
 
 

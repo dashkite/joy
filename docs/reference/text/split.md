@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # split
 
 _Function_ &bull; Returns an array obtained by splitting _string_ using the given Regular Expression _pattern_.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns an array obtained by splitting _string_ using the give
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|array|any||
+|&rarr; array|any||
 
 
 

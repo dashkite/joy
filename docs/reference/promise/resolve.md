@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # resolve
 
 _Function_ &bull; Returns a promise that resolve to _value_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a promise that resolve to _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

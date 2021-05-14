@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isUndefined
 
 _Function_ &bull; Returns true if _value_ is undefined, false otherwise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is undefined, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

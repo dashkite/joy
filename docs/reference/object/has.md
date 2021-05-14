@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # has
 
 _Function_ &bull; Returns the true if the given object has a property matching the given key, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns the true if the given object has a property matching t
 |------|------|-------------|
 |key|any||
 |object|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

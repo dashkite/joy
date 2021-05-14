@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # unshift
 
 _Function_ &bull; Adds _value_ to the start of the _array_ and returns the mutated array.
@@ -9,7 +12,7 @@ _Function_ &bull; Adds _value_ to the start of the _array_ and returns the mutat
 |------|------|-------------|
 |array|any||
 |value|any||
-|array|any||
+|&rarr; array|any||
 
 
 

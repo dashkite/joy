@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # fromBase
 
 _Function_ &bull; Returns a number from a string representation for a given radix.
@@ -7,12 +10,12 @@ _Function_ &bull; Returns a number from a string representation for a given radi
 
 | name | type | description |
 |------|------|-------------|
-|radix|[`Number`][number]|The radix to which to convert the number.|
-|string|[`String`][string]|The string to convert|
-|number|[`Number`][number]|The number corresponding to the string.|
+|radix|[`Number`][Number]|The radix to which to convert the number.|
+|string|[`String`][String]|The string to convert|
+|&rarr; number|[`Number`][Number]|The number corresponding to the string.|
 
 
 
 
-[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

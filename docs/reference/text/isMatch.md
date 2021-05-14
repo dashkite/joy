@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isMatch
 
 _Function_ &bull; Returns true if the given Regular Expression _pattern_ matches, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if the given Regular Expression _pattern_ matches
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

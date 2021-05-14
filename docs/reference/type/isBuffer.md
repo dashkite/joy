@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isBuffer
 
 _Function_ &bull; Returns true if _value_ is an instance of `Buffer`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `Buffer`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

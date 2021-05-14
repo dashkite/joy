@@ -1,0 +1,12 @@
+name: gloss
+type: function
+summary: Remove punctuation, diacritics, and case from a string.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to convert.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # any
 
 _Function_ &bull; Returns a function that returns true if any of the given _functions_, attempted in the order given, returns true, and false otherwise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that returns true if any of the given _func
 | name | type | description |
 |------|------|-------------|
 |functions|any||
-|function|any||
+|&rarr; function|any||
 
 
 

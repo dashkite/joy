@@ -1,0 +1,23 @@
+name: elide
+type: function
+summary: >-
+  Elides a string so that it is no longer than a specified length, appending a terminating string.
+description: >-
+  Elides a string so that it is no longer than a specified length, appending a terminating string. Avoids truncating in the middle of a word.
+examples:
+  - title: Truncating a string.
+    code:
+      CoffeeScript: |-
+        assert.equal "Hello...", elide 10, "...", "Hello, world!"
+signatures:
+  - arguments:
+      - name: length
+        type: Number
+        description: The target string length.
+      - name: string
+        type: String
+        description: The string to elide.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

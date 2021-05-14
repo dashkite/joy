@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # promise
 
 _Function_ &bull; Creates a promise.
@@ -8,7 +11,7 @@ _Function_ &bull; Creates a promise.
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

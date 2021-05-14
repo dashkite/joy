@@ -1,0 +1,12 @@
+name: squote
+type: function
+summary: Enclose a string within single quotes.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to quote.
+    returns:
+      name: string
+      type: String
+      description: The quoted string.

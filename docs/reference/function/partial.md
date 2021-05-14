@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # partial
 
 _Function_ &bull; Returns a function that substitutes arguments using the given pattern array before passing them to the given function.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns a function that substitutes arguments using the given 
 |------|------|-------------|
 |function|any||
 |pattern|any||
-|function|any||
+|&rarr; function|any||
 
 
 

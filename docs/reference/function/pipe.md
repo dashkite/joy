@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # pipe
 
 _Function_ &bull; Returns a function that composes the given functions, calling them in the order given.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that composes the given functions, calling 
 | name | type | description |
 |------|------|-------------|
 |functions|any||
-|function|any||
+|&rarr; function|any||
 
 
 

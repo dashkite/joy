@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isNaN
 
 _Function_ &bull; Returns true if _value_ is not a number. Equivalent to `Number.isNaN`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is not a number. Equivalent to `Number
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

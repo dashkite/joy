@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isKind
 
 _Function_ &bull; Returns true if _value_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if _value_ is an instance of _type_ or one of its
 |------|------|-------------|
 |type|any||
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

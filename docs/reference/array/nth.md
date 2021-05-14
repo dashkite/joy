@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # nth
 
 _Function_ &bull; Returns the nth element of an array.
@@ -7,12 +10,12 @@ _Function_ &bull; Returns the nth element of an array.
 
 | name | type | description |
 |------|------|-------------|
-|n|[`Number`][number]|The index of the element to return.|
-|array|[`Array`][array]|The target array.|
-|value|any|The selected element.|
+|n|[`Number`][Number]|The index of the element to return.|
+|array|[`Array`][Array]|The target array.|
+|&rarr; value|any|The selected element.|
 
 
 
 
-[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

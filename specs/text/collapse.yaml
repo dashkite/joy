@@ -1,0 +1,12 @@
+name: collapse
+type: function
+summary: Removes leading and trailing whitespace and collapses remaining sequences of whitespace into a single space.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string from which to remove whitespace.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

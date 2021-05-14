@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # branch
 
 _Function_ &bull; Returns a function evaluates a list of _conditions_ (and associative array consisting of pairs of predicates and consequents), in the order given, until one of the predicates matches. Calls the corresponding consquent if a match is found.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function evaluates a list of _conditions_ (and assoc
 | name | type | description |
 |------|------|-------------|
 |conditions|any||
-|function|any||
+|&rarr; function|any||
 
 
 

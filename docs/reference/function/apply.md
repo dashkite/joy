@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # apply
 
 _Function_ &bull; Calls the given function with the given arguments. Use with [`bind`][bind] to bind `this`.
@@ -9,7 +12,7 @@ _Function_ &bull; Calls the given function with the given arguments. Use with [`
 |------|------|-------------|
 |function|any||
 |arguments|any||
-|value|any||
+|&rarr; value|any||
 
 
 

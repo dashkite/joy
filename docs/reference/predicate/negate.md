@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # negate
 
 _Function_ &bull; Returns a function that returns the negation of the given function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that returns the negation of the given func
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

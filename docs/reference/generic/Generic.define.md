@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # Generic.define
 
 _Function_ &bull; Defines a specialization for given generic function using the given _terms_ and _implementation_ function. Returns the corresponding `GenericFunction` instance.
@@ -10,7 +13,7 @@ _Function_ &bull; Defines a specialization for given generic function using the 
 |function|any||
 |terms...|any||
 |implementation|any||
-|GenericFunction|any||
+|&rarr; GenericFunction|any||
 
 
 

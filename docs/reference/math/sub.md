@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # sub
 
 _Function_ &bull; Returns x - y.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns x - y.
 |------|------|-------------|
 |x|any||
 |y|any||
-|number|any||
+|&rarr; number|any||
 
 
 

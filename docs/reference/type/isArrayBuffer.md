@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isArrayBuffer
 
 _Function_ &bull; Returns true if _value_ is an instance of `ArrayBuffer`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `ArrayBuffer`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

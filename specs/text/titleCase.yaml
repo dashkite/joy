@@ -1,0 +1,12 @@
+name: titleCase
+type: function
+summary: Capitalizes the first letter of each word.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to convert.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

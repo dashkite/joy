@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # pop/dequeue
 
 _Function_ &bull; Removes the value from the end of an array and returns it, mutating the array.
@@ -7,11 +10,11 @@ _Function_ &bull; Removes the value from the end of an array and returns it, mut
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][array]|The array from which to remove an element.|
-|value|any|The removed element.|
+|array|[`Array`][Array]|The array from which to remove an element.|
+|&rarr; value|any|The removed element.|
 
 **Aliases:**
 dequeue
 
 
-[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

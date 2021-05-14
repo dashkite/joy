@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # setters
 
 _Function_ &bull; Defines setters on _target_ using the given _dictionary_ of keys and setter functions. Convenience wrapper for [`setter`](#setter). Like most Joy functions, `setters` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
@@ -9,7 +12,7 @@ _Function_ &bull; Defines setters on _target_ using the given _dictionary_ of ke
 |------|------|-------------|
 |dictionary|any||
 |target|any||
-|object|any||
+|&rarr; object|any||
 
 
 

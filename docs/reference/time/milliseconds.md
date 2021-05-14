@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # milliseconds
 
 _Function_ &bull; Returns the current time in milliseconds, with precision to microseconds if available.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the current time in milliseconds, with precision to mi
 | name | type | description |
 |------|------|-------------|
 |()|any||
-|number|any||
+|&rarr; number|any||
 
 
 

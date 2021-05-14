@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # splice
 
 _Function_ &bull; Removes the elements in _array_ from _start_ up to, but not including, _end_, and returns the mutated array.
@@ -10,7 +13,7 @@ _Function_ &bull; Removes the elements in _array_ from _start_ up to, but not in
 |start|any||
 |end|any||
 |array|any||
-|array|any||
+|&rarr; array|any||
 
 
 

@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # rest
 
 _Function_ &bull; Returns a new array consisting of all but the first element of the given array.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a new array consisting of all but the first element of
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|array|any||
+|&rarr; array|any||
 
 
 

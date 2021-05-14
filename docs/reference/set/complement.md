@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # complement
 
 _Function_ &bull; Returns a set that is the complement (values that are only produced by one iterable) of the given iterables.
@@ -8,8 +11,7 @@ _Function_ &bull; Returns a set that is the complement (values that are only pro
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|iterable|any||
-|set|any||
+|&rarr; set|any||
 
 
 

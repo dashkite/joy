@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # values
 
 _Function_ &bull; Returns the property values for the given object.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the property values for the given object.
 | name | type | description |
 |------|------|-------------|
 |object|any||
-|array|any||
+|&rarr; array|any||
 
 
 

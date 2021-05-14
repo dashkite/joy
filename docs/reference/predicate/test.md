@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # test
 
 _Function_ &bull; Returns a function that calls the _consequent_ if the _predicate_ returns true, and the (optional) _alternative_ otherwise.
@@ -10,7 +13,7 @@ _Function_ &bull; Returns a function that calls the _consequent_ if the _predica
 |predicate|any||
 |consequent[|any||
 |alternative]|any||
-|function|any||
+|&rarr; function|any||
 
 
 

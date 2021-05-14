@@ -1,0 +1,15 @@
+name: truncate
+type: function
+summary: Truncates a string to a specified length.
+signatures:
+  - arguments:
+      - name: length
+        type: Number
+        description: The target string length.
+      - name: string
+        type: String
+        description: The string to truncate.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

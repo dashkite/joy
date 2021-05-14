@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # remove
 
 _Function_ &bull; Removes _value_ from array, if it exists within it, returning the mutated array.
@@ -9,7 +12,7 @@ _Function_ &bull; Removes _value_ from array, if it exists within it, returning 
 |------|------|-------------|
 |value|any||
 |array|any||
-|array|any||
+|&rarr; array|any||
 
 
 

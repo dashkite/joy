@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # toString
 
 _Function_ &bull; Returns a string representation of _value_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a string representation of _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|string|any||
+|&rarr; string|any||
 
 
 

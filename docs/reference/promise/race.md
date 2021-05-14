@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # race
 
 _Function_ &bull; Returns a promise that resolves or rejects as soon as one of the promises in an iterable resolves or rejects, with the value or reason from that promise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a promise that resolves or rejects as soon as one of t
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

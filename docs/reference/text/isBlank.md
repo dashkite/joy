@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isBlank
 
 _Function_ &bull; Returns true if the string is empty, false otherwise.
@@ -7,11 +10,11 @@ _Function_ &bull; Returns true if the string is empty, false otherwise.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][string]|The string to test.|
-|boolean|[`Boolean`][boolean]|True if the string is empty, false otherwise.|
+|string|[`String`][String]|The string to test.|
+|&rarr; boolean|[`Boolean`][Boolean]|True if the string is empty, false otherwise.|
 
 
 
 
-[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[boolean]: #
+[String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Boolean]: #

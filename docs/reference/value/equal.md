@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # equal
 
 _Function_ &bull; Returns true if the given values are equal, false otherwise. Performs a deep comparison.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if the given values are equal, false otherwise. P
 |------|------|-------------|
 |a|any||
 |b|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

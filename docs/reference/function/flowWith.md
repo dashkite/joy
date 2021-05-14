@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # flowWith
 
 _Function_ &bull; Works like [`flow`][flow], except transforms each function with the given adaper before composing them.
@@ -9,9 +12,9 @@ _Function_ &bull; Works like [`flow`][flow], except transforms each function wit
 |------|------|-------------|
 |adapter|any||
 |functions|any||
-|function|any||
+|&rarr; function|any||
 
 
 
 
-[flow]: /reference/function/flow
+[flow]: /reference/function/flow.md

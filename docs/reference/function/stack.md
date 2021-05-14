@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # stack
 
 _Function_ &bull; Returns a function that passes its arguments to the given function as an array.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that passes its arguments to the given func
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

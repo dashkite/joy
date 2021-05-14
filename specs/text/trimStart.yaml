@@ -1,0 +1,12 @@
+name: trimStart
+type: function
+summary: Removes leading whitespace from a string.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string from which to remove whitespace.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

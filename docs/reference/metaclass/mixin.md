@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # mixin
 
 _Function_ &bull; Applies each function to the given target. See [`getters`](#getters) for an example of how to use it with object modifiers like `getters` or `methods` to create reusable mixins.
@@ -9,7 +12,7 @@ _Function_ &bull; Applies each function to the given target. See [`getters`](#ge
 |------|------|-------------|
 |target|any||
 |functions|any||
-|object|any||
+|&rarr; object|any||
 
 
 

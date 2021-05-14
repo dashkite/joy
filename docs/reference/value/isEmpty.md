@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isEmpty
 
 _Function_ &bull; Returns true if the size of _value_ is zero, false otherwise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if the size of _value_ is zero, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

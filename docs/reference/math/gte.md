@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # gte
 
 _Function_ &bull; Returns true if x >= y, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if x >= y, false otherwise.
 |------|------|-------------|
 |x|any||
 |y|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

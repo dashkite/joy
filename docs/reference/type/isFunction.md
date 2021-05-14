@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isFunction
 
 _Function_ &bull; Returns true if _value_ is a function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is a function.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

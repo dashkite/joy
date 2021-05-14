@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # cat
 
 _Function_ &bull; Concatenates arrays passed as arguments, returning a new array.
@@ -7,11 +10,10 @@ _Function_ &bull; Concatenates arrays passed as arguments, returning a new array
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][array]|Array to concatenate.|
-|array|[`Array`][array]|Array to concatenate.|
-|array|[`Array`][array]|New array resulting from concatening the given arrays.|
+|array|[`Array`][Array]|Array to concatenate.|
+|&rarr; array|[`Array`][Array]|New array resulting from concatening the given arrays.|
 
 
 
 
-[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

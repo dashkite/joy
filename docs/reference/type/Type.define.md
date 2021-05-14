@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # Type.define
 
 _Function_ &bull; Creates a new type (class) that extends _parent_, if defined, or `Object` otherwise. Convenience wrapper for `class`.
@@ -8,7 +11,7 @@ _Function_ &bull; Creates a new type (class) that extends _parent_, if defined, 
 | name | type | description |
 |------|------|-------------|
 |parent|any||
-|class|any||
+|&rarr; class|any||
 
 
 

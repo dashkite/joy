@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # Generic.lookup
 
 _Function_ &bull; Returns the implementation that matches the given _arguments_, if any.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns the implementation that matches the given _arguments_,
 |------|------|-------------|
 |function|any||
 |arguments...|any||
-|function|any||
+|&rarr; function|any||
 
 
 

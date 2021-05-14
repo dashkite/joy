@@ -1,0 +1,19 @@
+name: uncase
+type: function
+summary: Removes case and replaces delimiters with spaces.
+examples:
+  - title: Scenarios for using `uncase`.
+    code:
+      CoffeeScript: |-
+        assert.equal "foo bar", uncase "foo-bar"
+        assert.equal "foo bar", uncase "fooBar"
+        assert.equal "foo bar", uncase "Foo Bar"
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to convert.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

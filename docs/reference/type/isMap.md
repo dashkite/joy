@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isMap
 
 _Function_ &bull; Returns true if _value_ is an instance of `Map`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `Map`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

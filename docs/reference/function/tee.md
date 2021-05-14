@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # tee
 
 _Function_ &bull; Returns a function that calls the given function but always returns its first argument.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that calls the given function but always re
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

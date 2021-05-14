@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # match
 
 _Function_ &bull; Returns the [match data][match data] for the given Regular Expression _pattern_ or undefined if the pattern doesn't match.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns the [match data][match data] for the given Regular Exp
 |------|------|-------------|
 |pattern|any||
 |string|any||
-|match|any||
+|&rarr; match|any||
 
 
 

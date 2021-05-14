@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # set
 
 _Function_ &bull; Sets the value of the property matching the given key for the given object.
@@ -10,7 +13,7 @@ _Function_ &bull; Sets the value of the property matching the given key for the 
 |key|any||
 |value|any||
 |object|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

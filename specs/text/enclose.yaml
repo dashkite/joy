@@ -1,0 +1,33 @@
+name: enclose
+type: function
+summary: Enclose a string with delimeters.
+description: >-
+  Enclose a string with a delimeters. The delimeters may be specified by a [String][] or an [Array][]. The first character or array element is the start delimeter. The second character or array element is the end delimeter. If no end delimiter is specified, the start and end delimiters are the same.
+examples:
+  - title: Enclosing a string within parenthesis.
+    code:
+      CoffeeScript: |
+        assert.equal "( hello )", enclose [ "( ", " )" ], "hello"
+signatures:
+  - arguments:
+      - name: delimiter-string
+        type: String
+        description: The delimiter(s).
+      - name: string
+        type: String
+        description: The string to delimit.
+    returns:
+      name: string
+      type: String
+      description: The enclosed string.
+  - arguments:
+      - name: delimiter-array
+        type: Array
+        description: The delimiter(s).
+      - name: string
+        type: String
+        description: The string to delimit.
+    returns:
+      name: string
+      type: String
+      description: The enclosed string.

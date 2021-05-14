@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # once
 
 _Function_ &bull; Returns a function that calls the given function once. Subsequent invocations will simply return the value returned by the initial invocation.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that calls the given function once. Subsequ
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

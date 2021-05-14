@@ -1,0 +1,17 @@
+name: repeat
+type: function
+summary: Repeats _string_ until reaching _length_ characters.
+description: >-
+  Repeats _string_ until reaching _length_ characters. Conveience method for [`String::repeat`][].
+signatures:
+  - arguments:
+      - name: length
+        type: Number
+        description: The target string length.
+      - name: string
+        type: String
+        description: The string to repeat.
+    returns:
+      name: string
+      type: String
+      description: The resulting string.

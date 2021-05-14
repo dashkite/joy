@@ -44,7 +44,6 @@ export default ->
 
     test "tap", do ({f} = {}) ->
 
-
       [
 
         test "iterator", ->
@@ -60,22 +59,6 @@ export default ->
           assert.equal 5, f.callCount
 
       ]
-
-    test "select", [
-
-      test "iterator", ->
-        assert.deepEqual [ 1, 3, 5 ],
-          Array.from _.select odd, new Set [1..5]
-
-      test "reagent", ->
-        assert.deepEqual [ 1, 3, 5 ],
-          Array.from await _.collect _.select odd, reagent [1..5]
-
-      test "array specialization", ->
-        assert.deepEqual [ 1, 3, 5 ],
-          Array.from _.select odd, [1..5]
-
-    ]
 
     test "select", [
 

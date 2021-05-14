@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isModulo
 
 _Function_ &bull; Returns true if y % x is zero, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if y % x is zero, false otherwise.
 |------|------|-------------|
 |x|any||
 |y|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

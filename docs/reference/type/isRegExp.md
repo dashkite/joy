@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isRegExp
 
 _Function_ &bull; Returns true if _value_ is an instance of `RegExp`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `RegExp`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

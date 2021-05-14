@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # intersection
 
 _Function_ &bull; Returns a set that is the intersection (the common elements) of the given iterables.
@@ -8,8 +11,7 @@ _Function_ &bull; Returns a set that is the intersection (the common elements) o
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|iterable|any||
-|set|any||
+|&rarr; set|any||
 
 
 

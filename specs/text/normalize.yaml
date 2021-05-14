@@ -1,0 +1,13 @@
+name: normalize
+type: function
+summary: >-
+  Converts a string to normalized decomposd Unicode and removes diacritics.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to normalize.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

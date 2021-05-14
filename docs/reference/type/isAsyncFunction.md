@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isAsyncFunction
 
 _Function_ &bull; Returns true if _value_ is an asynchronous function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an asynchronous function.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

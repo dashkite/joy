@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # wait
 
 _Function_ &bull; Returns a function that awaits on its arguments before passing it to the given function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that awaits on its arguments before passing
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

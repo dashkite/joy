@@ -1,0 +1,15 @@
+name: startsWith
+type: function
+summary: Returns true if a string begins with a given substring.
+signatures:
+  - arguments:
+      - name: substring
+        type: String
+        description: The substring to match.
+      - name: string
+        type: String
+        description: The string to search.
+    returns:
+      name: matches
+      type: Boolean
+      description: True if the string begins with _substring_, false otherwise.

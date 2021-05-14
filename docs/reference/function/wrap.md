@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # wrap
 
 _Function_ &bull; Returns a function that returns its argument.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that returns its argument.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|function|any||
+|&rarr; function|any||
 
 
 

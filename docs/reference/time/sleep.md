@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # sleep
 
 _Function_ &bull; Returns a promise that resolves after the _interval_ (in milliseconds) has expired.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a promise that resolves after the _interval_ (in milli
 | name | type | description |
 |------|------|-------------|
 |interval|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

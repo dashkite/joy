@@ -1,0 +1,16 @@
+name: dashed
+aliases:
+  - underscore
+  - underscores
+  - snakeCase
+type: function
+summary: Converts a space-delimited string to underscore-delimited.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to convert.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

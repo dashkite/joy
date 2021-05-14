@@ -1,0 +1,12 @@
+name: camelCase
+type: function
+summary: Converts a space-delimited string to camel case.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to convert.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

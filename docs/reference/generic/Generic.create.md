@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # Generic.create
 
 _Function_ &bull; Creates a generic function. Returns a function whose `_` property references te corresponding `GenericFunction` instance.
@@ -9,7 +12,7 @@ _Function_ &bull; Creates a generic function. Returns a function whose `_` prope
 |------|------|-------------|
 |name|any||
 |description | description|any||
-|function|any||
+|&rarr; function|any||
 
 
 

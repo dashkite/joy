@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # third
 
 _Function_ &bull; Returns the third element of _array_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the third element of _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|value|any||
+|&rarr; value|any||
 
 
 

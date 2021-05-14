@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # pipeWith
 
 _Function_ &bull; Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
@@ -9,7 +12,7 @@ _Function_ &bull; Works like [`pipe`](#pipe), except transforms each function wi
 |------|------|-------------|
 |adapter|any||
 |functions|any||
-|function|any||
+|&rarr; function|any||
 
 
 

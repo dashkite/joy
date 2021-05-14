@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # min
 
 _Function_ &bull; Returns the minimum number in _array_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the minimum number in _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|number|any||
+|&rarr; number|any||
 
 
 

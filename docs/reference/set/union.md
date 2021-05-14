@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # union
 
 _Function_ &bull; Returns a set that is the union of the given iterables.
@@ -8,8 +11,7 @@ _Function_ &bull; Returns a set that is the union of the given iterables.
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|iterable|any||
-|set|any||
+|&rarr; set|any||
 
 
 

@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # unique
 
 _Function_ &bull; Returns a set that is consists only of the unique elements of _iterable_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a set that is consists only of the unique elements of 
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|set|any||
+|&rarr; set|any||
 
 
 

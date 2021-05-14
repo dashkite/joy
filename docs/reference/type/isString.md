@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isString
 
 _Function_ &bull; Returns true if _value_ is an instance of `String`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `String`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

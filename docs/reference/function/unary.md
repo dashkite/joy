@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # unary
 
 _Function_ &bull; Returns a unary function that passes its argument to the given function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a unary function that passes its argument to the given
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

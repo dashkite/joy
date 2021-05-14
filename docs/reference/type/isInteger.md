@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isInteger
 
 _Function_ &bull; Returns true if _value_ is fine. Equivalent to `Number.isInteger`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is fine. Equivalent to `Number.isInteg
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

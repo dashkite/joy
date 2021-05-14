@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # replace
 
 _Function_ &bull; Returns the string resulting from replacing matches of the Regular Expression _pattern_ using _replacement_, which may be a string or function returning a string.
@@ -10,7 +13,7 @@ _Function_ &bull; Returns the string resulting from replacing matches of the Reg
 |pattern|any||
 |replacement|any||
 |string|any||
-|string|any||
+|&rarr; string|any||
 
 
 

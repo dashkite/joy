@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # method
 
 _Function_ &bull; Defines a method on _target_ using the given _key_ (the property name) and _description_. Like most Joy functions, `method` is curryable, so you can define a function that will define a property on any object. Use in combination with [`mixin`](#mixin) to create reusable mixins.
@@ -10,7 +13,7 @@ _Function_ &bull; Defines a method on _target_ using the given _key_ (the proper
 |key|any||
 |function|any||
 |target|any||
-|object|any||
+|&rarr; object|any||
 
 
 

@@ -1,0 +1,14 @@
+name: quote
+type: function
+aliases:
+  - dquote
+summary: Enclose a string with quotes.
+signatures:
+  - arguments:
+      - name: string
+        type: String
+        description: The string to quote.
+    returns:
+      name: string
+      type: String
+      description: The quoted string.

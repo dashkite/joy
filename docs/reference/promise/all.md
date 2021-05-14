@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # all
 
 _Function_ &bull; Returns a promise that resolve to an array of the values of of the resolved promises. Rejects if any of the promises are rejected.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a promise that resolve to an array of the values of of
 | name | type | description |
 |------|------|-------------|
 |iterable|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

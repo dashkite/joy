@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # abs
 
 _Function_ &bull; Returns the absolute value of _x_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the absolute value of _x_.
 | name | type | description |
 |------|------|-------------|
 |x|any||
-|number|any||
+|&rarr; number|any||
 
 
 

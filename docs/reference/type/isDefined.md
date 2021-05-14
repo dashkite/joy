@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isDefined
 
 _Function_ &bull; Returns true if _value_ is defined, false otherwise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is defined, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

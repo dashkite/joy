@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # includes
 
 _Function_ &bull; Returns true if _value_ is produced by _iterable_, false otherwise. Specialized for array.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if _value_ is produced by _iterable_, false other
 |------|------|-------------|
 |value|any||
 |iterable|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

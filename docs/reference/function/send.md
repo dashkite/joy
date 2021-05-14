@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # send
 
 _Function_ &bull; Invokes the named method on _object_ with _arguments_.
@@ -10,7 +13,7 @@ _Function_ &bull; Invokes the named method on _object_ with _arguments_.
 |name|any||
 |arguments|any||
 |object|any||
-|value|any||
+|&rarr; value|any||
 
 
 

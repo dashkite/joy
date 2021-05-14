@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # slice
 
 _Function_ &bull; Returns an array containing the elements in _array_ from _start_ up to, but not including, _end_.
@@ -10,7 +13,7 @@ _Function_ &bull; Returns an array containing the elements in _array_ from _star
 |start|any||
 |end|any||
 |array|any||
-|array|any||
+|&rarr; array|any||
 
 
 

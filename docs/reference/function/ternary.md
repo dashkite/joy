@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # ternary
 
 _Function_ &bull; Returns a ternary function that passes its arguments to the given function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a ternary function that passes its arguments to the gi
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

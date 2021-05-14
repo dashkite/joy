@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # max
 
 _Function_ &bull; Returns the maximum number in _array_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the maximum number in _array_.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|number|any||
+|&rarr; number|any||
 
 
 

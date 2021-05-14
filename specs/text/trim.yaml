@@ -1,9 +1,12 @@
-title: trim
 name: trim
 type: function
-summary: Returns a the given string with leading and trailing whitespace removed.
+summary: Removes leading and trailing whitespace from a string.
 signatures:
   - arguments:
       - name: string
+        type: String
+        description: The string from which to remove whitespace.
     returns:
       name: string
+      type: String
+      description: The modified string.

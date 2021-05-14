@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # arity
 
 _Function_ &bull; Returns an n-ary function that passes its arguments to the given function.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns an n-ary function that passes its arguments to the giv
 |------|------|-------------|
 |n|any||
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

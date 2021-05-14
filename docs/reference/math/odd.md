@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # odd
 
 _Function_ &bull; Returns true if x % 2 is non-zero, false otherwise.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if x % 2 is non-zero, false otherwise.
 | name | type | description |
 |------|------|-------------|
 |x|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

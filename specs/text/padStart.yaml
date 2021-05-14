@@ -1,0 +1,18 @@
+name: padStart
+type: function
+summary: Pads the start of a string with another string, repeating until the resulting string reaches a given length.
+signatures:
+  - arguments:
+      - name: length
+        type: Number
+        description: The target string length.
+      - name: padding
+        type: String
+        description: The string to use as padding.
+      - name: string
+        type: String
+        description: The string to pad.
+    returns:
+      name: string
+      type: String
+      description: The modified string.

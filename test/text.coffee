@@ -134,6 +134,8 @@ export default ->
           assert.equal "This is simply...",
             $.elide n, "...", "This is simply too much!"
 
+      test "documentation example", ->
+        assert.equal "Hello...", $.elide 10, "...", "Hello, world!"
     ]
 
     test "split", ->

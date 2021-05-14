@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # Type.create
 
 _Function_ &bull; Creates a new instance of a type (class). Convenience wrapper for `new`.
@@ -8,7 +11,7 @@ _Function_ &bull; Creates a new instance of a type (class). Convenience wrapper 
 | name | type | description |
 |------|------|-------------|
 |type|any||
-|instance|any||
+|&rarr; instance|any||
 
 
 

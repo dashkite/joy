@@ -1,6 +1,7 @@
 name: chain
 type: function
-summary: Like `tee`, but for method chaining: always returns `this`.
+summary: |-
+  Like `tee`, but for method chaining: always returns `this`.
 signatures:
   - arguments:
       - name: function

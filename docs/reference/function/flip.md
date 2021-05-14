@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # flip
 
 _Function_ &bull; Returns a function that reverses its arguments before passing them to the given function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a function that reverses its arguments before passing 
 | name | type | description |
 |------|------|-------------|
 |function|any||
-|function|any||
+|&rarr; function|any||
 
 
 

@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # assign
 
 _Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
@@ -9,7 +12,7 @@ _Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _objec
 |------|------|-------------|
 |object|any||
 |objects...|any||
-|object|any||
+|&rarr; object|any||
 
 
 

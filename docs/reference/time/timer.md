@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # timer
 
 _Function_ &bull; Calls _action_ function after the _interval_ (in milliseconds) has expired. Returns a function to cancel the timer.
@@ -9,7 +12,7 @@ _Function_ &bull; Calls _action_ function after the _interval_ (in milliseconds)
 |------|------|-------------|
 |interval|any||
 |action|any||
-|cancel|any||
+|&rarr; cancel|any||
 
 
 

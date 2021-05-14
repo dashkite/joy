@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # toLowerCase
 
 _Function_ &bull; Returns a the given string in lower case.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a the given string in lower case.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|string|any||
+|&rarr; string|any||
 
 
 

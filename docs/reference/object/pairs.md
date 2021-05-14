@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # pairs
 
 _Function_ &bull; Returns the properties for the given object as an associative array (an array of two-element arrays).
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the properties for the given object as an associative 
 | name | type | description |
 |------|------|-------------|
 |object|any||
-|array|any||
+|&rarr; array|any||
 
 
 

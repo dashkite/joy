@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # shuffle
 
 _Function_ &bull; Randomly shuffles the elements of the array.
@@ -8,7 +11,7 @@ _Function_ &bull; Randomly shuffles the elements of the array.
 | name | type | description |
 |------|------|-------------|
 |array|any||
-|array|any||
+|&rarr; array|any||
 
 
 

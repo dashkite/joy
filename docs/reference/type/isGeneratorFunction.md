@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isGeneratorFunction
 
 _Function_ &bull; Returns true if _value_ is a generator function.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is a generator function.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

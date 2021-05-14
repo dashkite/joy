@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # get
 
 _Function_ &bull; Returns the value of the property matching the given key for the given object. Like most Joy functions, `get` is curryable, so `get` can be used like Ramda's [`pluck`][ramda].
@@ -10,7 +13,7 @@ _Function_ &bull; Returns the value of the property matching the given key for t
 |------|------|-------------|
 |key|any||
 |object|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

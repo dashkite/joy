@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isPrototype
 
 _Function_ &bull; Returns true if _prototype_ is the prototype for _value_, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if _prototype_ is the prototype for _value_, fals
 |------|------|-------------|
 |prototype|any||
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

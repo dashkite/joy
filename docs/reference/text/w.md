@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # w
 
 _Function_ &bull; Returns an array obtained by splitting _string_ on whitespace.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns an array obtained by splitting _string_ on whitespace.
 | name | type | description |
 |------|------|-------------|
 |string|any||
-|array|any||
+|&rarr; array|any||
 
 
 

@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # range
 
 _Function_ &bull; Returns a numeric array with consecutive values from _start_ to _finish_.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns a numeric array with consecutive values from _start_ t
 |------|------|-------------|
 |start|any||
 |finish|any||
-|array|any||
+|&rarr; array|any||
 
 
 

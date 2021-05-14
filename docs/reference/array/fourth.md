@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # fourth
 
 _Function_ &bull; Returns the fourth element of an array.
@@ -7,10 +10,10 @@ _Function_ &bull; Returns the fourth element of an array.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][array]|The target array.|
-|value|any|The selected element.|
+|array|[`Array`][Array]|The target array.|
+|&rarr; value|any|The selected element.|
 
 
 
 
-[array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

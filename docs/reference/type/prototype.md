@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # prototype
 
 _Function_ &bull; Returns the prototype of the given _value_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns the prototype of the given _value_.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|prototype|any||
+|&rarr; prototype|any||
 
 
 

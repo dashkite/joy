@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # reject
 
 _Function_ &bull; Returns a promise that rejects with _error_.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a promise that rejects with _error_.
 | name | type | description |
 |------|------|-------------|
 |error|any||
-|promise|any||
+|&rarr; promise|any||
 
 
 

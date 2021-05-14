@@ -1,0 +1,18 @@
+name: parseNumber
+type: function
+summary: Parses a string representation of a number.
+description: |-
+  Returns a number parsed from a string.
+
+  !!!warning Warning
+  If the number being parsed is larger than may be safely represented in JavaScript (that is, larger than [`Number.MAX_SAFE_INTEGER`][]), the parsed number will lose precision. If you may be parsing extremely large numbers, use [`BigInt`][] instead.
+  !!!
+signatures:
+  - arguments:
+      - name: strig
+        type: String
+        description: The string to parse.
+    returns:
+      name: number
+      type: Number
+      description: The number parsed from the string.

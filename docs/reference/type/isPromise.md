@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isPromise
 
 _Function_ &bull; Returns true if _value_ is an instance of `Promise`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `Promise`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

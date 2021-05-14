@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isType
 
 _Function_ &bull; Returns true if _value_ is an instance of _type_, false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if _value_ is an instance of _type_, false otherw
 |------|------|-------------|
 |type|any||
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

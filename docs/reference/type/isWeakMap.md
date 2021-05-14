@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # isWeakMap
 
 _Function_ &bull; Returns true if _value_ is an instance of `WeakMap`.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns true if _value_ is an instance of `WeakMap`.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 

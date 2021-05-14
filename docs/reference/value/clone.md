@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # clone
 
 _Function_ &bull; Returns a deep clone of the given value.
@@ -8,7 +11,7 @@ _Function_ &bull; Returns a deep clone of the given value.
 | name | type | description |
 |------|------|-------------|
 |value|any||
-|value|any||
+|&rarr; value|any||
 
 
 

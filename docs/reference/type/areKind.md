@@ -1,3 +1,6 @@
+---
+order: 1
+---
 # areKind
 
 _Function_ &bull; Returns true if each element of in an array of _values_ is an instance of _type_ or one of its descendents (as defined by the prototype chain for _value_), false otherwise.
@@ -9,7 +12,7 @@ _Function_ &bull; Returns true if each element of in an array of _values_ is an 
 |------|------|-------------|
 |type|any||
 |values|any||
-|boolean|any||
+|&rarr; boolean|any||
 
 
 
