@@ -1,10 +1,14 @@
-title: unshift
 name: unshift
 type: function
 summary: Adds _value_ to the start of the _array_ and returns the mutated array.
 signatures:
   - arguments:
-      - name: array
       - name: value
+        descriptio: The value to add.
+      - name: array
+        type: Array
+        description: The array to which to add the value.
     returns:
       name: array
+      type: Array
+      description: The mutated array.

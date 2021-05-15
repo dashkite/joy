@@ -7,6 +7,8 @@ summary: >-
 signatures:
   - arguments:
       - name: array
-      - name: value
+        type: Array
+        description: The array from which to get the value.
     returns:
-      name: array
+      name: value
+      description: The element removed from the array.

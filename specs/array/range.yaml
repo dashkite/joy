@@ -5,6 +5,12 @@ summary: Returns a numeric array with consecutive values from _start_ to _finish
 signatures:
   - arguments:
       - name: start
+        type: Number
+        description: The start of the range.
       - name: finish
+        type: Number
+        description: The end of the range.
     returns:
       name: array
+      type: Array
+      description: An array of numeric values from _start_ to _finish_.

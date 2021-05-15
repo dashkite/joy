@@ -1,4 +1,3 @@
-title: remove
 name: remove
 type: function
 summary: >-
@@ -7,6 +6,11 @@ summary: >-
 signatures:
   - arguments:
       - name: value
+        description: The value to remove.
       - name: array
+        type: Array
+        description: The array from which to remove the value.
     returns:
       name: array
+      type: Array
+      description: The mutated array.

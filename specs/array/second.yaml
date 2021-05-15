@@ -1,9 +1,11 @@
-title: second
 name: second
 type: function
-summary: Returns the second element of _array_.
+summary: Returns the second element of an array.
 signatures:
   - arguments:
-      - name: array
+    - name: array
+      description: The target array.
+      type: Array
     returns:
       name: value
+      description: The selected element.

@@ -1,9 +1,12 @@
-title: shuffle
 name: shuffle
 type: function
-summary: Randomly shuffles the elements of the array.
+summary: Randomly shuffles the elements of the array, returning a new array.
 signatures:
   - arguments:
       - name: array
+        type: Array
+        description: The array to shuffle.
     returns:
       name: array
+      type: Array
+      description: The resulting array.

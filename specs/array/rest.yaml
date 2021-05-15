@@ -1,11 +1,13 @@
-title: rest
 name: rest
 type: function
 summary: >-
-  Returns a new array consisting of all but the first element of the given
-  array.
+  Takes all but the first an element of an array.
 signatures:
   - arguments:
       - name: array
+        type: Array
+        description: The array from which to take elements.
     returns:
       name: array
+      type: Array
+      description: The resulting array.

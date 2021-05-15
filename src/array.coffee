@@ -15,7 +15,7 @@ rest = ([first, rest...]) -> rest
 push = curry (ax, a) -> ax.push a; ax
 pop = detach Array::pop
 shift = detach Array::shift
-unshift = curry (ax, a) -> ax.unshift a; ax
+unshift = curry (a, ax) -> ax.unshift a; ax
 enqueue = unshift
 dequeue = pop
 

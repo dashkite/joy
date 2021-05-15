@@ -26,7 +26,7 @@ export default ->
       assert.deepEqual A, [2, 3]
 
     test "unshift", ->
-      assert.deepEqual (_.unshift [1, 2, 3], 0), [0, 1, 2, 3]
+      assert.deepEqual (_.unshift 0, [1, 2, 3]), [0, 1, 2, 3]
 
     test "cat", -> assert.deepEqual (_.cat [1..5], [6..10]), [1..10]
 

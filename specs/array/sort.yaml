@@ -1,4 +1,3 @@
-title: sort
 name: sort
 type: function
 summary: >-
@@ -7,6 +6,12 @@ summary: >-
 signatures:
   - arguments:
       - name: comparator
+        type: Function
+        description: The function to use for comparisons.
       - name: array
+        type: Array
+        description: The array to sort.
     returns:
       name: array
+      type: Array
+      description: The sorted array.

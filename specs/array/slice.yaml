@@ -1,13 +1,19 @@
-title: slice
 name: slice
 type: function
 summary: >-
-  Returns an array containing the elements in _array_ from _start_ up to, but
-  not including, _end_.
+  Takes elements in _array_ from _start_ up to, but not including, _end_.
 signatures:
   - arguments:
       - name: start
+        type: Number
+        description: The start of the range of elements to take.
       - name: end
+        type: Number
+        description: The end of the range of elements to take.
       - name: array
+        type: Array
+        description: The array from which to take elements.
     returns:
       name: array
+      type: Array
+      description: The resulting array.

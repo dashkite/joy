@@ -10,9 +10,12 @@ _Function_ &bull; Sorts the given array in place using the _comparator_ function
 
 | name | type | description |
 |------|------|-------------|
-|comparator|any||
-|array|any||
-|&rarr; array|any||
+|comparator|[`Function`][Function]|The function to use for comparisons.|
+|array|[`Array`][Array]|The array to sort.|
+|&rarr; array|[`Array`][Array]|The sorted array.|
 
 
 
+
+[Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

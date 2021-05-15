@@ -10,9 +10,11 @@ _Function_ &bull; Removes _value_ from array, if it exists within it, returning 
 
 | name | type | description |
 |------|------|-------------|
-|value|any||
-|array|any||
-|&rarr; array|any||
+|value|any|The value to remove.|
+|array|[`Array`][Array]|The array from which to remove the value.|
+|&rarr; array|[`Array`][Array]|The mutated array.|
 
 
 
+
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
