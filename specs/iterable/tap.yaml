@@ -1,0 +1,15 @@
+name: tap
+type: function
+summary: Calls _function_ with each product from _iterable_, returning the original product.
+signatures:
+  - arguments:
+      - name: function
+        type: Function
+        description: The function to apply to each product.
+      - name: iterable
+        type: Iterable
+        description: The iterable from which to consume products.
+    returns:
+      name: generator
+      type: Generator
+      description: Generates the products from the original iterable.

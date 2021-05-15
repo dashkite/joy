@@ -1,0 +1,12 @@
+name: collect
+type: function
+summary: Collects products from a generator into an array.
+signatures:
+  - arguments:
+      - name: iterable
+        type: Iterable
+        description: The iterable from which to consume products.
+    returns:
+      name: array
+      type: Array
+      description: The resulting array.

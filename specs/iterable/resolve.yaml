@@ -1,0 +1,20 @@
+name: resolve
+type: function
+summary: Awaits on promises produced by _iterable_, generating the resolved values.
+examples:
+  - title: Waiting on reading a file.
+    code:
+      CoffeeScript: |
+        load = flow [
+          glob "**/*.coffee"
+          resolve map partial FS.fileRead _, "utf8"
+        ]
+signatures:
+  - arguments:
+      - name: iterable
+        type: Iterable
+        description: The iterable from which to consume products.
+    returns:
+      name: generator
+      type: Generator
+      description: Generates the resolved products of the original iterable.

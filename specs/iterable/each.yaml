@@ -1,0 +1,14 @@
+name: each
+type: function
+summary: Calls _function_ with each product from _iterable_, returning `undefined`.
+signatures:
+  - arguments:
+      - name: function
+        type: Function
+        description: The function to apply to each product.
+      - name: iterable
+        type: Iterable
+        description: The iterable from which to consume products.
+    returns:
+      name: ∅
+      type: undefined

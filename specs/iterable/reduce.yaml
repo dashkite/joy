@@ -1,0 +1,21 @@
+name: reduce
+type: function
+summary: Reduces _iterable_ to _value_ by combining its products using a _reducer_.
+examples:
+  - title: Adding a sequence of numbers.
+    code:
+      CoffeeScript: |-
+        assert.equal 15, reduce add, 0, [1..5]
+signatures:
+  - arguments:
+      - name: reducer
+        type: Function
+        description: The function to use to combine a product and a value.
+      - name: initial
+        description: The the initial value of the reduction.
+      - name: iterable
+        type: Iterable
+        description: The iterable to reduce.
+    returns:
+      name: value
+      description: The resulting value.

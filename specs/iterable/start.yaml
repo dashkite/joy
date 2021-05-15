@@ -1,0 +1,11 @@
+name: start
+type: function
+summary: Consumes and discards products from _iterable_.
+signatures:
+  - arguments:
+      - name: iterable
+        type: Iterable
+        description: The iterable from which to consume products.
+    returns:
+      name: ∅
+      type: undefined
