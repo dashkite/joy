@@ -1,5 +1,8 @@
 presets:
-  coffeescript: null
+  coffeescript:
+    targets:
+      - import
+      - node
   verify: null
   update: null
   release: null
