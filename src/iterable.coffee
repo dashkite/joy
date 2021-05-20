@@ -1,6 +1,6 @@
 import {generic} from "./generic"
 import {wrap, curry, binary, ternary, tee} from "./function"
-import {isArray, isFunction, isIterable, isReagent} from "./type"
+import {isString, isArray, isFunction, isIterable, isReagent} from "./type"
 isAny = wrap true
 
 _includes = generic
@@ -73,6 +73,26 @@ generic reduce, isFunction, isAny, isArray,
   (f, k, ax) -> ax.reduce f, k
 reduce = fold = curry ternary reduce
 
+join = generic name: "join"
+generic join, isFunction, isIterable, (f, i) ->
+  n = 0
+  for x from i
+    r = if n++ > 0 then f r, x else x
+  r
+
+generic join, isFunction, isReagent, (f, i) ->
+  n = 0
+  for await x from i
+    r = if n++ > 0 then f r, x else x
+  r
+generic join, isString, isIterable, (a, i) ->
+  join a, collect i
+
+generic join, isString, isReagent, (a, i) ->
+  join a, await collect i
+
+generic join, isString, isArray, (a, ax) -> ax.join a
+
 export {
   includes
   uniqueBy
@@ -85,4 +105,5 @@ export {
   start
   each
   reduce
+  join
 }

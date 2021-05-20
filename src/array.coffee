@@ -37,8 +37,6 @@ cat = detach Array::concat
 
 slice = curry (i, j, ax) -> ax[i...j]
 
-join = curry (a, ax) -> ax.join a
-
 fill = curry (a, ax) -> ax.fill a
 
 range = curry (start, finish) -> [start..finish]
@@ -87,7 +85,6 @@ export {
   remove
   cat
   slice
-  join
   fill
   range
   pluck

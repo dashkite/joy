@@ -57,10 +57,6 @@ export default ->
       assert.deepEqual (_.range 1, 5), [1..5]
       assert.deepEqual (_.range 5, 1), [5..1]
 
-    test "join", ->
-      A = ["water", "earth", "fire", "air"]
-      assert (_.join "-", A) == "water-earth-fire-air"
-
     test "fill", ->
       A = [1, 2, 3, 4]
       assert.deepEqual (_.fill 0, A), [0,0,0,0]

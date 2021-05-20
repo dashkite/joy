@@ -1,0 +1,29 @@
+title: join
+name: join
+type: function
+summary: >-
+  Like reduce, except for joining products with a join function.
+description: >-
+  Accepts a join function and a producer. Specialized for joining products with a string and for arrays.
+signatures:
+  - arguments:
+      - name: append
+        type: Function
+        description: The join function.
+      - name: iterable
+        type: Iterator
+        description: The iterable whose products will be joined.
+    returns:
+      name: result
+      description: The value resulting from joining the products.
+  - arguments:
+      - name: delimiter
+        type: String
+        description: The delimeter separating products of the iterable.
+      - name: iterable
+        type: Iterator
+        description: The iterable whose products will be joined.
+    returns:
+      name: string
+      type: String
+      description: The resulting string.

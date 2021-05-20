@@ -111,4 +111,31 @@ export default ->
 
     ]
 
+    test "join", [
+
+      test "iterator", ->
+        assert.equal "water-earth-fire-air",
+          _.join ((r, x) -> r + "-" + x),
+            new Set [ "water", "earth", "fire", "air" ]
+
+      test "reagent", ->
+        assert.equal "water-earth-fire-air",
+          await _.join ((r, x) -> r + "-" + x),
+            reagent [ "water", "earth", "fire", "air" ]
+
+
+      test "iterator/string specialization", ->
+        assert.equal "water-earth-fire-air",
+          _.join "-", new Set [ "water", "earth", "fire", "air" ]
+
+      test "reagent/string specialization", ->
+        assert.equal "water-earth-fire-air",
+          await _.join "-", reagent [ "water", "earth", "fire", "air" ]
+
+      test "array/string specialization", ->
+          assert.equal "water-earth-fire-air",
+            _.join "-", [ "water", "earth", "fire", "air" ]
+
+    ]
+
   ]

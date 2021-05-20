@@ -1,5 +1,8 @@
 presets:
-  coffeescript: ~
-  verify: ~
-  update: ~
-  release: ~
+  coffeescript: null
+  verify: null
+  update: null
+  release: null
+  docs: null
+  writeme: null
+  retype: null
