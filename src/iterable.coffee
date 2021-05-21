@@ -93,6 +93,8 @@ generic join, isString, isReagent, (a, i) ->
 
 generic join, isString, isArray, (a, ax) -> ax.join a
 
+join = curry binary join
+
 export {
   includes
   uniqueBy

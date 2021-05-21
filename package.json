@@ -46,7 +46,7 @@
   "homepage": "https://github.com/dashkite/module#readme",
   "devDependencies": {
     "@dashkite/genie": "^0.3.3",
-    "@dashkite/genie-presets": "file:../genie-presets",
+    "@dashkite/genie-presets": "^0.1.3",
     "amen": "^3.0.0",
     "panda-quill": "^5.0.0",
     "retypeapp": "^1.5.0",
