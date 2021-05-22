@@ -6,3 +6,5 @@ presets:
   verify: null
   update: null
   release: null
+  writeme: null
+  retype: null

@@ -1,0 +1,16 @@
+name: events
+type: function
+summary: >-
+  Converts an event source into an asynchronous iterator.
+signatures:
+  - arguments:
+      - name: name
+        type: String
+        description: The name of the event to listen for.
+      - name: source
+        type: EventEmitter | EventTarget
+        description: The event source.
+    returns:
+      name: iterator
+      type: Iterable
+      description: The asynchronous iterator.
