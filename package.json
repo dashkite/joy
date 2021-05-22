@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/joy",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "",
   "main": "./build/node/src/index.js",
   "exports": {
