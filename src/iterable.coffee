@@ -1,5 +1,5 @@
 import {generic} from "./generic"
-import {wrap, curry, binary, ternary, tee} from "./function"
+import {wrap, curry, binary, ternary, tee, apply} from "./function"
 import {isString, isArray, isFunction, isIterable, isReagent} from "./type"
 isAny = wrap true
 
@@ -95,6 +95,34 @@ generic join, isString, isArray, (a, ax) -> ax.join a
 
 join = curry binary join
 
+class Queue
+  @create: -> new Queue
+  constructor: ->
+    @q = []
+    @p = []
+  enqueue: (value) ->
+    if @p.length > 0
+      apply @p.shift(), [ value ]
+    else
+      @q.push value
+  dequeue: ->
+    if @q.length > 0
+      @q.shift()
+    else
+      new Promise (resolve) => @p.push resolve
+  isIdle: -> @p.length == 0 && @q.length == 0
+
+
+events = curry (name, source) ->
+  q = Queue.create()
+  if source.on?
+    source.on name, (event) -> q.enqueue event
+  else if source.addEventListener?
+    source.addEventListener name, (event) -> q.enqueue event
+  else throw new TypeError "events: source must support
+    `on` or `addEventListener` method"
+  loop yield await q.dequeue()
+
 export {
   includes
   uniqueBy
@@ -108,4 +136,6 @@ export {
   each
   reduce
   join
+  Queue
+  events
 }

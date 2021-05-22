@@ -1,6 +1,7 @@
 import assert from "assert/strict"
 import { test, print } from "amen"
 import sinon from "sinon"
+import EventEmitter from "events"
 
 import { add, square, odd } from "../src/math"
 # under test
@@ -30,7 +31,7 @@ export default ->
 
       test "reagent", ->
         assert.deepEqual [ 1, 4, 9 ],
-          Array.from await _.collect _.map square, reagent [1..3]
+          await _.collect _.map square, reagent [1..3]
 
       test "array specialization", ->
         assert.deepEqual [ 1, 4, 9 ],
@@ -55,7 +56,7 @@ export default ->
         test "reagent", ->
           f = sinon.fake.returns -1
           assert.deepEqual [ 1..5 ],
-            Array.from await _.collect _.tap f, reagent [1..5]
+            await _.collect _.tap f, reagent [1..5]
           assert.equal 5, f.callCount
 
       ]
@@ -68,7 +69,7 @@ export default ->
 
       test "reagent", ->
         assert.deepEqual [ 1, 3, 5 ],
-          Array.from await _.collect _.select odd, reagent [1..5]
+          await _.collect _.select odd, reagent [1..5]
 
       test "array specialization", ->
         assert.deepEqual [ 1, 3, 5 ],
@@ -137,5 +138,15 @@ export default ->
             _.join "-", [ "water", "earth", "fire", "air" ]
 
     ]
+
+    test "events", ->
+      source = new EventEmitter
+      for i in [ 1..5 ]
+        do (i) -> queueMicrotask -> source.emit "test", i
+      assert.deepEqual [ 1..5 ],
+        await _.collect do ->
+          for await j from _.events "test", source
+            yield j
+            break if j == 5
 
   ]
