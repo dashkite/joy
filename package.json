@@ -6,11 +6,11 @@
   "exports": {
     ".": {
       "node": "./build/node/src/index.js",
-      "import": "./build/node/src/index.js"
+      "import": "./build/import/src/index.js"
     },
     "./*": {
       "node": "./build/node/src/*.js",
-      "import": "./build/node/src/*.js"
+      "import": "./build/import/src/*.js"
     }
   },
   "files": [
