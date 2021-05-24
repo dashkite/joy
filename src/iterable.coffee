@@ -1,5 +1,6 @@
 import {generic} from "./generic"
 import {wrap, curry, binary, ternary, tee, apply} from "./function"
+import {negate} from "./predicate"
 import {isString, isArray, isFunction, isIterable, isReagent} from "./type"
 isAny = wrap true
 
