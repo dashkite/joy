@@ -7,9 +7,12 @@ timer = curry (interval, action) ->
 sleep = (interval) ->
   new Promise (resolve) -> setTimeout resolve, interval
 
-{performance} = window ? (require "perf_hooks")
 
-milliseconds = -> performance.now()
+milliseconds =
+  if performance?
+    -> performance.now()
+  else
+    -> Date.now()
 
 benchmark = (f) ->
   start = milliseconds()
