@@ -1,8 +1,19 @@
 import assert from "assert"
 import {test, print, success} from "amen"
 
-import {isType, isKind, isFunction, isString, isNumber,
-  isEqual, eq, gte, lte} from "../src"
+import {
+  isType
+  isKind
+  isFunction
+  isString
+  isNumber
+} from "../src/type"
+
+import {
+  eq
+  gte
+  lte
+} from "../src/math"
 
 import { Generic, generic } from "../src/generic"
 
