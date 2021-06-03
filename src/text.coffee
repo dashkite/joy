@@ -130,7 +130,7 @@ template = (string, filters = {}) ->
       filters
     apply = (string, name) -> filters[name] string
     (context) ->
-      string.replace /\{\{([\s\S]+)\}\}/g, (_, target) ->
+      string.replace /\{\{([^}]+)\}\}/g, (_, target) ->
         [key, names...] = target.split("|").map trim
         names.reduce apply, context[key]
 

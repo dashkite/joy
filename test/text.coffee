@@ -157,9 +157,9 @@ export default ->
       assert ($.replace /bar/, "baz", "foobar") == "foobaz"
 
     test "template", ->
-      f = $.template "foo {{ bar | reverse }} baz",
+      f = $.template "foo {{ bar | reverse }} baz {{foo}}",
         reverse: (s) -> s.split("").reverse().join("")
-      assert.equal "foo xuaf baz", f bar: "faux"
+      assert.equal "foo xuaf baz baz", f foo: "baz", bar: "faux"
 
 
 ]

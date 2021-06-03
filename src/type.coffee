@@ -59,7 +59,7 @@ isWeakMap = isType WeakMap
 
 isSet = isType Set
 
-isError = isType Error
+isError = isKind Error
 
 isDefined = (x) -> x?
 
