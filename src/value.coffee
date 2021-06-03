@@ -18,8 +18,10 @@ equal = generic
 
 generic equal, isObject, isObject, (a, b) ->
   return true if a == b
-  return false if !(equal (Object.keys a), (Object.keys b))
-  for k, v of a when !(equal v, b[k])
+  akeys = Object.keys a
+  bkeys = Object.keys b
+  return false if akeys.length != bkeys.length
+  for k in akeys when !(k in bkeys && equal a[k], b[k])
     return false
   true
 
