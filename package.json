@@ -29,6 +29,10 @@
     ".": {
       "browser": "./build/browser/src/index.js",
       "node": "./build/node/src/index.js"
+    },
+    ".*": {
+      "node": "./build/node/src/*.js",
+      "browser": "./build/browser/src/*.js"
     }
   },
   "main": "build/node/src/index.js",
