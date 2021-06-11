@@ -45,9 +45,9 @@
   },
   "devDependencies": {
     "@dashkite/genie": "^0.5.2",
-    "@dashkite/genie-presets": "^0.2.3",
+    "@dashkite/genie-presets": "^0.4.4",
     "amen": "^3.0.0",
-    "retypeapp": "^1.5.0",
+    "retypeapp": "^1.6.0",
     "sinon": "^11.1.1"
   }
 }
