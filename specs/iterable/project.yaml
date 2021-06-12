@@ -2,7 +2,7 @@ name: project
 type: function
 summary: |-
   Returns the value of the property matching the given _property_ for each product from _iterable_.
-  
+
 description: |-
   Returns the value of the property matching the given _property_ for each product from _iterable_. That is, it is the composition of [`get`][get] with [`map`][map].
 
@@ -14,8 +14,6 @@ description: |-
   [map]: https://dashkite.github.io/joy/reference/iterable/map/
   [ramda]: https://ramdajs.com/docs/#pluck
 
-
-  Projects
 signatures:
   - arguments:
       - name: property
