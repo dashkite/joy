@@ -32,7 +32,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/joy/" class="flex items-center leading-snug text-2xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Joy</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">0.3.0</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">0.3.10</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -174,9 +174,7 @@
         <span>partition</span>
     </h1>
 </doc-anchor-target>
-<p><em>Function</em> • Returns the products of an <em>iterable</em> unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most <em>size</em>.
-<code v-pre>partition</code> produces these partitions until the <em>iterable</em> is exhausted, at which point the final partition may have some length less than <em>size</em>, but it will never be empty.
-<code v-pre>partition</code> is suitable for both synchronous iterators and asynchronous iterators. <code v-pre>partition</code> returns a generator with synchronicity matching <em>iterable</em>. In both cases, the resultant products are arrays of the underlying products.</p>
+<p><em>Function</em> • Returns the products of an <em>iterable</em> unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most <em>size</em>.</p>
 <pre><code>partition size, iterable &rarr; generator</code></pre>
 <br>
 <table class="comfortable">
@@ -201,10 +199,19 @@
 <tr>
 <td>→ generator</td>
 <td><doc-anchor-trigger to="#"><code v-pre>Generator</code></doc-anchor-trigger></td>
-<td>Generates products that are arrays of length <em>size</em>, listing otherwise unaltered products from the source <em>iterable</em>. This generator has a synchronicity matching <em>iterable</em>.</td>
+<td>Produces arrays of length <em>size</em>, listing otherwise unaltered products from the source <em>iterable</em>.</td>
 </tr>
 </tbody>
 </table>
+<doc-anchor-target id="description">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
+        <span>Description</span>
+    </h2>
+</doc-anchor-target>
+<p>Returns the products of an <em>iterable</em> unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most <em>size</em>.</p>
+<p><code v-pre>partition</code> produces these partitions until the <em>iterable</em> is exhausted, at which point the final partition may have some length less than <em>size</em>, but it will never be empty.</p>
+<p><code v-pre>partition</code> is suitable for both synchronous iterators and asynchronous iterators. <code v-pre>partition</code> returns a generator with synchronicity matching <em>iterable</em>. In both cases, the resultant products are arrays of the underlying products.</p>
 
 
 

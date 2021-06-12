@@ -32,7 +32,7 @@
             <div class="flex items-center px-2 md:px-6">
                 <a id="docs-site-logo" href="/joy/" class="flex items-center leading-snug text-2xl">
                     <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Joy</span>
-                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">0.3.0</span>
+                </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">0.3.10</span>
             </div>
 
             <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
@@ -174,11 +174,7 @@
         <span>project</span>
     </h1>
 </doc-anchor-target>
-<p><em>Function</em> • Returns the value of the property matching the given <em>property</em> for each product from <em>iterable</em>. That is, it is the composition of [<code v-pre>get</code>][get] with <a href="/joy/reference/promise/map"><code v-pre>map</code></a>.
-Like most Joy functions, <code v-pre>project</code> is curryable, so <code v-pre>project</code> can be used like Ramda&#x27;s <doc-anchor-trigger to="#"><code v-pre>pluck</code></doc-anchor-trigger>.
-However, because <code v-pre>project</code> relies on <code v-pre>map</code>, <code v-pre>project</code> is suitable for both synchronous and asynchronous iterables. Note that <code v-pre>project</code> uses Array::map when specifically passed an array.
-[get]: <a href="https://dashkite.github.io/joy/reference/object/get/">https://dashkite.github.io/joy/reference/object/get/</a> <a href="/joy/reference/promise/map">map</a>: <a href="https://dashkite.github.io/joy/reference/iterable/map/">https://dashkite.github.io/joy/reference/iterable/map/</a> <a href="#">ramda</a>: <a href="https://ramdajs.com/docs/#pluck">https://ramdajs.com/docs/#pluck</a></p>
-<p>Projects</p>
+<p><em>Function</em> • Returns the value of the property matching the given <em>property</em> for each product from <em>iterable</em>.</p>
 <pre><code>project property, iterable &rarr; generator</code></pre>
 <br>
 <pre><code>project property, array &rarr; array</code></pre>
@@ -219,6 +215,16 @@ However, because <code v-pre>project</code> relies on <code v-pre>map</code>, <c
 </tr>
 </tbody>
 </table>
+<doc-anchor-target id="description">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
+        <span>Description</span>
+    </h2>
+</doc-anchor-target>
+<p>Returns the value of the property matching the given <em>property</em> for each product from <em>iterable</em>. That is, it is the composition of <a href="https://dashkite.github.io/joy/reference/object/get/"><code v-pre>get</code></a> with <a href="https://dashkite.github.io/joy/reference/iterable/map/"><code v-pre>map</code></a>.</p>
+<p>Like most Joy functions, <code v-pre>project</code> is curryable, so <code v-pre>project</code> can be used like Ramda&#x27;s <a href="https://ramdajs.com/docs/#pluck"><code v-pre>pluck</code></a>.</p>
+<p>However, because <code v-pre>project</code> relies on <code v-pre>map</code>, <code v-pre>project</code> is suitable for both synchronous and asynchronous iterables. Note that <code v-pre>project</code> uses Array::map when specifically passed an array.</p>
+<p>Projects</p>
 
 
 
