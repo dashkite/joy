@@ -1,7 +1,9 @@
 import {generic} from "./generic"
 import {wrap, curry, binary, ternary, tee, apply} from "./function"
 import {negate} from "./predicate"
-import {isString, isArray, isFunction, isIterable, isReagent} from "./type"
+import {isString, isNumber, isArray, isFunction,
+  isIterable, isReagent} from "./type"
+import {get} from "./object"
 isAny = wrap true
 
 _includes = generic
@@ -26,6 +28,8 @@ generic map, isFunction, isIterable, (f, i) -> yield (f x) for x from i
 generic map, isFunction, isReagent, (f, r) -> yield (f x) for await x from r
 generic map, isFunction, isArray, (f, ax) -> ax.map f
 map = curry binary map
+
+project = curry (p, i) -> map (get p), i
 
 tap = generic name: "tap"
 generic tap, isFunction, isIterable,
@@ -96,6 +100,29 @@ generic join, isString, isArray, (a, ax) -> ax.join a
 
 join = curry binary join
 
+
+partition = generic name: "partition"
+generic partition, isNumber, isIterable, (n, i) ->
+  batch = []
+  for x from i
+    batch.push x
+    if batch.length == n
+      yield batch
+      batch = []
+  if batch.length > 0
+    yield batch
+
+generic partition, isNumber, isReagent, (n, r) ->
+  batch = []
+  for await x from r
+    batch.push x
+    if batch.length == n
+      yield batch
+      batch = []
+  if batch.length > 0
+    yield batch
+
+
 class Queue
   @create: -> new Queue
   constructor: ->
@@ -128,6 +155,7 @@ export {
   includes
   uniqueBy
   map
+  project
   tap
   select
   reject
@@ -137,6 +165,7 @@ export {
   each
   reduce
   join
+  partition
   Queue
   events
 }

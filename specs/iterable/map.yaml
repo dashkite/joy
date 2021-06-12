@@ -1,6 +1,11 @@
 name: map
 type: function
-summary: Calls _function_ with each product from _iterable_.
+summary: >-
+  Calls _function_ with each product from _iterable_.
+
+  `map` is suitable for use with both synchronous iterables and asynchronous iterables, and will return a generator producing the resulting products with matching synchronicity.
+
+  `map` uses Array::map when specifically passed an array, so in that case it returns a new array.
 signatures:
   - arguments:
       - name: function
@@ -12,4 +17,15 @@ signatures:
     returns:
       name: generator
       type: Generator
-      description: Generates the result of applying _function_ to products from _iterable_.
+      description: Generates the result of applying _function_ to products from _iterable_ with a synchronicity matching _iterable_.
+  - arguments:
+      - name: function
+        type: Function
+        description: The function to apply to each item.
+      - name: array
+        type: Array
+        description: The iterable from which to consume products.
+    returns:
+      name: array
+      type: Array
+      description: Lists the result of applying _function_ to items from _array_.

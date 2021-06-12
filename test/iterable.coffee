@@ -35,9 +35,31 @@ export default ->
 
       test "array specialization", ->
         assert.deepEqual [ 1, 4, 9 ],
-          Array.from _.map square, [1..3]
+          _.map square, [1..3]
 
     ]
+
+    test "project", do ({alice, bob, cathy} = {}) ->
+
+      alice = name: "Alice", city: "New York"
+      bob = name: "Bob", city: "Atlanta"
+      cathy = name: "Cathy", city: "Los Angeles"
+
+      [
+
+        test "iterator", ->
+          assert.deepEqual [ "Alice", "Bob", "Cathy" ],
+            Array.from _.project "name", new Set [ alice, bob, cathy ]
+
+        test "reagent", ->
+          assert.deepEqual [ "Alice", "Bob", "Cathy" ],
+            await _.collect _.project "name", reagent [ alice, bob, cathy ]
+
+        test "array specialization", ->
+          assert.deepEqual [ "Alice", "Bob", "Cathy" ],
+            _.project "name", [ alice, bob, cathy ]
+
+      ]
 
     test "resolve", ->
       assert.deepEqual [1..3],
@@ -136,6 +158,20 @@ export default ->
       test "array/string specialization", ->
           assert.equal "water-earth-fire-air",
             _.join "-", [ "water", "earth", "fire", "air" ]
+
+    ]
+
+    test "partition", [
+
+      test "iterator", ->
+        ax = []
+        ax.push batch for batch from _.partition 4, new Set [0...12]
+        assert.deepEqual [ [0...4], [4...8], [8...12] ], ax
+
+      test "reagent", ->
+        ax = []
+        ax.push batch for await batch from _.partition 4, reagent [0...12]
+        assert.deepEqual [ [0...4], [4...8], [8...12] ], ax
 
     ]
 

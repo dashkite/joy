@@ -3,8 +3,9 @@ order: 1
 ---
 # get
 
-_Function_ &bull; Returns the value of the property matching the given key for the given object. Like most Joy functions, `get` is curryable, so `get` can be used like Ramda's [`pluck`][ramda].
-[ramda]: https://ramdajs.com/docs/#pluck
+_Function_ &bull; Returns the value of the property matching the given key for the given object.
+Like most Joy functions, `get` is curryable, so `get` can be used like Ramda's [`prop`][ramda].
+[ramda]: https://ramdajs.com/docs/#prop
 
 <pre><code>get key, object &rarr; boolean</code></pre>
 <br>
