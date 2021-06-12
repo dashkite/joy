@@ -1,6 +1,9 @@
 name: project
 type: function
-summary: >-
+summary: |-
+  Returns the value of the property matching the given _property_ for each product from _iterable_.
+  
+description: |-
   Returns the value of the property matching the given _property_ for each product from _iterable_. That is, it is the composition of [`get`][get] with [`map`][map].
 
   Like most Joy functions, `project` is curryable, so `project` can be used like Ramda's [`pluck`][ramda].

@@ -2,6 +2,8 @@ name: partition
 type: function
 summary: >-
   Returns the products of an _iterable_ unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most _size_.
+description: |-
+  Returns the products of an _iterable_ unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most _size_.
 
   `partition` produces these partitions until the _iterable_ is exhausted, at which point the final partition may have some length less than _size_, but it will never be empty.
 
@@ -18,4 +20,4 @@ signatures:
     returns:
       name: generator
       type: Generator
-      description: Generates products that are arrays of length _size_, listing otherwise unaltered products from the source _iterable_. This generator has a synchronicity matching _iterable_.
+      description: Produces arrays of length _size_, listing otherwise unaltered products from the source _iterable_.

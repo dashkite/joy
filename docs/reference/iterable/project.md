@@ -3,12 +3,7 @@ order: 1
 ---
 # project
 
-_Function_ &bull; Returns the value of the property matching the given _property_ for each product from _iterable_. That is, it is the composition of [`get`][get] with [`map`][map].
-Like most Joy functions, `project` is curryable, so `project` can be used like Ramda's [`pluck`][ramda].
-However, because `project` relies on `map`, `project` is suitable for both synchronous and asynchronous iterables. Note that `project` uses Array::map when specifically passed an array.
-[get]: https://dashkite.github.io/joy/reference/object/get/ [map]: https://dashkite.github.io/joy/reference/iterable/map/ [ramda]: https://ramdajs.com/docs/#pluck
-
-Projects
+_Function_ &bull; Returns the value of the property matching the given _property_ for each product from _iterable_.
 
 <pre><code>project property, iterable &rarr; generator</code></pre>
 <br>
@@ -24,10 +19,22 @@ Projects
 |&rarr; array|[`Array`][Array]|Lists the value of the _property_ from each item in _array_.|
 
 
+## Description
+
+Returns the value of the property matching the given _property_ for each product from _iterable_. That is, it is the composition of [`get`][get] with [`map`][map].
+
+Like most Joy functions, `project` is curryable, so `project` can be used like Ramda's [`pluck`][ramda].
+
+However, because `project` relies on `map`, `project` is suitable for both synchronous and asynchronous iterables. Note that `project` uses Array::map when specifically passed an array.
+
+[get]: https://dashkite.github.io/joy/reference/object/get/
+[map]: https://dashkite.github.io/joy/reference/iterable/map/
+[ramda]: https://ramdajs.com/docs/#pluck
 
 
-[map]: /reference/promise/map.md
-[ramda]: #
+Projects
+
+
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Iterable]: #
 [Generator]: #
