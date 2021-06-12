@@ -174,8 +174,12 @@
         <span>map</span>
     </h1>
 </doc-anchor-target>
-<p><em>Function</em> • Calls <em>function</em> with each product from <em>iterable</em>.</p>
+<p><em>Function</em> • Calls <em>function</em> with each product from <em>iterable</em>.
+<code v-pre>map</code> is suitable for use with both synchronous iterables and asynchronous iterables, and will return a generator producing the resulting products with matching synchronicity.
+<code v-pre>map</code> uses Array::map when specifically passed an array, so in that case it returns a new array.</p>
 <pre><code>map function, iterable &rarr; generator</code></pre>
+<br>
+<pre><code>map function, array &rarr; array</code></pre>
 <br>
 <table class="comfortable">
 <thead>
@@ -199,7 +203,17 @@
 <tr>
 <td>→ generator</td>
 <td><doc-anchor-trigger to="#"><code v-pre>Generator</code></doc-anchor-trigger></td>
-<td>Generates the result of applying <em>function</em> to products from <em>iterable</em>.</td>
+<td>Generates the result of applying <em>function</em> to products from <em>iterable</em> with a synchronicity matching <em>iterable</em>.</td>
+</tr>
+<tr>
+<td>array</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code v-pre>Array</code></a></td>
+<td>The iterable from which to consume products.</td>
+</tr>
+<tr>
+<td>→ array</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code v-pre>Array</code></a></td>
+<td>Lists the result of applying <em>function</em> to items from <em>array</em>.</td>
 </tr>
 </tbody>
 </table>
@@ -224,10 +238,10 @@
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/joy/reference/iterable/reduce">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/joy/reference/iterable/partition">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                <span class="block mt-1">reduce</span>
+                <span class="block mt-1">partition</span>
             </span>
             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
         </a>
