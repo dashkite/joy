@@ -26,7 +26,7 @@ uniqueBy = (f, ax) ->
 map = generic name: "map"
 generic map, isFunction, isIterable, (f, i) -> yield (f x) for x from i
 generic map, isFunction, isReagent, (f, r) -> yield (f x) for await x from r
-generic map, isFunction, isArray, (f, ax) -> ax.map f
+generic map, isFunction, isArray, (f, ax) -> ax.map (x) -> f x
 map = curry binary map
 
 project = curry (p, i) -> map (get p), i
