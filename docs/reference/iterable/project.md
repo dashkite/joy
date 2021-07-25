@@ -5,18 +5,47 @@ order: 1
 
 _Function_ &bull; Returns the value of the property matching the given _property_ for each product from _iterable_.
 
-<pre><code>project property, iterable &rarr; generator</code></pre>
-<br>
-<pre><code>project property, array &rarr; array</code></pre>
-<br>
+
+==- <pre><code>project property, iterable &rarr; generator</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
 |property|[`String`][String]|The name of the object property to project from each product.|
 |iterable|[`Iterable`][Iterable]|The iterable from which to consume products.|
-|&rarr; generator|[`Generator`][Generator]|Generates the value of the _property_ from each product from _iterable_ with a synchronicity matching _iterable_.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|generator|[`Generator`][Global]|Generates the value of the _property_ from each product from _iterable_ with a synchronicity matching _iterable_.|
+
+
+==- <pre><code>project property, array &rarr; array</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
+
+| name | type | description |
+|------|------|-------------|
+|property|[`String`][String]|The name of the object property to project from each item.|
 |array|[`Array`][Array]|The array from which to consume items.|
-|&rarr; array|[`Array`][Array]|Lists the value of the _property_ from each item in _array_.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|array|[`Array`][Global]|Lists the value of the _property_ from each item in _array_.|
+
+
+
+===
 
 
 ## Description
@@ -32,10 +61,7 @@ However, because `project` relies on `map`, `project` is suitable for both synch
 [ramda]: https://ramdajs.com/docs/#pluck
 
 
-Projects
-
-
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Iterable]: #
-[Generator]: #
+[Global]: #
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

@@ -5,14 +5,28 @@ order: 1
 
 _Function_ &bull; Returns true if x >= y, false otherwise.
 
-<pre><code>gte x, y &rarr; boolean</code></pre>
-<br>
+
+==- <pre><code>gte x, y &rarr; boolean</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|x|any||
-|y|any||
-|&rarr; boolean|any||
+|x|Any||
+|y|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|boolean|Any||
+
+
+
+===
 
 
 

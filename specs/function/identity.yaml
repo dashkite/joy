@@ -5,5 +5,51 @@ summary: Returns its argument.
 signatures:
   - arguments:
       - name: value
+        description: Any JavaScript value.
     returns:
       name: value
+      description: The unaltered argument `value`.
+
+description: |
+  Named for the mathematical concept of [identity][]. `identity` returns the first argument you provide it, unaltered. This [no operation][] is a fundamental building block of functional composition. Use it as a default, a fallback, or even just as a placeholder for in-progress code.
+
+  !!! Primary Pro Tip
+  The return `value` is the arugment `value`. That is, even when passing an object to `identity`, the return value is [strictly equal][] to the argument.
+  !!!
+
+  [identity]: https://en.wikipedia.org/wiki/Identity_(mathematics)
+  [no operation]: https://en.wikipedia.org/wiki/NOP_(code)
+
+
+example:
+  sections:
+    - title: Returns its argument.
+      code:
+        CoffeeScript: |-
+          assert.equal 1,
+            _.identity 1
+        JavaScript: |-
+          assert.equal(1,
+            _.identity(1));
+
+    - title: Returns only its first argument.
+      code:
+        CoffeeScript: |-
+          assert.equal 1,
+            _.identity 1, 2, 3
+        JavaScript: |-
+          assert.equal(1,
+            _.identity(1, 2, 3));
+
+    - title: Returns the exact argument. Even objects are strictly equal.
+      code:
+        CoffeeScript: |-
+          a = company: "Delos"
+
+          assert.equal a,
+            _.identity a
+        JavaScript: |-
+          const a = { company: "Delos" };
+
+          assert.equal(a,
+            _.identity(a));

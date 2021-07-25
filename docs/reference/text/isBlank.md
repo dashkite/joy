@@ -5,16 +5,30 @@ order: 1
 
 _Function_ &bull; Returns true if the string is empty, false otherwise.
 
-<pre><code>isBlank string &rarr; boolean</code></pre>
-<br>
+
+==- <pre><code>isBlank string &rarr; boolean</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
 |string|[`String`][String]|The string to test.|
-|&rarr; boolean|[`Boolean`][Boolean]|True if the string is empty, false otherwise.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|boolean|[`Boolean`][Global]|True if the string is empty, false otherwise.|
+
+
+
+===
 
 
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Boolean]: #
+[Global]: #

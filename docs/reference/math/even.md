@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Returns true if x % 2 is zero, false otherwise.
 
-<pre><code>even x &rarr; boolean</code></pre>
-<br>
+
+==- <pre><code>even x &rarr; boolean</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|x|any||
-|&rarr; boolean|any||
+|x|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|boolean|Any||
+
+
+
+===
 
 
 

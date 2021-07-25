@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Returns a promise that resolve to _value_.
 
-<pre><code>resolve value &rarr; promise</code></pre>
-<br>
+
+==- <pre><code>resolve value &rarr; promise</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|value|any||
-|&rarr; promise|any||
+|value|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|promise|Any||
+
+
+
+===
 
 
 

@@ -5,31 +5,28 @@ order: 1
 
 _Function_ &bull; Works like [`pipe`](#pipe), except transforms each function with the given adaper before composing them.
 
-<pre><code>pipeWith adapter, functions &rarr; function</code></pre>
-<br>
+
+==- <pre><code>pipeWith adapter, functions &rarr; function</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|adapter|any||
-|functions|any||
-|&rarr; function|any||
+|adapter|Any||
+|functions|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|function|Any||
 
 
 
-## Examples
+===
 
 
- ||| CoffeeScript 
-```coffeescript 
-trace = (f) ->
-  (args...) ->
-    console.log "function:", f.name
-    console.log "-- arguments:", args
-    console.log "-- returns:", r = f args...
-    r
-
-pipeWith trace, [
-  # functions to trace...
-]
-```
 

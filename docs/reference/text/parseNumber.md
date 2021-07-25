@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Parses a string representation of a number.
 
-<pre><code>parseNumber strig &rarr; number</code></pre>
-<br>
+
+==- <pre><code>parseNumber strig &rarr; number</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
 |strig|[`String`][String]|The string to parse.|
-|&rarr; number|[`Number`][Number]|The number parsed from the string.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|number|[`Number`][Global]|The number parsed from the string.|
+
+
+
+===
 
 
 ## Description
@@ -24,6 +38,6 @@ If the number being parsed is larger than may be safely represented in JavaScrip
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[Global]: #
 [NumberMAX_SAFE_INTEGER]: #
 [BigInt]: #

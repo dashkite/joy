@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Returns the current time in milliseconds, with precision to microseconds if available.
 
-<pre><code>milliseconds () &rarr; number</code></pre>
-<br>
+
+==- <pre><code>milliseconds () &rarr; number</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|()|any||
-|&rarr; number|any||
+|()|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|number|Any||
+
+
+
+===
 
 
 

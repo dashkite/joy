@@ -5,14 +5,28 @@ order: 1
 
 _Function_ &bull; Returns the products of an _iterable_ unchanged, but grouped into partitions. Each partition is an array with a length of at least 1 and at most _size_.
 
-<pre><code>partition size, iterable &rarr; generator</code></pre>
-<br>
+
+==- <pre><code>partition size, iterable &rarr; generator</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
 |size|[`Number`][Number]|The maximum length of the arrays that make up each partition of products.|
 |iterable|[`Iterable`][Iterable]|The iterable from which to consume products.|
-|&rarr; generator|[`Generator`][Generator]|Produces arrays of length _size_, listing otherwise unaltered products from the source _iterable_.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|generator|[`Generator`][Global]|Produces arrays of length _size_, listing otherwise unaltered products from the source _iterable_.|
+
+
+
+===
 
 
 ## Description
@@ -26,4 +40,4 @@ Returns the products of an _iterable_ unchanged, but grouped into partitions. Ea
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Iterable]: #
-[Generator]: #
+[Global]: #

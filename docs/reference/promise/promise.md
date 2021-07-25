@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Creates a promise.
 
-<pre><code>promise function &rarr; promise</code></pre>
-<br>
+
+==- <pre><code>promise function &rarr; promise</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|function|any||
-|&rarr; promise|any||
+|function|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|promise|Any||
+
+
+
+===
 
 
 

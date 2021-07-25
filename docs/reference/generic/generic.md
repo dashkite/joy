@@ -5,14 +5,28 @@ order: 1
 
 _Function_ &bull; Generic function wrapper around [`Generic.define`](#Generic.define).
 
-<pre><code>generic function, arguments... &rarr; GenericFunction</code></pre>
-<br>
+
+==- <pre><code>generic function, arguments... &rarr; GenericFunction</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|function|any||
-|arguments...|any||
-|&rarr; GenericFunction|any||
+|function|Any||
+|arguments...|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|GenericFunction|Any||
+
+
+
+===
 
 
 

@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Creates a new instance of a type (class). Convenience wrapper for `new`.
 
-<pre><code>Type.create type &rarr; instance</code></pre>
-<br>
+
+==- <pre><code>Type.create type &rarr; instance</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|type|any||
-|&rarr; instance|any||
+|type|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|instance|Any||
+
+
+
+===
 
 
 

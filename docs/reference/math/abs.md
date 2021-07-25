@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Returns the absolute value of _x_.
 
-<pre><code>abs x &rarr; number</code></pre>
-<br>
+
+==- <pre><code>abs x &rarr; number</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|x|any||
-|&rarr; number|any||
+|x|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|number|Any||
+
+
+
+===
 
 
 

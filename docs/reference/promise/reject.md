@@ -5,13 +5,27 @@ order: 1
 
 _Function_ &bull; Returns a promise that rejects with _error_.
 
-<pre><code>reject error &rarr; promise</code></pre>
-<br>
+
+==- <pre><code>reject error &rarr; promise</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|error|any||
-|&rarr; promise|any||
+|error|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|promise|Any||
+
+
+
+===
 
 
 

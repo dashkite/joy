@@ -5,22 +5,27 @@ order: 1
 
 _Function_ &bull; Returns the properties for the given object as an associative array (an array of two-element arrays).
 
-<pre><code>pairs object &rarr; array</code></pre>
-<br>
+
+==- <pre><code>pairs object &rarr; array</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|object|any||
-|&rarr; array|any||
+|object|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|array|Any||
 
 
 
-## Examples
+===
 
 
- ||| CoffeeScript 
-```coffeescript 
-assert.deepEqual (x.pairs {a: 1, b: 2, c: 3}),
-  [["a", 1], ["b", 2], ["c", 3]]
-```
 

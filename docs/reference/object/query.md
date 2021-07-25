@@ -5,23 +5,28 @@ order: 1
 
 _Function_ &bull; Returns true if _object_ matches _exemplar_, false otherwise. An exemplar matches if all of its properties are equal to the corresponding properties in the target object. Matching is done recursively, so the exemplar can contain nested values.
 
-<pre><code>query exemplar, object &rarr; object</code></pre>
-<br>
+
+==- <pre><code>query exemplar, object &rarr; object</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|exemplar|any||
-|object|any||
-|&rarr; object|any||
+|exemplar|Any||
+|object|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|object|Any||
 
 
 
-## Examples
+===
 
 
- ||| CoffeeScript 
-```coffeescript 
-assert.equal true, x.query { x: {y: 2 }}, { x: { y: 2}}
-assert.equal false, x.query { x: {y: 2 }}, { x: { y: 1}}
-```
 

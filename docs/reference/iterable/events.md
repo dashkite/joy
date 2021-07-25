@@ -5,18 +5,32 @@ order: 1
 
 _Function_ &bull; Converts an event source into an asynchronous iterator.
 
-<pre><code>events name, source &rarr; iterator</code></pre>
-<br>
+
+==- <pre><code>events name, source &rarr; iterator</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
 |name|[`String`][String]|The name of the event to listen for.|
 |source|[`EventEmitter | EventTarget`][EventEmitter  EventTarget]|The event source.|
-|&rarr; iterator|[`Iterable`][Iterable]|The asynchronous iterator.|
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|iterator|[`Iterable`][Global]|The asynchronous iterator.|
+
+
+
+===
 
 
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [EventEmitter  EventTarget]: #
-[Iterable]: #
+[Global]: #

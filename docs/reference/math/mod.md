@@ -5,14 +5,28 @@ order: 1
 
 _Function_ &bull; Returns x % y.
 
-<pre><code>mod x, y &rarr; number</code></pre>
-<br>
+
+==- <pre><code>mod x, y &rarr; number</code></pre>
+<hr>
+
+[!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|x|any||
-|y|any||
-|&rarr; number|any||
+|x|Any||
+|y|Any||
+
+<br>
+
+[!badge size="xl" variant="success" text="Returns"]
+
+| name | type | description |
+|------|------|-------------|
+|number|Any||
+
+
+
+===
 
 
 
