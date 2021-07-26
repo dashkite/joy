@@ -188,10 +188,14 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Returns the value of the property matching the given <em>property</em> for each product from <em>iterable</em>.</p>
-<pre><code>project property, iterable &rarr; generator</code></pre>
-<br>
-<pre><code>project property, array &rarr; array</code></pre>
-<br>
+<doc-panels>
+   <doc-panel id="pre-code-project-property-iterable-generator-code-pre" collapsed>
+       <template #title><pre><code>project property, iterable → generator</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -211,23 +215,79 @@
 <td><doc-anchor-trigger to="#"><code v-pre>Iterable</code></doc-anchor-trigger></td>
 <td>The iterable from which to consume products.</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
 <tr>
-<td>→ generator</td>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>generator</td>
 <td><doc-anchor-trigger to="#"><code v-pre>Generator</code></doc-anchor-trigger></td>
 <td>Generates the value of the <em>property</em> from each product from <em>iterable</em> with a synchronicity matching <em>iterable</em>.</td>
+</tr>
+</tbody>
+</table>
+   </doc-panel>
+   <doc-panel id="pre-code-project-property-array-array-code-pre" collapsed>
+       <template #title><pre><code>project property, array → array</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>property</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
+<td>The name of the object property to project from each item.</td>
 </tr>
 <tr>
 <td>array</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code v-pre>Array</code></a></td>
 <td>The array from which to consume items.</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
 <tr>
-<td>→ array</td>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>array</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code v-pre>Array</code></a></td>
 <td>Lists the value of the <em>property</em> from each item in <em>array</em>.</td>
 </tr>
 </tbody>
 </table>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
@@ -237,7 +297,6 @@
 <p>Returns the value of the property matching the given <em>property</em> for each product from <em>iterable</em>. That is, it is the composition of <a href="https://dashkite.github.io/joy/reference/object/get/"><code v-pre>get</code></a> with <a href="https://dashkite.github.io/joy/reference/iterable/map/"><code v-pre>map</code></a>.</p>
 <p>Like most Joy functions, <code v-pre>project</code> is curryable, so <code v-pre>project</code> can be used like Ramda&#x27;s <a href="https://ramdajs.com/docs/#pluck"><code v-pre>pluck</code></a>.</p>
 <p>However, because <code v-pre>project</code> relies on <code v-pre>map</code>, <code v-pre>project</code> is suitable for both synchronous and asynchronous iterables. Note that <code v-pre>project</code> uses Array::map when specifically passed an array.</p>
-<p>Projects</p>
 
 
 

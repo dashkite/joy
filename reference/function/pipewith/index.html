@@ -29,7 +29,6 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
-    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,8 +188,13 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Works like <doc-anchor-trigger to="#pipe"><code v-pre>pipe</code></doc-anchor-trigger>, except transforms each function with the given adaper before composing them.</p>
-<pre><code>pipeWith adapter, functions &rarr; function</code></pre>
-<br>
+<doc-panel id="pre-code-pipewith-adapter-functions-function-code-pre" collapsed>
+    <template #title><pre><code>pipeWith adapter, functions → function</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -202,27 +206,37 @@
 <tbody>
 <tr>
 <td>adapter</td>
-<td>any</td>
+<td>Any</td>
 <td></td>
 </tr>
 <tr>
 <td>functions</td>
-<td>any</td>
-<td></td>
-</tr>
-<tr>
-<td>→ function</td>
-<td>any</td>
+<td>Any</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<doc-anchor-target id="examples">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h2>
-</doc-anchor-target>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
+<td>Any</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</doc-panel>
 
 
 
@@ -295,6 +309,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "pipeWith", icon: "file", hasPrism: true, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "pipeWith", icon: "file", hasPrism: false, hasMermaid: false }</script>
     </body>
 </html>

@@ -29,6 +29,7 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
+    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,8 +189,13 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Returns a function that returns its argument.</p>
-<pre><code>wrap value &rarr; function</code></pre>
-<br>
+<doc-panel id="pre-code-wrap-value-function-code-pre" collapsed>
+    <template #title><pre><code>wrap value → function</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -201,16 +207,122 @@
 <tbody>
 <tr>
 <td>value</td>
-<td>any</td>
-<td></td>
-</tr>
-<tr>
-<td>→ function</td>
-<td>any</td>
-<td></td>
+<td>Any</td>
+<td>Any JavaScript value.</td>
 </tr>
 </tbody>
 </table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><code v-pre>Function</code></a></td>
+<td>An anonymous function that returns <code v-pre>value</code> when invoked.</td>
+</tr>
+</tbody>
+</table>
+</doc-panel>
+<doc-anchor-target id="description">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
+        <span>Description</span>
+    </h2>
+</doc-anchor-target>
+<p><code v-pre>wrap</code> returns an anonymous function that, when invoked, returns the argument <code v-pre>value</code>. This &quot;wrapping&quot; operation is a fundamental building block of functional composition. Use it any time you need to convert a value into a function you want to invoke later.</p>
+<doc-alert variant="warning">
+<template #title>Caution</template>
+<p>The argument <code v-pre>value</code> remains in scope between invocations. If you use <code v-pre>wrap</code> on a <code v-pre>value</code> where JavaScript applies <a href="https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c">pass by reference</a>, mutations to <code v-pre>value</code> persist. That is, the <em>new</em> value is returned the next time you invoke <code v-pre>wrap</code>. That&#x27;s probably not a good idea, so be careful.</p>
+</doc-alert>
+<doc-anchor-target id="examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
+        <span>Examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="returns-a-function-that-returns-its-argument">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-a-function-that-returns-its-argument">#</doc-anchor-trigger>
+        <span>Returns a function that returns its argument.</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="coffeescript">
+<template #title>CoffeeScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">provide = _.wrap 1
+
+assert.equal 1,
+  provide()</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="javascript">
+<template #title>JavaScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">let provide = _.wrap(1);
+
+assert.equal(1,
+  provide());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="avoid-mutating-wrapped-values">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#avoid-mutating-wrapped-values">#</doc-anchor-trigger>
+        <span>Avoid mutating wrapped values.</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="coffeescript">
+<template #title>CoffeeScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">provide = _.wrap x: 1
+double = (object) -&gt;
+  object.x *= 2
+  object
+
+assert.deepEqual x: 2,
+  double provide()
+
+# With `value` mutated, provide returns the doubled value.
+assert.deepEqual x: 2,
+  provide()</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="javascript">
+<template #title>JavaScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">let provide = _.wrap({ x: 1 });
+let double = (object) =&gt; {
+  object.x *= 2
+  return object
+};
+
+assert.deepEqual({ x: 2 },
+  double(provide()));
+
+assert.deepEqual({ x: 2 },
+  provide());</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<p>The above example defines:</p>
+<ul>
+<li><code v-pre>provide</code>, a function created by <code v-pre>wrap</code> that returns an object.</li>
+<li><code v-pre>double</code>, a function that mutates the object passed to it.</li>
+</ul>
+<p>In the first assert, we can see that <code v-pre>double</code> successfully doubles the value returned from <code v-pre>provide</code>. However, because JavaScript applies <a href="https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c">pass by reference</a> to objects, the value returned by <code v-pre>provide</code> is also altered. We confirm that in the second assert.</p>
+<p>Keep this in mind when using <code v-pre>wrap</code> and avoid mutating its <code v-pre>value</code>.</p>
 
 
 
@@ -283,6 +395,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "wrap", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "wrap", icon: "file", hasPrism: true, hasMermaid: false }</script>
     </body>
 </html>

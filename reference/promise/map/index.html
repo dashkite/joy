@@ -189,8 +189,13 @@
 </doc-anchor-target>
 <p><em>Function</em> • Returns a promise that resolves after all of the given promises have either resolved or rejected, with an array of objects that each describes the outcome of each promise. Effectively maps an iterable of promises to an array of results.<br />
 For each outcome object, a status string is present. If the status is fulfilled, then a value is present. If the status is rejected, then a reason is present. The value (or reason) reflects what value each promise was fulfilled (or rejected) with.</p>
-<pre><code>map iterable &rarr; promise</code></pre>
-<br>
+<doc-panel id="pre-code-map-iterable-promise-code-pre" collapsed>
+    <template #title><pre><code>map iterable → promise</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -202,16 +207,32 @@ For each outcome object, a status string is present. If the status is fulfilled,
 <tbody>
 <tr>
 <td>iterable</td>
-<td>any</td>
-<td></td>
-</tr>
-<tr>
-<td>→ promise</td>
-<td>any</td>
+<td>Any</td>
 <td></td>
 </tr>
 </tbody>
 </table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>promise</td>
+<td>Any</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</doc-panel>
 
 
 

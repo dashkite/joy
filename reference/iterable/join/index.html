@@ -188,10 +188,14 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Like reduce, except for joining products with a join function.</p>
-<pre><code>join append, iterable &rarr; result</code></pre>
-<br>
-<pre><code>join delimiter, iterable &rarr; string</code></pre>
-<br>
+<doc-panels>
+   <doc-panel id="pre-code-join-append-iterable-result-code-pre" collapsed>
+       <template #title><pre><code>join append, iterable → result</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -211,23 +215,79 @@
 <td><doc-anchor-trigger to="#"><code v-pre>Iterator</code></doc-anchor-trigger></td>
 <td>The iterable whose products will be joined.</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
 <tr>
-<td>→ result</td>
-<td>any</td>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>result</td>
+<td>Any</td>
 <td>The value resulting from joining the products.</td>
 </tr>
+</tbody>
+</table>
+   </doc-panel>
+   <doc-panel id="pre-code-join-delimiter-iterable-string-code-pre" collapsed>
+       <template #title><pre><code>join delimiter, iterable → string</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>delimiter</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
 <td>The delimeter separating products of the iterable.</td>
 </tr>
 <tr>
-<td>→ string</td>
+<td>iterable</td>
+<td><doc-anchor-trigger to="#"><code v-pre>Iterator</code></doc-anchor-trigger></td>
+<td>The iterable whose products will be joined.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
 <td>The resulting string.</td>
 </tr>
 </tbody>
 </table>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>

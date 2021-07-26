@@ -29,7 +29,6 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
-    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,8 +188,13 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Defines getters on <em>target</em> using the given <em>dictionary</em> of keys and getter functions. Convenience wrapper for <doc-anchor-trigger to="#getter"><code v-pre>getter</code></doc-anchor-trigger>. Like most Joy functions, <code v-pre>getters</code> is curryable, so you can define a function that will define a property on any object. Use in combination with <doc-anchor-trigger to="#mixin"><code v-pre>mixin</code></doc-anchor-trigger> to create reusable mixins.</p>
-<pre><code>getters dictionary, target &rarr; object</code></pre>
-<br>
+<doc-panel id="pre-code-getters-dictionary-target-object-code-pre" collapsed>
+    <template #title><pre><code>getters dictionary, target → object</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -202,27 +206,37 @@
 <tbody>
 <tr>
 <td>dictionary</td>
-<td>any</td>
+<td>Any</td>
 <td></td>
 </tr>
 <tr>
 <td>target</td>
-<td>any</td>
-<td></td>
-</tr>
-<tr>
-<td>→ object</td>
-<td>any</td>
+<td>Any</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<doc-anchor-target id="examples">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h2>
-</doc-anchor-target>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>object</td>
+<td>Any</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</doc-panel>
 
 
 
@@ -295,6 +309,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "getters", icon: "file", hasPrism: true, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "getters", icon: "file", hasPrism: false, hasMermaid: false }</script>
     </body>
 </html>

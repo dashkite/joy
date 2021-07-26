@@ -29,6 +29,7 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
+    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -188,8 +189,13 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Returns its argument.</p>
-<pre><code>identity value &rarr; value</code></pre>
-<br>
+<doc-panel id="pre-code-identity-value-value-code-pre" collapsed>
+    <template #title><pre><code>identity value → value</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -201,16 +207,119 @@
 <tbody>
 <tr>
 <td>value</td>
-<td>any</td>
-<td></td>
-</tr>
-<tr>
-<td>→ value</td>
-<td>any</td>
-<td></td>
+<td>Any</td>
+<td>Any JavaScript value.</td>
 </tr>
 </tbody>
 </table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>Any</td>
+<td>The unaltered argument <code v-pre>value</code>.</td>
+</tr>
+</tbody>
+</table>
+</doc-panel>
+<doc-anchor-target id="description">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
+        <span>Description</span>
+    </h2>
+</doc-anchor-target>
+<p>Named for the mathematical concept of <a href="https://en.wikipedia.org/wiki/Identity_(mathematics)">identity</a>. <code v-pre>identity</code> returns the first argument you provide it, unaltered. This <a href="https://en.wikipedia.org/wiki/NOP_(code)">no operation</a> is a fundamental building block of functional composition. Use it as a default, a fallback, or even just as a placeholder for in-progress code.</p>
+<doc-alert variant="primary">
+<template #title>Point of Interest</template>
+<p>The return <code v-pre>value</code> is the arugment <code v-pre>value</code>. That is, even when passing an object to <code v-pre>identity</code>, the return <code v-pre>value</code> is <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality">strictly equal</a> to the argument <code v-pre>value</code>.</p>
+</doc-alert>
+<doc-anchor-target id="examples">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
+        <span>Examples</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="returns-its-argument">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-its-argument">#</doc-anchor-trigger>
+        <span>Returns its argument.</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="coffeescript">
+<template #title>CoffeeScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">assert.equal 1,
+  _.identity 1</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="javascript">
+<template #title>JavaScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">assert.equal(1,
+  _.identity(1));</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="returns-only-its-first-argument">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-only-its-first-argument">#</doc-anchor-trigger>
+        <span>Returns only its first argument.</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="coffeescript">
+<template #title>CoffeeScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">assert.equal 1,
+  _.identity 1, 2, 3</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="javascript">
+<template #title>JavaScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">assert.equal(1,
+  _.identity(1, 2, 3));</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
+<doc-anchor-target id="returns-the-exact-argument-even-objects-are-strictly-equal">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#returns-the-exact-argument-even-objects-are-strictly-equal">#</doc-anchor-trigger>
+        <span>Returns the exact argument. Even objects are strictly equal.</span>
+    </h4>
+</doc-anchor-target>
+<doc-tabs>
+<doc-tab id="coffeescript">
+<template #title>CoffeeScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-coffeescript"><code v-pre class="language-coffeescript">a = company: &quot;Delos&quot;
+
+assert.equal a,
+  _.identity a</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+<doc-tab id="javascript">
+<template #title>JavaScript</template>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<pre class="language-javascript"><code v-pre class="language-javascript">const a = { company: &quot;Delos&quot; };
+
+assert.equal(a,
+  _.identity(a));</code></pre>
+</doc-codeblock></div>
+</doc-tab>
+</doc-tabs>
 
 
 
@@ -283,6 +392,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "identity", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "identity", icon: "file", hasPrism: true, hasMermaid: false }</script>
     </body>
 </html>

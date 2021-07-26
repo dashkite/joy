@@ -29,7 +29,6 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
-    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,10 +188,14 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Enclose a string with delimeters.</p>
-<pre><code>enclose delimiter-string, string &rarr; string</code></pre>
-<br>
-<pre><code>enclose delimiter-array, string &rarr; string</code></pre>
-<br>
+<doc-panels>
+   <doc-panel id="pre-code-enclose-delimiter-string-string-string-code-pre" collapsed>
+       <template #title><pre><code>enclose delimiter-string, string → string</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -212,18 +215,79 @@
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
 <td>The string to delimit.</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
 <tr>
-<td>→ string</td>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
 <td>The enclosed string.</td>
 </tr>
+</tbody>
+</table>
+   </doc-panel>
+   <doc-panel id="pre-code-enclose-delimiter-array-string-string-code-pre" collapsed>
+       <template #title><pre><code>enclose delimiter-array, string → string</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>delimiter-array</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array"><code v-pre>Array</code></a></td>
 <td>The delimiter(s).</td>
 </tr>
+<tr>
+<td>string</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
+<td>The string to delimit.</td>
+</tr>
 </tbody>
 </table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string</td>
+<td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String"><code v-pre>String</code></a></td>
+<td>The enclosed string.</td>
+</tr>
+</tbody>
+</table>
+   </doc-panel>
+</doc-panels>
 <doc-anchor-target id="description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
@@ -231,12 +295,6 @@
     </h2>
 </doc-anchor-target>
 <p>Enclose a string with a delimeters. The delimeters may be specified by a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a> or an <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>. The first character or array element is the start delimeter. The second character or array element is the end delimeter. If no end delimiter is specified, the start and end delimiters are the same.</p>
-<doc-anchor-target id="examples">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h2>
-</doc-anchor-target>
 
 
 
@@ -309,6 +367,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "enclose", icon: "file", hasPrism: true, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "enclose", icon: "file", hasPrism: false, hasMermaid: false }</script>
     </body>
 </html>

@@ -29,7 +29,6 @@
 
     <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
-    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,8 +188,13 @@
     </h1>
 </doc-anchor-target>
 <p><em>Function</em> • Create a template function from a templatized string.</p>
-<pre><code>template template, filters &rarr; function</code></pre>
-<br>
+<doc-panel id="pre-code-template-template-filters-function-code-pre" collapsed>
+    <template #title><pre><code>template template, filters → function</code></pre>
+</template>
+<hr>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
+    <span>Arguments</span>
+</span></p>
 <table class="comfortable">
 <thead>
 <tr>
@@ -210,13 +214,29 @@
 <td><doc-anchor-trigger to="#"><code v-pre>Object</code></doc-anchor-trigger></td>
 <td>A dictionary of filter functions for use within the template.</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-green-700 bg-green-100 h-8 px-4 text-base rounded-md">
+    <span>Returns</span>
+</span></p>
+<table class="comfortable">
+<thead>
 <tr>
-<td>→ function</td>
+<th>name</th>
+<th>type</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>function</td>
 <td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><code v-pre>Function</code></a></td>
 <td>The template as a function, taking an object as an argument.</td>
 </tr>
 </tbody>
 </table>
+</doc-panel>
 <doc-anchor-target id="description">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
@@ -224,12 +244,6 @@
     </h2>
 </doc-anchor-target>
 <p>Create a template function from a templatized string and an optional set of filters. Useful for simple applications, but relatively limited and slow. Uses regexp substitution and does not support common templating features, such as control flow, iteration, or escaping.</p>
-<doc-anchor-target id="examples">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
-        <span>Examples</span>
-    </h2>
-</doc-anchor-target>
 
 
 
@@ -302,6 +316,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "template", icon: "file", hasPrism: true, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "template", icon: "file", hasPrism: false, hasMermaid: false }</script>
     </body>
 </html>
