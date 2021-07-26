@@ -24,7 +24,7 @@ _Function_ &bull; Calls _function_ with each product from _iterable_.
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Generates the result of applying _function_ to products from _iterable_ with a synchronicity matching _iterable_.|
+|generator|[`Generator`][Generator]|Generates the result of applying _function_ to products from _iterable_ with a synchronicity matching _iterable_.|
 
 
 ==- <pre><code>map function, array &rarr; array</code></pre>
@@ -43,7 +43,7 @@ _Function_ &bull; Calls _function_ with each product from _iterable_.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|Lists the result of applying _function_ to items from _array_.|
+|array|[`Array`][Array]|Lists the result of applying _function_ to items from _array_.|
 
 
 
@@ -54,5 +54,5 @@ _Function_ &bull; Calls _function_ with each product from _iterable_.
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Iterable]: #
-[Global]: #
+[Generator]: #
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

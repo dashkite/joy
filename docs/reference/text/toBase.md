@@ -22,7 +22,7 @@ _Function_ &bull; Returns a string representation of a number with a given radix
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The string representation of the number.|
+|string|[`String`][String]|The string representation of the number.|
 
 
 
@@ -32,4 +32,4 @@ _Function_ &bull; Returns a string representation of a number with a given radix
 
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[Global]: #
+[String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

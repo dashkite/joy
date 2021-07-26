@@ -22,7 +22,7 @@ _Function_ &bull; Removes _value_ from array, if it exists within it, returning 
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The mutated array.|
+|array|[`Array`][Array]|The mutated array.|
 
 
 
@@ -32,4 +32,3 @@ _Function_ &bull; Removes _value_ from array, if it exists within it, returning 
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

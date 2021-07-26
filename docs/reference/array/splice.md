@@ -23,7 +23,7 @@ _Function_ &bull; Removes the elements in _array_ from _start_ up to, but not in
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The mutated array.|
+|array|[`Array`][Array]|The mutated array.|
 
 
 
@@ -34,4 +34,3 @@ _Function_ &bull; Removes the elements in _array_ from _start_ up to, but not in
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

@@ -21,7 +21,7 @@ _Function_ &bull; Awaits on promises produced by _iterable_, generating the reso
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Generates the resolved products of the original iterable.|
+|generator|[`Generator`][Generator]|Generates the resolved products of the original iterable.|
 
 
 
@@ -31,4 +31,4 @@ _Function_ &bull; Awaits on promises produced by _iterable_, generating the reso
 
 
 [Iterable]: #
-[Global]: #
+[Generator]: #

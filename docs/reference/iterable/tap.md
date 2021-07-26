@@ -22,7 +22,7 @@ _Function_ &bull; Calls _function_ with each product from _iterable_, returning 
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Generates the products from the original iterable.|
+|generator|[`Generator`][Generator]|Generates the products from the original iterable.|
 
 
 
@@ -33,4 +33,4 @@ _Function_ &bull; Calls _function_ with each product from _iterable_, returning 
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Iterable]: #
-[Global]: #
+[Generator]: #

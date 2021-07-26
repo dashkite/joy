@@ -22,7 +22,7 @@ _Function_ &bull; Sets each element of an array to a specified value and returns
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The resulting filled array.|
+|array|[`Array`][Array]|The resulting filled array.|
 
 
 
@@ -32,4 +32,3 @@ _Function_ &bull; Sets each element of an array to a specified value and returns
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

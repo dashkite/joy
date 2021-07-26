@@ -29,8 +29,7 @@ arity  = (N, f) ->
     when 10
       (a0, a1, a2, a3, a4, a5, a6, a7, a8, a9) -> f.apply @, arguments
     else
-      throw new Error "First argument to arity must be a non-negative
-        integer no greater than ten"
+      throw new Error "First argument to arity must be an integer between 0 and 10, inclusive."
 
 unary = (f) -> arity 1, f
 

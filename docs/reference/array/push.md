@@ -22,7 +22,7 @@ _Function_ &bull; Adds to the end of an array, returning the mutated array.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The mutated array.|
+|array|[`Array`][Array]|The mutated array.|
 
 
 
@@ -33,4 +33,3 @@ enqueue
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

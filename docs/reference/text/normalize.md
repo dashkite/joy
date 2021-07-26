@@ -21,7 +21,7 @@ _Function_ &bull; Converts a string to normalized decomposd Unicode and removes 
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The modified string.|
+|string|[`String`][String]|The modified string.|
 
 
 
@@ -31,4 +31,3 @@ _Function_ &bull; Converts a string to normalized decomposd Unicode and removes 
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

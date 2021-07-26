@@ -22,7 +22,7 @@ _Function_ &bull; Returns the products of an _iterable_ unchanged, but grouped i
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Produces arrays of length _size_, listing otherwise unaltered products from the source _iterable_.|
+|generator|[`Generator`][Generator]|Produces arrays of length _size_, listing otherwise unaltered products from the source _iterable_.|
 
 
 
@@ -40,4 +40,4 @@ Returns the products of an _iterable_ unchanged, but grouped into partitions. Ea
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Iterable]: #
-[Global]: #
+[Generator]: #

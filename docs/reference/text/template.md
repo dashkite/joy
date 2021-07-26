@@ -22,7 +22,7 @@ _Function_ &bull; Create a template function from a templatized string.
 
 | name | type | description |
 |------|------|-------------|
-|function|[`Function`][Global]|The template as a function, taking an object as an argument.|
+|function|[`Function`][Function]|The template as a function, taking an object as an argument.|
 
 
 
@@ -36,4 +36,4 @@ Create a template function from a templatized string and an optional set of filt
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Object]: #
-[Global]: #
+[Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function

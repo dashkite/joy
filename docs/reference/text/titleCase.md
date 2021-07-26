@@ -21,7 +21,7 @@ _Function_ &bull; Capitalizes the first letter of each word.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The modified string.|
+|string|[`String`][String]|The modified string.|
 
 
 
@@ -31,4 +31,3 @@ _Function_ &bull; Capitalizes the first letter of each word.
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

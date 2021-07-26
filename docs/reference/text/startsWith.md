@@ -22,7 +22,7 @@ _Function_ &bull; Returns true if a string begins with a given substring.
 
 | name | type | description |
 |------|------|-------------|
-|matches|[`Boolean`][Global]|True if the string begins with _substring_, false otherwise.|
+|matches|[`Boolean`][Boolean]|True if the string begins with _substring_, false otherwise.|
 
 
 
@@ -32,4 +32,4 @@ _Function_ &bull; Returns true if a string begins with a given substring.
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #
+[Boolean]: #

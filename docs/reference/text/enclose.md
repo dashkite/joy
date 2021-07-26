@@ -22,7 +22,7 @@ _Function_ &bull; Enclose a string with delimeters.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The enclosed string.|
+|string|[`String`][String]|The enclosed string.|
 
 
 ==- <pre><code>enclose delimiter-array, string &rarr; string</code></pre>
@@ -41,7 +41,7 @@ _Function_ &bull; Enclose a string with delimeters.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The enclosed string.|
+|string|[`String`][String]|The enclosed string.|
 
 
 
@@ -54,5 +54,4 @@ Enclose a string with a delimeters. The delimeters may be specified by a [String
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

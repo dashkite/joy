@@ -21,7 +21,7 @@ _Function_ &bull; Parses a string representation of a number.
 
 | name | type | description |
 |------|------|-------------|
-|number|[`Number`][Global]|The number parsed from the string.|
+|number|[`Number`][Number]|The number parsed from the string.|
 
 
 
@@ -33,11 +33,11 @@ _Function_ &bull; Parses a string representation of a number.
 Returns a number parsed from a string.
 
 !!!warning Warning
-If the number being parsed is larger than may be safely represented in JavaScript (that is, larger than [`Number.MAX_SAFE_INTEGER`][NumberMAX_SAFE_INTEGER]), the parsed number will lose precision. If you may be parsing extremely large numbers, use [`BigInt`][BigInt] instead.
+If the number being parsed is larger than may be safely represented in JavaScript (that is, larger than [`Number.MAX_SAFE_INTEGER`][Number.MAX_SAFE_INTEGER]), the parsed number will lose precision. If you may be parsing extremely large numbers, use [`BigInt`][BigInt] instead.
 !!!
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #
-[NumberMAX_SAFE_INTEGER]: #
+[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[Number.MAX_SAFE_INTEGER]: #
 [BigInt]: #

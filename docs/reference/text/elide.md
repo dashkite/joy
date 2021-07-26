@@ -22,7 +22,7 @@ _Function_ &bull; Elides a string so that it is no longer than a specified lengt
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The modified string.|
+|string|[`String`][String]|The modified string.|
 
 
 
@@ -36,4 +36,3 @@ Elides a string so that it is no longer than a specified length, appending a ter
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

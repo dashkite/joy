@@ -23,7 +23,7 @@ _Function_ &bull; Pads the start and end of a string with another string, repeat
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The modified string.|
+|string|[`String`][String]|The modified string.|
 
 
 
@@ -34,4 +34,3 @@ _Function_ &bull; Pads the start and end of a string with another string, repeat
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

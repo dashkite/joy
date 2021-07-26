@@ -41,7 +41,7 @@ _Function_ &bull; Like reduce, except for joining products with a join function.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The resulting string.|
+|string|[`String`][String]|The resulting string.|
 
 
 
@@ -56,4 +56,3 @@ Accepts a join function and a producer. Specialized for joining products with a 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Iterator]: #
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

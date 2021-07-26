@@ -21,7 +21,7 @@ _Function_ &bull; Collects products from a generator into an array.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The resulting array.|
+|array|[`Array`][Array]|The resulting array.|
 
 
 
@@ -31,4 +31,4 @@ _Function_ &bull; Collects products from a generator into an array.
 
 
 [Iterable]: #
-[Global]: #
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

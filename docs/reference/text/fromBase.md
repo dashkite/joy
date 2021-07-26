@@ -22,7 +22,7 @@ _Function_ &bull; Returns a number from a string representation for a given radi
 
 | name | type | description |
 |------|------|-------------|
-|number|[`Number`][Global]|The number corresponding to the string.|
+|number|[`Number`][Number]|The number corresponding to the string.|
 
 
 
@@ -33,4 +33,3 @@ _Function_ &bull; Returns a number from a string representation for a given radi
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

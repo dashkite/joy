@@ -21,7 +21,7 @@ _Function_ &bull; Enclose a string within single quotes.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The quoted string.|
+|string|[`String`][String]|The quoted string.|
 
 
 
@@ -31,4 +31,3 @@ _Function_ &bull; Enclose a string within single quotes.
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

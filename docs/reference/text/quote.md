@@ -21,7 +21,7 @@ _Function_ &bull; Enclose a string with quotes.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The quoted string.|
+|string|[`String`][String]|The quoted string.|
 
 
 
@@ -32,4 +32,3 @@ dquote
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

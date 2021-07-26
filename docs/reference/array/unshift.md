@@ -22,7 +22,7 @@ _Function_ &bull; Adds _value_ to the start of the _array_ and returns the mutat
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The mutated array.|
+|array|[`Array`][Array]|The mutated array.|
 
 
 
@@ -32,4 +32,3 @@ _Function_ &bull; Adds _value_ to the start of the _array_ and returns the mutat
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

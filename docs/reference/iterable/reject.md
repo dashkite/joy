@@ -22,7 +22,7 @@ _Function_ &bull; Calls _predicate_ for each product from _iterable_, generating
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Generates the products satisfying _predicate_.|
+|generator|[`Generator`][Generator]|Generates the products satisfying _predicate_.|
 
 
 
@@ -33,4 +33,4 @@ _Function_ &bull; Calls _predicate_ for each product from _iterable_, generating
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Iterable]: #
-[Global]: #
+[Generator]: #

@@ -22,7 +22,7 @@ _Function_ &bull; Returns a numeric array with consecutive values from _start_ t
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|An array of numeric values from _start_ to _finish_.|
+|array|[`Array`][Array]|An array of numeric values from _start_ to _finish_.|
 
 
 
@@ -32,4 +32,4 @@ _Function_ &bull; Returns a numeric array with consecutive values from _start_ t
 
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
-[Global]: #
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

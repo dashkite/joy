@@ -21,7 +21,7 @@ _Function_ &bull; Like `tee`, but for method chaining: always returns `this`.
 
 | name | type | description |
 |------|------|-------------|
-|function|[`Function`][Global]|The resulting method.|
+|function|[`Function`][Function]|The resulting method.|
 
 
 
@@ -31,4 +31,3 @@ _Function_ &bull; Like `tee`, but for method chaining: always returns `this`.
 
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
-[Global]: #

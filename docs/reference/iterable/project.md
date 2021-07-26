@@ -22,7 +22,7 @@ _Function_ &bull; Returns the value of the property matching the given _property
 
 | name | type | description |
 |------|------|-------------|
-|generator|[`Generator`][Global]|Generates the value of the _property_ from each product from _iterable_ with a synchronicity matching _iterable_.|
+|generator|[`Generator`][Generator]|Generates the value of the _property_ from each product from _iterable_ with a synchronicity matching _iterable_.|
 
 
 ==- <pre><code>project property, array &rarr; array</code></pre>
@@ -41,7 +41,7 @@ _Function_ &bull; Returns the value of the property matching the given _property
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|Lists the value of the _property_ from each item in _array_.|
+|array|[`Array`][Array]|Lists the value of the _property_ from each item in _array_.|
 
 
 
@@ -63,5 +63,5 @@ However, because `project` relies on `map`, `project` is suitable for both synch
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Iterable]: #
-[Global]: #
+[Generator]: #
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

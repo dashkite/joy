@@ -23,7 +23,7 @@ _Function_ &bull; Takes elements in _array_ from _start_ up to, but not includin
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The resulting array.|
+|array|[`Array`][Array]|The resulting array.|
 
 
 
@@ -34,4 +34,3 @@ _Function_ &bull; Takes elements in _array_ from _start_ up to, but not includin
 
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

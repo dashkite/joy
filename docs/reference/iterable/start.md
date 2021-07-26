@@ -21,7 +21,7 @@ _Function_ &bull; Consumes and discards products from _iterable_.
 
 | name | type | description |
 |------|------|-------------|
-|∅|[`undefined`][Global]||
+|∅|[`undefined`][undefined]||
 
 
 
@@ -31,4 +31,4 @@ _Function_ &bull; Consumes and discards products from _iterable_.
 
 
 [Iterable]: #
-[Global]: #
+[undefined]: #

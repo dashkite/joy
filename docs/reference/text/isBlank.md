@@ -21,7 +21,7 @@ _Function_ &bull; Returns true if the string is empty, false otherwise.
 
 | name | type | description |
 |------|------|-------------|
-|boolean|[`Boolean`][Global]|True if the string is empty, false otherwise.|
+|boolean|[`Boolean`][Boolean]|True if the string is empty, false otherwise.|
 
 
 
@@ -31,4 +31,4 @@ _Function_ &bull; Returns true if the string is empty, false otherwise.
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #
+[Boolean]: #

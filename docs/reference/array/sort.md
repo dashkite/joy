@@ -22,7 +22,7 @@ _Function_ &bull; Sorts the given array in place using the _comparator_ function
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The sorted array.|
+|array|[`Array`][Array]|The sorted array.|
 
 
 
@@ -33,4 +33,3 @@ _Function_ &bull; Sorts the given array in place using the _comparator_ function
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #

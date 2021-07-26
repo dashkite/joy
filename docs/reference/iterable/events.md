@@ -22,7 +22,7 @@ _Function_ &bull; Converts an event source into an asynchronous iterator.
 
 | name | type | description |
 |------|------|-------------|
-|iterator|[`Iterable`][Global]|The asynchronous iterator.|
+|iterator|[`Iterable`][Iterable]|The asynchronous iterator.|
 
 
 
@@ -33,4 +33,4 @@ _Function_ &bull; Converts an event source into an asynchronous iterator.
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [EventEmitter  EventTarget]: #
-[Global]: #
+[Iterable]: #

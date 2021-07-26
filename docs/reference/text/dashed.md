@@ -21,7 +21,7 @@ _Function_ &bull; Converts a space-delimited string to hyphen-delimited.
 
 | name | type | description |
 |------|------|-------------|
-|string|[`String`][Global]|The modified string.|
+|string|[`String`][String]|The modified string.|
 
 
 
@@ -32,4 +32,3 @@ dash, dashes
 
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[Global]: #

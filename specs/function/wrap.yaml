@@ -8,54 +8,63 @@ signatures:
         description: Any JavaScript value.
     returns:
       name: function
+      type: Function
       description: An anonymous function that returns `value` when invoked.
 
 description: |
-  Named for the mathematical concept of [identity][]. `identity` returns the first argument you provide it, unaltered. This [no operation][] is a fundamental building block of functional composition. Use it as a default, a fallback, or even just as a placeholder for in-progress code.
+  `wrap` returns an anonymous function that, when invoked, returns the argument `value`. This "wrapping" operation is a fundamental building block of functional composition. Use it any time you need to convert a value into a function you want to invoke later.
 
-  !!! Tip
-  The return `value` is the arugment `value`. That is, even when passing an object to `identity` the return value is [strictly equal][] to the argument.
+  !!! Warning Caution
+  The argument `value` remains in scope between invocations. If you use `wrap` on a `value` where JavaScript applies [pass by reference][], mutations to `value` persist. That is, the _new_ value is returned the next time you invoke `wrap`. That's probably not a good idea, so be careful.
   !!!
 
-  [identity]: https://en.wikipedia.org/wiki/Identity_(mathematics)
-  [no operation]: https://en.wikipedia.org/wiki/NOP_(code)
-  [strictly equal]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
-
-
 example:
-  description: |-
-    > You can [read more] about how Joy examples are written.
-
-    [read more]: /concepts/examples
-
   sections:
-    - title: Returns its argument.
+    - title: Returns a function that returns its argument.
       code:
         CoffeeScript: |-
+          provide = _.wrap 1
+
           assert.equal 1,
-            _.identity 1
+            provide()
         JavaScript: |-
-          assert.equal(1,
-            _.identity(1));
+          let provide = _.wrap(1);
 
-    - title: Returns only its first argument.
+          assert.equal(1,
+            provide());
+
+    - title: Avoid mutating wrapped values.
       code:
         CoffeeScript: |-
-          assert.equal 1,
-            _.identity 1, 2, 3
+          provide = _.wrap x: 1
+          double = (object) ->
+            object.x *= 2
+            object
+
+          assert.deepEqual x: 2,
+            double provide()
+
+          # With `value` mutated, provide returns the doubled value.
+          assert.deepEqual x: 2,
+            provide()
         JavaScript: |-
-          assert.equal(1,
-            _.identity(1, 2, 3));
+          let provide = _.wrap({ x: 1 });
+          let double = (object) => {
+            object.x *= 2
+            return object
+          };
 
-    - title: Returns the exact argument. Even objects are strictly equal.
-      code:
-        CoffeeScript: |-
-          a = company: "Delos"
+          assert.deepEqual({ x: 2 },
+            double(provide()));
 
-          assert.equal a,
-            _.identity a
-        JavaScript: |-
-          const a = { company: "Delos" };
+          assert.deepEqual({ x: 2 },
+            provide());
 
-          assert.equal(a,
-            _.identity(a));
+      description: |
+        The above example defines:
+          - `provide`, a function created by `wrap` that returns an object.
+          - `double`, a function that mutates the object passed to it.
+
+        In the first assert, we can see that `double` successfully doubles the value returned from `provide`. However, because JavaScript applies [pass by reference][] to objects, the value returned by `provide` is also altered. We confirm that in the second assert.
+
+        Keep this in mind when using `wrap` and avoid mutating its `value`.

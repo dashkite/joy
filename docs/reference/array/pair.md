@@ -22,7 +22,7 @@ _Function_ &bull; Returns it's arguments as an array representing a pair.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|A two-element array representing a pair.|
+|array|[`Array`][Array]|A two-element array representing a pair.|
 
 
 
@@ -31,4 +31,4 @@ _Function_ &bull; Returns it's arguments as an array representing a pair.
 
 
 
-[Global]: #
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array

@@ -21,7 +21,7 @@ _Function_ &bull; Takes all but the first an element of an array.
 
 | name | type | description |
 |------|------|-------------|
-|array|[`Array`][Global]|The resulting array.|
+|array|[`Array`][Array]|The resulting array.|
 
 
 
@@ -31,4 +31,3 @@ _Function_ &bull; Takes all but the first an element of an array.
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-[Global]: #
