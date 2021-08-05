@@ -13,12 +13,12 @@ signatures:
     returns:
       name: wrapper
       type: Function
-      description: An anonymous function with the desired arity. This function wraps `target` and passes it all arguments.
+      description: An anonymous function with the desired arity. This function wraps `target` and passes to `target` all arguments.
 
 description: |
-  A function's [arity][] describes how many arguments it expects. Joy provides `arity` as a means to manipulate arity, an operation that is a fundamental building block of functional composition. Rather than modifying `target` directly, `arity` shims the interface with one that has the desired arity.
+  A function's [arity][arity] describes how many arguments it expects. `arity` allows you to set arity by wrapping a `target` function with a `wrapper` function.
 
-  `arity` wraps `target` with an anonymous function, `wrapper`. `wrapper` has an arity of `desiredArity` However, `arity` prioritizes pragmatism. `wrapper` passes the [`arguments`][] object to `target`. So, _all_ arguments passed to `wrapper` are passed to `target`, regardless of `desiredArity`.
+  `wrapper` is an anonymous function with an arity of `desiredArity`. However, `wrapper` passes the [`arguments`][] object to `target`. So, _all_ arguments passed to `wrapper` are passed to `target`, regardless of `desiredArity`.
 
   `arity` also ensures `target` runs with the current [`this`][].
 
@@ -55,10 +55,7 @@ example:
             g.length);
 
       description: |-
-        We may freely establish an interface of a given arity for our function. However, note that the underlying function, `f`, remains unchanged. We are shimming the interface. We are wrapping `f` with a function that:
-
-        1. Has an interface that matches our specification
-        2. Transparently passes the arguments along.
+        We may freely establish an interface of a given arity for our function. However, note that the underlying function, `f`, remains unchanged.
 
     - title: "`arity` does not provide enforcement."
       code:
@@ -82,9 +79,9 @@ example:
             nullaryDouble(2));
 
       description: |
-        We can look at the arity of `nullaryDouble` and confirm that it is `0` (nullary). However, `arity` does not provide enforcemet. We can pass an argument to `nullaryDouble`. It accepts the argument and returns its double.
+        We can look at the arity of `nullaryDouble` and confirm that it is `0` (nullary). However, `arity` does not provide enforcement. We can pass an argument to `nullaryDouble`. It accepts the argument and returns its double.
 
-        This example highlights the pragmatism of `arity`. The function `nullaryDouble` does present a nullary interface, but it will also pass along any arguments it receives (via the [`arguments`][] object). If you're buliding a structure that depends on strict arity enforcement, you're free to inspect `Function.length` and opt into that rigor, but that's not `arity`'s design goal.
+        The function `nullaryDouble` passes along any arguments it receives (via the [`arguments`][] object) to `double`. If you're buliding a structure that depends on strict arity enforcement, you're free to inspect `Function.length` and opt into that rigor, but that's not `arity`'s design goal.
 
     - title: Use `arity` to build interfaces with intention.
       code:
@@ -104,12 +101,10 @@ example:
       description: |
         For this example, let's take a look at the implementation of [`wait`][].
 
-        In summary, imagine having several arguments to pass to `f`, but some of them are promises. We would like to make sure they all resolve before we pass them to `f`.
+        Imagine having several arguments to pass to `f`, but some of them are promises. We would like to make sure they all resolve before we pass them to `f`.
 
-        We could write that imperatively, but Joy encourages a functional style. That involves building up interfaces that do what we need. And in this case, `wait` is an interface shim that resolves those promises for us.
+        We could write that imperatively, but Joy encourages a functional style. That involves building up interfaces that do what we need. And in this case, `wait` is an wrapper that resolves those promises for us before calling `f`.
 
-        But when we sat down to write `wait`, we wanted it to be as flexible as possible and to not obscure the interface it's shimming. `wait` inspects the underlying function and uses `arity` to _preserve_ its arity.
+        But when we sat down to write `wait`, we wanted it to be as flexible as possible and to not obscure the interface it wraps. `wait` inspects the underlying function and uses `arity` to _preserve_ its arity.
 
         That allows `wait` to be powerful and flexible. And because it preserves the arity, we give ourselves the optionality to use that in another, higher-level interface.
-
-        Being intentional about interface optionality is a hallmark of functional composition. It's a design decision in Joy to encourage it, and it reflects the pragmatism of JavaScript itself. Having a "flexible by default" mindset makes it easy to craft and test out metaprogramming structures as you build them up.

@@ -30,7 +30,7 @@ _Function_ &bull; Returns its argument.
 
 ## Description
 
-Named for the mathematical concept of [identity][identity]. `identity` returns the first argument you provide it, unaltered. This [no operation][no operation] is a fundamental building block of functional composition. Use it as a default, a fallback, or even just as a placeholder for in-progress code.
+Named for the mathematical concept of [identity][identity]. `identity` returns the first argument you provide it, unaltered. This is the functional version of a [no operation][no operation]. Use it as a default, a fallback, or even just as a placeholder for in-progress code.
 
 !!! Primary Point of Interest
 The return `value` is the arugment `value`. That is, even when passing an object to `identity`, the return `value` is [strictly equal][strictly equal] to the argument `value`.

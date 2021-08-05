@@ -30,7 +30,7 @@ _Function_ &bull; Returns a function that returns its argument.
 
 ## Description
 
-`wrap` returns an anonymous function that, when invoked, returns the argument `value`. This "wrapping" operation is a fundamental building block of functional composition. Use it any time you need to convert a value into a function you want to invoke later.
+`wrap` returns an anonymous function that, when invoked, returns the argument `value`. Use it any time you need to convert a value into a function you want to invoke later.
 
 !!! Warning Caution
 The argument `value` remains in scope between invocations. If you use `wrap` on a `value` where JavaScript applies [pass by reference][pass by reference], mutations to `value` persist. That is, the _new_ value is returned the next time you invoke `wrap`. That's probably not a good idea, so be careful.
@@ -100,9 +100,9 @@ The above example defines:
   - `provide`, a function created by `wrap` that returns an object.
   - `double`, a function that mutates the object passed to it.
 
-In the first assert, we can see that `double` successfully doubles the value returned from `provide`. However, because JavaScript applies [pass by reference][pass by reference] to objects, the value returned by `provide` is also altered. We confirm that in the second assert.
+In the first assert, we can see that `double` successfully doubles the value returned from `provide`. However, because JavaScript applies [pass by reference][pass by reference] to regular objects, the value now returned by `provide` is also altered. We confirm that in the second assert.
 
-Keep this in mind when using `wrap` and avoid mutating its `value`.
+Keep this in mind when using `wrap` and avoid mutating `value`.
 
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
