@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: /joy/sitemap.xml.gz

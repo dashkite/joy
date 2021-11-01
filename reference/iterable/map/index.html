@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-root" content="/joy">
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
@@ -25,10 +26,10 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css" rel="stylesheet" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689064618375" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
-    <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689064618375" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -187,13 +188,12 @@
         <span>map</span>
     </h1>
 </doc-anchor-target>
-<p><em>Function</em> • Calls <em>function</em> with each product from <em>iterable</em>.<br />
-<code v-pre>map</code> is suitable for use with both synchronous iterables and asynchronous iterables, and will return a generator producing the resulting products with matching synchronicity.<br />
+<p><em>Function</em> • Calls <em>function</em> with each product from <em>iterable</em>.
+<code v-pre>map</code> is suitable for use with both synchronous iterables and asynchronous iterables, and will return a generator producing the resulting products with matching synchronicity.
 <code v-pre>map</code> uses Array::map when specifically passed an array, so in that case it returns a new array.</p>
 <doc-panels>
    <doc-panel id="pre-code-map-function-iterable-generator-code-pre" collapsed>
-       <template #title><pre><code>map function, iterable → generator</code></pre>
-</template>
+       <template #title><pre><code>map function, iterable → generator</code></pre></template>
 <hr>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>Arguments</span>
@@ -241,8 +241,7 @@
 </table>
    </doc-panel>
    <doc-panel id="pre-code-map-function-array-array-code-pre" collapsed>
-       <template #title><pre><code>map function, array → array</code></pre>
-</template>
+       <template #title><pre><code>map function, array → array</code></pre></template>
 <hr>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>Arguments</span>
@@ -362,6 +361,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "map", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "map", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-root" content="/joy">
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
@@ -25,10 +26,10 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css" rel="stylesheet" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689064618375" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
-    <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689064618375" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -189,8 +190,7 @@
 </doc-anchor-target>
 <p><em>Function</em> • Removes leading and trailing whitespace and collapses remaining sequences of whitespace into a single space.</p>
 <doc-panel id="pre-code-collapse-string-string-code-pre" collapsed>
-    <template #title><pre><code>collapse string → string</code></pre>
-</template>
+    <template #title><pre><code>collapse string → string</code></pre></template>
 <hr>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>Arguments</span>
@@ -253,7 +253,7 @@
     </div>
 
     <div class="w-1/2">
-        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/joy/reference/text/dashed/">
+        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-all md:break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="/joy/reference/text/underscored/">
             <span>
                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
                 <span class="block mt-1">dashed</span>
@@ -304,6 +304,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "collapse", icon: "file", hasPrism: false, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "collapse", icon: "file", hasPrism: false, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>

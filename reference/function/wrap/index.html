@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-root" content="/joy">
     <meta name="turbo-cache-control" content="no-cache">
 
     <!-- Primary Meta Tags -->
@@ -25,11 +26,11 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css" rel="stylesheet" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689064618375" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js" defer></script>
-    <script type="text/javascript" src="/joy/resources/js/retype.js" defer></script>
-    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js" defer></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689064618375" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
+    <script id="prism-js" type="text/javascript" src="/joy/resources/js/prism.js?v=1.10.689064618375" defer></script>
 </head>
     <body>
         <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -190,8 +191,7 @@
 </doc-anchor-target>
 <p><em>Function</em> • Returns a function that returns its argument.</p>
 <doc-panel id="pre-code-wrap-value-function-code-pre" collapsed>
-    <template #title><pre><code>wrap value → function</code></pre>
-</template>
+    <template #title><pre><code>wrap value → function</code></pre></template>
 <hr>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>Arguments</span>
@@ -239,11 +239,24 @@
         <span>Description</span>
     </h2>
 </doc-anchor-target>
-<p><code v-pre>wrap</code> returns an anonymous function that, when invoked, returns the argument <code v-pre>value</code>. This &quot;wrapping&quot; operation is a fundamental building block of functional composition. Use it any time you need to convert a value into a function you want to invoke later.</p>
-<doc-alert variant="warning">
-<template #title>Caution</template>
+<p><code v-pre>wrap</code> returns an anonymous function that, when invoked, returns the argument <code v-pre>value</code>. Use it any time you need to convert a value into a function you want to invoke later.</p>
+<div class="flex mb-6">
+    <div class="flex-shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
+    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
+                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3">
+            <h5>Caution</h5>
 <p>The argument <code v-pre>value</code> remains in scope between invocations. If you use <code v-pre>wrap</code> on a <code v-pre>value</code> where JavaScript applies <a href="https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c">pass by reference</a>, mutations to <code v-pre>value</code> persist. That is, the <em>new</em> value is returned the next time you invoke <code v-pre>wrap</code>. That&#x27;s probably not a good idea, so be careful.</p>
-</doc-alert>
+        </div>
+    </div>
+</div>
 <doc-anchor-target id="examples">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#examples">#</doc-anchor-trigger>
@@ -321,8 +334,8 @@ assert.deepEqual({ x: 2 },
 <li><code v-pre>provide</code>, a function created by <code v-pre>wrap</code> that returns an object.</li>
 <li><code v-pre>double</code>, a function that mutates the object passed to it.</li>
 </ul>
-<p>In the first assert, we can see that <code v-pre>double</code> successfully doubles the value returned from <code v-pre>provide</code>. However, because JavaScript applies <a href="https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c">pass by reference</a> to objects, the value returned by <code v-pre>provide</code> is also altered. We confirm that in the second assert.</p>
-<p>Keep this in mind when using <code v-pre>wrap</code> and avoid mutating its <code v-pre>value</code>.</p>
+<p>In the first assert, we can see that <code v-pre>double</code> successfully doubles the value returned from <code v-pre>provide</code>. However, because JavaScript applies <a href="https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c">pass by reference</a> to regular objects, the value now returned by <code v-pre>provide</code> is also altered. We confirm that in the second assert.</p>
+<p>Keep this in mind when using <code v-pre>wrap</code> and avoid mutating <code v-pre>value</code>.</p>
 
 
 
@@ -395,6 +408,6 @@ assert.deepEqual({ x: 2 },
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "wrap", icon: "file", hasPrism: true, hasMermaid: false }</script>
+        <script>window.__DOCS__ = { "title": "wrap", icon: "file", hasPrism: true, hasMermaid: false, hasMath: false }</script>
     </body>
 </html>
