@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css?v=1.10.689070204800" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689072862921" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689070204800" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689072862921" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
@@ -188,9 +188,9 @@
         <span>merge</span>
     </h1>
 </doc-anchor-target>
-<p><em>Function</em> • Adds the properties for <em>objects</em> to <em>object</em>. Modifies <em>object</em>. If you want to create a new object, use <doc-anchor-trigger to="#merge"><code v-pre>merge</code></doc-anchor-trigger>.</p>
-<doc-panel id="pre-code-merge-object-objects-object-code-pre" collapsed>
-    <template #title><pre><code>merge object, objects... → object</code></pre></template>
+<p><em>Function</em> • Returns a new object that compbines the properties of <code v-pre>objects</code>. If you want to modify an existing object, use <a href="/joy/reference/object/assign/"><code v-pre>assign</code></a>.</p>
+<doc-panel id="pre-code-merge-objects-combination-code-pre" collapsed>
+    <template #title><pre><code>merge objects... → combination</code></pre></template>
 <hr>
 <p><span class="no-link inline-flex items-center justify-center font-medium leading-none whitespace-nowrap text-blue-600 bg-blue-100 h-8 px-4 text-base rounded-md">
     <span>Arguments</span>
@@ -205,14 +205,9 @@
 </thead>
 <tbody>
 <tr>
-<td>object</td>
-<td>Any</td>
-<td></td>
-</tr>
-<tr>
 <td>objects...</td>
-<td>Any</td>
-<td></td>
+<td><doc-anchor-trigger to="#"><code v-pre>Object</code></doc-anchor-trigger></td>
+<td>This is one or more objects to be combined into a new object.</td>
 </tr>
 </tbody>
 </table>
@@ -230,9 +225,9 @@
 </thead>
 <tbody>
 <tr>
-<td>object</td>
-<td>Any</td>
-<td></td>
+<td>combination</td>
+<td><doc-anchor-trigger to="#"><code v-pre>Object</code></doc-anchor-trigger></td>
+<td>A new object created with the combined fields of <code v-pre>objects</code>. Last applied wins.</td>
 </tr>
 </tbody>
 </table>

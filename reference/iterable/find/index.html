@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css?v=1.10.689070204800" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689072862921" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689070204800" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689072862921" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
@@ -287,6 +287,13 @@
 </table>
    </doc-panel>
 </doc-panels>
+<doc-anchor-target id="description">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#description">#</doc-anchor-trigger>
+        <span>Description</span>
+    </h2>
+</doc-anchor-target>
+<p><code v-pre>find</code> processes the elements of <code v-pre>iterable</code> until it finds a value that returns <code v-pre>true</code> when passed as an arugment to <code v-pre>searchFunction</code>. If such a value cannot be found, <code v-pre>find</code> returns <code v-pre>undefined</code>.</p>
 
 
 

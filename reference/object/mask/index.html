@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css?v=1.10.689070204800" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/joy/resources/css/retype.css?v=1.10.689072862921" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689070204800" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689072862921" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
@@ -243,7 +243,7 @@
         <span>Description</span>
     </h2>
 </doc-anchor-target>
-<p>Performs a masking operation on <code v-pre>original</code>. <code v-pre>keys</code> specifies the subset of fields to select for inclusion in the output. <code v-pre>maskedObject</code> is a new object with a subset of <code v-pre>original</code>&#x27;s <a href="/joy/reference/value/clone/">cloned</a> values. <code v-pre>original</code> is unalerted.</p>
+<p><code v-pre>keys</code> specifies the subset of keys to select for inclusion in the output. <code v-pre>maskedObject</code> is a new object with a subset of <code v-pre>original</code>&#x27;s values. <code v-pre>original</code> is unalerted. <code v-pre>mask</code> does not clone non-primitive values, similar to behavior from <a href="/joy/reference/object/merge/"><code v-pre>merge</code></a>, so use caution.</p>
 
 
 
