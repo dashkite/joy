@@ -18,7 +18,7 @@ has = curry (p, x) -> x[p]?
 
 mask = curry (keys, a) ->
   b = {}
-  b[key] = clone a[key] for key in keys
+  b[key] = a[key] for key in keys
   b
 
 assign = (target, sources...) -> Object.assign target, sources...

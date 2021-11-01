@@ -48,6 +48,10 @@ _Function_ &bull; Returns a sought value from an iterable if it can be found, ot
 ===
 
 
+## Description
+
+`find` processes the elements of `iterable` until it finds a value that returns `true` when passed as an arugment to `searchFunction`. If such a value cannot be found, `find` returns `undefined`.
+
 
 
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function

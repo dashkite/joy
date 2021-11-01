@@ -25,3 +25,5 @@ signatures:
     returns:
       name: output
       description: The result of the search. Either the matching value or `undefined`.
+description: |
+  `find` processes the elements of `iterable` until it finds a value that returns `true` when passed as an arugment to `searchFunction`. If such a value cannot be found, `find` returns `undefined`.

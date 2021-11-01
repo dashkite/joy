@@ -31,11 +31,11 @@ _Function_ &bull; Returns a new object with the specified subset of the values f
 
 ## Description
 
-Performs a masking operation on `original`. `keys` specifies the subset of fields to select for inclusion in the output. `maskedObject` is a new object with a subset of `original`'s [cloned][clone] values. `original` is unalerted.
+`keys` specifies the subset of keys to select for inclusion in the output. `maskedObject` is a new object with a subset of `original`'s values. `original` is unalerted. `mask` does not clone non-primitive values, similar to behavior from [`merge`][merge], so use caution. 
 
 
 
 [Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [Iterable]: #
 [Object]: #
-[clone]: /reference/value/clone.md
+[merge]: /reference/object/merge.md

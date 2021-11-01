@@ -2,11 +2,14 @@ title: merge
 name: merge
 type: function
 summary: >-
-  Adds the properties for _objects_ to _object_. Modifies _object_. If you want
-  to create a new object, use [`merge`](#merge).
+  Returns a new object that compbines the properties of `objects`. If you want
+  to modify an existing object, use [`assign`][].
 signatures:
   - arguments:
-      - name: object
       - name: objects...
+        type: Object
+        description: This is one or more objects to be combined into a new object.
     returns:
-      name: object
+      name: combination
+      type: Object
+      description: A new object created with the combined fields of `objects`. Last applied wins.

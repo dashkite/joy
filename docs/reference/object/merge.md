@@ -3,18 +3,17 @@ order: 1
 ---
 # merge
 
-_Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _object_. If you want to create a new object, use [`merge`](#merge).
+_Function_ &bull; Returns a new object that compbines the properties of `objects`. If you want to modify an existing object, use [`assign`][assign].
 
 
-==- <pre><code>merge object, objects... &rarr; object</code></pre>
+==- <pre><code>merge objects... &rarr; combination</code></pre>
 <hr>
 
 [!badge size="xl" variant="primary" text="Arguments"]
 
 | name | type | description |
 |------|------|-------------|
-|object|Any||
-|objects...|Any||
+|objects...|[`Object`][Object]|This is one or more objects to be combined into a new object.|
 
 <br>
 
@@ -22,7 +21,7 @@ _Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _objec
 
 | name | type | description |
 |------|------|-------------|
-|object|Any||
+|combination|[`Object`][Object]|A new object created with the combined fields of `objects`. Last applied wins.|
 
 
 
@@ -30,3 +29,6 @@ _Function_ &bull; Adds the properties for _objects_ to _object_. Modifies _objec
 
 
 
+
+[assign]: /reference/object/assign.md
+[Object]: #
