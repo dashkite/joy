@@ -1,8 +1,8 @@
-title: equal
-name: equal
+title: eq
+name: eq
 type: function
 summary: >-
-  Returns true if the given values are equal, false otherwise. Performs a deep, recursive comparison.
+  Returns true if the given values are equal, false otherwise. Performs a shallow comparison.
 signatures:
   - arguments:
       - name: a

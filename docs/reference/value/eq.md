@@ -1,12 +1,12 @@
 ---
 order: 1
 ---
-# equal
+# eq
 
-_Function_ &bull; Returns true if the given values are equal, false otherwise. Performs a deep, recursive comparison.
+_Function_ &bull; Returns true if the given values are equal, false otherwise. Performs a shallow comparison.
 
 
-==- <pre><code>equal a, b &rarr; boolean</code></pre>
+==- <pre><code>eq a, b &rarr; boolean</code></pre>
 <hr>
 
 [!badge size="xl" variant="primary" text="Arguments"]

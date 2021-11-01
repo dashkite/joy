@@ -9,9 +9,15 @@ isAny = wrap true
 _includes = generic
   name: "includes"
 
+generic _includes, (wrap true), isReagent, (a, ax) ->
+  for _a from ax
+    return true if Object.is a, (await _a)
+  false
+
 generic _includes, (wrap true), isIterable, (a, ax) ->
-  for _a from ax when a == _a
-    return true
+  for _a from ax
+    return true if Object.is a, _a
+  false
 
 generic _includes, (wrap true), isArray, (a, ax) ->
   ax.includes a

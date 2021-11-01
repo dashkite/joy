@@ -1,9 +1,9 @@
-import {identity, curry} from "./function"
-import { any } from "./predicate"
+import { identity, curry, binary } from "./function"
+import { any, negate } from "./predicate"
 import { generic } from "./generic"
 
 import {
-  isUndefined,
+  isUndefined, isAny
   isSymbol, isRegExp,
   isBuffer, isArrayBuffer, isTypedArray, isDataView,
   isMap, isArray, isObject, isSet,
@@ -11,10 +11,18 @@ import {
   isFunction, isWeakMap, isError
 } from "./type"
 
+hasEqual = (a) => a?.equal?
+
 equal = generic
   name: "equal"
   description: "Performs a deep comparison of two entities."
-  default: (a, b) -> a == b
+  default: (a, b) -> Object.is a, b
+
+generic equal, isAny, hasEqual, (a, b) ->
+  b.equal a
+
+generic equal, hasEqual, isAny, (a, b) ->
+  a.equal b
 
 generic equal, isObject, isObject, (a, b) ->
   return true if a == b
@@ -49,7 +57,7 @@ generic equal, isBuffer, isBuffer, (a, b) ->
 isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
 
 generic equal, isPrimitive, isPrimitive, (a, b) ->
-  a == b
+  Object.is a, b
 
 generic equal, isDate, isDate, (a, b) ->
   a.getTime() == b.getTime()
@@ -78,6 +86,14 @@ generic equal, isMap, isMap, (a, b) ->
     if ! equal value, (b.get key)
       return false
   true
+
+equal = curry binary equal
+
+notEqual = curry negate equal
+
+eq = curry (a, b) -> Object.is a, b
+
+neq = curry negate eq
 
 clone = generic
   name: "clone"
@@ -174,6 +190,9 @@ isEmpty = (x) -> (size x) == 0
 
 export {
   equal
+  notEqual
+  eq
+  neq
   clone
   size
   isEmpty

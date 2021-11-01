@@ -1,8 +1,8 @@
 import {_, curry, partial, apply} from "./function"
 import {negate} from "./predicate"
 
-eq = curry (x, y) -> x == y
-neq = curry (x, y) -> x != y
+# `eq` and `neq` were here, but I moved them to the value module. 
+# TODO: How do we deal with naming overlap? 
 
 gte = curry (x, y) -> y >= x
 lte = curry (x, y) -> y <= x
@@ -29,5 +29,5 @@ pow = curry (x, y) -> x ** y
 square = partial pow, [ _, 2 ]
 cube = partial pow, [ _, 3 ]
 
-export {eq, neq, gt, lt, gte, lte, add, sub, mul, div, mod,
+export {gt, lt, gte, lte, add, sub, mul, div, mod,
   isModulo, even, odd, min, max, abs, pow, square, cube}

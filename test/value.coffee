@@ -2,7 +2,7 @@ import assert from "assert/strict"
 import {test, print} from "amen"
 
 import {sleep} from "../src/time"
-import {equal, clone, size, isEmpty} from "../src/value"
+import {equal, notEqual, eq, neq, clone, size, isEmpty} from "../src/value"
 
 export default ->
 
@@ -74,7 +74,7 @@ export default ->
         assert equal 1, 1
         assert ! equal 1, 2
       test "NaN", ->
-        assert ! equal NaN, NaN
+        assert equal NaN, NaN
       test "string", ->
         assert equal " ", " "
         assert ! equal "", " "
@@ -132,6 +132,11 @@ export default ->
         assert ! equal (new DataView new ArrayBuffer 6),
           (new DataView new ArrayBuffer 8)
 
+      test "curryable", ->
+        isOne = equal 1
+        assert isOne 1
+        assert ! isOne 2
+
 
       # Negative tests
       # test "weak map", ->
@@ -140,6 +145,53 @@ export default ->
       # test "set", ->
       #   assert.throws (-> equal new Set(), new Set())
 
+    ]
+
+    test "notEqual", [
+
+      test "shallow", ->
+        assert ! notEqual "panda", "panda"
+        assert notEqual "panda", "panda2"
+
+      test "deep", ->
+        assert.equal false,
+          notEqual x: 1, y: { z: {a: {b: {c: 12}}} },
+            x: 1, y: { z: {a: {b: {c: 12}}} }
+        assert.equal true,
+          notEqual x: 1, y: { z: {a: {b: {c: 12}}} },
+            x: 1, y: { z: {a: {b: {c: 13}}} }
+    ]
+
+    test "eq", [
+
+      test "equality", ->
+        assert eq 1, 1
+        assert ! eq 1, 2
+
+      test "is shallow", ->
+        assert.equal false,
+          eq { x: 1 }, { x: 1 }
+
+      test "curryable", ->
+        isOne = equal 1
+        assert isOne 1
+        assert ! isOne 2
+    ]
+
+    test "neq", [
+
+      test "negated equality", ->
+        assert ! neq 1, 1
+        assert neq 1, 2
+
+      test "is shallow", ->
+        assert.equal true,
+          neq { x: 1 }, { x: 1 }
+
+      test "curryable", ->
+        isNotOne = neq 1
+        assert ! isNotOne 1
+        assert isNotOne 2
     ]
 
     test "size", [

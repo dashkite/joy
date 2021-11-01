@@ -1,4 +1,4 @@
-import { curry } from "./function"
+import { curry, wrap } from "./function"
 import { any } from "./predicate"
 
 prototype = (value) -> if value? then Object.getPrototypeOf value
@@ -19,6 +19,8 @@ isKind = curry (type, value) ->
 isSynonymousKind = curry (type, value) ->
   value? && ((isSynonymousType type, value) ||
     (isSynonymousKind type, (prototype value)))
+
+isAny = wrap true
 
 # TODO: is this correct? to check generally for a derived type
 # needs tests ....
@@ -109,6 +111,7 @@ export {
   instanceOf
   isDefined
   isUndefined
+  isAny
   isBoolean
   isString
   isSymbol

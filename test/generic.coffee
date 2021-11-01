@@ -11,6 +11,9 @@ import {
 
 import {
   eq
+} from "../src/value"
+
+import {
   gte
   lte
 } from "../src/math"
