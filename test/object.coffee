@@ -32,6 +32,10 @@ export default ->
     test "set", ->
       assert.deepEqual { x: 2 }, (x.set "x", 2, x: 1)
 
+    test "mask", ->
+      assert.deepEqual { foo: "foo", bar: "bar" }, 
+        x.mask [ "foo", "bar" ], { foo: "foo", data: "123", bar: "bar" }
+
     test "assign", ->
       a = x: 1, y: 2
       b = z: 3

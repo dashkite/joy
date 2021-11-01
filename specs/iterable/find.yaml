@@ -1,0 +1,27 @@
+title: find
+name: find
+type: function
+summary: >-
+  Returns a sought value from an iterable if it can be found, otherwise `undefined`.
+  Specialized for array.
+signatures:
+  - arguments:
+      - name: searchFunction
+        type: Function
+        description: The search function that checks for a given value.
+      - name: iterable
+        type: Iterable
+        description: The synchronous or asynchronous iterable containing values to search through.
+    returns:
+      name: output
+      description: The result of the search. Either the matching value or `undefined`.
+  - arguments:
+      - name: searchFunction
+        type: Function
+        description: The search function that checks for a given value.
+      - name: array
+        type: Array
+        description: An array of values to search through.
+    returns:
+      name: output
+      description: The result of the search. Either the matching value or `undefined`.

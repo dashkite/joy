@@ -61,6 +61,34 @@ export default ->
 
       ]
 
+    test "find", do ->
+
+      isFour = (x) -> x == 4
+    
+      [
+        test "iterator", ->
+          assert.deepEqual 4,
+            await _.find isFour, new Set [ 1, 4, 9 ]
+
+          assert.deepEqual undefined,
+            await _.find isFour, new Set [ 1, 5, 9 ]
+
+        test "reagent", ->
+          assert.deepEqual 4,
+            await _.find isFour, reagent [ 1, 4, 9 ]
+
+          assert.deepEqual undefined,
+            await _.find isFour, reagent [ 1, 5, 9 ]
+
+        test "array specialization", ->
+          assert.deepEqual 4,
+            _.find isFour, [ 1, 4, 9 ]
+
+          assert.deepEqual undefined,
+            _.find isFour, [ 1, 5, 9 ]
+
+      ]
+
     test "resolve", ->
       assert.deepEqual [1..3],
         await _.collect _.map ((x) -> x++), ((_.resolve _.map promise) [1..3])

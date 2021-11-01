@@ -1,6 +1,6 @@
 import {curry} from "./function"
 import {isObject, isArray, isFunction, isRegExp} from "./type"
-import {equal} from "./value"
+import { equal, clone } from "./value"
 
 keys = Object.keys
 
@@ -15,6 +15,11 @@ set = curry (key, value, object) ->
   object
 
 has = curry (p, x) -> x[p]?
+
+mask = curry (keys, a) ->
+  b = {}
+  b[key] = clone a[key] for key in keys
+  b
 
 assign = (target, sources...) -> Object.assign target, sources...
 
@@ -35,6 +40,7 @@ export {
   get
   set
   has
+  mask
   assign
   merge
   query

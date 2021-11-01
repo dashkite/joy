@@ -35,4 +35,4 @@ See the [Concept page on equality][Concepts.equality] for more information.
 
 
 
-[Concepts.equality]: /concepts/equality
+[Concepts.equality]: /joy/concepts/equality/

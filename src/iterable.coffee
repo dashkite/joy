@@ -10,8 +10,8 @@ _includes = generic
   name: "includes"
 
 generic _includes, (wrap true), isReagent, (a, ax) ->
-  for _a from ax
-    return true if Object.is a, (await _a)
+  for await _a from ax
+    return true if Object.is a, _a
   false
 
 generic _includes, (wrap true), isIterable, (a, ax) ->
@@ -36,6 +36,18 @@ generic map, isFunction, isArray, (f, ax) -> ax.map (x) -> f x
 map = curry binary map
 
 project = curry (p, i) -> map (get p), i
+
+find = generic name: "find"
+generic find, isFunction, isIterable, (f, i) ->
+  for x from i
+    return x if (await f x) == true
+  undefined
+generic find, isFunction, isReagent, (f, r) ->
+  for await x from r
+    return x if (await f x) == true
+  undefined
+generic find, isFunction, isArray, (f, ax) -> ax.find (x) -> f x
+find = curry binary find
 
 tap = generic name: "tap"
 generic tap, isFunction, isIterable,
@@ -162,6 +174,7 @@ export {
   uniqueBy
   map
   project
+  find
   tap
   select
   reject

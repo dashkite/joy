@@ -1,0 +1,19 @@
+title: mask
+name: mask
+type: function
+summary: >-
+  Returns a new object with the specified subset of the values from the original.
+signatures:
+  - arguments:
+      - name: keys
+        type: Array
+        description: The list of object keys to pull from `original`
+      - name: original
+        type: Iterable
+        description: The synchronous or asynchronous iterable containing values to search through.
+    returns:
+      name: maskedObject
+      type: Object
+      description: The output obejct with a masked subset of the original keys.
+description: |
+  Performs a masking operation on `original`. `keys` specifies the subset of fields to select for inclusion in the output. `maskedObject` is a new object with a subset of `original`'s [cloned][clone] values. `original` is unalerted.
