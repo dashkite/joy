@@ -14,7 +14,7 @@ _Function_ &bull; Returns a new object with the specified subset of the values f
 | name | type | description |
 |------|------|-------------|
 |keys|[`Array`][Array]|The list of object keys to pull from `original`|
-|original|[`Iterable`][Iterable]|The synchronous or asynchronous iterable containing values to search through.|
+|original|[`Iterable`][Iterable]|The object `mask` uses as the basis of its copy.|
 
 <br>
 
@@ -22,7 +22,7 @@ _Function_ &bull; Returns a new object with the specified subset of the values f
 
 | name | type | description |
 |------|------|-------------|
-|maskedObject|[`Object`][Object]|The output obejct with a masked subset of the original keys.|
+|maskedObject|[`Object`][Object]|The output object with a masked subset of the original keys.|
 
 
 

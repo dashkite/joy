@@ -108,6 +108,10 @@ export default ->
         assert equal [1, 2, 3], [1, 2, 3]
         assert ! equal [1, 2, 3], [1, 2, 4]
 
+      test "set", ->
+        assert equal ( new Set [1, 2, 3 ] ), ( new Set [ 1, 2, 3 ] )
+        assert ! equal ( new Set [ 1, 2, 3 ] ), (new Set [ 1, 2, 4 ] )
+
       test "map", ->
         A = new Map()
         B = new Map()

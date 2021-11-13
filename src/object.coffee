@@ -21,6 +21,11 @@ mask = curry (keys, a) ->
   b[key] = a[key] for key in keys
   b
 
+exclude = curry (keys, a) ->
+  b = {}
+  b[key] = value for key, value of a when key not in keys
+  b
+
 assign = (target, sources...) -> Object.assign target, sources...
 
 merge = (objects...) -> Object.assign {}, objects...
@@ -41,6 +46,7 @@ export {
   set
   has
   mask
+  exclude
   assign
   merge
   query

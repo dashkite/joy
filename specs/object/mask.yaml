@@ -10,10 +10,10 @@ signatures:
         description: The list of object keys to pull from `original`
       - name: original
         type: Iterable
-        description: The synchronous or asynchronous iterable containing values to search through.
+        description: The object `mask` uses as the basis of its copy.
     returns:
       name: maskedObject
       type: Object
-      description: The output obejct with a masked subset of the original keys.
+      description: The output object with a masked subset of the original keys.
 description: |
   `keys` specifies the subset of keys to select for inclusion in the output. `maskedObject` is a new object with a subset of `original`'s values. `original` is unalerted. `mask` does not clone non-primitive values, similar to behavior from [`merge`][], so use caution. 

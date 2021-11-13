@@ -12,6 +12,8 @@ import {
 } from "./type"
 
 hasEqual = (a) => a?.equal?
+isNot = (a, b) -> !Object.is a, b
+isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
 
 equal = generic
   name: "equal"
@@ -24,68 +26,74 @@ generic equal, isAny, hasEqual, (a, b) ->
 generic equal, hasEqual, isAny, (a, b) ->
   a.equal b
 
-generic equal, isObject, isObject, (a, b) ->
-  return true if a == b
-  akeys = Object.keys a
-  bkeys = Object.keys b
-  return false if akeys.length != bkeys.length
-  for k in akeys when !(k in bkeys && equal a[k], b[k])
-    return false
-  true
-
 generic equal, isTypedArray, isTypedArray, (a, b) ->
-  if (a.length != b.length) || (a.name != b.name)
+  if (isNot a.length, b.length) || (isNot a.name, b.name)
     return false
   for i in [0..a.length]
-    if a[i] != b[i]
+    if isNot a[i], b[i]
       return false
   true
 
 generic equal, isArrayBuffer, isArrayBuffer, (a, b) ->
-  if a.byteLength != b.byteLength
+  if isNot a.byteLength, b.byteLength
     return false
   equal (new Uint8Array a), (new Uint8Array b)
 
 generic equal, isDataView, isDataView, (a, b) ->
-  if (a.byteLength != b.byteLength) || (a.byteOffset != b.byteOffset)
+  if (isNot a.byteLength, b.byteLength) || (isNot a.byteOffset, b.byteOffset)
     return false
   equal a.buffer, b.buffer
 
 generic equal, isBuffer, isBuffer, (a, b) ->
   a.equals b
 
-isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
-
-generic equal, isPrimitive, isPrimitive, (a, b) ->
-  Object.is a, b
-
 generic equal, isDate, isDate, (a, b) ->
-  a.getTime() == b.getTime()
+  Object.is a.getTime(), b.getTime()
 
 generic equal, isRegExp, isRegExp, (a, b) ->
-  a.toString() == b.toString()
+  Object.is a.toString(), b.toString()
 
 generic equal, isError, isError, (a, b) ->
   (equal a.name, b.name) && (equal a.message, b.message)
 
 generic equal, isSymbol, isSymbol, (a, b) ->
-  a.valueOf() == b.valueOf()
+  Object.is a.valueOf(), b.valueOf()
+
+generic equal, isMap, isMap, (a, b) ->
+  if isNot a.size, b.size
+    return false
+  for [key, value] from a
+    if ! equal value, (b.get key)
+      return false
+  true
+
+generic equal, isSet, isSet, (a, b) ->
+  if isNot a.size, b.size
+    return false
+  for value from a
+    if ! b.has value
+      return false
+  true
 
 generic equal, isArray, isArray, (a, b) ->
-  if a.length != b.length
+  if isNot a.length, b.length
     return false
   for i in [0..a.length]
     if ! equal a[i], b[i]
       return false
   true
 
-generic equal, isMap, isMap, (a, b) ->
-  if a.size != b.size
+generic equal, isObject, isObject, (a, b) ->
+  return true if Object.is a, b
+  akeys = Object.keys a
+  bkeys = Object.keys b
+  return false if isNot akeys.length, bkeys.length
+  for k in akeys when !(k in bkeys && equal a[k], b[k])
     return false
-  for [key, value] from a
-    if ! equal value, (b.get key)
-      return false
   true
+
+generic equal, isPrimitive, isPrimitive, (a, b) ->
+  Object.is a, b
 
 equal = curry binary equal
 
@@ -186,7 +194,7 @@ generic size, isObject, (x) -> (Object.keys x).length
 generic size, hasSize, (x) -> x.size
 generic size, hasLength, (x) -> x.length
 
-isEmpty = (x) -> (size x) == 0
+isEmpty = (x) -> Object.is (size x), 0
 
 export {
   equal

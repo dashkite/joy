@@ -36,6 +36,10 @@ export default ->
       assert.deepEqual { foo: "foo", bar: "bar" }, 
         x.mask [ "foo", "bar" ], { foo: "foo", data: "123", bar: "bar" }
 
+    test "exclude", ->
+      assert.deepEqual { foo: "foo", bar: "bar" }, 
+        x.exclude [ "data" ], { foo: "foo", data: "123", bar: "bar" }
+
     test "assign", ->
       a = x: 1, y: 2
       b = z: 3

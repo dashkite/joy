@@ -1,0 +1,19 @@
+title: exclude
+name: exclude
+type: function
+summary: >-
+  Returns a new object with all the keys from the original except those specified.
+signatures:
+  - arguments:
+      - name: keys
+        type: Array
+        description: The list of object keys to exclude from `original`
+      - name: original
+        type: Iterable
+        description: The object `exclude` uses as the basis of its copy.
+    returns:
+      name: excludedObject
+      type: Object
+      description: A new object with all the keys and values of `original` save those excluded in `keys`.
+description: |
+  `keys` specifies the subset of keys to select for exclusion in the output. `excludedObject` is a new object with a subset of `original`'s values. `original` is unalerted. `exclude` does not clone non-primitive values, similar to behavior from [`merge`][], so use caution. 
