@@ -26,9 +26,9 @@
     <script>(function () { var el = document.documentElement, m = localStorage.getItem("/joy/doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
     <link href="/joy/favicon.ico" rel="icon" />
-    <link href="/joy/resources/css/retype.css?v=1.10.689639613524" rel="stylesheet" data-turbo-track="reload" />
+    <link href="/joy/resources/css/retype.css?v=1.10.690099771006" rel="stylesheet" data-turbo-track="reload" />
 
-    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.689639613524" defer data-turbo-track="reload"></script>
+    <script type="text/javascript" src="/joy/resources/js/config.js?v=1.10.690099771006" defer data-turbo-track="reload"></script>
     <script type="text/javascript" src="/joy/resources/js/retype.js?v=1.10" defer data-turbo-track="reload"></script>
 </head>
     <body>
@@ -212,7 +212,7 @@
 <tr>
 <td>original</td>
 <td><doc-anchor-trigger to="#"><code v-pre>Iterable</code></doc-anchor-trigger></td>
-<td>The synchronous or asynchronous iterable containing values to search through.</td>
+<td>The object <code v-pre>mask</code> uses as the basis of its copy.</td>
 </tr>
 </tbody>
 </table>
@@ -232,7 +232,7 @@
 <tr>
 <td>maskedObject</td>
 <td><doc-anchor-trigger to="#"><code v-pre>Object</code></doc-anchor-trigger></td>
-<td>The output obejct with a masked subset of the original keys.</td>
+<td>The output object with a masked subset of the original keys.</td>
 </tr>
 </tbody>
 </table>
