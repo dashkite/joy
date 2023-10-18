@@ -21,9 +21,25 @@ benchmark = (f) ->
   else
     milliseconds() - start
 
+debounce = do ( last = 0 ) ->
+  ( interval, f ) -> ->
+    now = Date.now()
+    if ( now - last ) > interval
+      last = now
+      do f
+
 export {
   sleep
   timer
   milliseconds
   benchmark
+  debounce
+}
+
+export default {
+  sleep
+  timer
+  milliseconds
+  benchmark
+  debounce
 }

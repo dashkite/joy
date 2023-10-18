@@ -1,5 +1,6 @@
-import assert from "assert"
-import {test, print} from "amen"
+import assert from "@dashkite/assert"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 
 import * as _ from "../src/math"
 
@@ -55,5 +56,5 @@ export default ->
     test "pow", ->
       assert.equal 8, _.pow 2, 3
       pow2 = _.pow 2
-      assert 8, pow2 3
+      assert.equal 8, pow2 3
   ]

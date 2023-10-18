@@ -1,5 +1,6 @@
-import assert from "assert"
-import {test, print} from "amen"
+import assert from "@dashkite/assert"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 
 import * as _ from "../src/time"
 
@@ -38,5 +39,17 @@ export default ->
 
     test "milliseconds", ->
       assert.equal Number, _.milliseconds().constructor
+
+    test "debounce", ->
+      count = 0
+      inc = _.debounce 10, -> count++
+      inc()
+      inc()
+      await _.sleep 11
+      inc()
+      assert.equal 2, count
+
+
+      
 
   ]

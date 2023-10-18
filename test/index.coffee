@@ -1,4 +1,5 @@
-import {success} from "amen"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 import FS from "fs/promises"
 import Path from "path"
 

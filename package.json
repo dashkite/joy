@@ -44,9 +44,11 @@
     "test": "genie test"
   },
   "devDependencies": {
-    "@dashkite/genie": "^0.5.6",
-    "@dashkite/genie-presets": "^0.5.3",
-    "amen": "^3.0.0",
+    "@dashkite/amen": "link:../amen",
+    "@dashkite/amen-console": "link:../amen-console",
+    "@dashkite/assert": "^0.1.4",
+    "@dashkite/genie": "link:../genie",
+    "@dashkite/genie-coffee": "link:../genie-coffee",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
   }

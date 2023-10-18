@@ -1,6 +1,7 @@
-import assert from "assert"
+import assert from "@dashkite/assert"
 import sinon from "sinon"
-import {print, test, success} from "amen"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 
 import * as _f from "../src/function"
 

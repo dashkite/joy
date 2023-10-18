@@ -1,5 +1,6 @@
-import assert from "assert/strict"
-import { test, print } from "amen"
+import assert from "@dashkite/assert"
+import { test, success } from "@dashkite/amen"
+import print from "@dashkite/amen-console"
 import sinon from "sinon"
 import EventEmitter from "events"
 
