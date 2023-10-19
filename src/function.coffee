@@ -198,3 +198,35 @@ export {
   chain
   proxy
 }
+
+export default {
+  identity
+  wrap
+  arity
+  unary
+  binary
+  ternary
+  flip
+  curry
+  _
+  substitute
+  partial
+  spread
+  stack
+  pipeWith
+  pipe
+  compose
+  wait
+  flow
+  flowWith
+  tee
+  rtee
+  once
+  memoize
+  apply
+  bind
+  detach
+  send
+  chain
+  proxy
+}
