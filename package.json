@@ -50,6 +50,7 @@
     "@dashkite/assert": "^0.1.4",
     "@dashkite/genie": "link:../genie",
     "@dashkite/genie-coffee": "link:../genie-coffee",
+    "@dashkite/genie-modules": "link:../genie-modules",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
   }
