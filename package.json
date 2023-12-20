@@ -51,6 +51,7 @@
     "@dashkite/genie": "^0.7.3",
     "@dashkite/genie-coffee": "link:../genie-coffee",
     "@dashkite/genie-modules": "link:../genie-modules",
+    "@dashkite/genie-release": "link:../genie-release",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
   }
