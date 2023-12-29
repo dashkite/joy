@@ -119,7 +119,7 @@ export default ->
         C = new Map()
         A.set "pandas", "are good"
         B.set "pandas", "are good"
-        C.set "pandas", "are best"
+        R.set "pandas", "are best"
         assert equal A, B
         assert ! equal A, C
 
