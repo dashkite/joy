@@ -1,0 +1,11 @@
+title: tag
+name: tag
+type: function
+summary: Given a name and value, 
+  returns an object with a corresponding property.
+signatures:
+  - arguments:
+      - name: key
+      - name: value
+    returns:
+      name: object

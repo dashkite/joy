@@ -38,6 +38,8 @@ query = curry (example, target) ->
   else
     equal example, target
 
+tag = curry ( key, value ) -> [ key ]: value
+
 export {
   keys
   values
@@ -50,4 +52,5 @@ export {
   assign
   merge
   query
+  tag
 }
