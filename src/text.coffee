@@ -123,16 +123,10 @@ w = words = pipe [
 
 isBlank = (s) -> (isString s) && (isEmpty s)
 
-template = (string, filters = {}) ->
-  do ({ key, apply } = {}) ->
-    filters = Object.assign {},
-      {toString, toUpperCase, toLowerCase, trim},
-      filters
-    apply = (string, name) -> filters[name] string
-    (context) ->
-      string.replace /\{\{([^}]+)\}\}/g, (_, target) ->
-        [key, names...] = target.split("|").map trim
-        names.reduce apply, context[key]
+interpolate = Fn.curry ( template, context ) ->
+  parameters = Object.keys context
+  f = new Function "{#{ parameters }}", "return `#{ template }`"
+  f context
 
 export {
   toString
@@ -175,5 +169,5 @@ export {
   match
   isMatch
   replace
-  template
+  interpolate
 }
