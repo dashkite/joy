@@ -123,7 +123,7 @@ w = words = pipe [
 
 isBlank = (s) -> (isString s) && (isEmpty s)
 
-interpolate = Fn.curry ( template, context ) ->
+interpolate = curry ( template, context ) ->
   parameters = Object.keys context
   f = new Function "{#{ parameters }}", "return `#{ template }`"
   f context
