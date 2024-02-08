@@ -18,7 +18,7 @@ has = curry (p, x) -> x?[ p ]?
 
 mask = curry ( keys, a ) ->
   b = {}
-  b[ key ] = a[ key ] for key in keys
+  b[ key ] = a[ key ] for key in keys when a[ key ]?
   b
 
 exclude = curry ( keys, a ) ->
