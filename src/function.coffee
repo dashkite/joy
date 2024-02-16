@@ -68,16 +68,18 @@ flip = (f) ->
       (ax...) -> f.apply @, ax.reverse()
 
 curry = (f) ->
-  arity f.length, (ax...) ->
-    self = @
-    if ax.length >= f.length
-      f.apply self, ax
-    else
-      length = f.length - ax.length
-      if length == 1
-        (x) -> f.apply self, [ ax..., x ]
+  if f.length > 1
+    arity f.length, (ax...) ->
+      self = @
+      if ax.length >= f.length
+        f.apply self, ax
       else
-        curry arity length, (bx...) -> f.apply self, [ ax..., bx... ]
+        length = f.length - ax.length
+        if length == 1
+          (x) -> f.apply self, [ ax..., x ]
+        else
+          curry arity length, (bx...) -> f.apply self, [ ax..., bx... ]
+  else f
 
 _ = {}
 
@@ -150,7 +152,9 @@ apply = curry (f, ax) -> (f ax...)
 
 bind = curry (f, x) -> f.bind x
 
-detach = (f) -> arity (f.length + 1), curry (x, args...) -> f.apply x, args
+detach = (f) ->
+  curry arity (f.length + 1), 
+    (x, args...) -> f.apply x, args
 
 send = curry (name, ax, object) -> object[name].apply object, ax
 

@@ -158,9 +158,13 @@ export default ->
     test "bind", -> assert (_.bind (-> @x), {x: 1})() == 1
 
     test "detach", ->
-      assert.deepEqual (_.detach Array::sort)([5,4,3,2,1]), [1,2,3,4,5]
-      assert.equal 1, (_.detach String::trim).length
-      assert.equal 3, (_.detach String::replace).length
+      shift = _.detach Array::shift
+      replace = _.detach String::replace
+      assert.equal 1, shift [1..5]
+      assert.equal 3, replace.length
+      f = replace "cat"
+      assert.equal 2, f.length
+      assert.equal "dog", f "cat", "dog"
 
     test "send", ->
       class Foo
