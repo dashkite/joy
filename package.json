@@ -50,7 +50,7 @@
     "@dashkite/genie": "link:../genie",
     "@dashkite/genie-clean": "link:../genie-clean",
     "@dashkite/genie-coffee": "link:../genie-coffee",
-    "@dashkite/genie-modules": "link:../genie-modules",
+    "@dashkite/genie-module": "link:../genie-modules",
     "@dashkite/genie-release": "link:../genie-release",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
