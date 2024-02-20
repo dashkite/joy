@@ -35,7 +35,6 @@
       "browser": "./build/browser/src/*.js"
     }
   },
-  "main": "build/node/src/index.js",
   "files": [
     "build/node/src",
     "build/browser/src"
