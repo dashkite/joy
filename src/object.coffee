@@ -40,6 +40,8 @@ query = curry ( example, target ) ->
 
 tag = curry ( key, value ) -> [ key ]: value
 
+foo = "bar"
+
 export {
   keys
   values
