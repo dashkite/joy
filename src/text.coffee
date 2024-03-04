@@ -43,7 +43,7 @@ normalize = (string) ->
   .replace /[\u0300-\u036F]/g, ""
 
 uncase = pipe [
-  replace /^[A-Z]/g, (c) -> R.toLowerCase()
+  replace /^[A-Z]/g, (c) -> c.toLowerCase()
   replace /[A-Z]/g, (c) -> " #{c.toLowerCase()}"
   replace /[_-]/g, " "
 ]

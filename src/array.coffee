@@ -46,13 +46,15 @@ pluck = (ax) -> ax[(round random() * (ax.length - 1))]
 
 pair = curry (a, b) -> [a, b]
 
-sort = curry (f, ax) -> ax.sort f, ax
+sort = curry (f, ax) -> ax.toSorted f, ax
+
+compact = curry ( ax ) -> ax.filter ( a ) -> a?
 
 # https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 #
-{floor, random} = Math
-shuffle = (ax) ->
-  bx = cat ax
+{ floor, random } = Math
+shuffle = ( ax ) ->
+  bx = [ ax... ]
   i = bx.length
   unless i <= 1
     while --i > 0
@@ -90,5 +92,6 @@ export {
   pluck
   pair
   sort
+  compact
   shuffle
 }

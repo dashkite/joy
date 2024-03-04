@@ -72,6 +72,10 @@ export default ->
     test "sort", ->
       assert.deepEqual [0..5], _.sort ((a, b) -> a - b), [5..0]
 
+    test "compact", ->
+      assert.deepEqual [0..5], 
+        _.compact [ 0, null, 1, undefined, 2, 3, undefined, 4, null, 5 ]
+
     test "shuffle", ->
 
       A = [1, 2, 3, 4, 5]

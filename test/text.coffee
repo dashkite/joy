@@ -158,10 +158,10 @@ export default ->
     test "replace", ->
       assert ($.replace /bar/, "baz", "foobar") == "foobaz"
 
-    test "template", ->
-      f = $.template "foo {{ bar | reverse }} baz {{foo}}",
-        reverse: (s) -> s.split("").reverse().join("")
-      assert.equal "foo xuaf baz baz", f foo: "baz", bar: "faux"
+    test "interpolate", ->
+      assert.equal "foo baz bar faux", 
+        $.interpolate "foo ${ foo } bar ${ bar }", 
+          foo: "baz", bar: "faux"
 
 
 ]
