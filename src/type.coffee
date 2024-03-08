@@ -63,6 +63,8 @@ isSet = isType Set
 
 isError = isKind Error
 
+isURL = isType URL
+
 isDefined = (x) -> x?
 
 isUndefined = (x) -> !x?
@@ -129,6 +131,7 @@ export {
   isMap
   isWeakMap
   isSet
+  isURL
   isRegularFunction
   isGeneratorFunction
   isAsyncFunction
