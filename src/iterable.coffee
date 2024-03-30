@@ -4,6 +4,7 @@ import {negate} from "./predicate"
 import {isString, isNumber, isArray, isFunction,
   isIterable, isReagent} from "./type"
 import {get} from "./object"
+import { eq } from "./value"
 isAny = wrap true
 
 _includes = generic
@@ -24,6 +25,7 @@ generic _includes, (wrap true), isArray, (a, ax) ->
 
 includes = curry binary _includes
 
+# TODO should this return an iterator?
 uniqueBy = (f, ax) ->
   bx = []
   (bx.push a) for a from ax when !(bx.find (b) -> f a, b)?
@@ -157,7 +159,6 @@ class Queue
     else
       new Promise (resolve) => @p.push resolve
   isIdle: -> @p.length == 0 && @q.length == 0
-
 
 events = curry (name, source) ->
   q = Queue.create()
