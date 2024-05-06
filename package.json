@@ -41,13 +41,13 @@
   ],
   "scripts": {
     "test": "genie test",
-    "build": "genie build"
+    "build": "genie -x module -- build"
   },
   "devDependencies": {
     "@dashkite/amen": "link:../amen",
     "@dashkite/amen-console": "link:../amen-console",
     "@dashkite/assert": "^0.1.4",
-    "@dashkite/genie": "link:../genie",
+    "@dashkite/genie": "^0.8.4",
     "@dashkite/genie-clean": "link:../genie-clean",
     "@dashkite/genie-coffee": "link:../genie-coffee",
     "@dashkite/genie-module": "link:../genie-module",
