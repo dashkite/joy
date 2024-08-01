@@ -13,7 +13,7 @@ last = ([rest..., last]) -> last
 rest = ([first, rest...]) -> rest
 
 # Array mutators
-push = curry (ax, a) -> ax.push a; ax
+push = curry (a, ax) -> ax.push a; ax
 pop = detach Array::pop
 shift = detach Array::shift
 unshift = curry (a, ax) -> ax.unshift a; ax

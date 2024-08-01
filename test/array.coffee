@@ -18,7 +18,7 @@ export default ->
     test "last", -> assert (_.last [1..5]) == 5
     test "rest", -> assert (_.first _.rest [1..5]) == 2
 
-    test "push/enqueue", -> assert.deepEqual (_.push [1..4], 5), [1..5]
+    test "push/enqueue", -> assert.deepEqual (_.push 5, [1..4]), [1..5]
     test "pop/dequeue", -> assert (_.pop [1..5]) == 5
 
     test "shift", ->
