@@ -144,6 +144,7 @@ generic partition, isNumber, isReagent, (n, r) ->
 
 
 class Queue
+  @make: -> new Queue
   @create: -> new Queue
   constructor: ->
     @q = []
