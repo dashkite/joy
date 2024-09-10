@@ -117,21 +117,6 @@ export default ->
       assert.equal 1, f.length
       assert.equal "Sabc", await f "S"
 
-    test "flowWith", ->
-      r = []
-      log = (f) -> (args...) -> r.push args; f args...
-      a = (x) -> Promise.resolve x + "a"
-      b = (x) -> Promise.resolve x + "b"
-      c = (x) -> Promise.resolve x + "c"
-      f = _.flowWith log, [ a, b, c ]
-      assert.equal 1, f.length
-      assert.equal "Sabc", await f "S"
-      assert.deepEqual r, [
-        [ "S" ]
-        [ "Sa" ]
-        [ "Sab" ]
-      ]
-
     test "spread", ->
       assert.equal "ab", (_.spread (a, b) -> a + b)(["a", "b"])
 

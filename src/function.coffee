@@ -101,15 +101,19 @@ spread = (f) -> (ax) -> f ax...
 
 stack = (f) -> (ax...) -> f ax
 
-# Inspired by Rambda: https://ramdajs.com/docs/#pipeWith
-pipeWith = curry (c, fx) ->
-  gx = ((c f) for f in fx)
-  arity fx[0].length, (ax...) ->
-    for f, i in gx
-      ax = [ f ax... ]
-    ax[0]
+pipe = ( fx ) ->
+  do ( n = fx[ 0 ].length ) ->    
+    arity n, ( args... ) ->
+      for f in fx
+        args = [ f args... ]
+      args[ 0 ]
 
-pipe = pipeWith identity
+flow = ( fx ) ->
+  do ( n = fx[ 0 ].length ) ->    
+    arity n, ( args... ) ->
+      for f in fx
+        args = [ await f args... ]
+      args[ 0 ]
 
 compose = (fx) -> pipe fx.reverse()
 
@@ -117,10 +121,6 @@ wait = (f) ->
   arity f.length, (ax...) ->
     Promise.all ax
       .then (ax) -> f ax...
-
-flow = pipeWith wait
-
-flowWith = curry (c, fx) -> pipeWith (pipe [ c, wait ]), fx
 
 tee = (f) ->
   arity (Math.max f.length, 1), (a, bx...) ->
@@ -185,12 +185,10 @@ export {
   partial
   spread
   stack
-  pipeWith
   pipe
   compose
   wait
   flow
-  flowWith
   tee
   rtee
   once
@@ -217,12 +215,10 @@ export default {
   partial
   spread
   stack
-  pipeWith
   pipe
   compose
   wait
   flow
-  flowWith
   tee
   rtee
   once
