@@ -29,6 +29,15 @@ export default ->
     test "unshift", ->
       assert.deepEqual (_.unshift 0, [1, 2, 3]), [0, 1, 2, 3]
 
+    test "peek", ->
+      ax = [ 1, 2, 3 ]
+      assert.equal 3, _.peek ax
+
+    test "poke", ->
+      ax = [ 1, 2, 3 ]
+      _.poke 4, ax
+      assert.equal 4, _.peek ax
+
     test "cat", -> assert.deepEqual (_.cat [1..5], [6..10]), [1..10]
 
     test "slice", ->

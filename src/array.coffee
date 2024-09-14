@@ -20,6 +20,10 @@ unshift = curry (a, ax) -> ax.unshift a; ax
 enqueue = unshift
 dequeue = pop
 
+# Add for completeness
+peek = ( ax ) -> ax[ ax.length - 1 ]
+poke = ( a, ax ) -> ax[ ax.length - 1 ] = a
+
 # true splice without weird insertion option
 # or compose-breaking return value
 splice = curry (i, n, ax) ->
@@ -114,6 +118,8 @@ export {
   unshift
   enqueue
   dequeue
+  peek
+  poke
   splice
   insert
   remove
