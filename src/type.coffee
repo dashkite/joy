@@ -11,10 +11,11 @@ isSynonymousType = curry (type, value) ->
   type?.name == value.constructor.name
 
 isKind = curry (type, value) ->
-  try
-    value instanceof type
-  catch
-    false
+  ( isType type, value ) || do ->
+    try
+      value instanceof type
+    catch
+      false
 
 isSynonymousKind = curry (type, value) ->
   value? && ((isSynonymousType type, value) ||
