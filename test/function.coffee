@@ -178,6 +178,14 @@ export default ->
 
     ]
 
+    test "map", ->
+      increment = ( x) -> x + 1
+      double = ( x ) -> x * 2
+      square = ( x ) -> x * x
+
+      f = _.map [ increment, double, square ]
+      assert.deepEqual [ 6, 10, 25 ], f 5
+
     test "proxy", ->
 
       class A

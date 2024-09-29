@@ -168,6 +168,13 @@ chain = (f) ->
     else
       self
 
+map = ( fx ) ->
+  do ({ lengths, length } = {}) ->
+    lengths = fx.map ( f ) -> f.length
+    length = Math.max lengths...
+    arity length, ( args... ) ->
+      ( f args... ) for f in fx
+
 proxy = curry (name, ax) ->
   (bx...) -> @[name].apply @, [ ax..., bx... ]
 
@@ -198,6 +205,7 @@ export {
   detach
   send
   chain
+  map
   proxy
 }
 
@@ -228,5 +236,6 @@ export default {
   detach
   send
   chain
+  map
   proxy
 }
