@@ -10,6 +10,8 @@ pairs = ( x ) -> [ k, v ] for k, v of x
 
 get = curry ( key, object ) -> object[ key ]
 
+getx = curry 
+
 set = curry ( key, value, object ) ->
   object[ key ] = value
   object
@@ -40,6 +42,51 @@ query = curry ( example, target ) ->
 
 tag = curry ( key, value ) -> [ key ]: value
 
+collapse = curry ({ prefix, delimiter }, object ) ->
+  delimiter ?= "."
+  result = {}
+  for key, value of object
+    qkey = if prefix? then "#{ prefix }#{ delimiter }#{ key }" else key
+    if isObject value
+      Object.assign result, 
+        collapse { prefix: qkey, delimiter }, value
+    else
+      result[ qkey ] = value
+  result
+
+expand = curry ({ delimiter }, object ) ->
+  delimiter ?= "."
+  result = {}
+  for key, value of object
+    [ keys..., last ] = key.split delimiter
+    current = result
+    for subkey in keys
+      current = ( current[ subkey ] ?= {} )
+    current[ last ] = value
+  result
+
+xget = curry ( key, value ) ->
+  if value?
+    if ( isArray key )
+      if ( key.length > 0 )
+        do ({ first, rest } = {}) ->
+          [ first, rest... ] = key
+          xget rest, value[ first ]
+      else value
+    else
+      xget ( key.split "." ), value
+
+xset = curry ( key, value, object ) ->
+  if ( isArray key )
+    do ({ rest, last, target } = {}) ->
+      [ rest..., last ] = key
+      ( xget rest, object )?[ last ] = value
+  else
+    xset ( key.split "." ), value, object
+
+xhas = curry ( key, target ) ->
+  ( xget key, target )?
+
 export {
   keys
   values
@@ -53,4 +100,9 @@ export {
   merge
   query
   tag
+  expand
+  collapse
+  xget
+  xset
+  xhas
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 build/browser/src/metaclass.js: mTEeEcr-
 build/browser/src/time.js: nLsG75Jq
 build/browser/src/math.js: 7-DCg98z
@@ -13,3 +14,20 @@ build/browser/src/object.js: nWB49Mn4
 build/browser/src/array.js: NtUe14kE
 build/browser/src/type.js: IGdhGeVF
 build/browser/src/function.js: uqic3mMF
+=======
+build/browser/src/math.js: 3fy1i3o5
+build/browser/src/predicate.js: atvbtje2
+build/browser/src/metaclass.js: FflO5O9T
+build/browser/src/time.js: 3biQSPsD
+build/browser/src/generic.js: _xGVuxxm
+build/browser/src/array.js: HcDXqEZR
+build/browser/src/text.js: zAqTOZBV
+build/browser/src/iterable.js: FwCMxoQL
+build/browser/src/function.js: NUU-EWlu
+build/browser/src/index.js: KLMHOHqG
+build/browser/src/set.js: xkgyuoJQ
+build/browser/src/type.js: yswfsW_W
+build/browser/src/object.js: aLmTGW0Q
+build/browser/src/promise.js: 3gbAJmK5
+build/browser/src/value.js: _MWxwp3G
+>>>>>>> origin/winterfell
