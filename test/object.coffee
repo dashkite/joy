@@ -69,20 +69,23 @@ export default ->
         { 'x-a': 1, 'x-b': 2, 'x-c-q': 3, y: 4, 'z-d': 5 }
       assert.deepEqual before, _.expand delimiter: "-", after
 
-    test "xget", ->
+    test "getx", ->
       target = { x: { a: 1, b: 2, c: { q: 3 }}, y: 4, z: { d: 5 }}
-      assert.equal 3, _.xget "x.c.q", target
-      assert.deepEqual { q: 3 }, _.xget "x.c", target
-      assert.deepEqual { d: 5 }, _.xget "z", target
+      assert.equal 3, _.getx "x.c.q", target
+      assert.deepEqual { q: 3 }, _.getx "x.c", target
+      assert.deepEqual { d: 5 }, _.getx "z", target
 
-    test "xset", ->
+    test "setx", ->
       target = { x: { a: 1, b: 2, c: { q: 3 }}, y: 4, z: { d: 5 }}
-      _.xset "x.c.q", 5, target
-      assert.equal 5, _.xget "x.c.q", target
+      _.setx "x.c.q", 5, target
+      assert.equal 5, _.getx "x.c.q", target
+      # implicit initialization
+      _.setx "x.d.q", 7, target
+      assert.equal 7, _.getx "x.d.q", target
 
-    test "xhas", ->
+    test "hasx", ->
       target = { x: { a: 1, b: 2, c: { q: 3 }}, y: 4, z: { d: 5 }}
-      assert _.xhas "x.c.q", target
+      assert _.hasx "x.c.q", target
       assert !(_.has "x.c.p", target )
 
 

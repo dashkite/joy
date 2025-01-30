@@ -159,9 +159,10 @@ class Queue
       @q.shift()
     else
       new Promise (resolve) => @p.push resolve
+
   isIdle: -> @p.length == 0 && @q.length == 0
 
-  [Symbol.asyncIterator]: ->
+  [ Symbol.asyncIterator ]: ->
     loop yield await do @dequeue
 
 events = curry (name, source) ->

@@ -65,27 +65,34 @@ expand = curry ({ delimiter }, object ) ->
     current[ last ] = value
   result
 
-xget = curry ( key, value ) ->
-  if value?
+getx = curry ( key, object ) ->
+  if object?
     if ( isArray key )
-      if ( key.length > 0 )
-        do ({ first, rest } = {}) ->
-          [ first, rest... ] = key
-          xget rest, value[ first ]
-      else value
+      do ({ first, rest } = {}) ->
+        [ first, rest... ] = key
+        if rest.length > 0
+          if object[ first ]?
+            getx rest, object[ first ]
+        else
+          object[ first ]
     else
-      xget ( key.split "." ), value
+      getx ( key.split "." ), object
 
-xset = curry ( key, value, object ) ->
-  if ( isArray key )
-    do ({ rest, last, target } = {}) ->
-      [ rest..., last ] = key
-      ( xget rest, object )?[ last ] = value
-  else
-    xset ( key.split "." ), value, object
+setx = curry ( key, value, object ) ->
+  if object?
+    if ( isArray key )
+      do ({ first, last, target } = {}) ->
+        [ first, rest... ] = key
+        if rest.length > 0
+          object[ first ] ?= {}
+          setx rest, value, object[ first ]
+        else
+          object[ first ] = value
+    else
+      setx ( key.split "." ), value, object
 
-xhas = curry ( key, target ) ->
-  ( xget key, target )?
+hasx = curry ( key, target ) ->
+  ( getx key, target )?
 
 export {
   keys
@@ -102,7 +109,7 @@ export {
   tag
   expand
   collapse
-  xget
-  xset
-  xhas
+  getx
+  setx
+  hasx
 }

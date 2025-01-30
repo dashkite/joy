@@ -70,6 +70,8 @@ isDefined = (x) -> x?
 
 isUndefined = (x) -> !x?
 
+isNull = isUndefined
+
 GeneratorFunction = (-> yield null).constructor
 
 isGeneratorFunction = isType GeneratorFunction
@@ -114,6 +116,7 @@ export {
   instanceOf
   isDefined
   isUndefined
+  isNull
   isAny
   isBoolean
   isString
