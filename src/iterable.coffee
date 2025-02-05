@@ -144,26 +144,32 @@ generic partition, isNumber, isReagent, (n, r) ->
 
 
 class Queue
+
   @make: -> new Queue
+
   @create: -> new Queue
+
   constructor: ->
-    @q = []
     @p = []
-  enqueue: (value) ->
+    @q = []
+
+  enqueue: ( value ) ->
     if @p.length > 0
       apply @p.shift(), [ value ]
     else
       @q.push value
+    @
+
   dequeue: ->
     if @q.length > 0
       @q.shift()
     else
-      new Promise (resolve) => @p.push resolve
+      new Promise ( resolve ) => @p.push resolve
 
   isIdle: -> @p.length == 0 && @q.length == 0
 
   [ Symbol.asyncIterator ]: ->
-    loop yield await do @dequeue
+    loop yield await @dequeue()
 
 events = curry (name, source) ->
   q = Queue.create()
