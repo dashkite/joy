@@ -148,7 +148,7 @@ memoize = (f) ->
     arity f.length, (ax...) ->
       cache[ JSON.stringify ax ] ?= apply f, ax
 
-apply = curry (f, ax) -> (f ax...)
+apply = curry (f, ax) -> f.apply null, ax
 
 bind = curry (f, x) -> f.bind x
 
