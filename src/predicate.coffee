@@ -72,6 +72,7 @@ _attempt = (f) ->
 attempt = (fx) ->
   any (_attempt f for f in fx)
 
+
 export {
   negate
   any

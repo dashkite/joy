@@ -17,7 +17,8 @@ isPrimitive = (x) -> (isBoolean x) || (isNumber x) || (isString x)
 
 equal = generic
   name: "equal"
-  description: "Performs a deep comparison of two entities."
+  description: "Returns true if two values are 
+    semantically (deeply) equal, false otherwise"
   default: (a, b) -> Object.is a, b
 
 generic equal, isAny, hasEqual, (a, b) ->

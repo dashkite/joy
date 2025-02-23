@@ -12,12 +12,12 @@ export default ->
 
     test "timer", [
 
-      test "set", ->
+      await test "set", ->
         new Promise (y, n) ->
           _.timer 100, y
           setTimeout n, 200
 
-      test "cancel", ->
+      await test "cancel", ->
         new Promise (y, n) ->
           cancel = _.timer 100, n
           cancel()
@@ -25,14 +25,14 @@ export default ->
 
     ]
 
-    test "sleep", ->
+    await test "sleep", ->
 
       new Promise (y, n) ->
         setTimeout n, 200
         await _.sleep 100
         y()
 
-    test "benchmark", ->
+    await test "benchmark", ->
       # this can vary quite widely depending on the
       # number of other tests running
       assert 500 > (await _.benchmark -> _.sleep 100)
@@ -40,7 +40,7 @@ export default ->
     test "milliseconds", ->
       assert.equal Number, _.milliseconds().constructor
 
-    test "debounce", ->
+    await test "debounce", ->
       count = 0
       inc = _.debounce 10, -> count++
       inc()
@@ -49,7 +49,12 @@ export default ->
       inc()
       assert.equal 2, count
 
-
-      
+    await test "expect", ->
+      flag = false
+      do ->
+        start = Date.now()
+        await _.sleep 1
+        flag = true
+      assert await _.expect timeout: 50, -> flag == true
 
   ]
