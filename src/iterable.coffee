@@ -170,6 +170,7 @@ class Queue
 
   [ Symbol.asyncIterator ]: ->
     loop yield await @dequeue()
+    return
 
 events = curry (name, source) ->
   q = Queue.create()
@@ -180,6 +181,7 @@ events = curry (name, source) ->
   else throw new TypeError "events: source must support
     `on` or `addEventListener` method"
   loop yield await q.dequeue()
+  return
 
 export {
   includes
