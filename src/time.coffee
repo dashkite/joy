@@ -38,10 +38,11 @@ expect = ->
   do ({ options, predicate, start, result, done } = {}) ->
 
     [ options, predicate ] = switch args.length
-      when 1 then [{ timeout: 1000 }, args... ]
+      when 1 then [{}, args... ]
       when 2 then args
       else throw new Error "expect: invalid arguments"
 
+    options.timeout ?= 1000
     start = Date.now()
 
     done = ->
