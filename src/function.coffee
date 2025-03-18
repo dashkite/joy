@@ -104,16 +104,20 @@ stack = (f) -> (ax...) -> f ax
 pipe = ( fx ) ->
   do ( n = fx[ 0 ].length ) ->    
     arity n, ( args... ) ->
-      for f in fx
-        args = [ f args... ]
-      args[ 0 ]
+      [ f, gx... ] = fx
+      result = f.apply @, args
+      for g in gx
+        result = g.call null, result
+      result
 
 flow = ( fx ) ->
   do ( n = fx[ 0 ].length ) ->    
     arity n, ( args... ) ->
-      for f in fx
-        args = [ await f args... ]
-      args[ 0 ]
+      [ f, gx... ] = fx
+      result = await f.apply @, args
+      for g in gx
+        result = await g.call null, result
+      result
 
 compose = (fx) -> pipe fx.reverse()
 
@@ -124,16 +128,14 @@ wait = (f) ->
 
 tee = (f) ->
   arity (Math.max f.length, 1), (a, bx...) ->
-    self = @
-    if (k = (f.apply self, [ a, bx... ]))?.then?
+    if (k = (f.apply @, [ a, bx... ]))?.then?
       k.then -> a
     else
       a
 
 rtee = (f) ->
   arity (Math.max f.length, 1), (ax..., b) ->
-    self = @
-    if (k = (f.apply self, [ ax..., b ]))?.then?
+    if (k = (f.apply @, [ ax..., b ]))?.then?
       k.then -> b
     else
       b
@@ -141,12 +143,12 @@ rtee = (f) ->
 once = (f) ->
   do (k=undefined) ->
     arity f.length,
-      (ax...) -> if k? then k else (k = apply f, ax)
+      (ax...) -> if k? then k else (k = f.apply @, ax)
 
 memoize = (f) ->
   do (cache = {}) ->
     arity f.length, (ax...) ->
-      cache[ JSON.stringify ax ] ?= apply f, ax
+      cache[ JSON.stringify ax ] ?= f.apply @, ax
 
 apply = curry (f, ax) -> f.apply null, ax
 
@@ -162,18 +164,17 @@ isPromise = (k) -> k instanceof Promise
 
 chain = (f) ->
   arity (Math.max f.length, 1), (ax...) ->
-    self = @
-    if (isPromise (k = (f.apply self, ax)))
-      k.then -> self
+    if (isPromise (k = (f.apply @, ax)))
+      k.then => @
     else
-      self
+      @
 
 map = ( fx ) ->
   do ({ lengths, length } = {}) ->
     lengths = fx.map ( f ) -> f.length
     length = Math.max lengths...
     arity length, ( args... ) ->
-      ( f args... ) for f in fx
+      ( f.apply @, args ) for f in fx
 
 proxy = curry (name, ax) ->
   (bx...) -> @[name].apply @, [ ax..., bx... ]
