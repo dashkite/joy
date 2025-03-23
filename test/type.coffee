@@ -60,6 +60,10 @@ export default ->
           assert $.isSynonymousKind C, b1
           assert $.isSynonymousKind D, b1
 
+
+        test "isDerivedFrom", ->
+          assert $.isDerivedFrom A, B
+
       ]
 
     test "common types", [

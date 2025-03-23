@@ -21,6 +21,11 @@ isSynonymousKind = curry (type, value) ->
   value? && ((isSynonymousType type, value) ||
     (isSynonymousKind type, (prototype value)))
 
+# TODO rename isType and isKind
+#      if these used *Of we could use isType and isKind
+#      to check the types themselves instead of isDerived
+isDerivedFrom = curry ( K, T ) -> isKind K, T::
+
 isAny = wrap true
 
 # TODO: is this correct? to check generally for a derived type
@@ -112,6 +117,7 @@ export {
   isKind
   isSynonymousType
   isSynonymousKind
+  isDerivedFrom
   Type
   instanceOf
   isDefined
