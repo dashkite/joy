@@ -13,12 +13,20 @@ milliseconds =
   else
     -> Date.now()
 
-benchmark = (f) ->
-  start = milliseconds()
-  if (r = f())?.then?
-    r.then -> milliseconds() - start
-  else
-    milliseconds() - start
+benchmark = ( task ) ->
+  ( await measure "anonymous", task )
+    .duration
+
+measure = ( name, task ) ->
+  do ({ finish, measure, result } = {}) ->
+    performance.mark "#{ name }-start"
+    finish = ->
+      performance.mark "#{ name }-finish"
+      measure = performance.measure "#{ name }", 
+        "#{ name }-start", "#{ name }-finish"
+      measure
+    result = task()
+    if result.then? then ( result.then finish ) else finish()
 
 debounce = do ( last = 0 ) ->
   ( interval, f ) -> ->
@@ -75,6 +83,7 @@ export {
   timer
   milliseconds
   benchmark
+  measure
   debounce
   frame
   expect
@@ -85,6 +94,7 @@ export default {
   timer
   milliseconds
   benchmark
+  measure
   debounce
   frame
   expect
