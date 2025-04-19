@@ -117,6 +117,39 @@ export default ->
       assert.equal 1, f.length
       assert.equal "Sabc", await f "S"
 
+    test "bpipe", ->
+      A = class
+      a = -> @x += "a"
+      b = -> @x += "b"
+      c = -> @x += "c"
+      f = _.bpipe [ a, b, c ]
+      A::f = f
+      a = new A
+      a.x = "S"
+      assert.equal "Sabc", a.f()
+
+    test "bcompose", ->
+      A = class
+      a = -> @x += "a"
+      b = -> @x += "b"
+      c = -> @x += "c"
+      f = _.bcompose [ c, b, a ]
+      A::f = f
+      a = new A
+      a.x = "S"
+      assert.equal "Sabc", a.f()
+
+    test "bflow", ->
+      A = class
+      a = -> @x += await Promise.resolve "a"
+      b = -> @x += await Promise.resolve "b"
+      c = -> @x += await Promise.resolve "c"
+      f = _.bflow [ a, b, c ]
+      A::f = f
+      a = new A
+      a.x = "S"
+      assert.equal "Sabc", await a.f()
+
     test "spread", ->
       assert.equal "ab", (_.spread (a, b) -> a + b)(["a", "b"])
 

@@ -105,7 +105,7 @@ pipe = ( fx ) ->
   do ( n = fx[ 0 ].length ) ->    
     arity n, ( args... ) ->
       [ f, gx... ] = fx
-      result = f.apply @, args
+      result = f.apply null, args
       for g in gx
         result = g.call null, result
       result
@@ -114,12 +114,32 @@ flow = ( fx ) ->
   do ( n = fx[ 0 ].length ) ->    
     arity n, ( args... ) ->
       [ f, gx... ] = fx
-      result = await f.apply @, args
+      result = await f.apply null, args
       for g in gx
         result = await g.call null, result
       result
 
 compose = (fx) -> pipe fx.reverse()
+
+bpipe = ( fx ) ->
+  do ( n = fx[ 0 ].length ) ->    
+    arity n, ( args... ) ->
+      [ f, gx... ] = fx
+      result = f.apply @, args
+      for g in gx
+        result = g.call @, result
+      result
+
+bflow = ( fx ) ->
+  do ( n = fx[ 0 ].length ) ->    
+    arity n, ( args... ) ->
+      [ f, gx... ] = fx
+      result = await f.apply @, args
+      for g in gx
+        result = await g.call @, result
+      result
+
+bcompose = (fx) -> bpipe fx.reverse()
 
 wait = (f) ->
   arity f.length, (ax...) ->
@@ -197,6 +217,9 @@ export {
   compose
   wait
   flow
+  bpipe
+  bcompose
+  bflow
   tee
   rtee
   once
@@ -228,6 +251,9 @@ export default {
   compose
   wait
   flow
+  bpipe
+  bcompose
+  bflow
   tee
   rtee
   once
