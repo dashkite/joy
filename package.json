@@ -53,6 +53,7 @@
     "@dashkite/genie-module": "link:../genie-module",
     "@dashkite/genie-release": "link:../genie-release",
     "@dashkite/genie-watch": "link:../genie-watch",
+    "@dashkite/vista": "link:../vista",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
   },
