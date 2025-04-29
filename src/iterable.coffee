@@ -25,7 +25,6 @@ generic _includes, (wrap true), isArray, (a, ax) ->
 
 includes = curry binary _includes
 
-# TODO should this return an iterator?
 uniqueBy = (f, ax) ->
   bx = []
   (bx.push a) for a from ax when !(bx.find (b) -> f a, b)?

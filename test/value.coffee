@@ -216,7 +216,6 @@ export default ->
 
     ]
 
-    # TODO probably needs more tests
     test "merge", [
 
       test "merge shallow objects", ->

@@ -20,8 +20,6 @@ export default ->
     test "fromBase", ->
       assert.equal 5, $.fromBase 2, "101"
       assert.equal 63, $.fromBase 16, "3f"
-      # TODO fromBase doesn't return BigInt
-      # assert.equal 2n ** 64n, $.fromBase 36, "3w5e11264sgsg"
 
     test "parseNumber", ->
       assert.equal 25, $.parseNumber " 25 "

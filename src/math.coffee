@@ -2,7 +2,6 @@ import {_, curry, partial, apply} from "./function"
 import {negate} from "./predicate"
 
 # `eq` and `neq` were here, but I moved them to the value module. 
-# TODO: How do we deal with naming overlap? 
 
 gte = curry (x, y) -> y >= x
 lte = curry (x, y) -> y <= x

@@ -37,18 +37,6 @@ debounce = do ( last = 0 ) ->
 
 
 # from Wayland
-# TODO use this version?
-#
-# debounce = ( f ) ->
-#   # ensure the first time always fires
-#   do ({ last, tolerance } = {}) ->
-#     tolerance = 500 #ms
-#     last = -tolerance
-#     ( args... ) ->
-#       current = performance.now()
-#       if tolerance <= ( current - last )
-#         last = current
-#         f args...
 
 frame = ->
   new Promise ( resolve ) ->

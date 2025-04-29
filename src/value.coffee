@@ -197,10 +197,6 @@ generic size, hasLength, (x) -> x.length
 
 isEmpty = (x) -> Object.is (size x), 0
 
-# TODO should merge of scalars return 2nd value?
-#      we could make this merge an internal function
-#      and throw if we get unmergeable objects
-# TODO handle Map, WeakMap, Set
 
 merge = generic
   name: "merge"
