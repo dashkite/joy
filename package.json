@@ -55,5 +55,8 @@
     "@dashkite/genie-watch": "link:../genie-watch",
     "retypeapp": "^1.10.0",
     "sinon": "^12.0.1"
+  },
+  "dependencies": {
+    "deepmerge": "^4.3.1"
   }
 }

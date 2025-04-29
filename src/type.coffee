@@ -71,11 +71,15 @@ isError = isKind Error
 
 isURL = isType URL
 
+# TODO the semantics of null and undefined may need refinement
+
 isDefined = (x) -> x?
 
 isUndefined = (x) -> !x?
 
 isNull = isUndefined
+
+#--------------------------------------------------------------
 
 GeneratorFunction = (-> yield null).constructor
 

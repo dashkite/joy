@@ -64,7 +64,7 @@ camelCase = pipe [
   ]
 ]
 
-dashed = dashes = dash = pipe [
+dashed = dashes = dash = hyphenate = pipe [
   uncase
   gloss
   replace /\s/g, (s) -> "-"
@@ -143,6 +143,7 @@ export {
   dashed
   dashes
   dash
+  hyphenate
   underscored
   underscores
   underscore

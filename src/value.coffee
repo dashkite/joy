@@ -197,6 +197,32 @@ generic size, hasLength, (x) -> x.length
 
 isEmpty = (x) -> Object.is (size x), 0
 
+# TODO should merge of scalars return 2nd value?
+#      we could make this merge an internal function
+#      and throw if we get unmergeable objects
+# TODO handle Map, WeakMap, Set
+
+merge = generic
+  name: "merge"
+  description: "Perform a deep merge of two values"
+  default: ( x, y ) -> y
+
+generic merge, isObject, isObject, ( x, y ) ->
+  result = {}
+  for key, value of x
+    result[ key ] = value
+  for key, value of y
+    if x[ key ]?
+      result[ key ] = merge x[ key ], value
+    else
+      result[ key ] = value
+  result
+
+generic merge, isArray, isArray, ( x, y ) ->
+  [ x..., y... ]
+
+merge = curry binary merge
+
 export {
   equal
   notEqual
@@ -205,4 +231,5 @@ export {
   clone
   size
   isEmpty
+  merge
 }

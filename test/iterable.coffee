@@ -94,6 +94,30 @@ export default ->
       assert.deepEqual [1..3],
         await _.collect _.map ((x) -> x++), ((_.resolve _.map promise) [1..3])
 
+    test "zip", [
+
+      test "iterator x iterator", ->
+        assert.deepEqual [[ 1, 2 ], [ 3, 4 ], [ 5, undefined ]],
+          Array.from _.zip [ 1, 3, 5 ], [ 2, 4 ]
+
+      test "reagent x iterator", ->
+        i = ( do -> yield await 1;  yield 3; yield 5 )
+        assert.deepEqual [[ 1, 2 ], [ 3, 4 ], [ 5, undefined ]],
+         await _.collect _.zip i, [ 2, 4 ]
+    
+      test "iterator x reagent", ->
+        j = ( do -> yield await 2;  yield 4 )
+        assert.deepEqual [[ 1, 2 ], [ 3, 4 ], [ 5, undefined ]],
+         await _.collect _.zip [ 1, 3, 5 ], j
+
+      test "reagent x reagent", ->
+        i = ( do -> yield await 1;  yield 3; yield 5 )
+        j = ( do -> yield await 2;  yield 4 )
+        assert.deepEqual [[ 1, 2 ], [ 3, 4 ], [ 5, undefined ]],
+         await _.collect _.zip i, j
+
+    ]
+
     test "tap", do ({f} = {}) ->
 
       [

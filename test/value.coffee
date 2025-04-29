@@ -2,8 +2,9 @@ import assert from "@dashkite/assert"
 import { test, success } from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
-import {sleep} from "../src/time"
-import {equal, notEqual, eq, neq, clone, size, isEmpty} from "../src/value"
+import { sleep } from "../src/time"
+import { equal, notEqual, eq, neq, 
+  clone, size, isEmpty, merge } from "../src/value"
 
 export default ->
 
@@ -213,6 +214,65 @@ export default ->
         assert isEmpty new Set
         assert ! isEmpty new Set [ 0 ]
 
+    ]
+
+    # TODO probably needs more tests
+    test "merge", [
+
+      test "merge shallow objects", ->
+        x = { a: 1, b: 2 }
+        y = { c: 3 }
+        assert.deepEqual ( merge x, y ),
+          { a: 1, b: 2, c: 3 }
+
+      test "merge nested objects", ->
+        x = { a: { b: 2 }}
+        y = { a: { c: 3 }}
+        assert.deepEqual ( merge x, y ),
+          { a: { b: 2, c: 3 }}
+
+      test "merge shallow arrays", ->
+        x = [ 1, 2 ]
+        y = [ 3 ]
+        assert.deepEqual ( merge x, y ),
+          [ 1, 2, 3 ]
+
+      test "merge nested arrays", ->
+        x = [ 1, [ 2 ]]
+        y = [[ 3 ]]
+        assert.deepEqual ( merge x, y ),
+          [ 1, [ 2 ], [ 3 ]]
+
+      test "merge with conflicting values", ->
+        x = { a: 1, b: 2 }
+        y = { b: 3 }
+        assert.deepEqual ( merge x, y ),
+          { a: 1, b: 3 }
+
+      test "basic merge", ->
+        # adapted from: 
+        #  https://github.com/TehShrike/deepmerge?tab=readme-ov-file#example-usage
+        x =
+          foo: { bar: 3 }
+          array: [
+            { does: "work", too: [ 1, 2, 3 ]}
+          ]
+        y =
+          foo: { baz: 4 }
+          quux: 5
+          array: [
+            { does: "work", too: [ 4, 5, 6 ]}
+            { really: "yes" }
+          ]
+
+        assert.deepEqual ( merge x, y ),
+          foo: { bar: 3, baz: 4 }
+          array: [
+            { does: "work", too: [ 1, 2, 3 ]}
+            { does: "work", too: [ 4, 5, 6 ]}
+            { really: "yes" }
+          ]
+          quux: 5
     ]
 
 

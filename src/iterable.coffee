@@ -69,6 +69,49 @@ select = curry binary select
 
 reject = curry (f, i) -> select (negate f), i
 
+zip = generic name: "zip"
+generic zip, isIterable, isIterable, ( i, j ) ->
+  i = i[ Symbol.iterator ]()
+  j = j[ Symbol.iterator ]()
+  p = i.next()
+  q = j.next()
+  while !( p.done && q.done )
+    yield [ p.value, q.value ]
+    p = i.next()
+    q = j.next()
+
+generic zip, isIterable, isReagent, ( i, j ) ->
+  i = i[ Symbol.iterator ]()
+  j = j[ Symbol.asyncIterator ]()
+  p = i.next()
+  q = await j.next()
+  while !( p.done && q.done )
+    yield [ p.value, q.value ]
+    p = i.next()
+    q = await j.next()
+
+generic zip, isReagent, isIterable, ( i, j ) ->
+  i = i[ Symbol.asyncIterator ]()
+  j = j[ Symbol.iterator ]()
+  p = await i.next()
+  q = j.next()
+  while !( p.done && q.done )
+    yield [ p.value, q.value ]
+    p = await i.next()
+    q = j.next()
+
+generic zip, isReagent, isReagent, ( i, j ) ->
+  i = i[ Symbol.asyncIterator ]()
+  j = j[ Symbol.asyncIterator ]()
+  p = await i.next()
+  q = await j.next()
+  while !( p.done && q.done )
+    yield [ p.value, q.value ]
+    p = await i.next()
+    q = await j.next()
+
+zip = curry binary zip
+
 resolve = curry (filter, producer) ->
   yield await x for await x from filter producer
 
@@ -142,7 +185,6 @@ generic partition, isNumber, isReagent, (n, r) ->
   if batch.length > 0
     yield batch
 
-
 class Queue
 
   @make: -> new Queue
@@ -193,6 +235,7 @@ export {
   select
   reject
   resolve
+  zip
   collect
   start
   each
