@@ -3,7 +3,7 @@ import { any, negate } from "./predicate"
 import { generic } from "./generic"
 
 import {
-  isUndefined, isAny
+  isNullish, isAny
   isSymbol, isRegExp,
   isBuffer, isArrayBuffer, isTypedArray, isDataView,
   isMap, isArray, isObject, isSet,
@@ -112,7 +112,7 @@ clone = generic
     throw new Error "clone: no match on entity #{entity?.constructor?.name}"
 
 isPrimitive = any [
-  isUndefined
+  isNullish
   isNumber
   isString
   isBoolean

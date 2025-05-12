@@ -65,12 +65,17 @@ isError = isKind Error
 
 isURL = isType URL
 
+isNotNullish = (x) -> x?
 
-isDefined = (x) -> x?
+isNullish = (x) -> !x?
 
-isUndefined = (x) -> !x?
+isNull = ( x ) -> x == null
 
-isNull = isUndefined
+isNotNull = ( x ) -> x != null
+
+isDefined = ( x ) -> x != undefined
+
+isUndefined = ( x ) -> x == undefined
 
 #--------------------------------------------------------------
 
@@ -117,9 +122,12 @@ export {
   isDerivedFrom
   Type
   instanceOf
+  isNull
+  isNotNull
   isDefined
   isUndefined
-  isNull
+  isNullish
+  isNotNullish
   isAny
   isBoolean
   isString
