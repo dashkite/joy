@@ -101,43 +101,27 @@ spread = (f) -> (ax) -> f ax...
 
 stack = (f) -> (ax...) -> f ax
 
-pipe = ( fx ) ->
-  do ( n = fx[ 0 ].length ) ->    
-    arity n, ( args... ) ->
-      [ f, gx... ] = fx
-      result = f.apply null, args
-      for g in gx
-        result = g.call null, result
-      result
+pipe = ([ f, gx... ]) ->
+  if gx.length == 0
+    f
+  else
+    do ({ g } = {}) ->
+      g = pipe gx
+      arity ( f.length ), ( args... ) ->
+        do ({ self, x } = { self: @ }) ->
+          x = f.apply self, args
+          if x.then?
+            x.then ( g.bind self )
+          else
+            g.call self, x
 
-flow = ( fx ) ->
-  do ( n = fx[ 0 ].length ) ->    
-    arity n, ( args... ) ->
-      [ f, gx... ] = fx
-      result = await f.apply null, args
-      for g in gx
-        result = await g.call null, result
-      result
+flow = pipe
 
 compose = (fx) -> pipe fx.reverse()
 
-bpipe = ( fx ) ->
-  do ( n = fx[ 0 ].length ) ->    
-    arity n, ( args... ) ->
-      [ f, gx... ] = fx
-      result = f.apply @, args
-      for g in gx
-        result = g.call @, result
-      result
+bpipe = pipe
 
-bflow = ( fx ) ->
-  do ( n = fx[ 0 ].length ) ->    
-    arity n, ( args... ) ->
-      [ f, gx... ] = fx
-      result = await f.apply @, args
-      for g in gx
-        result = await g.call @, result
-      result
+bflow = pipe
 
 bcompose = (fx) -> bpipe fx.reverse()
 

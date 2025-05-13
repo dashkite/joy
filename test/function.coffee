@@ -113,7 +113,7 @@ export default ->
       a = (x) -> Promise.resolve x + "a"
       b = (x) -> Promise.resolve x + "b"
       c = (x) -> Promise.resolve x + "c"
-      f = _.flow [ a, b, c ]
+      f = _.pipe [ a, b, c ]
       assert.equal 1, f.length
       assert.equal "Sabc", await f "S"
 
@@ -122,7 +122,7 @@ export default ->
       a = -> @x += "a"
       b = -> @x += "b"
       c = -> @x += "c"
-      f = _.bpipe [ a, b, c ]
+      f = _.pipe [ a, b, c ]
       A::f = f
       a = new A
       a.x = "S"
@@ -133,7 +133,7 @@ export default ->
       a = -> @x += "a"
       b = -> @x += "b"
       c = -> @x += "c"
-      f = _.bcompose [ c, b, a ]
+      f = _.compose [ c, b, a ]
       A::f = f
       a = new A
       a.x = "S"
@@ -144,11 +144,19 @@ export default ->
       a = -> @x += await Promise.resolve "a"
       b = -> @x += await Promise.resolve "b"
       c = -> @x += await Promise.resolve "c"
-      f = _.bflow [ a, b, c ]
+      f = _.pipe [ a, b, c ]
       A::f = f
       a = new A
       a.x = "S"
       assert.equal "Sabc", await a.f()
+
+    test "implicit conversion from sync to async", ->
+      a = (x) -> x + "a"
+      b = (x) -> Promise.resolve x + "b"
+      c = (x) -> x + "c"
+      f = _.pipe [ a, b, c ]
+      assert.equal 1, f.length
+      assert.equal "Sabc", await f "S"
 
     test "spread", ->
       assert.equal "ab", (_.spread (a, b) -> a + b)(["a", "b"])
