@@ -150,6 +150,12 @@ export default ->
       a.x = "S"
       assert.equal "Sabc", await a.f()
 
+    test "pipe: binding applied for a single function", ->
+      a = -> @x + "a"
+      f = _.pipe [ a ]
+      assert.equal 0, f.length
+      assert.equal "Sa", f.call x: "S"
+
     test "implicit conversion from sync to async", ->
       a = (x) -> x + "a"
       b = (x) -> Promise.resolve x + "b"
