@@ -103,7 +103,7 @@ stack = (f) -> (ax...) -> f ax
 
 pipe = ([ f, gx... ]) ->
   if gx.length == 0
-    f
+    f ? identity
   else
     do ({ g } = {}) ->
       g = pipe gx

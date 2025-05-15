@@ -93,77 +93,90 @@ export default ->
     test "wait", ->
       assert.equal 4, await ((_.wait _.identity)(Promise.resolve 4))
 
-    test "pipe", ->
-      a = (x) -> x + "a"
-      b = (x) -> x + "b"
-      c = (x) -> x + "c"
-      f = _.pipe [ a, b, c ]
-      assert.equal 1, f.length
-      assert.equal "Sabc", f "S"
+    test "pipe", [
 
-    test "compose", ->
-      a = (x) -> x + "a"
-      b = (x) -> x + "b"
-      c = (x) -> x + "c"
-      f = _.compose [ c, b, a ]
-      assert.equal 1, f.length
-      assert.equal "Sabc", f "S"
+      test "synchronous pipe", ->
+        a = (x) -> x + "a"
+        b = (x) -> x + "b"
+        c = (x) -> x + "c"
+        f = _.pipe [ a, b, c ]
+        assert.equal 1, f.length
+        assert.equal "Sabc", f "S"
 
-    test "flow", ->
-      a = (x) -> Promise.resolve x + "a"
-      b = (x) -> Promise.resolve x + "b"
-      c = (x) -> Promise.resolve x + "c"
-      f = _.pipe [ a, b, c ]
-      assert.equal 1, f.length
-      assert.equal "Sabc", await f "S"
+      test "compose", ->
+        a = (x) -> x + "a"
+        b = (x) -> x + "b"
+        c = (x) -> x + "c"
+        f = _.compose [ c, b, a ]
+        assert.equal 1, f.length
+        assert.equal "Sabc", f "S"
 
-    test "bpipe", ->
-      A = class
-      a = -> @x += "a"
-      b = -> @x += "b"
-      c = -> @x += "c"
-      f = _.pipe [ a, b, c ]
-      A::f = f
-      a = new A
-      a.x = "S"
-      assert.equal "Sabc", a.f()
+      test "flow [deprecated]", ->
+        a = (x) -> Promise.resolve x + "a"
+        b = (x) -> Promise.resolve x + "b"
+        c = (x) -> Promise.resolve x + "c"
+        f = _.pipe [ a, b, c ]
+        assert.equal 1, f.length
+        assert.equal "Sabc", await f "S"
 
-    test "bcompose", ->
-      A = class
-      a = -> @x += "a"
-      b = -> @x += "b"
-      c = -> @x += "c"
-      f = _.compose [ c, b, a ]
-      A::f = f
-      a = new A
-      a.x = "S"
-      assert.equal "Sabc", a.f()
+      test "bpipe [deprecated]", ->
+        A = class
+        a = -> @x += "a"
+        b = -> @x += "b"
+        c = -> @x += "c"
+        f = _.pipe [ a, b, c ]
+        A::f = f
+        a = new A
+        a.x = "S"
+        assert.equal "Sabc", a.f()
 
-    test "bflow", ->
-      A = class
-      a = -> @x += await Promise.resolve "a"
-      b = -> @x += await Promise.resolve "b"
-      c = -> @x += await Promise.resolve "c"
-      f = _.pipe [ a, b, c ]
-      A::f = f
-      a = new A
-      a.x = "S"
-      assert.equal "Sabc", await a.f()
+      test "bcompose [deprecated]", ->
+        A = class
+        a = -> @x += "a"
+        b = -> @x += "b"
+        c = -> @x += "c"
+        f = _.compose [ c, b, a ]
+        A::f = f
+        a = new A
+        a.x = "S"
+        assert.equal "Sabc", a.f()
 
-    test "pipe: binding applied for a single function", ->
-      a = -> @x + "a"
-      f = _.pipe [ a ]
-      assert.equal 0, f.length
-      assert.equal "Sa", f.call x: "S"
+      test "bflow [deprecated]", ->
+        A = class
+        a = -> @x += await Promise.resolve "a"
+        b = -> @x += await Promise.resolve "b"
+        c = -> @x += await Promise.resolve "c"
+        f = _.pipe [ a, b, c ]
+        A::f = f
+        a = new A
+        a.x = "S"
+        assert.equal "Sabc", await a.f()
 
-    test "implicit conversion from sync to async", ->
-      a = (x) -> x + "a"
-      b = (x) -> Promise.resolve x + "b"
-      c = (x) -> x + "c"
-      f = _.pipe [ a, b, c ]
-      assert.equal 1, f.length
-      assert.equal "Sabc", await f "S"
+      test "bound function", ->
+        a = -> @x + "a"
+        f = _.pipe [ a ]
+        assert.equal 0, f.length
+        assert.equal "Sa", f.call x: "S"
 
+      test "implicit conversion to async", ->
+        a = (x) -> x + "a"
+        b = (x) -> Promise.resolve x + "b"
+        c = (x) -> x + "c"
+        f = _.pipe [ a, b, c ]
+        assert.equal 1, f.length
+        assert.equal "Sabc", await f "S"
+
+      test "pipe [ f ] ==> f", ->
+        f = ->
+        g = _.pipe [ f ]
+        assert.equal f, g
+
+      test "pipe [] ==> identity", ->
+        f = _.pipe []
+        assert f true
+
+    ] 
+    
     test "spread", ->
       assert.equal "ab", (_.spread (a, b) -> a + b)(["a", "b"])
 
