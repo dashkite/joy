@@ -110,7 +110,7 @@ pipe = ([ f, gx... ]) ->
       arity ( f.length ), ( args... ) ->
         do ({ self, x } = { self: @ }) ->
           x = f.apply self, args
-          if x.then?
+          if x?.then?
             x.then ( g.bind self )
           else
             g.call self, x
