@@ -28,6 +28,24 @@ methods = curry (dictionary, target) ->
 
 mixin = curry (target, fx) -> f target for f in fx ; target
 
+metaclass = ( base = Object ) ->
+
+  class extends base
+
+    @getter: ( key, f ) -> getter key, f, @::
+    @setter: ( key, f ) -> setter key, f, @::
+    @property: ( key, specifier ) -> property key, specifier, @::
+    @getters: ( dictionary ) -> getters dictionary, @::
+    @setters: ( dictionary ) -> setters dictionary, @::
+    @properties: ( dictionary ) -> properties dictionary, @::
+
+    @$getter: ( key, f ) -> getter key, f, @
+    @$setter: ( key, f ) -> setter key, f, @
+    @$property: ( key, specifier ) -> property key, specifier, @
+    @$getters: ( dictionary ) -> getters dictionary, @
+    @$setters: ( dictionary ) -> setters dictionary, @
+    @$properties: ( dictionary ) -> properties dictionary, @
+
 export {
   property
   getter
@@ -38,4 +56,5 @@ export {
   setters
   methods
   mixin
+  metaclass
 }
