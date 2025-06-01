@@ -83,6 +83,14 @@ GeneratorFunction = (-> yield null).constructor
 
 isGeneratorFunction = isType GeneratorFunction
 
+AsyncGeneratorFunction = (-> yield await null).constructor
+
+isAsyncGeneratorFunction = isType AsyncGeneratorFunction
+
+ReactorFunction = AsyncGeneratorFunction
+
+isReactorFunction = isAsyncGeneratorFunction
+
 isPromise = isType Promise
 
 isAsyncFunction = isType (-> await null).constructor
@@ -148,7 +156,12 @@ export {
   isSet
   isURL
   isRegularFunction
+  GeneratorFunction
   isGeneratorFunction
+  AsyncGeneratorFunction
+  isAsyncGeneratorFunction
+  ReactorFunction
+  isReactorFunction
   isAsyncFunction
   isFunction
   isBuffer
