@@ -25,7 +25,6 @@ isDerivedFrom = curry ( K, T ) -> isKind K, T::
 
 isAny = wrap true
 
-
 isNumber = any [
   isType Number
   isType BigInt
