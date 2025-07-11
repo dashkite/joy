@@ -41,7 +41,8 @@
   ],
   "scripts": {
     "test": "genie test",
-    "build": "genie -x module -- build"
+    "build": "genie -x module -- build",
+    "release": "genie release"
   },
   "devDependencies": {
     "@dashkite/amen": "link:../amen",
