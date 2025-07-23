@@ -139,6 +139,25 @@ export default ->
         f = -> await true
         assert $.isAsyncFunction f
 
+      test "isPromise", ->
+
+        p = Promise.resolve true
+        assert $.isPromise p
+
+        class FooPromise extends Promise
+        p = new FooPromise ->
+        assert $.isPromise p
+
+      test "isThenable", ->
+
+        p = Promise.resolve true
+        assert $.isThenable p
+
+        class Foo
+          then: ->
+
+        p = new Foo
+        assert $.isThenable p
     ]
 
     test "Type", do ->

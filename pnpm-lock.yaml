@@ -15,8 +15,8 @@ importers:
         specifier: 0.4.0
         version: 0.4.0
       '@dashkite/assert':
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.1.4
+        version: 0.1.4
       '@dashkite/genie':
         specifier: ^0.16.0
         version: 0.16.0
@@ -27,8 +27,8 @@ importers:
         specifier: 0.9.0
         version: 0.9.0
       '@dashkite/genie-release':
-        specifier: ^0.2.14
-        version: 0.2.14
+        specifier: link:../genie-release
+        version: link:../genie-release
       '@dashkite/genie-watch':
         specifier: 0.5.0
         version: 0.5.0(@aws-sdk/credential-provider-node@3.529.0)
@@ -845,8 +845,8 @@ packages:
   '@dashkite/amen@0.5.0':
     resolution: {integrity: sha512-Fe9F26jje4dje5qb+EwH9SN3c1s3Ipv7IVYEn9qunXdM3+0DfP4BoKoWqQ0h+ZAl8lv0uwH/LPZylV5e7H7w+w==}
 
-  '@dashkite/assert@0.3.0':
-    resolution: {integrity: sha512-x0lHMF8k2CkFrx7gmtT8qoZ3GPk+RPPLRG5RcKMheqS7zDPEDPZ7IkHzXt2kq7LyvTMZZ+TI3suW44+Ms6Mqbg==}
+  '@dashkite/assert@0.1.4':
+    resolution: {integrity: sha512-OLOzI/lA+EwCh6znSexGAG1V4bkaT5gU04xl6ApEluv5jICnHhinZ707MObu+jhVVJ9uHDDlG85O+Afn1aTQoQ==}
 
   '@dashkite/dolores@0.1.0':
     resolution: {integrity: sha512-EyL1wH7HdVRCAr42nkkYqsYwW/zzUsA9Dq2/jJ3mnbuJcIZLqj6kiQNgcXdhs0By4egGnOvyndKGpVOTl8QBYg==}
@@ -856,9 +856,6 @@ packages:
 
   '@dashkite/genie-coffee@0.9.0':
     resolution: {integrity: sha512-8Ukg3m/nQnxbmrww313lzYJJQRAxhRgbPpbqCWj7ovzS8LejoA1OGbbjRd8Ew7SdzZrJ6WYY7d08VxIbim72mw==}
-
-  '@dashkite/genie-release@0.2.14':
-    resolution: {integrity: sha512-nCl/031ZlxwIXC6ThX7xv1HBKo4GVxesKU2d3PcWDrXe7heXGC7bjmxmS3ZVqhH9zXV7T+bDOsDWOOUMH2wciA==}
 
   '@dashkite/genie-watch@0.5.0':
     resolution: {integrity: sha512-bdqagDbOkbvAwb8eN2L77SC9sVzD80vPnlY5bApqsgCwvigtrl9dQcWVXEmk3tpNnlz5Rzeqr7s93P/QkPvqYg==}
@@ -870,12 +867,6 @@ packages:
 
   '@dashkite/joy@0.3.16':
     resolution: {integrity: sha512-dsU0us4j1Pb+zceoBvLbnZ2PbmULkJUtM2vtWLxKmoc1DE4w9SVTiPTe6JWvF0A0vk90ldv+Lc9qEA5x3O+DtQ==}
-
-  '@dashkite/joy@0.6.0':
-    resolution: {integrity: sha512-6lFhlzHQ3SWqD1o8RcT6prWmiU5KHhdmG/t8AaGChRfYCYOahDmmLtaglMmpNJVWnve8nFL7BBC03+hnTl9HUw==}
-
-  '@dashkite/joy@0.7.0':
-    resolution: {integrity: sha512-1sldJtFRJJwwm1yb2vrhUNvs9ns30ROS5E7KwBTkJ+yPVNsbgIFbakYn7AQSaEsLs/ZdqbHW7dWx+Wo/uG4D7w==}
 
   '@dashkite/kaiko@0.3.3':
     resolution: {integrity: sha512-XnAvVr9y2MsDqMLr4A24vkLF7Iuq3E8RjHEEpqhe29P5NevVX9jXKcXUStNMp9MSJbjHd2pqUNiM5Vvdja9ggg==}
@@ -900,9 +891,6 @@ packages:
 
   '@dashkite/parse@0.4.3':
     resolution: {integrity: sha512-bE0kBjaGYjUnCzWJelQnx8vsfJ9YP07aRTVFZoY7TZWvMmnihoCSugL4IVWAOA2O0EAZXjT8FcjA4bNJ/BQwwg==}
-
-  '@dashkite/zephyr@0.12.1':
-    resolution: {integrity: sha512-84wSTbmFpI+tydtzTkMT6FS5ybnNaL4V40fA2c235/UPx/Whg3NRr6BaVLW53+v+bHL6fDbttCTZNNLEtzTxPw==}
 
   '@eslint-community/eslint-utils@4.7.0':
     resolution: {integrity: sha512-dyybb3AcajC7uha6CvhdVRJqaKyn7w2YKqKyAN37NKYgZT36w+iRb0Dymmc5qEJ549c/S31cMMSFd75bteCpCw==}
@@ -1929,11 +1917,6 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-
-  zx@8.7.1:
-    resolution: {integrity: sha512-28u1w2LlIfvyvJvYe6pmCipesk8oL5AFMVp+P/U445LcaPgzrU5lNDtAPd6nJvWmoCNyXZz37R/xKOGokccjsw==}
-    engines: {node: '>= 12.17.0'}
-    hasBin: true
 
 snapshots:
 
@@ -3886,9 +3869,9 @@ snapshots:
 
   '@dashkite/amen@0.5.0': {}
 
-  '@dashkite/assert@0.3.0':
+  '@dashkite/assert@0.1.4':
     dependencies:
-      '@dashkite/joy': 0.6.0
+      '@dashkite/joy': 0.3.16
 
   '@dashkite/dolores@0.1.0(@aws-sdk/credential-provider-node@3.529.0)':
     dependencies:
@@ -3937,11 +3920,6 @@ snapshots:
       - '@swc/helpers'
       - supports-color
 
-  '@dashkite/genie-release@0.2.14':
-    dependencies:
-      '@dashkite/zephyr': 0.12.1
-      zx: 8.7.1
-
   '@dashkite/genie-watch@0.5.0(@aws-sdk/credential-provider-node@3.529.0)':
     dependencies:
       '@dashkite/masonry': 0.14.0
@@ -3968,10 +3946,6 @@ snapshots:
       - '@swc/helpers'
 
   '@dashkite/joy@0.3.16': {}
-
-  '@dashkite/joy@0.6.0': {}
-
-  '@dashkite/joy@0.7.0': {}
 
   '@dashkite/kaiko@0.3.3': {}
 
@@ -4027,11 +4001,6 @@ snapshots:
   '@dashkite/parse@0.4.3':
     dependencies:
       '@dashkite/joy': 0.3.16
-
-  '@dashkite/zephyr@0.12.1':
-    dependencies:
-      '@dashkite/joy': 0.7.0
-      js-yaml: 4.1.0
 
   '@eslint-community/eslint-utils@4.7.0(eslint@8.57.1)':
     dependencies:
@@ -5121,5 +5090,3 @@ snapshots:
   yallist@3.1.1: {}
 
   yocto-queue@0.1.0: {}
-
-  zx@8.7.1: {}

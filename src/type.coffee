@@ -90,7 +90,9 @@ ReactorFunction = AsyncGeneratorFunction
 
 isReactorFunction = isAsyncGeneratorFunction
 
-isPromise = isType Promise
+isPromise = isKind Promise
+
+isThenable = ( x ) -> x.then?
 
 isAsyncFunction = isType (-> await null).constructor
 
@@ -148,6 +150,7 @@ export {
   isError
   isRegExp
   isPromise
+  isThenable
   isObject
   isArray
   isMap
