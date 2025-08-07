@@ -3,3 +3,5 @@ node_modules
 .DS_Store
 retype.json.local
 .retype/
+
+pnpm-lock.yaml
