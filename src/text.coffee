@@ -15,7 +15,7 @@ toBase = curry (radix, number) ->
 
 fromBase = curry (radix, string) -> Number.parseInt string, radix
 
-parseNumber = (string) -> Number string
+parseNumber = (string) -> Number.parseFloat string
 
 match = curry (pattern, string) -> string.match pattern
 
