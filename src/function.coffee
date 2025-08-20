@@ -111,9 +111,10 @@ pipe = ([ f, gx... ]) ->
         do ({ self, x } = { self: @ }) ->
           x = f.apply self, args
           if x?.then?
-            x.then ( g.bind self )
+            x.then ( x ) ->
+              g.apply self, [ x ]
           else
-            g.call self, x
+            g.apply self, [ x ]
 
 flow = pipe
 
