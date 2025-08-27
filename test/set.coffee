@@ -16,7 +16,7 @@ export default ->
       assert.deepEqual (_.intersection [1..6], [4..10]), new Set [4..6]
 
     test "complement", ->
-      assert.deepEqual (_.complement [1..5], [3..6]), new Set [1,2,6]
+      assert.deepEqual (_.symmetricDifference [1..5], [3..6]), new Set [1,2,6]
 
     test "difference", ->
       assert.deepEqual (_.difference [1..9], [2..10]), new Set [1]
@@ -25,7 +25,7 @@ export default ->
       assert.deepEqual (_.unique [[1..4]..., [4..1]...]), new Set [1..4]
 
     test "dupes", ->
-      assert.deepEqual (_.dupes [[1..3]..., [2..1]...]), new Set [1,2]
+      assert.deepEqual (_.duplicates [[1..3]..., [2..1]...]), new Set [1,2]
 
 
   ]

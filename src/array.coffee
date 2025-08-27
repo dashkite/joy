@@ -55,36 +55,6 @@ sort = curry (f, ax) -> ax.toSorted f, ax
 
 compact = curry ( ax ) -> ax.filter ( a ) -> a?
 
-union = compose [
-  Array.from
-  Se.union
-]
-
-intersection = compose [
-  Array.from
-  Se.intersection
-]
-
-complement = compose [
-  Array.from
-  Se.complement
-]
-
-difference = compose [
-  Array.from
-  Se.difference
-]
-
-unique = compose [
-  Array.from
-  Se.unique
-]
-
-dupes = compose [
-  Array.from
-  Se.dupes
-]
-
 
 # https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 #
@@ -131,11 +101,5 @@ export {
   pair
   sort
   compact
-  union
-  intersection
-  complement
-  difference
-  unique
-  dupes
   shuffle
 }
