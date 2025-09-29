@@ -35,7 +35,6 @@ debounce = do ( last = 0 ) ->
       last = now
       do f
 
-
 # from Wayland
 
 frame = ->
