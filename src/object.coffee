@@ -16,7 +16,11 @@ set = curry ( key, value, object ) ->
   object[ key ] = value
   object
 
-has = curry (p, x) -> x?[ p ]?
+has = curry ( key, value ) ->
+  value? &&
+    (( Object.hasOwn value, key ) ||
+      (( proto = Object.getPrototypeOf value )? &&
+        ( has proto, key )))
 
 mask = curry ( keys, a ) ->
   b = {}
