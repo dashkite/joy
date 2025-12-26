@@ -113,13 +113,18 @@ isArrayBuffer = isType ArrayBuffer
 isDataView = isType DataView
 isTypedArray = isKind prototype Uint8Array
 
-isIterable = (x) -> isFunction x?[Symbol.iterator]
+isIterator = ( value ) -> value.next? && isIterable value
 
-isIterator = (x) -> (isFunction x?.next) && (isIterable x)
+isIterable = ( value ) -> 
+  isFunction value[ Symbol.iterator ]
 
-isReagent = isAsyncIterable = (x) -> isFunction x?[Symbol.asyncIterator]
+isReactive = ( value ) -> 
+  isFunction value[ Symbol.asyncIterator ]
 
-isReactor = isAsyncIterator = (x) -> (isFunction x?.next) && (isReagent x)
+isReagent = isReactive
+isAsyncIterable = isReactive
+isReactor = isReactive
+isAsyncIterator = isReactive
 
 export {
   prototype
@@ -172,6 +177,7 @@ export {
   isTypedArray
   isIterable
   isIterator
+  isReactive
   isReagent
   isAsyncIterable
   isReactor
