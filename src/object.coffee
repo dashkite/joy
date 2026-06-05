@@ -65,7 +65,7 @@ expand = curry ({ delimiter }, object ) ->
     [ keys..., last ] = key.split delimiter
     current = result
     for subkey in keys
-      current = ( current[ subkey ] ?= {} )
+      current = ( current[ subkey ] ?= {})
     current[ last ] = value
   result
 
