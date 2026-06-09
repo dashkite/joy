@@ -20,7 +20,7 @@ has = curry ( key, value ) ->
   value? &&
     (( Object.hasOwn value, key ) ||
       (( proto = Object.getPrototypeOf value )? &&
-        ( has proto, key )))
+        ( has key, proto )))
 
 mask = curry ( keys, a ) ->
   b = {}
