@@ -12,13 +12,13 @@
     "metaclass",
     "metaprogramming"
   ],
-  "homepage": "https://github.com/dashkite/module#readme",
+  "homepage": "https://github.com/dashkite/joy#readme",
   "bugs": {
-    "url": "https://github.com/dashkite/module/issues"
+    "url": "https://github.com/dashkite/joy/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dashkite/module.git"
+    "url": "git+https://github.com/dashkite/joy.git"
   },
   "license": "SEE LICENSE IN LICENSE.md",
   "contributors": [
