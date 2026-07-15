@@ -92,7 +92,7 @@ isReactorFunction = isAsyncGeneratorFunction
 
 isPromise = isKind Promise
 
-isThenable = ( x ) -> x.then?
+isThenable = ( x ) -> x?.then?
 
 isAsyncFunction = isType (-> await null).constructor
 
@@ -113,13 +113,13 @@ isArrayBuffer = isType ArrayBuffer
 isDataView = isType DataView
 isTypedArray = isKind prototype Uint8Array
 
-isIterator = ( value ) -> value.next? && isIterable value
+isIterator = ( value ) -> value?.next? && isIterable value
 
 isIterable = ( value ) -> 
-  isFunction value[ Symbol.iterator ]
+  ( value? ) && isFunction value[ Symbol.iterator ]
 
 isReactive = ( value ) -> 
-  isFunction value[ Symbol.asyncIterator ]
+  ( value? ) && isFunction value[ Symbol.asyncIterator ]
 
 isReagent = isReactive
 isAsyncIterable = isReactive
