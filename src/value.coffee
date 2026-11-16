@@ -3,7 +3,7 @@ import { any, negate } from "./predicate"
 import { generic } from "./generic"
 
 import {
-  isNullish, isAny
+  isNullish, isAny, isThenable
   isSymbol, isRegExp,
   isBuffer, isArrayBuffer, isTypedArray, isDataView,
   isMap, isArray, isObject, isSet,
@@ -219,6 +219,43 @@ generic merge, isArray, isArray, ( x, y ) ->
 
 merge = curry binary merge
 
+replaceArray = ( predicate, mutator, array ) ->
+  result = []
+  for value, index in array
+    next = replace predicate, mutator, value
+    if isThenable next
+      return do ->
+        result.push await next
+        for rest in array[ ( index + 1 )... ]
+          result.push await replace predicate, mutator, rest
+        result
+    result.push next
+  result
+
+replaceObject = ( predicate, mutator, object ) ->
+  result = {}
+  keys = Object.keys object
+  for key, index in keys
+    next = replace predicate, mutator, object[ key ]
+    if isThenable next
+      return do ->
+        result[ key ] = await next
+        for rest in keys[ ( index + 1 )... ]
+          result[ rest ] = await replace predicate, mutator, object[ rest ]
+        result
+    result[ key ] = next
+  result
+
+replace = curry ( predicate, mutator, target ) ->
+  if predicate target
+    mutator target
+  else if isArray target
+    replaceArray predicate, mutator, target
+  else if isObject target
+    replaceObject predicate, mutator, target
+  else
+    target
+
 export {
   equal
   notEqual
@@ -228,4 +265,5 @@ export {
   size
   isEmpty
   merge
+  replace
 }

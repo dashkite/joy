@@ -3,8 +3,9 @@ import { test, success } from "@dashkite/amen"
 import print from "@dashkite/amen-console"
 
 import { sleep } from "../src/time"
+import { isNumber, isObject, isPromise, isString } from "../src/type"
 import { equal, notEqual, eq, neq, 
-  clone, size, isEmpty, merge } from "../src/value"
+  clone, size, isEmpty, merge, replace } from "../src/value"
 
 export default ->
 
@@ -272,6 +273,90 @@ export default ->
             { really: "yes" }
           ]
           quux: 5
+    ]
+
+    test "replace", [
+
+      test "synchronous replacement returns synchronously without Promise", ->
+        structure =
+          count: 2
+          label: "keep"
+          nested:
+            items: [ 3, "skip", 4 ]
+            flag: true
+        result = replace isNumber, ( ( n ) -> n * 10 ), structure
+        assert !( isPromise result )
+        assert.deepEqual result,
+          count: 20
+          label: "keep"
+          nested:
+            items: [ 30, "skip", 40 ]
+            flag: true
+
+      test "asynchronous replacement resolves nested Promises and supports currying", ->
+        isToken = ( x ) -> ( isString x ) and ( x.startsWith "drn:" )
+        resolveTokens = replace isToken, ( uri ) ->
+          await sleep 5
+          uri.replace /^drn:/, "resolved:"
+
+        structure =
+          endpoint: "drn:auth"
+          staticText: "hello"
+          count: 42
+          list: [ "drn:item", "literal" ]
+
+        pending = resolveTokens structure
+        assert isPromise pending
+        assert.deepEqual ( await pending ),
+          endpoint: "resolved:auth"
+          staticText: "hello"
+          count: 42
+          list: [ "resolved:item", "literal" ]
+
+      test "serializes asynchronous mutator invocations across arrays and objects", ->
+        active = 0
+        maxActive = 0
+        order = []
+        isToken = ( x ) -> ( isString x ) and ( x.startsWith "drn:" )
+        resolveSerial = replace isToken, ( uri ) ->
+          active += 1
+          maxActive = Math.max maxActive, active
+          order.push "start:#{uri}"
+          await sleep 10
+          order.push "end:#{uri}"
+          active -= 1
+          uri.replace /^drn:/, "ok:"
+
+        result = await resolveSerial
+          first: "drn:one"
+          nested: [ "drn:two", "literal", "drn:three" ]
+          last: "drn:four"
+
+        assert.equal maxActive, 1
+        assert.deepEqual order, [
+          "start:drn:one"
+          "end:drn:one"
+          "start:drn:two"
+          "end:drn:two"
+          "start:drn:three"
+          "end:drn:three"
+          "start:drn:four"
+          "end:drn:four"
+        ]
+        assert.deepEqual result,
+          first: "ok:one"
+          nested: [ "ok:two", "literal", "ok:three" ]
+          last: "ok:four"
+
+      test "predicate can match container objects directly", ->
+        isRef = ( x ) -> ( isObject x ) and x.$ref?
+        result = replace isRef, ( ( x ) -> "target:#{x.$ref}" ),
+          keep: { nested: 1 }
+          pointer: { $ref: "users" }
+        assert.deepEqual result,
+          keep: { nested: 1 }
+          pointer: "target:users"
+
     ]
 
 
